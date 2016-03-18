@@ -51,9 +51,5 @@ namespace Ensum
 			}
 			
 		}
-		const void Window::BindRenderer(void * renderer)
-		{
-			return void();
-		}
 	}
 }

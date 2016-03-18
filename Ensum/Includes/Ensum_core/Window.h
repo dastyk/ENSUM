@@ -45,9 +45,6 @@ namespace Ensum
 			virtual const void Init() = 0;
 			virtual const void Start() = 0;
 
-
-			const void BindRenderer(void* renderer);
-
 			Utils::Event<const void()> FrameStart;
 		};
 	}
