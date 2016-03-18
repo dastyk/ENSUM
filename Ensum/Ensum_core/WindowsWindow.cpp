@@ -25,6 +25,7 @@ namespace Ensum
 
 				_instance->Init();
 
+				Utils::ConsoleLog::DumpToConsole("Window Created.");
 			}
 			catch (const Utils::Exce& e)
 			{

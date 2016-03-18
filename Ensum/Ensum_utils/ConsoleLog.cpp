@@ -95,7 +95,7 @@ namespace Ensum
 			{
 				va_list args;
 				va_start(args, message);
-				_instance->AddToQue(std::move(WriteData(message, args)));
+				_instance->AddToQue(WriteData(message, args));
 
 			}
 		}
@@ -124,6 +124,7 @@ namespace Ensum
 					va_end(d.args);
 
 					printf(buffer);
+					delete buffer;
 					printf("\n");
 					_toPrint->pop_front();
 					ReleaseMutex(_writeMutex);

@@ -45,8 +45,9 @@ namespace Ensum
 				if (index >= ENTITY_INDEX_MASK)
 				{
 					_generation->clear();
+					
+					Utils::ConsoleLog::DumpToConsole("To large entity index! %d.", index );
 					index = 0;
-					Utils::ConsoleLog::DumpToConsole("To large entity index!.");
 				}
 
 				_generation->push_back(0);

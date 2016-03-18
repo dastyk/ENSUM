@@ -42,21 +42,16 @@ int WINAPI WinMain(HINSTANCE hInstance,
 {
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Memoryleak detection.
-																  //_crtBreakAlloc = 1658;
+																  //_crtBreakAlloc = 163;
 #endif
 	Utils::ConsoleLog::CreateInstance();
 
 	Core::Window* w = Core::WinWindow::CreateWin();
 
 
-
 	Components::EntityManager manager;
 
 	Components::Entity ent = manager.Create();
-
-
-	while (true)
-		ent = manager.Create();
 
 
 	Core::Window::DeleteInstance();

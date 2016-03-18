@@ -8,6 +8,7 @@
 #include "Ensum_utils\Timer.h"
 #include "Ensum_utils\Exception.h"
 #include "Ensum_utils\Safe_Delete.h"
+#include "Ensum_utils\ConsoleLog.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
