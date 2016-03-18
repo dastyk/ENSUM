@@ -21,17 +21,10 @@ namespace Ensum
 		class ENSUM_UTILS_EXPORT ConsoleLog
 		{
 		private:
-			struct WriteData
-			{
-				const char* msg;
-				va_list args;
-				WriteData(const char* msg, const va_list args) : msg(msg), args(args) {}
-			};
-
 			ConsoleLog();
 			static ConsoleLog* _instance;
 
-			std::deque<WriteData>* _toPrint;
+			std::deque<const char*>* _toPrint;
 
 
 			HANDLE _threadHandle;
@@ -48,7 +41,7 @@ namespace Ensum
 			const static void DeleteInstance();
 			const static void DumpToConsole(const char* message, ...);
 
-			const void AddToQue(const WriteData& data);
+			const void AddToQue(const char* data);
 
 			const void Write();
 

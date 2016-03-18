@@ -32,8 +32,7 @@
 #pragma comment(lib, "Ensum_utils.lib")
 #endif
 
-
-using namespace Ensum;
+#include "GameWindow.h"
 
 int WINAPI WinMain(HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
@@ -42,16 +41,19 @@ int WINAPI WinMain(HINSTANCE hInstance,
 {
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Memoryleak detection.
-																  //_crtBreakAlloc = 163;
+	//															  _crtBreakAlloc = 172;
 #endif
 	Utils::ConsoleLog::CreateInstance();
 
-	Core::Window* w = Core::WinWindow::CreateWin();
+	Core::Window* w = Core::Window::CreateWin(new GameWindow);
 
 
 	Components::EntityManager manager;
 
 	Components::Entity ent = manager.Create();
+
+
+	w->Start();
 
 
 	Core::Window::DeleteInstance();

@@ -27,7 +27,7 @@ namespace Ensum
 			printf("<----||Console Initialized||---->\n\n");
 
 
-			_toPrint = new std::deque<WriteData>;
+			_toPrint = new std::deque<const char*>;
 			if (!_toPrint) Exception("Could not create print que.");
 
 
@@ -70,7 +70,6 @@ namespace Ensum
 			{
 				ConsoleLog::DeleteInstance();
 				e.Print();
-				throw e;
 			}
 			
 
@@ -85,7 +84,6 @@ namespace Ensum
 			catch (const Utils::Exce& e)
 			{
 				e.Print();
-				throw e;
 			}
 			
 		}
@@ -95,11 +93,18 @@ namespace Ensum
 			{
 				va_list args;
 				va_start(args, message);
-				_instance->AddToQue(WriteData(message, args));
+				int len = vsnprintf(NULL, 0, message, args) + 1;
+				// instance found, add message to que.
+				char* buffer = new char[len];
 
+				vsprintf(buffer, message, args);
+				va_end(args);
+			
+				_instance->AddToQue(buffer);
+				
 			}
 		}
-		const void ConsoleLog::AddToQue(const WriteData& data)
+		const void ConsoleLog::AddToQue(const char* data)
 		{
 			WaitForSingleObject(_writeMutex, INFINITE);
 			_toPrint->push_back(data);
@@ -115,17 +120,12 @@ namespace Ensum
 				{
 					WaitForSingleObject(_writeMutex, INFINITE);
 
-					WriteData& d = _toPrint->front();
-					int len = vsnprintf(NULL, 0, d.msg, d.args) + 1;
-					// instance found, add message to que.
-					char* buffer = new char[len];
-
-					vsprintf(buffer, d.msg, d.args);
-					va_end(d.args);
-
-					printf(buffer);
-					delete buffer;
+					const char* d = _toPrint->front();
+					
+					printf(d);			
 					printf("\n");
+					delete d;
+
 					_toPrint->pop_front();
 					ReleaseMutex(_writeMutex);
 				}

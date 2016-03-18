@@ -31,18 +31,19 @@ namespace Ensum
 			Window();
 
 			static Window* _instance;
-
 			Utils::Timer* _timer;
 
+
+			virtual const void Frame() = 0;
 		public:
 			virtual ~Window();
 
-			//static Window* CreateWindow(); A somewhat abstract thing
+			static Window* CreateWin(Window * window);
 			static Window* GetInstance();
 			static void DeleteInstance();
 
 			virtual const void Init() = 0;
-			virtual const void Start();
+			virtual const void Start() = 0;
 
 
 			const void BindRenderer(void* renderer);

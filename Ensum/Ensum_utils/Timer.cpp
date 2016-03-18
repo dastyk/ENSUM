@@ -102,6 +102,24 @@ namespace Ensum
 		}
 		const void Timer::Tick()
 		{
+			if (_stopped)
+			{
+				_deltaTime = 0.0;
+				return;
+			}
+
+			// Get time this frame
+			_currTime = clock();
+
+			// Time diff between this and previous frame.
+			_deltaTime = (_currTime - _prevTime)*_secondsPerCount;
+
+			// Prepare for next frame
+			_prevTime = _currTime;
+
+			if (_deltaTime < 0.0)
+				_deltaTime = 0.0;
+
 			return void();
 		}
 	}
