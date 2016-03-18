@@ -14,6 +14,27 @@
 #endif
 #endif  // _DEBUG
 
+
+
+
+#include "Ensum_core\WindowsWindow.h"
+#include "Ensum_components\EntityManager.h"
+#include "Ensum_utils\ConsoleLog.h"
+
+
+#ifdef _DEBUG
+#pragma comment(lib, "Ensum_coreD.lib")
+#pragma comment(lib, "Ensum_componentsD.lib")
+#pragma comment(lib, "Ensum_utilsD.lib")
+#else
+#pragma comment(lib, "Ensum_core.lib")
+#pragma comment(lib, "Ensum_components.lib")
+#pragma comment(lib, "Ensum_utils.lib")
+#endif
+
+
+using namespace Ensum;
+
 int WINAPI WinMain(HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
 	LPSTR lpCmdLine,
@@ -23,7 +44,23 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Memoryleak detection.
 																  //_crtBreakAlloc = 1658;
 #endif
+	Utils::ConsoleLog::CreateInstance();
 
+	Core::Window* w = Core::WinWindow::CreateWin();
+
+
+
+	Components::EntityManager manager;
+
+	Components::Entity ent = manager.Create();
+
+
+	while (true)
+		ent = manager.Create();
+
+
+	Core::Window::DeleteInstance();
+	Utils::ConsoleLog::DeleteInstance();
 
 	return 0;
 }

@@ -4,10 +4,16 @@
     <Filter Include="Window">
       <UniqueIdentifier>{ff11b000-33aa-4998-98d2-f0e78fbcb375}</UniqueIdentifier>
     </Filter>
+    <Filter Include="WindowsWindow">
+      <UniqueIdentifier>{e72c3bbe-48a2-43d3-9fe4-6c650cb07021}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
       <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsWindow.cpp">
+      <Filter>WindowsWindow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -15,5 +21,8 @@
       <Filter>Window</Filter>
     </ClInclude>
     <ClInclude Include="..\Includes\Ensum_core\dll_export.h" />
+    <ClInclude Include="..\Includes\Ensum_core\WindowsWindow.h">
+      <Filter>WindowsWindow</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

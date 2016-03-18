@@ -7,6 +7,9 @@
     <Filter Include="Timer">
       <UniqueIdentifier>{1147954d-05f8-4195-961e-17c6347a5557}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Exception">
+      <UniqueIdentifier>{e15e9934-379d-498a-8d8c-9a4239856206}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_utils\Timer.h">
@@ -16,10 +19,16 @@
       <Filter>Event</Filter>
     </ClInclude>
     <ClInclude Include="..\Includes\Ensum_utils\dll_export.h" />
+    <ClInclude Include="..\Includes\Ensum_utils\Exception.h">
+      <Filter>Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_utils\Safe_Delete.h" />
+    <ClInclude Include="..\Includes\Ensum_utils\ConsoleLog.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Timer.cpp">
       <Filter>Timer</Filter>
     </ClCompile>
+    <ClCompile Include="ConsoleLog.cpp" />
   </ItemGroup>
 </Project>

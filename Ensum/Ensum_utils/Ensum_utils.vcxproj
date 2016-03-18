@@ -152,11 +152,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Includes\Ensum_utils\ConsoleLog.h" />
     <ClInclude Include="..\Includes\Ensum_utils\dll_export.h" />
     <ClInclude Include="..\Includes\Ensum_utils\Event.h" />
+    <ClInclude Include="..\Includes\Ensum_utils\Exception.h" />
+    <ClInclude Include="..\Includes\Ensum_utils\Safe_Delete.h" />
     <ClInclude Include="..\Includes\Ensum_utils\Timer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConsoleLog.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
