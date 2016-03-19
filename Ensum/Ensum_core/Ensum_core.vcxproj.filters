@@ -7,6 +7,9 @@
     <Filter Include="WindowsWindow">
       <UniqueIdentifier>{e72c3bbe-48a2-43d3-9fe4-6c650cb07021}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{73d0baab-0915-4a32-aebd-db0e52d29615}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -14,6 +17,9 @@
     </ClCompile>
     <ClCompile Include="WindowsWindow.cpp">
       <Filter>WindowsWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Timer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -23,6 +29,9 @@
     <ClInclude Include="..\Includes\Ensum_core\dll_export.h" />
     <ClInclude Include="..\Includes\Ensum_core\WindowsWindow.h">
       <Filter>WindowsWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_core\Timer.h">
+      <Filter>Timer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

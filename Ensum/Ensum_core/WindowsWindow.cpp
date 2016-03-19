@@ -1,4 +1,7 @@
 #include "Ensum_core\WindowsWindow.h"
+#include "Ensum_utils\Exception.h"
+#include "Ensum_utils\ConsoleLog.h"
+#include "Safe_Delete.h"
 
 namespace Ensum
 {
@@ -6,7 +9,7 @@ namespace Ensum
 	{
 
 
-		WinWindow::WinWindow() : Window(), _hWnd(nullptr), _hInst(nullptr), _running(false), _wndCaption(L"Ensum"), _style(WS_OVERLAPPED | WS_CAPTION), _windowPosX(0), _windowPosY(0)
+		WinWindow::WinWindow() : Window(), _hWnd(nullptr), _hInst(nullptr), _running(false), _wndCaption(L"Ensum"), _style(WS_OVERLAPPED | WS_CAPTION)
 		{
 			_input = new Input::Input;
 		}
@@ -18,7 +21,7 @@ namespace Ensum
 		}
 		const void WinWindow::Init()
 		{
-			_timer = new Utils::Timer();
+			_timer = new Timer();
 			if (!_timer) Exception("Could not create the window timer.");
 
 			_hInst = GetModuleHandle(NULL);
@@ -46,8 +49,8 @@ namespace Ensum
 
 			// Register the window class.
 			//Place the window in the middle of the Window.
-			_windowPosX = (GetSystemMetrics(SM_CXSCREEN) - (int)windowWidth) / 2;
-			_windowPosY = (GetSystemMetrics(SM_CYSCREEN) - (int)windowHeight) / 2;
+			uint32_t windowPosX = (GetSystemMetrics(SM_CXSCREEN) - (int)windowWidth) / 2;
+			uint32_t windowPosY = (GetSystemMetrics(SM_CYSCREEN) - (int)windowHeight) / 2;
 
 			RegisterClassEx(&wc);
 			RECT rc = { 0, 0, (LONG)windowWidth, (LONG)windowHeight };
@@ -59,8 +62,8 @@ namespace Ensum
 				_wndCaption,
 				_wndCaption,
 				_style,
-				_windowPosX,
-				_windowPosY,
+				windowPosX,
+				windowPosY,
 				rc.right - rc.left,
 				rc.bottom - rc.top,
 				NULL,
@@ -78,11 +81,11 @@ namespace Ensum
 				SetWindowLongPtr(_hWnd, GWL_STYLE,
 					WS_SYSMENU | WS_POPUP | WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_VISIBLE);
 
-				_windowPosX = 0;
-				_windowPosY = 0;
+				windowPosX = 0;
+				windowPosY = 0;
 				windowWidth = (LONG)GetSystemMetrics(SM_CXSCREEN);
 				windowHeight = (LONG)GetSystemMetrics(SM_CYSCREEN);
-				SetWindowPos(_hWnd, 0, _windowPosX, _windowPosY, windowWidth, windowHeight, SWP_SHOWWINDOW);
+				SetWindowPos(_hWnd, 0, windowPosX, windowPosY, windowWidth, windowHeight, SWP_SHOWWINDOW);
 				SetForegroundWindow(_hWnd);
 				SetFocus(_hWnd);
 
@@ -105,7 +108,7 @@ namespace Ensum
 			SetFocus(_hWnd);
 
 			// Set the cursor to the middle of the client window
-			SetCursorPos(_windowPosX + windowWidth / 2, _windowPosY + windowHeight / 2);
+			SetCursorPos(windowPosX + windowWidth / 2, windowPosY + windowHeight / 2);
 
 
 			_input->Init(_hWnd);
@@ -119,6 +122,7 @@ namespace Ensum
 			_timer->Start();
 			while (_running)
 			{
+				_input->Frame();
 				// Handle the windows messages.
 				while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 				{

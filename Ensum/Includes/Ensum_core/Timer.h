@@ -4,12 +4,13 @@
 #include <time.h>
 #include "dll_export.h"
 
-#include "Window.h"
+
 
 namespace Ensum
 {
-	namespace Utils
+	namespace Core
 	{
+		// Fully abstract class for interfacting with the actual timer.
 		class ENSUM_CORE_EXPORT Timer
 		{
 		public:
@@ -22,10 +23,11 @@ namespace Ensum
 			const void Stop();
 			const float TotalTime();
 			const float Delta();
+
+		private:
 			const void Tick();
 
 
-		private:
 			clock_t _startTime;
 
 			clock_t _prevTime;

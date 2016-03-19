@@ -39,7 +39,6 @@ namespace Ensum
 			DWORD _style;
 			LPWSTR _wndCaption;
 
-			int _windowPosX, _windowPosY;
 			bool _running;
 
 			Input::Input* _input;

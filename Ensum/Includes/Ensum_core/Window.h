@@ -5,11 +5,8 @@
 #include "dll_export.h"
 
 #include "Ensum_utils\Event.h"
-#include "Ensum_utils\Timer.h"
-#include "Ensum_utils\Exception.h"
-#include "Ensum_utils\ConsoleLog.h"
-#include "Safe_Delete.h"
 
+#include "Ensum_core\Timer.h"
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
 #else
@@ -31,7 +28,7 @@ namespace Ensum
 			Window();
 
 			static Window* _instance;
-			Utils::Timer* _timer;
+			Timer* _timer;
 
 
 			virtual const void Frame() = 0;

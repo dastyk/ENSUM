@@ -1,4 +1,7 @@
 #include "Ensum_core\Window.h"
+#include "Safe_Delete.h"
+#include "Ensum_utils\Exception.h"
+#include "Ensum_utils\ConsoleLog.h"
 
 namespace Ensum
 {

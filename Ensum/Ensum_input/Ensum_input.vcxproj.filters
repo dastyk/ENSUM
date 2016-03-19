@@ -5,42 +5,15 @@
     <ClInclude Include="..\Includes\Ensum_input\Input.h">
       <Filter>Input</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Ensum_input\GamePad.h">
-      <Filter>Input\gamepad</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Ensum_input\Keyboard.h">
-      <Filter>Input\keyboard</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Includes\Ensum_input\Mouse.h">
-      <Filter>Input\mouse</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Input">
       <UniqueIdentifier>{368b4471-6032-4ad4-b260-5af67d10fae7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Input\keyboard">
-      <UniqueIdentifier>{6934985e-799f-4cf8-8c00-84cf91a173af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Input\mouse">
-      <UniqueIdentifier>{2a767a5f-2537-4725-b903-1224e7d8d3b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Input\gamepad">
-      <UniqueIdentifier>{647d15ec-003e-4ab0-be8e-734a1349f3f5}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Input.cpp">
       <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="GamePad.cpp">
-      <Filter>Input\gamepad</Filter>
-    </ClCompile>
-    <ClCompile Include="Keyboard.cpp">
-      <Filter>Input\keyboard</Filter>
-    </ClCompile>
-    <ClCompile Include="Mouse.cpp">
-      <Filter>Input\mouse</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

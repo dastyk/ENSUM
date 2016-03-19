@@ -151,17 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GamePad.cpp" />
     <ClCompile Include="Input.cpp" />
-    <ClCompile Include="Keyboard.cpp" />
-    <ClCompile Include="Mouse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_input\dll_export.h" />
-    <ClInclude Include="..\Includes\Ensum_input\GamePad.h" />
     <ClInclude Include="..\Includes\Ensum_input\Input.h" />
-    <ClInclude Include="..\Includes\Ensum_input\Keyboard.h" />
-    <ClInclude Include="..\Includes\Ensum_input\Mouse.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

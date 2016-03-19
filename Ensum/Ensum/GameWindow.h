@@ -25,7 +25,7 @@ public:
 private:
 	const void Frame();
 
-	Utils::Timer* _testtimer;
+	Core::Timer* _testtimer;
 };
 
 #endif

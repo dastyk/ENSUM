@@ -151,11 +151,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_core\dll_export.h" />
+    <ClInclude Include="..\Includes\Ensum_core\Timer.h" />
     <ClInclude Include="..\Includes\Ensum_core\Window.h" />
     <ClInclude Include="..\Includes\Ensum_core\WindowsWindow.h" />
   </ItemGroup>
