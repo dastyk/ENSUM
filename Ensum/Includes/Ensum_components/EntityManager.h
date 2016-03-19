@@ -28,7 +28,7 @@ namespace Ensum
 			Entity(const uint32_t id) : _id(id) {}
 
 			const uint32_t Index()const { return _id & ENTITY_INDEX_MASK; }
-			const uint8_t Generation()const { return static_cast<uint8_t>(ENTITY_INDEX_BITS >> _id); }
+			const uint8_t Generation()const { return static_cast<uint8_t>(_id >> ENTITY_INDEX_BITS); }
 
 			const Entity& operator=(const Entity& other) { this->_id = other._id; return *this; }
 			const bool operator==(const Entity& other) { return this->_id == other._id; }

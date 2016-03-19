@@ -2,7 +2,7 @@
 
 #include "Ensum_utils\ConsoleLog.h"
 #include "Ensum_utils\Exception.h"
-#include "Ensum_utils\Safe_Delete.h"
+#include "Safe_Delete.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
@@ -56,6 +56,8 @@ namespace Ensum
 		}
 		const bool EntityManager::Alive(const Entity & entity) const
 		{
+			uint8_t t = entity.Generation();
+			uint8_t t2 = (*_generation)[entity.Index()];
 			return entity.Generation() == (*_generation)[entity.Index()];
 		}
 		const void EntityManager::Delete(const Entity & entity)

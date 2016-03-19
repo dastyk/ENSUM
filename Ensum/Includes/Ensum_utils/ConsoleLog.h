@@ -24,7 +24,7 @@ namespace Ensum
 			ConsoleLog();
 			static ConsoleLog* _instance;
 
-			std::deque<const char*>* _toPrint;
+			std::deque<std::string>* _toPrint;
 
 
 			HANDLE _threadHandle;
@@ -41,7 +41,7 @@ namespace Ensum
 			const static void DeleteInstance();
 			const static void DumpToConsole(const char* message, ...);
 
-			const void AddToQue(const char* data);
+			const void AddToQue(const std::string& data);
 
 			const void Write();
 

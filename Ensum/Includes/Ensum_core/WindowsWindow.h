@@ -4,6 +4,14 @@
 #include "Ensum_core\Window.h"
 #include <Windows.h>
 #include <windowsx.h>
+#include "Ensum_input\Input.h"
+
+
+#ifdef _DEBUG
+#pragma comment(lib, "Ensum_inputD.lib")
+#else
+#pragma comment(lib, "Ensum_input.lib")
+#endif
 
 namespace Ensum
 {
@@ -24,8 +32,8 @@ namespace Ensum
 			virtual const void Init();
 			virtual const void Start();
 
-
-		private:
+			Input::Input* GetInput();
+		protected:
 			HINSTANCE _hInst;
 			HWND _hWnd;
 			DWORD _style;
@@ -33,6 +41,8 @@ namespace Ensum
 
 			int _windowPosX, _windowPosY;
 			bool _running;
+
+			Input::Input* _input;
 		};
 
 

@@ -22,7 +22,6 @@
     <ClInclude Include="..\Includes\Ensum_utils\Exception.h">
       <Filter>Exception</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Ensum_utils\Safe_Delete.h" />
     <ClInclude Include="..\Includes\Ensum_utils\ConsoleLog.h" />
   </ItemGroup>
   <ItemGroup>

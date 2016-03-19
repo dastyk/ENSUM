@@ -26,10 +26,12 @@
 #pragma comment(lib, "Ensum_coreD.lib")
 #pragma comment(lib, "Ensum_componentsD.lib")
 #pragma comment(lib, "Ensum_utilsD.lib")
+#pragma comment(lib, "Ensum_inputD.lib")
 #else
 #pragma comment(lib, "Ensum_core.lib")
 #pragma comment(lib, "Ensum_components.lib")
 #pragma comment(lib, "Ensum_utils.lib")
+#pragma comment(lib, "Ensum_input.lib")
 #endif
 
 #include "GameWindow.h"
@@ -41,7 +43,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 {
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Memoryleak detection.
-	//															  _crtBreakAlloc = 172;
+	//														  _crtBreakAlloc = 6456;
 #endif
 	Utils::ConsoleLog::CreateInstance();
 
@@ -51,7 +53,6 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	Components::EntityManager manager;
 
 	Components::Entity ent = manager.Create();
-
 
 	w->Start();
 

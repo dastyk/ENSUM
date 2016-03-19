@@ -8,12 +8,13 @@ namespace Ensum
 
 		WinWindow::WinWindow() : Window(), _hWnd(nullptr), _hInst(nullptr), _running(false), _wndCaption(L"Ensum"), _style(WS_OVERLAPPED | WS_CAPTION), _windowPosX(0), _windowPosY(0)
 		{
-
+			_input = new Input::Input;
 		}
 
 
 		WinWindow::~WinWindow()
 		{
+			SAFE_DELETE(_input);
 		}
 		const void WinWindow::Init()
 		{
@@ -105,6 +106,9 @@ namespace Ensum
 
 			// Set the cursor to the middle of the client window
 			SetCursorPos(_windowPosX + windowWidth / 2, _windowPosY + windowHeight / 2);
+
+
+			_input->Init(_hWnd);
 			return void();
 		}
 
@@ -127,6 +131,11 @@ namespace Ensum
 				// Do the frame processing.
 				Frame();
 			}
+		}
+
+		Input::Input * WinWindow::GetInput()
+		{
+			return _input;
 		}
 
 
@@ -152,7 +161,7 @@ namespace Ensum
 			default:
 			{
 				//return DefWindowProc(hwnd, umessage, wparam, lparam);
-				return DefWindowProc(hwnd, umessage, wparam, lparam);
+				return ((WinWindow*)Window::GetInstance())->GetInput()->MessageHandler(hwnd, umessage, wparam, lparam);
 			}
 			}
 			return 0;
