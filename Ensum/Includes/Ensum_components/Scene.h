@@ -32,7 +32,7 @@ namespace Ensum
 			/** The frame function for the scene.
 			*
 			*/
-			virtual const void Frame()const = 0;
+			virtual const void Frame() {};
 
 			virtual ~Scene() { _entityManager.Delete(_entity); };
 		protected:

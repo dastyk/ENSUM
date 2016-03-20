@@ -78,8 +78,10 @@ namespace Ensum
 				_sceneData.sceneUpdate[find->second] = update;
 			}
 		}
-		const void SceneManager::Frame() const
+		const void SceneManager::Frame()
 		{
+			_GC();
+
 			for (uint32_t i = 0; i < _sceneData.meta.used; i++)
 			{
 				if (_sceneData.sceneUpdate[i]) _sceneData.scenePtr[i]->Frame();
@@ -128,6 +130,22 @@ namespace Ensum
 			_entityToIndex->erase(e);
 
 			_sceneData.meta.used--;
+		}
+		const void SceneManager::_GC()
+		{
+			uint32_t alive_in_row = 0;
+			while (_sceneData.meta.used > 0 && alive_in_row < 4U) 
+			{
+				std::uniform_int_distribution<uint32_t> distribution(0U, _sceneData.meta.used - 1U);
+				uint32_t i = distribution(_generator);
+				if (_entityManager.Alive(_sceneData.entity[i])) 
+				{
+					alive_in_row++;
+					continue;
+				}
+				alive_in_row = 0;
+				_Destroy(i);
+			}
 		}
 	}
 }

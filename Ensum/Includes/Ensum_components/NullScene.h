@@ -17,11 +17,6 @@ namespace Ensum
 		public:
 			NullScene(EntityManager& entityManger, Input::Input* input);
 			~NullScene();
-
-			/** Frame does nothing.
-			*
-			*/
-			const void Frame()const;
 		};
 
 	}
