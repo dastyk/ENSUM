@@ -1,0 +1,193 @@
+\hypertarget{class_ensum_1_1_input_1_1_input}{}\section{Ensum\+:\+:Input\+:\+:Input Class Reference}
+\label{class_ensum_1_1_input_1_1_input}\index{Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}}
+
+
+Stores the states of the mouse and keyboard.  
+
+
+
+
+{\ttfamily \#include $<$Input.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_aade076509ba0a3b50a5f60b0fbeedf3b}{Frame} ()
+\begin{DoxyCompactList}\small\item\em Does frame updates. \end{DoxyCompactList}\item 
+const bool \hyperlink{class_ensum_1_1_input_1_1_input_a5770ec02144e58c2cc56df1ff3c97815}{Is\+Key\+Down} (Keys key\+Code) const \hypertarget{class_ensum_1_1_input_1_1_input_a5770ec02144e58c2cc56df1ff3c97815}{}\label{class_ensum_1_1_input_1_1_input_a5770ec02144e58c2cc56df1ff3c97815}
+
+\begin{DoxyCompactList}\small\item\em Returns whether specified key is down. \end{DoxyCompactList}\item 
+const bool \hyperlink{class_ensum_1_1_input_1_1_input_a5606f37cdd00048e85f71f5b2ab7324e}{Is\+Key\+Pushed} (Keys key\+Code)\hypertarget{class_ensum_1_1_input_1_1_input_a5606f37cdd00048e85f71f5b2ab7324e}{}\label{class_ensum_1_1_input_1_1_input_a5606f37cdd00048e85f71f5b2ab7324e}
+
+\begin{DoxyCompactList}\small\item\em Returns whether specified was pushed. \end{DoxyCompactList}\item 
+const bool \hyperlink{class_ensum_1_1_input_1_1_input_a33b4028b427092473507a6c704259456}{Is\+Scroll\+Down} (int32\+\_\+t \&delta)\hypertarget{class_ensum_1_1_input_1_1_input_a33b4028b427092473507a6c704259456}{}\label{class_ensum_1_1_input_1_1_input_a33b4028b427092473507a6c704259456}
+
+\begin{DoxyCompactList}\small\item\em Returns whether the scrollwheel was scrolled down this frame. \end{DoxyCompactList}\item 
+const bool \hyperlink{class_ensum_1_1_input_1_1_input_aedaa40538942e4b96a28545dbacafaf3}{Is\+Scroll\+Up} (int32\+\_\+t \&delta)
+\begin{DoxyCompactList}\small\item\em Returns whether the scrollwheel was scrolled up this frame. \end{DoxyCompactList}\item 
+const bool \hyperlink{class_ensum_1_1_input_1_1_input_aa8dd5973b6b459dc39fed330e10b3df5}{Is\+Mouse\+Key\+Down} (Mouse\+Keys key\+Code) const 
+\begin{DoxyCompactList}\small\item\em Returns whether specified mousekey is down. \end{DoxyCompactList}\item 
+const bool \hyperlink{class_ensum_1_1_input_1_1_input_af42a6b381d675c41daa6e36078bbaef5}{Is\+Mouse\+Key\+Pushed} (Mouse\+Keys key\+Code)\hypertarget{class_ensum_1_1_input_1_1_input_af42a6b381d675c41daa6e36078bbaef5}{}\label{class_ensum_1_1_input_1_1_input_af42a6b381d675c41daa6e36078bbaef5}
+
+\begin{DoxyCompactList}\small\item\em Returns whether specified mousekey is pushed. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_acb4d3ba082c4fd53984768eab378baba}{Get\+Mouse\+Pos} (int32\+\_\+t \&rX, int32\+\_\+t \&rY) const 
+\begin{DoxyCompactList}\small\item\em Returns the posisiton of the mouse, relative to the draw area of the window. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_aff8bcbdd6fc2c885259b4739d2102a36}{Get\+Mouse\+Diff} (int32\+\_\+t \&rX, int32\+\_\+t \&rY) const \hypertarget{class_ensum_1_1_input_1_1_input_aff8bcbdd6fc2c885259b4739d2102a36}{}\label{class_ensum_1_1_input_1_1_input_aff8bcbdd6fc2c885259b4739d2102a36}
+
+\begin{DoxyCompactList}\small\item\em Returns the delta of the current mousepos and previous mousepos. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_aeccd4757b81fa91776006f3193cf1899}{Lock\+Mouse\+To\+Center} (bool lock)\hypertarget{class_ensum_1_1_input_1_1_input_aeccd4757b81fa91776006f3193cf1899}{}\label{class_ensum_1_1_input_1_1_input_aeccd4757b81fa91776006f3193cf1899}
+
+\begin{DoxyCompactList}\small\item\em Locks/unlocks the mouse to the center. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_a99e2d54f15ba9449057d0850e8c9c752}{Lock\+Mouse\+To\+Window} (bool lock)\hypertarget{class_ensum_1_1_input_1_1_input_a99e2d54f15ba9449057d0850e8c9c752}{}\label{class_ensum_1_1_input_1_1_input_a99e2d54f15ba9449057d0850e8c9c752}
+
+\begin{DoxyCompactList}\small\item\em Lock/unlocks the mouse to the window. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_a7474a1ff2d8dd75cc7b594514dd762ed}{Hide\+Cursor} (bool show) const \hypertarget{class_ensum_1_1_input_1_1_input_a7474a1ff2d8dd75cc7b594514dd762ed}{}\label{class_ensum_1_1_input_1_1_input_a7474a1ff2d8dd75cc7b594514dd762ed}
+
+\begin{DoxyCompactList}\small\item\em Hides/shows the mouse cursor. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_a44634caec75e410c5652cdb041a33d55}{Rebind} (Keys org, Keys to)\hypertarget{class_ensum_1_1_input_1_1_input_a44634caec75e410c5652cdb041a33d55}{}\label{class_ensum_1_1_input_1_1_input_a44634caec75e410c5652cdb041a33d55}
+
+\begin{DoxyCompactList}\small\item\em Rebinds the key org to the key to. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_a368908dcc45e31fed3cd6c7da59033d0}{Rebind} (Mouse\+Keys org, Mouse\+Keys to)\hypertarget{class_ensum_1_1_input_1_1_input_a368908dcc45e31fed3cd6c7da59033d0}{}\label{class_ensum_1_1_input_1_1_input_a368908dcc45e31fed3cd6c7da59033d0}
+
+\begin{DoxyCompactList}\small\item\em Rebind the mousekey org to the mousekey to. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_a4bb72a770bc738add5e108851e6f5467}{Init} (H\+W\+ND hwnd)\hypertarget{class_ensum_1_1_input_1_1_input_a4bb72a770bc738add5e108851e6f5467}{}\label{class_ensum_1_1_input_1_1_input_a4bb72a770bc738add5e108851e6f5467}
+
+\begin{DoxyCompactList}\small\item\em Windows specific init. \end{DoxyCompactList}\item 
+L\+R\+E\+S\+U\+LT C\+A\+L\+L\+B\+A\+CK \hyperlink{class_ensum_1_1_input_1_1_input_aae4be7b638bbfbb75afd3bb8d782cbae}{Message\+Handler} (H\+W\+ND hwnd, U\+I\+NT umsg, W\+P\+A\+R\+AM w\+Param, L\+P\+A\+R\+AM l\+Param)\hypertarget{class_ensum_1_1_input_1_1_input_aae4be7b638bbfbb75afd3bb8d782cbae}{}\label{class_ensum_1_1_input_1_1_input_aae4be7b638bbfbb75afd3bb8d782cbae}
+
+\begin{DoxyCompactList}\small\item\em Windows specific message handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_ad8eda827bc3b8f09c907daabd5514c22}{\+\_\+\+Key\+Down} (Keys key\+Code)\hypertarget{class_ensum_1_1_input_1_1_input_ad8eda827bc3b8f09c907daabd5514c22}{}\label{class_ensum_1_1_input_1_1_input_ad8eda827bc3b8f09c907daabd5514c22}
+
+\begin{DoxyCompactList}\small\item\em Records the state of the key to down. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_a5918ced1e19d0a221e8ca01a672c93d7}{\+\_\+\+Key\+Up} (Keys key\+Code)\hypertarget{class_ensum_1_1_input_1_1_input_a5918ced1e19d0a221e8ca01a672c93d7}{}\label{class_ensum_1_1_input_1_1_input_a5918ced1e19d0a221e8ca01a672c93d7}
+
+\begin{DoxyCompactList}\small\item\em Records the state of the key to up. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_acaed245a2c82297fc861c2c78ccb14c8}{\+\_\+\+Mouse\+Down} (Mouse\+Keys key\+Code)\hypertarget{class_ensum_1_1_input_1_1_input_acaed245a2c82297fc861c2c78ccb14c8}{}\label{class_ensum_1_1_input_1_1_input_acaed245a2c82297fc861c2c78ccb14c8}
+
+\begin{DoxyCompactList}\small\item\em Records the state of the mousekey to down. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_a471b38d0c16fa0250334beb664456d3b}{\+\_\+\+Mouse\+Up} (Mouse\+Keys key\+Code)\hypertarget{class_ensum_1_1_input_1_1_input_a471b38d0c16fa0250334beb664456d3b}{}\label{class_ensum_1_1_input_1_1_input_a471b38d0c16fa0250334beb664456d3b}
+
+\begin{DoxyCompactList}\small\item\em Records the state of the mousekey to up. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_a75f307dacc5078275fdd6851b7d32bbd}{\+\_\+\+On\+Mouse\+Move} (uint32\+\_\+t x, uint32\+\_\+t y)\hypertarget{class_ensum_1_1_input_1_1_input_a75f307dacc5078275fdd6851b7d32bbd}{}\label{class_ensum_1_1_input_1_1_input_a75f307dacc5078275fdd6851b7d32bbd}
+
+\begin{DoxyCompactList}\small\item\em Records the posistion of the mouse. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_input_1_1_input_a4d32c8a55126504bea66acf1a7622e85}{\+\_\+\+On\+Mouse\+Scroll} (int32\+\_\+t delta)\hypertarget{class_ensum_1_1_input_1_1_input_a4d32c8a55126504bea66acf1a7622e85}{}\label{class_ensum_1_1_input_1_1_input_a4d32c8a55126504bea66acf1a7622e85}
+
+\begin{DoxyCompactList}\small\item\em Records the scrollwheel delta. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+H\+W\+ND {\bfseries \+\_\+hwnd}\hypertarget{class_ensum_1_1_input_1_1_input_a421ea6f6d448240f791aa2aa60ff4eaa}{}\label{class_ensum_1_1_input_1_1_input_a421ea6f6d448240f791aa2aa60ff4eaa}
+
+\item 
+bool {\bfseries \+\_\+keys} \mbox{[}N\+U\+M\+\_\+\+K\+E\+YS\mbox{]}\hypertarget{class_ensum_1_1_input_1_1_input_aa5dccbdacd7232a7533fe2f0956f4c36}{}\label{class_ensum_1_1_input_1_1_input_aa5dccbdacd7232a7533fe2f0956f4c36}
+
+\item 
+bool {\bfseries \+\_\+key\+Pressed} \mbox{[}N\+U\+M\+\_\+\+K\+E\+YS\mbox{]}\hypertarget{class_ensum_1_1_input_1_1_input_ac6ff4ef027802d64d495dd4aa5784b42}{}\label{class_ensum_1_1_input_1_1_input_ac6ff4ef027802d64d495dd4aa5784b42}
+
+\item 
+bool {\bfseries \+\_\+mouse\+Keys} \mbox{[}N\+U\+M\+\_\+\+M\+O\+U\+S\+E\+K\+E\+YS\mbox{]}\hypertarget{class_ensum_1_1_input_1_1_input_adf25b8364f04bbf7c35826513f814a38}{}\label{class_ensum_1_1_input_1_1_input_adf25b8364f04bbf7c35826513f814a38}
+
+\item 
+bool {\bfseries \+\_\+mouse\+Key\+Pressed} \mbox{[}N\+U\+M\+\_\+\+M\+O\+U\+S\+E\+K\+E\+YS\mbox{]}\hypertarget{class_ensum_1_1_input_1_1_input_a2677f823acfc50ba3ee0a8c18053898c}{}\label{class_ensum_1_1_input_1_1_input_a2677f823acfc50ba3ee0a8c18053898c}
+
+\item 
+int32\+\_\+t {\bfseries \+\_\+mouse\+PosX}\hypertarget{class_ensum_1_1_input_1_1_input_acfba9714a086127a683db73a112c8c56}{}\label{class_ensum_1_1_input_1_1_input_acfba9714a086127a683db73a112c8c56}
+
+\item 
+int32\+\_\+t {\bfseries \+\_\+mouse\+PosY}\hypertarget{class_ensum_1_1_input_1_1_input_a3e1cf5aeeb0333e25df6149292be04d8}{}\label{class_ensum_1_1_input_1_1_input_a3e1cf5aeeb0333e25df6149292be04d8}
+
+\item 
+int32\+\_\+t {\bfseries \+\_\+last\+Mouse\+PosX}\hypertarget{class_ensum_1_1_input_1_1_input_a40128893063305dd3f879a3d43e302d4}{}\label{class_ensum_1_1_input_1_1_input_a40128893063305dd3f879a3d43e302d4}
+
+\item 
+int32\+\_\+t {\bfseries \+\_\+last\+Mouse\+PosY}\hypertarget{class_ensum_1_1_input_1_1_input_ab200b39064859018de01ca5b2268ead0}{}\label{class_ensum_1_1_input_1_1_input_ab200b39064859018de01ca5b2268ead0}
+
+\item 
+int32\+\_\+t {\bfseries \+\_\+x\+Diff}\hypertarget{class_ensum_1_1_input_1_1_input_a66b1bd677e8eb78accfecb848e499920}{}\label{class_ensum_1_1_input_1_1_input_a66b1bd677e8eb78accfecb848e499920}
+
+\item 
+int32\+\_\+t {\bfseries \+\_\+y\+Diff}\hypertarget{class_ensum_1_1_input_1_1_input_a10bedefb4e3e85f0cb1d42f125e349f6}{}\label{class_ensum_1_1_input_1_1_input_a10bedefb4e3e85f0cb1d42f125e349f6}
+
+\item 
+bool {\bfseries \+\_\+mouse\+Locked\+To\+Screen}\hypertarget{class_ensum_1_1_input_1_1_input_ab48463bb35239ca17a85812d170b80eb}{}\label{class_ensum_1_1_input_1_1_input_ab48463bb35239ca17a85812d170b80eb}
+
+\item 
+bool {\bfseries \+\_\+mouse\+Locked\+To\+Center}\hypertarget{class_ensum_1_1_input_1_1_input_a0aa9fd5f126984184a8393ef4356c243}{}\label{class_ensum_1_1_input_1_1_input_a0aa9fd5f126984184a8393ef4356c243}
+
+\item 
+int32\+\_\+t {\bfseries \+\_\+scroll\+Delta}\hypertarget{class_ensum_1_1_input_1_1_input_a86b2566b93f5ddbf30c3eaf738e2d3d2}{}\label{class_ensum_1_1_input_1_1_input_a86b2566b93f5ddbf30c3eaf738e2d3d2}
+
+\item 
+std\+::unordered\+\_\+map$<$ Keys, Keys $>$ $\ast$ \hyperlink{class_ensum_1_1_input_1_1_input_a230c41d8d2b8a4df41d432036310c1ab}{\+\_\+key\+To\+Key}
+\item 
+std\+::unordered\+\_\+map$<$ Mouse\+Keys, Mouse\+Keys $>$ $\ast$ \hyperlink{class_ensum_1_1_input_1_1_input_a254dcd129224a0604bd0a5e4cb45b7e6}{\+\_\+mousekey\+To\+Mousekey}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the states of the mouse and keyboard. 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}!Frame@{Frame}}
+\index{Frame@{Frame}!Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}}
+\subsubsection[{\texorpdfstring{Frame()}{Frame()}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Input\+::\+Input\+::\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_input_1_1_input_aade076509ba0a3b50a5f60b0fbeedf3b}{}\label{class_ensum_1_1_input_1_1_input_aade076509ba0a3b50a5f60b0fbeedf3b}
+
+
+Does frame updates. 
+
+This is used for locking the mouse to the center and keeping track of button presses. \index{Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}!Get\+Mouse\+Pos@{Get\+Mouse\+Pos}}
+\index{Get\+Mouse\+Pos@{Get\+Mouse\+Pos}!Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}}
+\subsubsection[{\texorpdfstring{Get\+Mouse\+Pos(int32\+\_\+t \&r\+X, int32\+\_\+t \&r\+Y) const }{GetMousePos(int32_t &rX, int32_t &rY) const }}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Input\+::\+Input\+::\+Get\+Mouse\+Pos (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t \&}]{rX, }
+\item[{int32\+\_\+t \&}]{rY}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ensum_1_1_input_1_1_input_acb4d3ba082c4fd53984768eab378baba}{}\label{class_ensum_1_1_input_1_1_input_acb4d3ba082c4fd53984768eab378baba}
+
+
+Returns the posisiton of the mouse, relative to the draw area of the window. 
+
+0,0 is the upper left corner. \index{Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}!Is\+Mouse\+Key\+Down@{Is\+Mouse\+Key\+Down}}
+\index{Is\+Mouse\+Key\+Down@{Is\+Mouse\+Key\+Down}!Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}}
+\subsubsection[{\texorpdfstring{Is\+Mouse\+Key\+Down(\+Mouse\+Keys key\+Code) const }{IsMouseKeyDown(MouseKeys keyCode) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool Ensum\+::\+Input\+::\+Input\+::\+Is\+Mouse\+Key\+Down (
+\begin{DoxyParamCaption}
+\item[{Mouse\+Keys}]{key\+Code}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ensum_1_1_input_1_1_input_aa8dd5973b6b459dc39fed330e10b3df5}{}\label{class_ensum_1_1_input_1_1_input_aa8dd5973b6b459dc39fed330e10b3df5}
+
+
+Returns whether specified mousekey is down. 
+
+If returned true delta is the amount scrolled. Positive up. \index{Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}!Is\+Scroll\+Up@{Is\+Scroll\+Up}}
+\index{Is\+Scroll\+Up@{Is\+Scroll\+Up}!Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}}
+\subsubsection[{\texorpdfstring{Is\+Scroll\+Up(int32\+\_\+t \&delta)}{IsScrollUp(int32_t &delta)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool Ensum\+::\+Input\+::\+Input\+::\+Is\+Scroll\+Up (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t \&}]{delta}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_input_1_1_input_aedaa40538942e4b96a28545dbacafaf3}{}\label{class_ensum_1_1_input_1_1_input_aedaa40538942e4b96a28545dbacafaf3}
+
+
+Returns whether the scrollwheel was scrolled up this frame. 
+
+If returned true delta is the amount scrolled. Negative down. 
+
+\subsection{Member Data Documentation}
+\index{Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}!\+\_\+key\+To\+Key@{\+\_\+key\+To\+Key}}
+\index{\+\_\+key\+To\+Key@{\+\_\+key\+To\+Key}!Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}}
+\subsubsection[{\texorpdfstring{\+\_\+key\+To\+Key}{_keyToKey}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+map$<$Keys, Keys$>$$\ast$ Ensum\+::\+Input\+::\+Input\+::\+\_\+key\+To\+Key\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_input_1_1_input_a230c41d8d2b8a4df41d432036310c1ab}{}\label{class_ensum_1_1_input_1_1_input_a230c41d8d2b8a4df41d432036310c1ab}
+Key rebinding map \index{Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}!\+\_\+mousekey\+To\+Mousekey@{\+\_\+mousekey\+To\+Mousekey}}
+\index{\+\_\+mousekey\+To\+Mousekey@{\+\_\+mousekey\+To\+Mousekey}!Ensum\+::\+Input\+::\+Input@{Ensum\+::\+Input\+::\+Input}}
+\subsubsection[{\texorpdfstring{\+\_\+mousekey\+To\+Mousekey}{_mousekeyToMousekey}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+map$<$Mouse\+Keys, Mouse\+Keys$>$$\ast$ Ensum\+::\+Input\+::\+Input\+::\+\_\+mousekey\+To\+Mousekey\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_input_1_1_input_a254dcd129224a0604bd0a5e4cb45b7e6}{}\label{class_ensum_1_1_input_1_1_input_a254dcd129224a0604bd0a5e4cb45b7e6}
+Mousekey rebinding map 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/\+Ensum\+\_\+input/Input.\+h\end{DoxyCompactItemize}

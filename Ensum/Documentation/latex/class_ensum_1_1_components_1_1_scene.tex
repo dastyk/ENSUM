@@ -1,0 +1,61 @@
+\hypertarget{class_ensum_1_1_components_1_1_scene}{}\section{Ensum\+:\+:Components\+:\+:Scene Class Reference}
+\label{class_ensum_1_1_components_1_1_scene}\index{Ensum\+::\+Components\+::\+Scene@{Ensum\+::\+Components\+::\+Scene}}
+
+
+The abstract scene class.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+Inheritance diagram for Ensum\+:\+:Components\+:\+:Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ensum_1_1_components_1_1_scene}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \& \hyperlink{class_ensum_1_1_components_1_1_scene_ab614d491401edd9db3584d4e61ef6416}{Get\+Entity} () const \hypertarget{class_ensum_1_1_components_1_1_scene_ab614d491401edd9db3584d4e61ef6416}{}\label{class_ensum_1_1_components_1_1_scene_ab614d491401edd9db3584d4e61ef6416}
+
+\begin{DoxyCompactList}\small\item\em Returns the scenes entity. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_components_1_1_scene_af80a7a08e14551bbd411c235cbd7ebe9}{Frame} () const  =0\hypertarget{class_ensum_1_1_components_1_1_scene_af80a7a08e14551bbd411c235cbd7ebe9}{}\label{class_ensum_1_1_components_1_1_scene_af80a7a08e14551bbd411c235cbd7ebe9}
+
+\begin{DoxyCompactList}\small\item\em The frame function for the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Scene} (\hyperlink{class_ensum_1_1_components_1_1_entity_manager}{Entity\+Manager} \&entity\+Manger, \hyperlink{class_ensum_1_1_input_1_1_input}{Input\+::\+Input} $\ast$input)\hypertarget{class_ensum_1_1_components_1_1_scene_aee190492d4435b67533941958ff81a8e}{}\label{class_ensum_1_1_components_1_1_scene_aee190492d4435b67533941958ff81a8e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \hyperlink{class_ensum_1_1_components_1_1_scene_a8d36e81874a5b07e3edbd8720b8b289e}{\+\_\+entity}
+\item 
+\hyperlink{class_ensum_1_1_components_1_1_entity_manager}{Entity\+Manager} \& \hyperlink{class_ensum_1_1_components_1_1_scene_af7eb8e3279c5b6768f442ae05b44e75f}{\+\_\+entity\+Manager}
+\item 
+\hyperlink{class_ensum_1_1_input_1_1_input}{Input\+::\+Input} $\ast$ {\bfseries \+\_\+input}\hypertarget{class_ensum_1_1_components_1_1_scene_ab7ee39773379321c85d73984b03c5568}{}\label{class_ensum_1_1_components_1_1_scene_ab7ee39773379321c85d73984b03c5568}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The abstract scene class. 
+
+A scene could be considered it\textquotesingle{}s own world or a state in a statemachine. 
+
+\subsection{Member Data Documentation}
+\index{Ensum\+::\+Components\+::\+Scene@{Ensum\+::\+Components\+::\+Scene}!\+\_\+entity@{\+\_\+entity}}
+\index{\+\_\+entity@{\+\_\+entity}!Ensum\+::\+Components\+::\+Scene@{Ensum\+::\+Components\+::\+Scene}}
+\subsubsection[{\texorpdfstring{\+\_\+entity}{_entity}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity} Ensum\+::\+Components\+::\+Scene\+::\+\_\+entity\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_ensum_1_1_components_1_1_scene_a8d36e81874a5b07e3edbd8720b8b289e}{}\label{class_ensum_1_1_components_1_1_scene_a8d36e81874a5b07e3edbd8720b8b289e}
+The scenes own entity \index{Ensum\+::\+Components\+::\+Scene@{Ensum\+::\+Components\+::\+Scene}!\+\_\+entity\+Manager@{\+\_\+entity\+Manager}}
+\index{\+\_\+entity\+Manager@{\+\_\+entity\+Manager}!Ensum\+::\+Components\+::\+Scene@{Ensum\+::\+Components\+::\+Scene}}
+\subsubsection[{\texorpdfstring{\+\_\+entity\+Manager}{_entityManager}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Manager}\& Ensum\+::\+Components\+::\+Scene\+::\+\_\+entity\+Manager\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_ensum_1_1_components_1_1_scene_af7eb8e3279c5b6768f442ae05b44e75f}{}\label{class_ensum_1_1_components_1_1_scene_af7eb8e3279c5b6768f442ae05b44e75f}
+A reference to the entitymanager created in scenemanager 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/\+Ensum\+\_\+components/Scene.\+h\end{DoxyCompactItemize}

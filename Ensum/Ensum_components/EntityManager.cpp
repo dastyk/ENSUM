@@ -2,7 +2,7 @@
 
 #include "Ensum_utils\ConsoleLog.h"
 #include "Ensum_utils\Exception.h"
-#include "Ensum_utils\Safe_Delete.h"
+#include "Safe_Delete.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
@@ -45,8 +45,9 @@ namespace Ensum
 				if (index >= ENTITY_INDEX_MASK)
 				{
 					_generation->clear();
+					
+					Utils::ConsoleLog::DumpToConsole("To large entity index! %d.", index );
 					index = 0;
-					Utils::ConsoleLog::DumpToConsole("To large entity index!.");
 				}
 
 				_generation->push_back(0);
@@ -55,13 +56,20 @@ namespace Ensum
 		}
 		const bool EntityManager::Alive(const Entity & entity) const
 		{
+			uint8_t t = entity.Generation();
+			uint8_t t2 = (*_generation)[entity.Index()];
 			return entity.Generation() == (*_generation)[entity.Index()];
 		}
 		const void EntityManager::Delete(const Entity & entity)
 		{
-			const uint32_t idx = entity.Index();
-			(*_generation)[idx]++;
-			_freeIndices->push_back(idx);
+			uint8_t t = entity.Generation();
+			uint8_t t2 = (*_generation)[entity.Index()];
+			if (entity.Generation() == (*_generation)[entity.Index()])
+			{
+				const uint32_t idx = entity.Index();
+				(*_generation)[idx]++;
+				_freeIndices->push_back(idx);
+			}
 		}
 	}
 }

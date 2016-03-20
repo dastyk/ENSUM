@@ -1,0 +1,46 @@
+\hypertarget{class_ensum_1_1_components_1_1_entity_manager}{}\section{Ensum\+:\+:Components\+:\+:Entity\+Manager Class Reference}
+\label{class_ensum_1_1_components_1_1_entity_manager}\index{Ensum\+::\+Components\+::\+Entity\+Manager@{Ensum\+::\+Components\+::\+Entity\+Manager}}
+
+
+Manages all entities in all scenes.  
+
+
+
+
+{\ttfamily \#include $<$Entity\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \hyperlink{class_ensum_1_1_components_1_1_entity_manager_a15c2795c73d625bcc2399bf59cea64b5}{Create} ()\hypertarget{class_ensum_1_1_components_1_1_entity_manager_a15c2795c73d625bcc2399bf59cea64b5}{}\label{class_ensum_1_1_components_1_1_entity_manager_a15c2795c73d625bcc2399bf59cea64b5}
+
+\begin{DoxyCompactList}\small\item\em Creates an entity, and returns it. \end{DoxyCompactList}\item 
+const bool \hyperlink{class_ensum_1_1_components_1_1_entity_manager_aa30d3768a9f92b138a52b7ac7c6045cc}{Alive} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity) const \hypertarget{class_ensum_1_1_components_1_1_entity_manager_aa30d3768a9f92b138a52b7ac7c6045cc}{}\label{class_ensum_1_1_components_1_1_entity_manager_aa30d3768a9f92b138a52b7ac7c6045cc}
+
+\begin{DoxyCompactList}\small\item\em Determines whether or not the entity is alive. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_entity_manager_aaa8e8f7e613b8b8d8b707dd80a43aec5}{Delete} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)\hypertarget{class_ensum_1_1_components_1_1_entity_manager_aaa8e8f7e613b8b8d8b707dd80a43aec5}{}\label{class_ensum_1_1_components_1_1_entity_manager_aaa8e8f7e613b8b8d8b707dd80a43aec5}
+
+\begin{DoxyCompactList}\small\item\em Deletes an alive entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ $\ast$ {\bfseries \+\_\+generation}\hypertarget{class_ensum_1_1_components_1_1_entity_manager_a4eb470bc60cab8633f8a9811cb9a139f}{}\label{class_ensum_1_1_components_1_1_entity_manager_a4eb470bc60cab8633f8a9811cb9a139f}
+
+\item 
+std\+::deque$<$ uint32\+\_\+t $>$ $\ast$ {\bfseries \+\_\+free\+Indices}\hypertarget{class_ensum_1_1_components_1_1_entity_manager_aa90213c24c2e4f8f8c09f9cf1c21a613}{}\label{class_ensum_1_1_components_1_1_entity_manager_aa90213c24c2e4f8f8c09f9cf1c21a613}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint16\+\_\+t {\bfseries M\+I\+N\+I\+M\+U\+M\+\_\+\+F\+R\+E\+E\+\_\+\+I\+N\+D\+I\+C\+ES} = 1024U\hypertarget{class_ensum_1_1_components_1_1_entity_manager_a6d7bbd2c0c226a051f49382015c24962}{}\label{class_ensum_1_1_components_1_1_entity_manager_a6d7bbd2c0c226a051f49382015c24962}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages all entities in all scenes. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/\+Ensum\+\_\+components/Entity\+Manager.\+h\end{DoxyCompactItemize}

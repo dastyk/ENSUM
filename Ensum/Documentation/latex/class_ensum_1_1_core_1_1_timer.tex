@@ -1,0 +1,96 @@
+\hypertarget{class_ensum_1_1_core_1_1_timer}{}\section{Ensum\+:\+:Core\+:\+:Timer Class Reference}
+\label{class_ensum_1_1_core_1_1_timer}\index{Ensum\+::\+Core\+::\+Timer@{Ensum\+::\+Core\+::\+Timer}}
+
+
+Keeps track of time.  
+
+
+
+
+{\ttfamily \#include $<$Timer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Timer} (bool start\+Immediately=false)\hypertarget{class_ensum_1_1_core_1_1_timer_a00fb09cc574dbebe502b40d1d627c85b}{}\label{class_ensum_1_1_core_1_1_timer_a00fb09cc574dbebe502b40d1d627c85b}
+
+\item 
+const void \hyperlink{class_ensum_1_1_core_1_1_timer_ae34e21c17fe8325daf806f2f30980fab}{Reset} (bool start\+Immediately=false)
+\begin{DoxyCompactList}\small\item\em Reset all the timer values. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_core_1_1_timer_a3f8cd57aade8eb858d68ba376053df25}{Start} ()\hypertarget{class_ensum_1_1_core_1_1_timer_a3f8cd57aade8eb858d68ba376053df25}{}\label{class_ensum_1_1_core_1_1_timer_a3f8cd57aade8eb858d68ba376053df25}
+
+\begin{DoxyCompactList}\small\item\em Start the timer. \end{DoxyCompactList}\item 
+const float \hyperlink{class_ensum_1_1_core_1_1_timer_ae6a7f78e18573adc4378485519bc2daf}{Get\+Total\+Time\+And\+Stop} ()\hypertarget{class_ensum_1_1_core_1_1_timer_ae6a7f78e18573adc4378485519bc2daf}{}\label{class_ensum_1_1_core_1_1_timer_ae6a7f78e18573adc4378485519bc2daf}
+
+\begin{DoxyCompactList}\small\item\em Returns the timers total runtime, then stops the timer. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_core_1_1_timer_a0b65dc7246e0ac5498ac3f2ede1f2c29}{Stop} ()\hypertarget{class_ensum_1_1_core_1_1_timer_a0b65dc7246e0ac5498ac3f2ede1f2c29}{}\label{class_ensum_1_1_core_1_1_timer_a0b65dc7246e0ac5498ac3f2ede1f2c29}
+
+\begin{DoxyCompactList}\small\item\em Stops the timer. \end{DoxyCompactList}\item 
+const float \hyperlink{class_ensum_1_1_core_1_1_timer_a41ef243e3c8538b48e50096f1bfe8ad3}{Total\+Time} ()\hypertarget{class_ensum_1_1_core_1_1_timer_a41ef243e3c8538b48e50096f1bfe8ad3}{}\label{class_ensum_1_1_core_1_1_timer_a41ef243e3c8538b48e50096f1bfe8ad3}
+
+\begin{DoxyCompactList}\small\item\em Returns the timers total runtime. \end{DoxyCompactList}\item 
+const float \hyperlink{class_ensum_1_1_core_1_1_timer_ad51253e9d84426e84728ec47c9532654}{Delta} ()\hypertarget{class_ensum_1_1_core_1_1_timer_ad51253e9d84426e84728ec47c9532654}{}\label{class_ensum_1_1_core_1_1_timer_ad51253e9d84426e84728ec47c9532654}
+
+\begin{DoxyCompactList}\small\item\em Returns the time between last frame and this frame (delta time). \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_core_1_1_timer_a72e9509a79aad7d8ea103492c9c8124d}{Tick} ()
+\begin{DoxyCompactList}\small\item\em The tick of the timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+clock\+\_\+t {\bfseries \+\_\+start\+Time}\hypertarget{class_ensum_1_1_core_1_1_timer_aab6887cc2a2f30ce555deff5bc17696e}{}\label{class_ensum_1_1_core_1_1_timer_aab6887cc2a2f30ce555deff5bc17696e}
+
+\item 
+clock\+\_\+t {\bfseries \+\_\+prev\+Time}\hypertarget{class_ensum_1_1_core_1_1_timer_a2ba284502edc94522fe618279bb16529}{}\label{class_ensum_1_1_core_1_1_timer_a2ba284502edc94522fe618279bb16529}
+
+\item 
+clock\+\_\+t {\bfseries \+\_\+curr\+Time}\hypertarget{class_ensum_1_1_core_1_1_timer_a01b3f6f1e184d583bee33650536c9b3c}{}\label{class_ensum_1_1_core_1_1_timer_a01b3f6f1e184d583bee33650536c9b3c}
+
+\item 
+clock\+\_\+t {\bfseries \+\_\+stop\+Time}\hypertarget{class_ensum_1_1_core_1_1_timer_afc5eeed57d719727b0101552e1f57222}{}\label{class_ensum_1_1_core_1_1_timer_afc5eeed57d719727b0101552e1f57222}
+
+\item 
+clock\+\_\+t {\bfseries \+\_\+paused\+Time}\hypertarget{class_ensum_1_1_core_1_1_timer_a5b9fea13ed86b5847a04ee441c3b0714}{}\label{class_ensum_1_1_core_1_1_timer_a5b9fea13ed86b5847a04ee441c3b0714}
+
+\item 
+double {\bfseries \+\_\+delta\+Time}\hypertarget{class_ensum_1_1_core_1_1_timer_ad3ab4e39cd7966ae016488c24dd93d5f}{}\label{class_ensum_1_1_core_1_1_timer_ad3ab4e39cd7966ae016488c24dd93d5f}
+
+\item 
+double {\bfseries \+\_\+seconds\+Per\+Count}\hypertarget{class_ensum_1_1_core_1_1_timer_ad2709d86bc31c7b29dd8d4c80b83949b}{}\label{class_ensum_1_1_core_1_1_timer_ad2709d86bc31c7b29dd8d4c80b83949b}
+
+\item 
+bool {\bfseries \+\_\+stopped}\hypertarget{class_ensum_1_1_core_1_1_timer_a7291b9a7d45d5a3db820d34016097177}{}\label{class_ensum_1_1_core_1_1_timer_a7291b9a7d45d5a3db820d34016097177}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Keeps track of time. 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Core\+::\+Timer@{Ensum\+::\+Core\+::\+Timer}!Reset@{Reset}}
+\index{Reset@{Reset}!Ensum\+::\+Core\+::\+Timer@{Ensum\+::\+Core\+::\+Timer}}
+\subsubsection[{\texorpdfstring{Reset(bool start\+Immediately=false)}{Reset(bool startImmediately=false)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Core\+::\+Timer\+::\+Reset (
+\begin{DoxyParamCaption}
+\item[{bool}]{start\+Immediately = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_core_1_1_timer_ae34e21c17fe8325daf806f2f30980fab}{}\label{class_ensum_1_1_core_1_1_timer_ae34e21c17fe8325daf806f2f30980fab}
+
+
+Reset all the timer values. 
+
+Specify start\+Immediately if the timer should start immediately after being reset. \index{Ensum\+::\+Core\+::\+Timer@{Ensum\+::\+Core\+::\+Timer}!Tick@{Tick}}
+\index{Tick@{Tick}!Ensum\+::\+Core\+::\+Timer@{Ensum\+::\+Core\+::\+Timer}}
+\subsubsection[{\texorpdfstring{Tick()}{Tick()}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Core\+::\+Timer\+::\+Tick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_core_1_1_timer_a72e9509a79aad7d8ea103492c9c8124d}{}\label{class_ensum_1_1_core_1_1_timer_a72e9509a79aad7d8ea103492c9c8124d}
+
+
+The tick of the timer. 
+
+If a window is created when the timer is created the timer will automaticly subscribe to the Framestart event of the window. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/\+Ensum\+\_\+core/Timer.\+h\end{DoxyCompactItemize}

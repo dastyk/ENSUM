@@ -1,0 +1,26 @@
+\hypertarget{class_ensum_1_1_utils_1_1_event}{}\section{Ensum\+:\+:Utils\+:\+:Event$<$ T $>$ Class Template Reference}
+\label{class_ensum_1_1_utils_1_1_event}\index{Ensum\+::\+Utils\+::\+Event$<$ T $>$@{Ensum\+::\+Utils\+::\+Event$<$ T $>$}}
+
+
+What is this file? A delegate class that can be used to pass free functions or member functions to an event.  
+
+
+
+
+{\ttfamily \#include $<$Event.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\\*
+class Ensum\+::\+Utils\+::\+Event$<$ T $>$}
+
+What is this file? A delegate class that can be used to pass free functions or member functions to an event. 
+
+See more at \href{http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates}{\tt http\+://www.\+codeproject.\+com/\+Articles/11015/\+The-\/\+Impossibly-\/\+Fast-\/\+C-\/\+Delegates} There doesn\textquotesingle{}t seem to exist a much simpler way. std\+::function was considered, but due to lack of an equality operator they cannot be compared, ergo they also cannot be unsubscribed. Game Coding Complete says that C\#-\/style events would be nice, but C++ doesn\textquotesingle{}t support them out of the box. They do note however that it can be done using alot of template magic, with emphasis on alot. This solution works, but the syntax is horrible.
+
+The event itself is just a collection of delegates that should be called when the event occurs. Triggering the event is done by the one owning the event. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/Event.\+h\end{DoxyCompactItemize}

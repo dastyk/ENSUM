@@ -4,6 +4,8 @@
 #pragma warning (disable : 4786)
 //disable warnings on extern before template instantiation
 #pragma warning (disable : 4231)
+//disable warnings on member not being exported
+//#pragma warning (disable : 4251)
 
 #ifdef ENSUM_COMPONENTS_EXPORTS
 #	define ENSUM_COMPONENTS_EXPORT __declspec(dllexport)

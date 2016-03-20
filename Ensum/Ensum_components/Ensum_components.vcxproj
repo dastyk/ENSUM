@@ -152,10 +152,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EntityManager.cpp" />
+    <ClCompile Include="NullScene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_components\dll_export.h" />
+    <ClInclude Include="..\Includes\Ensum_components\Entity.h" />
     <ClInclude Include="..\Includes\Ensum_components\EntityManager.h" />
+    <ClInclude Include="..\Includes\Ensum_components\Manager.h" />
+    <ClInclude Include="..\Includes\Ensum_components\NullScene.h" />
+    <ClInclude Include="..\Includes\Ensum_components\Scene.h" />
+    <ClInclude Include="..\Includes\Ensum_components\SceneManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

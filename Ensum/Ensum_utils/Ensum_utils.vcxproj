@@ -72,7 +72,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)Delivery/BuildOutput/$(Configuration)/</OutDir>
+    <OutDir>$(SolutionDir)Delivery/$(Configuration)/</OutDir>
     <IntDir>$(SolutionDir)TempFiles/$(ProjectName)/$(Configuration)/</IntDir>
     <TargetName>$(ProjectName)D</TargetName>
   </PropertyGroup>
@@ -81,7 +81,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Delivery/BuildOutput/$(Configuration)/</OutDir>
+    <OutDir>$(SolutionDir)Delivery/$(Configuration)/</OutDir>
     <IntDir>$(SolutionDir)TempFiles/$(ProjectName)/$(Configuration)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -154,14 +154,11 @@
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_utils\ConsoleLog.h" />
     <ClInclude Include="..\Includes\Ensum_utils\dll_export.h" />
-    <ClInclude Include="..\Includes\Ensum_utils\Event.h" />
     <ClInclude Include="..\Includes\Ensum_utils\Exception.h" />
-    <ClInclude Include="..\Includes\Ensum_utils\Safe_Delete.h" />
-    <ClInclude Include="..\Includes\Ensum_utils\Timer.h" />
+    <ClInclude Include="..\Includes\Event.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleLog.cpp" />
-    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

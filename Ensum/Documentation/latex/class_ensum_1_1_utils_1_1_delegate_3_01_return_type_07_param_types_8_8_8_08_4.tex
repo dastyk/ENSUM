@@ -1,0 +1,71 @@
+\hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4}{}\section{Ensum\+:\+:Utils\+:\+:Delegate$<$ Return\+Type(Param\+Types...)$>$ Class Template Reference}
+\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4}\index{Ensum\+::\+Utils\+::\+Delegate$<$ Return\+Type(\+Param\+Types...)$>$@{Ensum\+::\+Utils\+::\+Delegate$<$ Return\+Type(\+Param\+Types...)$>$}}
+
+
+What is this file? A delegate class that can be used to pass free functions or member functions to an event.  
+
+
+
+
+{\ttfamily \#include $<$Event.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Delegate} (void $\ast$callee, Type function)\hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_aa036c0c84a557b6fd5be7792341fed85}{}\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_aa036c0c84a557b6fd5be7792341fed85}
+
+\item 
+Return\+Type {\bfseries operator()} (Param\+Types...\+x) const \hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a3ae424e1c121efb7ce4f04f4af2d10ec}{}\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a3ae424e1c121efb7ce4f04f4af2d10ec}
+
+\item 
+bool {\bfseries operator==} (const \hyperlink{class_ensum_1_1_utils_1_1_delegate}{Delegate} \&other) const \hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a7a814e851eb3a97f9b4a4ae4998a4eb8}{}\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a7a814e851eb3a97f9b4a4ae4998a4eb8}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T , Return\+Type(\+T\+::$\ast$)(\+Param\+Types...) T\+Method$>$ }\\static \hyperlink{class_ensum_1_1_utils_1_1_delegate}{Delegate} {\bfseries Make} (T $\ast$callee)\hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a55c46806e8372852550f6ae7326140fc}{}\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a55c46806e8372852550f6ae7326140fc}
+
+\item 
+{\footnotesize template$<$Return\+Type($\ast$)(\+Param\+Types...) func\+Ptr$>$ }\\static \hyperlink{class_ensum_1_1_utils_1_1_delegate}{Delegate} {\bfseries Make} ()\hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a9c39a6686ddf93ac1255d9f482844a52}{}\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a9c39a6686ddf93ac1255d9f482844a52}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Return\+Type($\ast$ {\bfseries Type}) (void $\ast$callee, Param\+Types...)\hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a2a7c0af5bb292262a83fb30e7126eaf1}{}\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a2a7c0af5bb292262a83fb30e7126eaf1}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T , Return\+Type(\+T\+::$\ast$)(\+Param\+Types...) T\+Method$>$ }\\static Return\+Type {\bfseries method\+Caller} (void $\ast$callee, Param\+Types...\+x)\hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_ab53d0e5bf351106f729586c144cd58bb}{}\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_ab53d0e5bf351106f729586c144cd58bb}
+
+\item 
+{\footnotesize template$<$Return\+Type($\ast$)(\+Param\+Types...) func$>$ }\\static Return\+Type {\bfseries function\+Caller} (void $\ast$unused, Param\+Types...\+x)\hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_ad7f1896a49be7b6312d9d4329d1f1622}{}\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_ad7f1896a49be7b6312d9d4329d1f1622}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ {\bfseries \+\_\+callee}\hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_ae8a767f8412e83e09f42b3794b948c33}{}\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_ae8a767f8412e83e09f42b3794b948c33}
+
+\item 
+Type {\bfseries \+\_\+callback\+Function}\hypertarget{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a31d7af1a08f4a32e3cb8a065de77d743}{}\label{class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4_a31d7af1a08f4a32e3cb8a065de77d743}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Return\+Type, typename... Param\+Types$>$\\*
+class Ensum\+::\+Utils\+::\+Delegate$<$ Return\+Type(\+Param\+Types...)$>$}
+
+What is this file? A delegate class that can be used to pass free functions or member functions to an event. 
+
+See more at \href{http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates}{\tt http\+://www.\+codeproject.\+com/\+Articles/11015/\+The-\/\+Impossibly-\/\+Fast-\/\+C-\/\+Delegates} There doesn\textquotesingle{}t seem to exist a much simpler way. std\+::function was considered, but due to lack of an equality operator they cannot be compared, ergo they also cannot be unsubscribed. Game Coding Complete says that C\#-\/style events would be nice, but C++ doesn\textquotesingle{}t support them out of the box. They do note however that it can be done using alot of template magic, with emphasis on alot. This solution works, but the syntax is horrible.
+
+The event itself is just a collection of delegates that should be called when the event occurs. Triggering the event is done by the one owning the event. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/Event.\+h\end{DoxyCompactItemize}

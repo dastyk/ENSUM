@@ -4,6 +4,8 @@
 #pragma warning (disable : 4786)
 //disable warnings on extern before template instantiation
 #pragma warning (disable : 4231)
+//disable warnings on unsafe function
+#pragma warning (disable : 4996)
 
 #ifdef ENSUM_UTILS_EXPORTS
 #	define ENSUM_UTILS_EXPORT __declspec(dllexport)

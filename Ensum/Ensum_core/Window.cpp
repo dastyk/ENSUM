@@ -1,4 +1,7 @@
 #include "Ensum_core\Window.h"
+#include "Safe_Delete.h"
+#include "Ensum_utils\Exception.h"
+#include "Ensum_utils\ConsoleLog.h"
 
 namespace Ensum
 {
@@ -6,17 +9,36 @@ namespace Ensum
 	{
 		Window* Window::_instance = nullptr;
 
-		Window::Window() : _timer(nullptr)
+		Window::Window(const Components::SceneManager& sceneManager) : _timer(nullptr),_sceneManager(sceneManager)
 		{
 		}
 
 
 		Window::~Window()
 		{
-			SAFE_DELETE(_timer);
+			SAFE_DELETE(_timer);		
+		}
+		Window * Window::CreateWin(Window * window)
+		{
+			try
+			{
+				if (!window) Exception("No window was specified.");
+				_instance = window;
+				_instance->Init();
+
+				Utils::ConsoleLog::DumpToConsole("Window Created.");
+			}
+			catch (const Utils::Exce& e)
+			{
+				Window::DeleteInstance();
+				e.Print();
+			}
+
+			return _instance;
 		}
 		Window * Window::GetInstance()
 		{
+			if (!_instance)Exception("No instance of window in GetInstance");
 			return _instance;
 		}
 		void Window::DeleteInstance()
@@ -28,17 +50,14 @@ namespace Ensum
 			catch (const Utils::Exce& e)
 			{
 				e.Print();
-				throw e;
+
 			}
 			
 		}
-		const void Window::Start()
+
+		Input::Input * Window::GetInput()
 		{
-			return void();
-		}
-		const void Window::BindRenderer(void * renderer)
-		{
-			return void();
+			return _input;
 		}
 	}
 }
