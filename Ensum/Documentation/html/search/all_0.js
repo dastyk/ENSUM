@@ -4,6 +4,7 @@ var searchData=
   ['_5fdestroy',['_Destroy',['../class_ensum_1_1_components_1_1_scene_manager.html#a8102cfd9f4fed62a06e564dc016b6c46',1,'Ensum::Components::SceneManager']]],
   ['_5fentity',['_entity',['../class_ensum_1_1_components_1_1_scene.html#a8d36e81874a5b07e3edbd8720b8b289e',1,'Ensum::Components::Scene']]],
   ['_5fentitymanager',['_entityManager',['../class_ensum_1_1_components_1_1_scene.html#af7eb8e3279c5b6768f442ae05b44e75f',1,'Ensum::Components::Scene']]],
+  ['_5fgc',['_GC',['../class_ensum_1_1_components_1_1_scene_manager.html#a156f50b0273598415c52dabae19ae334',1,'Ensum::Components::SceneManager']]],
   ['_5fkeydown',['_KeyDown',['../class_ensum_1_1_input_1_1_input.html#ad8eda827bc3b8f09c907daabd5514c22',1,'Ensum::Input::Input']]],
   ['_5fkeytokey',['_keyToKey',['../class_ensum_1_1_input_1_1_input.html#a230c41d8d2b8a4df41d432036310c1ab',1,'Ensum::Input::Input']]],
   ['_5fkeyup',['_KeyUp',['../class_ensum_1_1_input_1_1_input.html#a5918ced1e19d0a221e8ca01a672c93d7',1,'Ensum::Input::Input']]],
