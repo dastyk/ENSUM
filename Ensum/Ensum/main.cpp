@@ -48,11 +48,10 @@ public:
 	{
 		_input->Rebind(Input::Keys::Escape, Input::Keys::A);
 		_sceneManager.CreateScene(new Components::NullScene(_sceneManager.GetEntityManager(), _input));
+		_entityManager.Delete(_entity);
 	}
 	~Game()
 	{
-		int i = 0;
-	//	_input->Rebind(Input::Keys::Escape, Input::Keys::Escape);
 	}
 private:
 	Components::SceneManager& _sceneManager;
@@ -70,7 +69,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 {
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Memoryleak detection.
-	//												  _crtBreakAlloc = 193;
+													  _crtBreakAlloc = 0x00000109;
 #endif
 	Utils::ConsoleLog::CreateInstance();
 

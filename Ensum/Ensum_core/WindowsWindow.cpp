@@ -25,6 +25,7 @@ namespace Ensum
 
 		WinWindow::~WinWindow()
 		{
+			DestroyWindow(_hWnd);
 			SAFE_DELETE(_input);
 		}
 		const void WinWindow::Init()
@@ -171,7 +172,15 @@ namespace Ensum
 			default:
 			{
 				//return DefWindowProc(hwnd, umessage, wparam, lparam);
-				return Window::GetInstance()->GetInput()->MessageHandler(hwnd, umessage, wparam, lparam);
+				try
+				{
+					return Window::GetInstance()->GetInput()->MessageHandler(hwnd, umessage, wparam, lparam);
+				}
+				catch (const Utils::Exce& e)
+				{
+					Utils::ConsoleLog::DumpToConsole("Tried to get instance of window for input, but there was no window.");
+					return DefWindowProc(hwnd, umessage, wparam, lparam);
+				}
 			}
 			}
 			return 0;

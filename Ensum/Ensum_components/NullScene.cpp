@@ -12,7 +12,6 @@ namespace Ensum
 
 		NullScene::~NullScene()
 		{
-			int i = 0;
 		}
 	}
 }

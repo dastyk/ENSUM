@@ -58,7 +58,7 @@ namespace Ensum
 			_sceneData.entity[index] = ent;
 			_sceneData.scenePtr[index] = scene;
 			_sceneData.sceneUpdate[index] = true;
-
+			_sceneData.meta.used++;
 			return ent;
 		}
 		const void SceneManager::RemoveScene(const Entity& sceneEntity)
@@ -104,8 +104,8 @@ namespace Ensum
 			mdata.allocated = size;
 
 			new_data.entity = (Entity*)(mdata.buffer);
-			new_data.scenePtr = (Scene**)(new_data.entity + bytes);
-			new_data.sceneUpdate = (bool *)(new_data.scenePtr + bytes);
+			new_data.scenePtr = (Scene**)(new_data.entity + size);
+			new_data.sceneUpdate = (bool *)(new_data.scenePtr + size);
 
 			memcpy(new_data.entity, _sceneData.entity, _sceneData.meta.used * sizeof(Entity));
 			memcpy(new_data.scenePtr, _sceneData.scenePtr, _sceneData.meta.used * sizeof(Scene*));
@@ -120,6 +120,8 @@ namespace Ensum
 			unsigned last = _sceneData.meta.used - 1;
 			const Entity& e = _sceneData.entity[index];
 			const Entity& last_e = _sceneData.entity[last];
+
+			Utils::ConsoleLog::DumpToConsole("Deleting Scene with id: %d", e.ID);
 
 			_sceneData.entity[index] = _sceneData.entity[last];
 			SAFE_DELETE(_sceneData.scenePtr[index]);

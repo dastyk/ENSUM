@@ -77,6 +77,7 @@ namespace Ensum
 		}
 		const void ConsoleLog::DeleteInstance()
 		{
+			system("pause");
 			try
 			{
 				SAFE_DELETE(_instance);
