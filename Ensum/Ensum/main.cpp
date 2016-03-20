@@ -37,6 +37,32 @@
 
 using namespace Ensum;
 
+
+
+
+
+class Game : public Components::Scene
+{
+public:
+	Game(Components::EntityManager& entityManger, Input::Input* input, Components::SceneManager& scenemanager):Scene(entityManger,input) ,_sceneManager(scenemanager)
+	{
+		_input->Rebind(Input::Keys::Escape, Input::Keys::A);
+		_sceneManager.CreateScene(new Components::NullScene(_sceneManager.GetEntityManager(), _input));
+	}
+	~Game()
+	{
+		int i = 0;
+	//	_input->Rebind(Input::Keys::Escape, Input::Keys::Escape);
+	}
+private:
+	Components::SceneManager& _sceneManager;
+};
+
+
+
+
+
+
 int WINAPI WinMain(HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
 	LPSTR lpCmdLine,
@@ -44,14 +70,14 @@ int WINAPI WinMain(HINSTANCE hInstance,
 {
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Memoryleak detection.
-	//														  _crtBreakAlloc = 6456;
+	//												  _crtBreakAlloc = 193;
 #endif
 	Utils::ConsoleLog::CreateInstance();
 
 	Components::SceneManager sceneManager;
 	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow(sceneManager));
 	
-	sceneManager.CreateScene(new Components::NullScene(sceneManager.GetEntityManager(), w->GetInput()));
+	sceneManager.CreateScene(new Game(sceneManager.GetEntityManager(), w->GetInput(), sceneManager));
 
 
 	w->Start();

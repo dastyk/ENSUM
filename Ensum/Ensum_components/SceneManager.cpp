@@ -53,8 +53,8 @@ namespace Ensum
 
 			const Entity& ent = scene->GetEntity();
 			Utils::ConsoleLog::DumpToConsole("Creating Scene with id: %d", ent.ID);
-
-			uint32_t index = (*_entityToIndex)[ent];
+			
+			uint32_t index = (*_entityToIndex)[ent] = _entityToIndex->size();
 			_sceneData.entity[index] = ent;
 			_sceneData.scenePtr[index] = scene;
 			_sceneData.sceneUpdate[index] = true;
@@ -101,11 +101,11 @@ namespace Ensum
 			MetaData& mdata = new_data.meta;
 			mdata.buffer = std::malloc(bytes);
 			mdata.used = _sceneData.meta.used;
-			mdata.allocated = bytes;
+			mdata.allocated = size;
 
 			new_data.entity = (Entity*)(mdata.buffer);
-			new_data.scenePtr = (Scene**)(new_data.entity + size);
-			new_data.sceneUpdate = (bool *)(new_data.scenePtr + size);
+			new_data.scenePtr = (Scene**)(new_data.entity + bytes);
+			new_data.sceneUpdate = (bool *)(new_data.scenePtr + bytes);
 
 			memcpy(new_data.entity, _sceneData.entity, _sceneData.meta.used * sizeof(Entity));
 			memcpy(new_data.scenePtr, _sceneData.scenePtr, _sceneData.meta.used * sizeof(Scene*));
