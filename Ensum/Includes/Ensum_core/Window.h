@@ -4,18 +4,20 @@
 
 #include "dll_export.h"
 
-#include "Ensum_utils\Event.h"
+#include "Event.h"
 
 #include "Ensum_core\Timer.h"
 #include "Ensum_input\Input.h"
-
+#include "Ensum_components\SceneManager.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
 #pragma comment(lib, "Ensum_inputD.lib")
+#pragma comment(lib, "Ensum_componentsD.lib")
 #else
 #pragma comment(lib, "Ensum_utils.lib")
 #pragma comment(lib, "Ensum_input.lib")
+#pragma comment(lib, "Ensum_components.lib")
 #endif
 
 namespace Ensum
@@ -32,7 +34,7 @@ namespace Ensum
 		class ENSUM_CORE_EXPORT Window
 		{
 		protected:
-			Window();
+			Window(const Components::SceneManager& sceneManager);
 
 			/** The frame function.
 			* Put the gamelogic here.
@@ -77,6 +79,7 @@ namespace Ensum
 
 			Input::Input* _input;
 
+			const Components::SceneManager& _sceneManager;
 		};
 	}
 }

@@ -2,7 +2,6 @@
 #define _EVENT_H_
 
 #include <list>
-#include "dll_export.h"
 namespace Ensum
 {
 	namespace Utils
@@ -37,7 +36,7 @@ namespace Ensum
 		*the event occurs. Triggering the event is done by the one owning the event.
 		*/
 		template <typename ReturnType, typename... ParamTypes>
-		class ENSUM_UTILS_EXPORT Delegate<ReturnType(ParamTypes...)>
+		class Delegate<ReturnType(ParamTypes...)>
 		{
 			typedef ReturnType(*Type)(void* callee, ParamTypes...);
 
@@ -115,7 +114,7 @@ namespace Ensum
 		*the event occurs. Triggering the event is done by the one owning the event.
 		*/
 		template <typename ReturnType, typename... Arguments>
-		class ENSUM_UTILS_EXPORT Event<ReturnType(Arguments...)>
+		class Event<ReturnType(Arguments...)>
 		{
 		public:
 			Event() : _callbacks(nullptr)

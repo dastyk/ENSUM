@@ -18,7 +18,8 @@
 
 
 #include "Ensum_core\WindowsWindow.h"
-#include "Ensum_components\EntityManager.h"
+#include "Ensum_components\SceneManager.h"
+#include "Ensum_components\NullScene.h"
 #include "Ensum_utils\ConsoleLog.h"
 
 
@@ -47,12 +48,11 @@ int WINAPI WinMain(HINSTANCE hInstance,
 #endif
 	Utils::ConsoleLog::CreateInstance();
 
-	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow);
+	Components::SceneManager sceneManager;
+	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow(sceneManager));
+	
+	sceneManager.CreateScene(new Components::NullScene(sceneManager.GetEntityManager(), w->GetInput()));
 
-
-	Components::EntityManager manager;
-
-	Components::Entity ent = manager.Create();
 
 	w->Start();
 

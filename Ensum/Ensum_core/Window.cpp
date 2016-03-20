@@ -9,14 +9,14 @@ namespace Ensum
 	{
 		Window* Window::_instance = nullptr;
 
-		Window::Window() : _timer(nullptr)
+		Window::Window(const Components::SceneManager& sceneManager) : _timer(nullptr),_sceneManager(sceneManager)
 		{
 		}
 
 
 		Window::~Window()
 		{
-			SAFE_DELETE(_timer);
+			SAFE_DELETE(_timer);		
 		}
 		Window * Window::CreateWin(Window * window)
 		{

@@ -1,12 +1,5 @@
 #include "Ensum_core\Timer.h"
 #include "Ensum_core\Window.h"
-#include "Ensum_utils\Event.h"
-
-#ifdef _DEBUG
-#pragma comment(lib, "Ensum_utilsD.lib")
-#else
-#pragma comment(lib, "Ensum_utils.lib")
-#endif
 
 namespace Ensum
 {

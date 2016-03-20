@@ -13,6 +13,9 @@
     <Filter Include="EntityManager\Entity">
       <UniqueIdentifier>{cddb8b9e-76d5-4d98-ab49-0189e8c23446}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SceneManager\Scenes\NullScene">
+      <UniqueIdentifier>{5e998bcc-2b7a-4622-8996-67551e404952}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_components\EntityManager.h">
@@ -23,16 +26,22 @@
     <ClInclude Include="..\Includes\Ensum_components\Scene.h">
       <Filter>SceneManager\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Ensum_components\SceneManager.h">
-      <Filter>SceneManager</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Ensum_components\Entity.h">
       <Filter>EntityManager\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_components\NullScene.h">
+      <Filter>SceneManager\Scenes\NullScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_components\SceneManager.h">
+      <Filter>SceneManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntityManager.cpp">
       <Filter>EntityManager</Filter>
+    </ClCompile>
+    <ClCompile Include="NullScene.cpp">
+      <Filter>SceneManager\Scenes\NullScene</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>SceneManager</Filter>

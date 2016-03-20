@@ -9,7 +9,7 @@ namespace Ensum
 	{
 
 
-		WinWindow::WinWindow() : Window(), _hWnd(nullptr), _hInst(nullptr), _running(false), _wndCaption(L"Ensum"), _style(WS_OVERLAPPED | WS_CAPTION)
+		WinWindow::WinWindow(const Components::SceneManager& sceneManager) : Window(sceneManager), _hWnd(nullptr), _hInst(nullptr), _running(false), _wndCaption(L"Ensum"), _style(WS_OVERLAPPED | WS_CAPTION)
 		{
 			_input = new Input::Input;
 		}
@@ -18,6 +18,8 @@ namespace Ensum
 		{
 			if (_input->IsKeyDown(Input::Keys::Escape))
 				_running = false;
+
+			_sceneManager.Frame();
 		}
 
 
@@ -79,7 +81,7 @@ namespace Ensum
 			if (!_hWnd)
 			{
 				DWORD error = GetLastError();
-				Exception("Could not create the window. Error: "+ std::to_string(error));
+				Exception("Could not create the window. Error: " + std::to_string(error));
 			}
 
 			if (fullscreen)
@@ -118,6 +120,7 @@ namespace Ensum
 
 
 			_input->Init(_hWnd);
+
 			return void();
 		}
 

@@ -154,8 +154,8 @@
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_utils\ConsoleLog.h" />
     <ClInclude Include="..\Includes\Ensum_utils\dll_export.h" />
-    <ClInclude Include="..\Includes\Ensum_utils\Event.h" />
     <ClInclude Include="..\Includes\Ensum_utils\Exception.h" />
+    <ClInclude Include="..\Includes\Event.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleLog.cpp" />

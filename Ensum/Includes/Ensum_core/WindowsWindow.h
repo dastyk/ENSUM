@@ -22,7 +22,7 @@ namespace Ensum
 			*/
 			virtual const void Frame();
 		public:
-			WinWindow();
+			WinWindow(const Components::SceneManager& sceneManager);
 			virtual ~WinWindow();
 
 			/** Initialization for the window.
@@ -30,7 +30,7 @@ namespace Ensum
 			*/
 			virtual const void Init();
 			/** Start the message loop.
-			*
+			* 
 			*/
 			virtual const void Start();
 
