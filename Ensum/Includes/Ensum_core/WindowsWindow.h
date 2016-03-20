@@ -4,35 +4,36 @@
 #include "Ensum_core\Window.h"
 #include <Windows.h>
 #include <windowsx.h>
-#include "Ensum_input\Input.h"
-
-
-#ifdef _DEBUG
-#pragma comment(lib, "Ensum_inputD.lib")
-#else
-#pragma comment(lib, "Ensum_input.lib")
-#endif
 
 namespace Ensum
 {
 	namespace Core
 	{
-
+		/** Windows specific window.
+		*
+		*/
 		class ENSUM_CORE_EXPORT WinWindow :
 			public Window
 		{
 		protected:
-			WinWindow();
 
-			virtual const void Frame() = 0;
+			/** The frame function.
+			* Put the gamelogic here.
+			*/
+			virtual const void Frame();
 		public:
+			WinWindow();
 			virtual ~WinWindow();
 
-
+			/** Initialization for the window.
+			*
+			*/
 			virtual const void Init();
+			/** Start the message loop.
+			*
+			*/
 			virtual const void Start();
 
-			Input::Input* GetInput();
 		protected:
 			HINSTANCE _hInst;
 			HWND _hWnd;
@@ -40,12 +41,12 @@ namespace Ensum
 			LPWSTR _wndCaption;
 
 			bool _running;
-
-			Input::Input* _input;
 		};
 
 
-		//WndProc and ApplicationHandle is used to make sure we can handle windows messages
+		/**WndProc is used to make sure we can handle windows messages.
+		*
+		*/
 		static LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 	}
 }

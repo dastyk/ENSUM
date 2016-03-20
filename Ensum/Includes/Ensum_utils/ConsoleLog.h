@@ -18,6 +18,9 @@ namespace Ensum
 {
 	namespace Utils
 	{
+		/** Debug console.
+		*
+		*/
 		class ENSUM_UTILS_EXPORT ConsoleLog
 		{
 		private:
@@ -32,17 +35,30 @@ namespace Ensum
 			DWORD _threadAddress;
 
 			bool _shutdown;
-
-			//DWORD WINAPI ThreadEntryPoint(LPVOID lpParam);
 		public:
 			~ConsoleLog();
-
+			/** Creates the console.
+			*
+			*/
 			const static void CreateInstance();
+			/** Deletes the console.
+			*
+			*/
 			const static void DeleteInstance();
+			/** Adds the message and optional args to the que.
+			* Use this static function when writing to the console.
+			* This is a formated string. (See documentation for printf).
+			*/
 			const static void DumpToConsole(const char* message, ...);
 
+			/** Adds the string data to the que.
+			*
+			*/
 			const void AddToQue(const std::string& data);
 
+			/** Writes the first items in the que to the console, then deletes it.
+			* This is used in the thread.
+			*/
 			const void Write();
 
 		};

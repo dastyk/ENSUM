@@ -204,6 +204,10 @@ namespace Ensum
 			XButton1 = 0x4,
 			XButton2 = 0x5,
 		};
+
+		/** Stores the states of the mouse and keyboard.
+		*
+		*/
 		class ENSUM_INPUT_EXPORT Input
 		{
 		public:
@@ -212,42 +216,106 @@ namespace Ensum
 			Input();
 			~Input();
 
-
+			/** Does frame updates.
+			*  This is used for locking the mouse to the center and keeping track of button presses.
+			*/
 			const void Frame();
 	
-
+			/** Returns whether specified key is down.
+			*
+			*/
 			const bool IsKeyDown(Keys keyCode)const;
+			/** Returns whether specified was pushed.
+			*
+			*/
 			const bool IsKeyPushed(Keys keyCode);
 
+			/** Returns whether the scrollwheel was scrolled down this frame.
+			*
+			*/
 			const bool IsScrollDown(int32_t&delta);
+			/** Returns whether the scrollwheel was scrolled up this frame.
+			* If returned true delta is the amount scrolled. Negative down.
+			*/
 			const bool IsScrollUp(int32_t& delta);
 			
+			/** Returns whether specified mousekey is down.
+			*  If returned true delta is the amount scrolled. Positive up.
+			*/
 			const bool IsMouseKeyDown(MouseKeys keyCode)const;
+			/** Returns whether specified mousekey is pushed.
+			*
+			*/
 			const bool IsMouseKeyPushed(MouseKeys keyCode);
 
+			/** Returns the posisiton of the mouse, relative to the draw area of the window.
+			* 0,0 is the upper left corner.
+			*/
 			const void GetMousePos(int32_t& rX, int32_t& rY)const;
+			/** Returns the delta of the current mousepos and previous mousepos.
+			*
+			*/
 			const void GetMouseDiff(int32_t& rX, int32_t& rY)const;
 
+			/** Locks/unlocks the mouse to the center.
+			*
+			*/
 			const void LockMouseToCenter(bool lock);
+			/** Lock/unlocks the mouse to the window.
+			*
+			*/
 			const void LockMouseToWindow(bool lock);
+			/** Hides/shows the mouse cursor.
+			*
+			*/
 			const void HideCursor(bool show)const;
 
+			/** Rebinds the key org to the key to.
+			*
+			*/
 			const void Rebind(Keys org, Keys to);
+			/** Rebind the mousekey org to the mousekey to.
+			*
+			*/
 			const void Rebind(MouseKeys org, MouseKeys to);
 
 			//const void Rebind(Keys org, MouseKeys to);
 			//const void Rebind(MouseKeys org, Keys to);
 #if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP) && defined(WM_USER)
+			/** Windows specific init.
+			*
+			*/
 			const void Init(HWND hwnd);
+			/** Windows specific message handler.
+			*
+			*/
 			LRESULT CALLBACK MessageHandler(HWND hwnd, UINT umsg, WPARAM wParam, LPARAM lParam);
 #endif
 		private:
+			/** Records the state of the key to down.
+			*
+			*/
 			const void _KeyDown(Keys keyCode);
+			/** Records the state of the key to up.
+			*
+			*/
 			const void _KeyUp(Keys keyCode);
 
+			/** Records the state of the mousekey to down.
+			*
+			*/
 			const void _MouseDown(MouseKeys keyCode);
+			/** Records the state of the mousekey to up.
+			*
+			*/
 			const void _MouseUp(MouseKeys keyCode);
+			/** Records the posistion of the mouse.
+			*
+			*/
 			const void _OnMouseMove(uint32_t x, uint32_t y);
+			/** Records the scrollwheel delta.
+			*
+			*/
 			const void _OnMouseScroll(int32_t delta);
 
 		private:
@@ -266,8 +334,8 @@ namespace Ensum
 			bool _mouseLockedToCenter;
 			int32_t _scrollDelta;
 
-			std::unordered_map<Keys, Keys>* _keyToKey;
-			std::unordered_map<MouseKeys, MouseKeys>* _mousekeyToMousekey;
+			std::unordered_map<Keys, Keys>* _keyToKey; /*!< Key rebinding map */
+			std::unordered_map<MouseKeys, MouseKeys>* _mousekeyToMousekey;/*!< Mousekey rebinding map */
 		};
 	}
 }

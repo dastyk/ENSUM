@@ -4,16 +4,38 @@
     <Filter Include="EntityManager">
       <UniqueIdentifier>{661cbc2a-34f6-4c45-ad16-b2fc1f8a9ea0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SceneManager">
+      <UniqueIdentifier>{657b5080-ebda-43ba-b973-602adc4e3adc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SceneManager\Scenes">
+      <UniqueIdentifier>{735a48df-368a-47de-9b3b-fe18477074e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EntityManager\Entity">
+      <UniqueIdentifier>{cddb8b9e-76d5-4d98-ab49-0189e8c23446}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_components\EntityManager.h">
       <Filter>EntityManager</Filter>
     </ClInclude>
     <ClInclude Include="..\Includes\Ensum_components\dll_export.h" />
+    <ClInclude Include="..\Includes\Ensum_components\Manager.h" />
+    <ClInclude Include="..\Includes\Ensum_components\Scene.h">
+      <Filter>SceneManager\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_components\SceneManager.h">
+      <Filter>SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_components\Entity.h">
+      <Filter>EntityManager\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntityManager.cpp">
       <Filter>EntityManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>SceneManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

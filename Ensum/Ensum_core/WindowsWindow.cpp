@@ -14,6 +14,12 @@ namespace Ensum
 			_input = new Input::Input;
 		}
 
+		const void WinWindow::Frame()
+		{
+			if (_input->IsKeyDown(Input::Keys::Escape))
+				_running = false;
+		}
+
 
 		WinWindow::~WinWindow()
 		{
@@ -137,10 +143,7 @@ namespace Ensum
 			}
 		}
 
-		Input::Input * WinWindow::GetInput()
-		{
-			return _input;
-		}
+
 
 
 		LRESULT CALLBACK WndProc(HWND hwnd, UINT umessage, WPARAM wparam, LPARAM lparam)
@@ -165,7 +168,7 @@ namespace Ensum
 			default:
 			{
 				//return DefWindowProc(hwnd, umessage, wparam, lparam);
-				return ((WinWindow*)Window::GetInstance())->GetInput()->MessageHandler(hwnd, umessage, wparam, lparam);
+				return Window::GetInstance()->GetInput()->MessageHandler(hwnd, umessage, wparam, lparam);
 			}
 			}
 			return 0;

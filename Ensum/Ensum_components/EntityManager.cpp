@@ -62,9 +62,14 @@ namespace Ensum
 		}
 		const void EntityManager::Delete(const Entity & entity)
 		{
-			const uint32_t idx = entity.Index();
-			(*_generation)[idx]++;
-			_freeIndices->push_back(idx);
+			uint8_t t = entity.Generation();
+			uint8_t t2 = (*_generation)[entity.Index()];
+			if (entity.Generation() == (*_generation)[entity.Index()])
+			{
+				const uint32_t idx = entity.Index();
+				(*_generation)[idx]++;
+				_freeIndices->push_back(idx);
+			}
 		}
 	}
 }

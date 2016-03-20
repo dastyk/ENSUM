@@ -54,5 +54,10 @@ namespace Ensum
 			}
 			
 		}
+
+		Input::Input * Window::GetInput()
+		{
+			return _input;
+		}
 	}
 }

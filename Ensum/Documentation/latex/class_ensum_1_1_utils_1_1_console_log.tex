@@ -1,0 +1,88 @@
+\hypertarget{class_ensum_1_1_utils_1_1_console_log}{}\section{Ensum\+:\+:Utils\+:\+:Console\+Log Class Reference}
+\label{class_ensum_1_1_utils_1_1_console_log}\index{Ensum\+::\+Utils\+::\+Console\+Log@{Ensum\+::\+Utils\+::\+Console\+Log}}
+
+
+Debug console.  
+
+
+
+
+{\ttfamily \#include $<$Console\+Log.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_abc61d8b873933eca1dce471498807839}{Add\+To\+Que} (const std\+::string \&data)\hypertarget{class_ensum_1_1_utils_1_1_console_log_abc61d8b873933eca1dce471498807839}{}\label{class_ensum_1_1_utils_1_1_console_log_abc61d8b873933eca1dce471498807839}
+
+\begin{DoxyCompactList}\small\item\em Adds the string data to the que. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_a6d0cb31da153393c122cd5f9514eb6c9}{Write} ()
+\begin{DoxyCompactList}\small\item\em Writes the first items in the que to the console, then deletes it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_a2081398f0762150043b92047fa97810a}{Create\+Instance} ()\hypertarget{class_ensum_1_1_utils_1_1_console_log_a2081398f0762150043b92047fa97810a}{}\label{class_ensum_1_1_utils_1_1_console_log_a2081398f0762150043b92047fa97810a}
+
+\begin{DoxyCompactList}\small\item\em Creates the console. \end{DoxyCompactList}\item 
+static const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_a5510d37e7c7038a022e9ff23f097263d}{Delete\+Instance} ()\hypertarget{class_ensum_1_1_utils_1_1_console_log_a5510d37e7c7038a022e9ff23f097263d}{}\label{class_ensum_1_1_utils_1_1_console_log_a5510d37e7c7038a022e9ff23f097263d}
+
+\begin{DoxyCompactList}\small\item\em Deletes the console. \end{DoxyCompactList}\item 
+static const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_a3cb3fc27bd5a6a1a04831e6eb8d79b42}{Dump\+To\+Console} (const char $\ast$message,...)
+\begin{DoxyCompactList}\small\item\em Adds the message and optional args to the que. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::deque$<$ std\+::string $>$ $\ast$ {\bfseries \+\_\+to\+Print}\hypertarget{class_ensum_1_1_utils_1_1_console_log_a14ea8d692b09b00c972baca65563be78}{}\label{class_ensum_1_1_utils_1_1_console_log_a14ea8d692b09b00c972baca65563be78}
+
+\item 
+H\+A\+N\+D\+LE {\bfseries \+\_\+thread\+Handle}\hypertarget{class_ensum_1_1_utils_1_1_console_log_aa93afd55081441f111fc804da614913e}{}\label{class_ensum_1_1_utils_1_1_console_log_aa93afd55081441f111fc804da614913e}
+
+\item 
+H\+A\+N\+D\+LE {\bfseries \+\_\+write\+Mutex}\hypertarget{class_ensum_1_1_utils_1_1_console_log_a1b8a903c69d744529d98d29f728cafcf}{}\label{class_ensum_1_1_utils_1_1_console_log_a1b8a903c69d744529d98d29f728cafcf}
+
+\item 
+D\+W\+O\+RD {\bfseries \+\_\+thread\+Address}\hypertarget{class_ensum_1_1_utils_1_1_console_log_a5258e193fd534462a6f5ff3a3a0a9072}{}\label{class_ensum_1_1_utils_1_1_console_log_a5258e193fd534462a6f5ff3a3a0a9072}
+
+\item 
+bool {\bfseries \+\_\+shutdown}\hypertarget{class_ensum_1_1_utils_1_1_console_log_abfe63ce28323a8554b5515ef684e582e}{}\label{class_ensum_1_1_utils_1_1_console_log_abfe63ce28323a8554b5515ef684e582e}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_ensum_1_1_utils_1_1_console_log}{Console\+Log} $\ast$ {\bfseries \+\_\+instance}\hypertarget{class_ensum_1_1_utils_1_1_console_log_ace276a80cd230798d08539f05816cdcb}{}\label{class_ensum_1_1_utils_1_1_console_log_ace276a80cd230798d08539f05816cdcb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Debug console. 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Utils\+::\+Console\+Log@{Ensum\+::\+Utils\+::\+Console\+Log}!Dump\+To\+Console@{Dump\+To\+Console}}
+\index{Dump\+To\+Console@{Dump\+To\+Console}!Ensum\+::\+Utils\+::\+Console\+Log@{Ensum\+::\+Utils\+::\+Console\+Log}}
+\subsubsection[{\texorpdfstring{Dump\+To\+Console(const char $\ast$message,...)}{DumpToConsole(const char *message,...)}}]{\setlength{\rightskip}{0pt plus 5cm}static const void Ensum\+::\+Utils\+::\+Console\+Log\+::\+Dump\+To\+Console (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{message, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_ensum_1_1_utils_1_1_console_log_a3cb3fc27bd5a6a1a04831e6eb8d79b42}{}\label{class_ensum_1_1_utils_1_1_console_log_a3cb3fc27bd5a6a1a04831e6eb8d79b42}
+
+
+Adds the message and optional args to the que. 
+
+Use this static function when writing to the console. This is a formated string. (See documentation for printf). \index{Ensum\+::\+Utils\+::\+Console\+Log@{Ensum\+::\+Utils\+::\+Console\+Log}!Write@{Write}}
+\index{Write@{Write}!Ensum\+::\+Utils\+::\+Console\+Log@{Ensum\+::\+Utils\+::\+Console\+Log}}
+\subsubsection[{\texorpdfstring{Write()}{Write()}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Utils\+::\+Console\+Log\+::\+Write (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_utils_1_1_console_log_a6d0cb31da153393c122cd5f9514eb6c9}{}\label{class_ensum_1_1_utils_1_1_console_log_a6d0cb31da153393c122cd5f9514eb6c9}
+
+
+Writes the first items in the que to the console, then deletes it. 
+
+This is used in the thread. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/\+Ensum\+\_\+utils/Console\+Log.\+h\end{DoxyCompactItemize}

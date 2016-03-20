@@ -7,10 +7,15 @@
 #include "Ensum_utils\Event.h"
 
 #include "Ensum_core\Timer.h"
+#include "Ensum_input\Input.h"
+
+
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
+#pragma comment(lib, "Ensum_inputD.lib")
 #else
 #pragma comment(lib, "Ensum_utils.lib")
+#pragma comment(lib, "Ensum_input.lib")
 #endif
 
 namespace Ensum
@@ -21,28 +26,57 @@ namespace Ensum
 
 		ENSUM_CORE_TEMPLATE template class ENSUM_CORE_EXPORT Utils::Event<const void()>;
 
-		// Fully abstract class for interfacting with the actual window.
+		/** Fully abstract class for interfacting with the actual window.
+		*
+		*/
 		class ENSUM_CORE_EXPORT Window
 		{
 		protected:
 			Window();
 
-			static Window* _instance;
-			Timer* _timer;
-
-
+			/** The frame function.
+			* Put the gamelogic here.
+			*/
 			virtual const void Frame() = 0;
 		public:
 			virtual ~Window();
 
+			/** Saves the given window and initializes it.
+			*
+			*/
 			static Window* CreateWin(Window * window);
+			/** Returns a pointer to the window.
+			*
+			*/
 			static Window* GetInstance();
+			/** Deletes the window.
+			* This also deletes all members
+			*/
 			static void DeleteInstance();
 
+			/** Initialization for the window.
+			*
+			*/
 			virtual const void Init() = 0;
+			/** Start the message loop.
+			*
+			*/
 			virtual const void Start() = 0;
 
+			/** Returns a pointer to the input.
+			*
+			*/
+			Input::Input* GetInput();
+		public:
 			Utils::Event<const void()> FrameStart;
+
+		protected:
+			static Window* _instance;
+
+			Timer* _timer;
+
+			Input::Input* _input;
+
 		};
 	}
 }

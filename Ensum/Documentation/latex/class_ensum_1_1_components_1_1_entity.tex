@@ -1,0 +1,48 @@
+\hypertarget{class_ensum_1_1_components_1_1_entity}{}\section{Ensum\+:\+:Components\+:\+:Entity Class Reference}
+\label{class_ensum_1_1_components_1_1_entity}\index{Ensum\+::\+Components\+::\+Entity@{Ensum\+::\+Components\+::\+Entity}}
+
+
+\hyperlink{class_ensum_1_1_components_1_1_entity}{Entity} is essentially a id, divided into generation and index.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Entity} (const uint32\+\_\+t id)\hypertarget{class_ensum_1_1_components_1_1_entity_a4eacdb9354583a1b2a946c4b18ec32af}{}\label{class_ensum_1_1_components_1_1_entity_a4eacdb9354583a1b2a946c4b18ec32af}
+
+\item 
+const uint32\+\_\+t \hyperlink{class_ensum_1_1_components_1_1_entity_a166ed226733f98a44407dea8d00d3293}{Index} () const \hypertarget{class_ensum_1_1_components_1_1_entity_a166ed226733f98a44407dea8d00d3293}{}\label{class_ensum_1_1_components_1_1_entity_a166ed226733f98a44407dea8d00d3293}
+
+\begin{DoxyCompactList}\small\item\em Returns the index part of the entity ID. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \hyperlink{class_ensum_1_1_components_1_1_entity_addbbcdac8d8fc445292ec8da5f72715e}{Generation} () const \hypertarget{class_ensum_1_1_components_1_1_entity_addbbcdac8d8fc445292ec8da5f72715e}{}\label{class_ensum_1_1_components_1_1_entity_addbbcdac8d8fc445292ec8da5f72715e}
+
+\begin{DoxyCompactList}\small\item\em Returns the genration part of the entity ID. \end{DoxyCompactList}\item 
+const \hyperlink{class_ensum_1_1_components_1_1_entity}{Entity} \& {\bfseries operator=} (const \hyperlink{class_ensum_1_1_components_1_1_entity}{Entity} \&other)\hypertarget{class_ensum_1_1_components_1_1_entity_a671dfaa0d8f92f61b3203104770cbc5e}{}\label{class_ensum_1_1_components_1_1_entity_a671dfaa0d8f92f61b3203104770cbc5e}
+
+\item 
+const bool {\bfseries operator==} (const \hyperlink{class_ensum_1_1_components_1_1_entity}{Entity} \&other)\hypertarget{class_ensum_1_1_components_1_1_entity_a197bd5c4805c239df5d2aeaeea9794f7}{}\label{class_ensum_1_1_components_1_1_entity_a197bd5c4805c239df5d2aeaeea9794f7}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{class_ensum_1_1_components_1_1_entity_a061100915c04852c58baff9e82d6d8b0}{\+\_\+id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_ensum_1_1_components_1_1_entity}{Entity} is essentially a id, divided into generation and index. 
+
+\subsection{Member Data Documentation}
+\index{Ensum\+::\+Components\+::\+Entity@{Ensum\+::\+Components\+::\+Entity}!\+\_\+id@{\+\_\+id}}
+\index{\+\_\+id@{\+\_\+id}!Ensum\+::\+Components\+::\+Entity@{Ensum\+::\+Components\+::\+Entity}}
+\subsubsection[{\texorpdfstring{\+\_\+id}{_id}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Ensum\+::\+Components\+::\+Entity\+::\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_entity_a061100915c04852c58baff9e82d6d8b0}{}\label{class_ensum_1_1_components_1_1_entity_a061100915c04852c58baff9e82d6d8b0}
+The actual id of the entity, the last 8 bits are the current generation of the entity, and the first 24 are the index. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/\+Ensum\+\_\+components/Entity.\+h\end{DoxyCompactItemize}

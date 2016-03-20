@@ -34,7 +34,7 @@
 #pragma comment(lib, "Ensum_input.lib")
 #endif
 
-#include "GameWindow.h"
+using namespace Ensum;
 
 int WINAPI WinMain(HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
@@ -47,7 +47,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 #endif
 	Utils::ConsoleLog::CreateInstance();
 
-	Core::Window* w = Core::Window::CreateWin(new GameWindow);
+	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow);
 
 
 	Components::EntityManager manager;

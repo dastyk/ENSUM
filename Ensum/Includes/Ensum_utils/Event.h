@@ -7,22 +7,35 @@ namespace Ensum
 {
 	namespace Utils
 	{
-		/*
-		What is this file? A delegate class that can be used to pass free functions or
-		member functions to an event. See more at http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates
-		There doesn't seem to exist a much simpler way. std::function was considered,
-		but due to lack of an equality operator they cannot be compared, ergo they also
-		cannot be unsubscribed. Game Coding Complete says that C#-style events would be
-		nice, but C++ doesn't support them out of the box. They do note however that it
-		can be done using alot of template magic, with emphasis on alot. This solution
-		works, but the syntax is horrible.
+		/**
+		*What is this file? A delegate class that can be used to pass free functions or
+		*member functions to an event. See more at http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates
+		*There doesn't seem to exist a much simpler way. std::function was considered,
+		*but due to lack of an equality operator they cannot be compared, ergo they also
+		*cannot be unsubscribed. Game Coding Complete says that C#-style events would be
+		*nice, but C++ doesn't support them out of the box. They do note however that it
+		*can be done using alot of template magic, with emphasis on alot. This solution
+		*works, but the syntax is horrible.
 
-		The event itself is just a collection of delegates that should be called when
-		the event occurs. Triggering the event is done by the one owning the event.
+		*The event itself is just a collection of delegates that should be called when
+		*the event occurs. Triggering the event is done by the one owning the event.
 		*/
 
 		template <typename T> class Delegate;
 
+		/**
+		*What is this file? A delegate class that can be used to pass free functions or
+		*member functions to an event. See more at http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates
+		*There doesn't seem to exist a much simpler way. std::function was considered,
+		*but due to lack of an equality operator they cannot be compared, ergo they also
+		*cannot be unsubscribed. Game Coding Complete says that C#-style events would be
+		*nice, but C++ doesn't support them out of the box. They do note however that it
+		*can be done using alot of template magic, with emphasis on alot. This solution
+		*works, but the syntax is horrible.
+
+		*The event itself is just a collection of delegates that should be called when
+		*the event occurs. Triggering the event is done by the one owning the event.
+		*/
 		template <typename ReturnType, typename... ParamTypes>
 		class ENSUM_UTILS_EXPORT Delegate<ReturnType(ParamTypes...)>
 		{
@@ -73,8 +86,34 @@ namespace Ensum
 			}
 		};
 
+		/**
+		*What is this file? A delegate class that can be used to pass free functions or
+		*member functions to an event. See more at http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates
+		*There doesn't seem to exist a much simpler way. std::function was considered,
+		*but due to lack of an equality operator they cannot be compared, ergo they also
+		*cannot be unsubscribed. Game Coding Complete says that C#-style events would be
+		*nice, but C++ doesn't support them out of the box. They do note however that it
+		*can be done using alot of template magic, with emphasis on alot. This solution
+		*works, but the syntax is horrible.
+
+		*The event itself is just a collection of delegates that should be called when
+		*the event occurs. Triggering the event is done by the one owning the event.
+		*/
 		template <typename T> class Event;
 
+		/**
+		*What is this file? A delegate class that can be used to pass free functions or
+		*member functions to an event. See more at http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates
+		*There doesn't seem to exist a much simpler way. std::function was considered,
+		*but due to lack of an equality operator they cannot be compared, ergo they also
+		*cannot be unsubscribed. Game Coding Complete says that C#-style events would be
+		*nice, but C++ doesn't support them out of the box. They do note however that it
+		*can be done using alot of template magic, with emphasis on alot. This solution
+		*works, but the syntax is horrible.
+
+		*The event itself is just a collection of delegates that should be called when
+		*the event occurs. Triggering the event is done by the one owning the event.
+		*/
 		template <typename ReturnType, typename... Arguments>
 		class ENSUM_UTILS_EXPORT Event<ReturnType(Arguments...)>
 		{
