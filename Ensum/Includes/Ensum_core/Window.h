@@ -34,7 +34,7 @@ namespace Ensum
 		class ENSUM_CORE_EXPORT Window
 		{
 		protected:
-			Window(const Components::SceneManager& sceneManager);
+			Window(Components::SceneManager& sceneManager);
 
 			/** The frame function.
 			* Put the gamelogic here.
@@ -79,7 +79,7 @@ namespace Ensum
 
 			Input::Input* _input;
 
-			const Components::SceneManager& _sceneManager;
+			Components::SceneManager& _sceneManager;
 		};
 	}
 }

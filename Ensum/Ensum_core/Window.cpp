@@ -9,7 +9,7 @@ namespace Ensum
 	{
 		Window* Window::_instance = nullptr;
 
-		Window::Window(const Components::SceneManager& sceneManager) : _timer(nullptr),_sceneManager(sceneManager)
+		Window::Window(Components::SceneManager& sceneManager) : _timer(nullptr),_sceneManager(sceneManager)
 		{
 		}
 

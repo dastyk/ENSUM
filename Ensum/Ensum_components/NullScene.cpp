@@ -13,10 +13,5 @@ namespace Ensum
 		NullScene::~NullScene()
 		{
 		}
-
-		const void NullScene::Frame() const
-		{
-			return void();
-		}
 	}
 }
