@@ -21,24 +21,36 @@ namespace Ensum
 		class ENSUM_COMPONENTS_EXPORT Entity
 		{
 		public:
-			Entity() : _id(-1) {}
-			Entity(const uint32_t id) : _id(id) {}
+			Entity() : ID(-1) {}
+			Entity(const uint32_t id) : ID(id) {}
+
+
 
 			/** Returns the index part of the entity ID. 
 			*  
 			*/
-			const uint32_t Index()const { return _id & ENTITY_INDEX_MASK; }
+			const uint32_t Index()const { return ID & ENTITY_INDEX_MASK; }
 			/** Returns the genration part of the entity ID.
 			*
 			*/
-			const uint8_t Generation()const { return static_cast<uint8_t>(_id >> ENTITY_INDEX_BITS); }
+			const uint8_t Generation()const { return static_cast<uint8_t>(ID >> ENTITY_INDEX_BITS); }
 
-			const Entity& operator=(const Entity& other) { this->_id = other._id; return *this; }
-			const bool operator==(const Entity& other) { return this->_id == other._id; }
+			const Entity& operator=(const Entity& other) { this->ID = other.ID; return *this; }
+			const bool operator==(const Entity& other) { return this->ID == other.ID; }
 
-		private:
-			uint32_t _id; /*!< The actual id of the entity, the last 8 bits are the current generation of the entity, and the first 24 are the index. */
+			uint32_t ID; /*!< The actual id of the entity, the last 8 bits are the current generation of the entity, and the first 24 are the index. */
 
+		};
+
+		/** Hasher for hashmaps.
+		*
+		*/
+		struct EntityHasher
+		{
+			std::size_t operator()(const Entity& key) const
+			{
+				return std::hash<unsigned>()(key.ID);
+			}
 		};
 	}
 }

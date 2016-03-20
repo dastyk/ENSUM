@@ -3,11 +3,15 @@
 
 #pragma once
 #include "Ensum_components\Scene.h"
+#include <unordered_map>
 
 namespace Ensum
 {
 	namespace Components
 	{
+		/** Manages all the scenes.
+		*
+		*/
 		class SceneManager
 		{
 		public:
@@ -15,7 +19,8 @@ namespace Ensum
 			~SceneManager();
 
 		private:
-
+			EntityManager _entityManager;
+			std::unordered_map<Entity, Scene*, EntityHasher> _entityToScene;
 		};
 	}
 }
