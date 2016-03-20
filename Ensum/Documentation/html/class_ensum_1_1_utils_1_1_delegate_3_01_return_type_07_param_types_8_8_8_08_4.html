@@ -119,19 +119,10 @@ $(document).ready(function(){initNavTree('class_ensum_1_1_utils_1_1_delegate_3_0
 <p>What is this file? A delegate class that can be used to pass free functions or member functions to an event.  
  <a href="class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_ensum__utils_2_event_8h_source.html">Event.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_event_8h_source.html">Event.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa036c0c84a557b6fd5be7792341fed85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa036c0c84a557b6fd5be7792341fed85"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Delegate</b> (void *callee, Type function)</td></tr>
-<tr class="separator:aa036c0c84a557b6fd5be7792341fed85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ae424e1c121efb7ce4f04f4af2d10ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ae424e1c121efb7ce4f04f4af2d10ec"></a>
-ReturnType&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (ParamTypes...x) const </td></tr>
-<tr class="separator:a3ae424e1c121efb7ce4f04f4af2d10ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a814e851eb3a97f9b4a4ae4998a4eb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a814e851eb3a97f9b4a4ae4998a4eb8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="class_ensum_1_1_utils_1_1_delegate.html">Delegate</a> &amp;other) const </td></tr>
-<tr class="separator:a7a814e851eb3a97f9b4a4ae4998a4eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa036c0c84a557b6fd5be7792341fed85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa036c0c84a557b6fd5be7792341fed85"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Delegate</b> (void *callee, Type function)</td></tr>
 <tr class="separator:aa036c0c84a557b6fd5be7792341fed85"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,20 +143,9 @@ template&lt;class T , ReturnType(T::*)(ParamTypes...) TMethod&gt; </td></tr>
 template&lt;ReturnType(*)(ParamTypes...) funcPtr&gt; </td></tr>
 <tr class="memitem:a9c39a6686ddf93ac1255d9f482844a52"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="class_ensum_1_1_utils_1_1_delegate.html">Delegate</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Make</b> ()</td></tr>
 <tr class="separator:a9c39a6686ddf93ac1255d9f482844a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55c46806e8372852550f6ae7326140fc"><td class="memTemplParams" colspan="2"><a class="anchor" id="a55c46806e8372852550f6ae7326140fc"></a>
-template&lt;class T , ReturnType(T::*)(ParamTypes...) TMethod&gt; </td></tr>
-<tr class="memitem:a55c46806e8372852550f6ae7326140fc"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="class_ensum_1_1_utils_1_1_delegate.html">Delegate</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Make</b> (T *callee)</td></tr>
-<tr class="separator:a55c46806e8372852550f6ae7326140fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c39a6686ddf93ac1255d9f482844a52"><td class="memTemplParams" colspan="2"><a class="anchor" id="a9c39a6686ddf93ac1255d9f482844a52"></a>
-template&lt;ReturnType(*)(ParamTypes...) funcPtr&gt; </td></tr>
-<tr class="memitem:a9c39a6686ddf93ac1255d9f482844a52"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="class_ensum_1_1_utils_1_1_delegate.html">Delegate</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Make</b> ()</td></tr>
-<tr class="separator:a9c39a6686ddf93ac1255d9f482844a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr class="memitem:a2a7c0af5bb292262a83fb30e7126eaf1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a7c0af5bb292262a83fb30e7126eaf1"></a>
-typedef ReturnType(*&#160;</td><td class="memItemRight" valign="bottom"><b>Type</b>) (void *callee, ParamTypes...)</td></tr>
-<tr class="separator:a2a7c0af5bb292262a83fb30e7126eaf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a7c0af5bb292262a83fb30e7126eaf1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a7c0af5bb292262a83fb30e7126eaf1"></a>
 typedef ReturnType(*&#160;</td><td class="memItemRight" valign="bottom"><b>Type</b>) (void *callee, ParamTypes...)</td></tr>
 <tr class="separator:a2a7c0af5bb292262a83fb30e7126eaf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,20 +160,12 @@ template&lt;class T , ReturnType(T::*)(ParamTypes...) TMethod&gt; </td></tr>
 template&lt;ReturnType(*)(ParamTypes...) func&gt; </td></tr>
 <tr class="memitem:ad7f1896a49be7b6312d9d4329d1f1622"><td class="memTemplItemLeft" align="right" valign="top">static ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>functionCaller</b> (void *unused, ParamTypes...x)</td></tr>
 <tr class="separator:ad7f1896a49be7b6312d9d4329d1f1622"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab53d0e5bf351106f729586c144cd58bb"><td class="memTemplParams" colspan="2"><a class="anchor" id="ab53d0e5bf351106f729586c144cd58bb"></a>
-template&lt;class T , ReturnType(T::*)(ParamTypes...) TMethod&gt; </td></tr>
-<tr class="memitem:ab53d0e5bf351106f729586c144cd58bb"><td class="memTemplItemLeft" align="right" valign="top">static ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>methodCaller</b> (void *callee, ParamTypes...x)</td></tr>
-<tr class="separator:ab53d0e5bf351106f729586c144cd58bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7f1896a49be7b6312d9d4329d1f1622"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad7f1896a49be7b6312d9d4329d1f1622"></a>
-template&lt;ReturnType(*)(ParamTypes...) func&gt; </td></tr>
-<tr class="memitem:ad7f1896a49be7b6312d9d4329d1f1622"><td class="memTemplItemLeft" align="right" valign="top">static ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>functionCaller</b> (void *unused, ParamTypes...x)</td></tr>
-<tr class="separator:ad7f1896a49be7b6312d9d4329d1f1622"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a332b8802a2968a6d5f30ea49194f666c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a332b8802a2968a6d5f30ea49194f666c"></a>
+<tr class="memitem:ae8a767f8412e83e09f42b3794b948c33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8a767f8412e83e09f42b3794b948c33"></a>
 void *&#160;</td><td class="memItemRight" valign="bottom"><b>_callee</b></td></tr>
-<tr class="separator:a332b8802a2968a6d5f30ea49194f666c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ae8a767f8412e83e09f42b3794b948c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31d7af1a08f4a32e3cb8a065de77d743"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31d7af1a08f4a32e3cb8a065de77d743"></a>
 Type&#160;</td><td class="memItemRight" valign="bottom"><b>_callbackFunction</b></td></tr>
 <tr class="separator:a31d7af1a08f4a32e3cb8a065de77d743"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,7 +178,7 @@ class Ensum::Utils::Delegate&lt; ReturnType(ParamTypes...)&gt;</h3>
 <p>See more at <a href="http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates">http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates</a> There doesn't seem to exist a much simpler way. std::function was considered, but due to lack of an equality operator they cannot be compared, ergo they also cannot be unsubscribed. Game Coding Complete says that C#-style events would be nice, but C++ doesn't support them out of the box. They do note however that it can be done using alot of template magic, with emphasis on alot. This solution works, but the syntax is horrible.</p>
 <p>The event itself is just a collection of delegates that should be called when the event occurs. Triggering the event is done by the one owning the event. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>Includes/Ensum_core/<a class="el" href="_ensum__core_2_event_8h_source.html">Event.h</a></li>
+<li>Includes/<a class="el" href="_event_8h_source.html">Event.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

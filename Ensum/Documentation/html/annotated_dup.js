@@ -2,8 +2,10 @@ var annotated_dup =
 [
     [ "Ensum", null, [
       [ "Components", null, [
-        [ "Entity", "class_ensum_1_1_components_1_1_entity.html", "class_ensum_1_1_components_1_1_entity" ],
+        [ "Entity", "struct_ensum_1_1_components_1_1_entity.html", "struct_ensum_1_1_components_1_1_entity" ],
+        [ "EntityHasher", "struct_ensum_1_1_components_1_1_entity_hasher.html", "struct_ensum_1_1_components_1_1_entity_hasher" ],
         [ "EntityManager", "class_ensum_1_1_components_1_1_entity_manager.html", "class_ensum_1_1_components_1_1_entity_manager" ],
+        [ "NullScene", "class_ensum_1_1_components_1_1_null_scene.html", "class_ensum_1_1_components_1_1_null_scene" ],
         [ "Scene", "class_ensum_1_1_components_1_1_scene.html", "class_ensum_1_1_components_1_1_scene" ],
         [ "SceneManager", "class_ensum_1_1_components_1_1_scene_manager.html", "class_ensum_1_1_components_1_1_scene_manager" ]
       ] ],
@@ -23,5 +25,6 @@ var annotated_dup =
         [ "Event< ReturnType(Arguments...)>", "class_ensum_1_1_utils_1_1_event_3_01_return_type_07_arguments_8_8_8_08_4.html", "class_ensum_1_1_utils_1_1_event_3_01_return_type_07_arguments_8_8_8_08_4" ],
         [ "Exce", "class_ensum_1_1_utils_1_1_exce.html", "class_ensum_1_1_utils_1_1_exce" ]
       ] ]
-    ] ]
+    ] ],
+    [ "MetaData", "struct_meta_data.html", "struct_meta_data" ]
 ];

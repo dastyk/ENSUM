@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('class_ensum_1_1_components_1_1_scene.h
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_ensum_1_1_components_1_1_scene-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Ensum::Components::Scene Class Reference</div>  </div>
+<div class="title">Ensum::Components::Scene Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -118,55 +118,47 @@ $(document).ready(function(){initNavTree('class_ensum_1_1_components_1_1_scene.h
  <a href="class_ensum_1_1_components_1_1_scene.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_scene_8h_source.html">Scene.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Ensum::Components::Scene:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_ensum_1_1_components_1_1_scene.png" usemap="#Ensum::Components::Scene_map" alt=""/>
+  <map id="Ensum::Components::Scene_map" name="Ensum::Components::Scene_map">
+<area href="class_ensum_1_1_components_1_1_null_scene.html" title="A scene that does nothing. " alt="Ensum::Components::NullScene" shape="rect" coords="0,56,188,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a958da01af0ce1c544ccb09b69b6d3cfc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene.html#a958da01af0ce1c544ccb09b69b6d3cfc">GetEntity</a> () const </td></tr>
-<tr class="memdesc:a958da01af0ce1c544ccb09b69b6d3cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the scenes entity.  <a href="#a958da01af0ce1c544ccb09b69b6d3cfc">More...</a><br /></td></tr>
-<tr class="separator:a958da01af0ce1c544ccb09b69b6d3cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab614d491401edd9db3584d4e61ef6416"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab614d491401edd9db3584d4e61ef6416"></a>
+virtual const <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene.html#ab614d491401edd9db3584d4e61ef6416">GetEntity</a> () const </td></tr>
+<tr class="memdesc:ab614d491401edd9db3584d4e61ef6416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the scenes entity. <br /></td></tr>
+<tr class="separator:ab614d491401edd9db3584d4e61ef6416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80a7a08e14551bbd411c235cbd7ebe9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af80a7a08e14551bbd411c235cbd7ebe9"></a>
+virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene.html#af80a7a08e14551bbd411c235cbd7ebe9">Frame</a> () const  =0</td></tr>
+<tr class="memdesc:af80a7a08e14551bbd411c235cbd7ebe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frame function for the scene. <br /></td></tr>
+<tr class="separator:af80a7a08e14551bbd411c235cbd7ebe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ad73cdf49ba7fe521e5572710192d0aed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad73cdf49ba7fe521e5572710192d0aed"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Scene</b> (<a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html">EntityManager</a> &amp;entityManger)</td></tr>
-<tr class="separator:ad73cdf49ba7fe521e5572710192d0aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee190492d4435b67533941958ff81a8e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee190492d4435b67533941958ff81a8e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Scene</b> (<a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html">EntityManager</a> &amp;entityManger, <a class="el" href="class_ensum_1_1_input_1_1_input.html">Input::Input</a> *input)</td></tr>
+<tr class="separator:aee190492d4435b67533941958ff81a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a8d36e81874a5b07e3edbd8720b8b289e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ensum_1_1_components_1_1_entity.html">Entity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene.html#a8d36e81874a5b07e3edbd8720b8b289e">_entity</a></td></tr>
+<tr class="memitem:a8d36e81874a5b07e3edbd8720b8b289e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene.html#a8d36e81874a5b07e3edbd8720b8b289e">_entity</a></td></tr>
 <tr class="separator:a8d36e81874a5b07e3edbd8720b8b289e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7eb8e3279c5b6768f442ae05b44e75f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html">EntityManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene.html#af7eb8e3279c5b6768f442ae05b44e75f">_entityManager</a></td></tr>
 <tr class="separator:af7eb8e3279c5b6768f442ae05b44e75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7ee39773379321c85d73984b03c5568"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7ee39773379321c85d73984b03c5568"></a>
+<a class="el" href="class_ensum_1_1_input_1_1_input.html">Input::Input</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_input</b></td></tr>
+<tr class="separator:ab7ee39773379321c85d73984b03c5568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The abstract scene class. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a958da01af0ce1c544ccb09b69b6d3cfc"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="class_ensum_1_1_components_1_1_entity.html">Entity</a>&amp; Ensum::Components::Scene::GetEntity </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the scenes entity. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
+<p>A scene could be considered it's own world or a state in a statemachine. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a8d36e81874a5b07e3edbd8720b8b289e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -175,7 +167,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_ensum_1_1_components_1_1_entity.html">Entity</a> Ensum::Components::Scene::_entity</td>
+          <td class="memname"><a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> Ensum::Components::Scene::_entity</td>
         </tr>
       </table>
   </td>

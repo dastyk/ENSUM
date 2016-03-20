@@ -105,11 +105,129 @@ $(document).ready(function(){initNavTree('class_ensum_1_1_components_1_1_scene_m
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_ensum_1_1_components_1_1_scene_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Ensum::Components::SceneManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages all the scenes.  
+ <a href="class_ensum_1_1_components_1_1_scene_manager.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_scene_manager_8h_source.html">SceneManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ensum_1_1_components_1_1_scene_manager_1_1_scene_data.html">SceneData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4a71bb9192da118a71f1b81ca49742cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a71bb9192da118a71f1b81ca49742cb"></a>
+const <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a4a71bb9192da118a71f1b81ca49742cb">CreateScene</a> (<a class="el" href="class_ensum_1_1_components_1_1_scene.html">Scene</a> *scene)</td></tr>
+<tr class="memdesc:a4a71bb9192da118a71f1b81ca49742cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the scene and return it's entity. <br /></td></tr>
+<tr class="separator:a4a71bb9192da118a71f1b81ca49742cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab970d3716b08c39b9b8c5484dea11595"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab970d3716b08c39b9b8c5484dea11595"></a>
+const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#ab970d3716b08c39b9b8c5484dea11595">RemoveScene</a> (const <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;sceneEntity)</td></tr>
+<tr class="memdesc:ab970d3716b08c39b9b8c5484dea11595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the scene component from the entity. <br /></td></tr>
+<tr class="separator:ab970d3716b08c39b9b8c5484dea11595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea9f13488931b4448778e5563685428e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea9f13488931b4448778e5563685428e"></a>
+const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#aea9f13488931b4448778e5563685428e">SetUpdate</a> (const <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;sceneEntity, bool update)</td></tr>
+<tr class="memdesc:aea9f13488931b4448778e5563685428e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies whether the scene should be updated each frame. <br /></td></tr>
+<tr class="separator:aea9f13488931b4448778e5563685428e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab909746d9a5de0620ca9c47f0bc13be6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab909746d9a5de0620ca9c47f0bc13be6"></a>
+const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#ab909746d9a5de0620ca9c47f0bc13be6">Frame</a> () const </td></tr>
+<tr class="memdesc:ab909746d9a5de0620ca9c47f0bc13be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do the framework for all active scenes. <br /></td></tr>
+<tr class="separator:ab909746d9a5de0620ca9c47f0bc13be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fdc5d47c5b8fe03807fe472b038a56f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fdc5d47c5b8fe03807fe472b038a56f"></a>
+<a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html">EntityManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a7fdc5d47c5b8fe03807fe472b038a56f">GetEntityManager</a> ()</td></tr>
+<tr class="memdesc:a7fdc5d47c5b8fe03807fe472b038a56f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a reference to the entity manager. <br /></td></tr>
+<tr class="separator:a7fdc5d47c5b8fe03807fe472b038a56f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a383a468319c93280ce8ac0bbb920ab87"><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a383a468319c93280ce8ac0bbb920ab87">_Allocate</a> (uint32_t size)</td></tr>
+<tr class="memdesc:a383a468319c93280ce8ac0bbb920ab87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate more memory for scenedata.  <a href="#a383a468319c93280ce8ac0bbb920ab87">More...</a><br /></td></tr>
+<tr class="separator:a383a468319c93280ce8ac0bbb920ab87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8102cfd9f4fed62a06e564dc016b6c46"><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a8102cfd9f4fed62a06e564dc016b6c46">_Destroy</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a8102cfd9f4fed62a06e564dc016b6c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an entry in the memory block.  <a href="#a8102cfd9f4fed62a06e564dc016b6c46">More...</a><br /></td></tr>
+<tr class="separator:a8102cfd9f4fed62a06e564dc016b6c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa4f54931996a70ad663bbcfc3a4f7024"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4f54931996a70ad663bbcfc3a4f7024"></a>
+<a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html">EntityManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_entityManager</b></td></tr>
+<tr class="separator:aa4f54931996a70ad663bbcfc3a4f7024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b83f00b84c55e4bae12d95a588671aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b83f00b84c55e4bae12d95a588671aa"></a>
+<a class="el" href="struct_ensum_1_1_components_1_1_scene_manager_1_1_scene_data.html">SceneData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_sceneData</b></td></tr>
+<tr class="separator:a8b83f00b84c55e4bae12d95a588671aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe20076d039658cc2f4cad3c22b644bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe20076d039658cc2f4cad3c22b644bc"></a>
+std::unordered_map&lt; <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a>, uint32_t, <a class="el" href="struct_ensum_1_1_components_1_1_entity_hasher.html">EntityHasher</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_entityToIndex</b></td></tr>
+<tr class="separator:afe20076d039658cc2f4cad3c22b644bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a997e4d367f66c9f80d27e027999f6802"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a997e4d367f66c9f80d27e027999f6802"></a>
+<a class="el" href="class_ensum_1_1_input_1_1_input.html">Input::Input</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_input</b></td></tr>
+<tr class="separator:a997e4d367f66c9f80d27e027999f6802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages all the scenes. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a383a468319c93280ce8ac0bbb920ab87"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void Ensum::Components::SceneManager::_Allocate </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocate more memory for scenedata. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8102cfd9f4fed62a06e564dc016b6c46"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void Ensum::Components::SceneManager::_Destroy </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Delete an entry in the memory block. </p>
+<p>The deleted entry is replaced by the last in the block. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Includes/Ensum_components/<a class="el" href="_scene_manager_8h_source.html">SceneManager.h</a></li>
 </ul>

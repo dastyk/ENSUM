@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['generation',['Generation',['../class_ensum_1_1_components_1_1_entity.html#addbbcdac8d8fc445292ec8da5f72715e',1,'Ensum::Components::Entity']]],
-  ['getentity',['GetEntity',['../class_ensum_1_1_components_1_1_scene.html#a958da01af0ce1c544ccb09b69b6d3cfc',1,'Ensum::Components::Scene']]],
+  ['generation',['Generation',['../struct_ensum_1_1_components_1_1_entity.html#addbbcdac8d8fc445292ec8da5f72715e',1,'Ensum::Components::Entity']]],
+  ['getentity',['GetEntity',['../class_ensum_1_1_components_1_1_scene.html#ab614d491401edd9db3584d4e61ef6416',1,'Ensum::Components::Scene']]],
+  ['getentitymanager',['GetEntityManager',['../class_ensum_1_1_components_1_1_scene_manager.html#a7fdc5d47c5b8fe03807fe472b038a56f',1,'Ensum::Components::SceneManager']]],
   ['getinput',['GetInput',['../class_ensum_1_1_core_1_1_window.html#af746ffdd0281b2722d162fbf96c3542b',1,'Ensum::Core::Window']]],
   ['getinstance',['GetInstance',['../class_ensum_1_1_core_1_1_window.html#ada827fab647cc63b1c389f91f670bf18',1,'Ensum::Core::Window']]],
   ['getmousediff',['GetMouseDiff',['../class_ensum_1_1_input_1_1_input.html#aff8bcbdd6fc2c885259b4739d2102a36',1,'Ensum::Input::Input']]],

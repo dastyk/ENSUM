@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['_5fallocate',['_Allocate',['../class_ensum_1_1_components_1_1_scene_manager.html#a383a468319c93280ce8ac0bbb920ab87',1,'Ensum::Components::SceneManager']]],
+  ['_5fdestroy',['_Destroy',['../class_ensum_1_1_components_1_1_scene_manager.html#a8102cfd9f4fed62a06e564dc016b6c46',1,'Ensum::Components::SceneManager']]],
   ['_5fkeydown',['_KeyDown',['../class_ensum_1_1_input_1_1_input.html#ad8eda827bc3b8f09c907daabd5514c22',1,'Ensum::Input::Input']]],
   ['_5fkeyup',['_KeyUp',['../class_ensum_1_1_input_1_1_input.html#a5918ced1e19d0a221e8ca01a672c93d7',1,'Ensum::Input::Input']]],
   ['_5fmousedown',['_MouseDown',['../class_ensum_1_1_input_1_1_input.html#acaed245a2c82297fc861c2c78ccb14c8',1,'Ensum::Input::Input']]],

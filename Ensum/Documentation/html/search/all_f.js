@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['window',['Window',['../class_ensum_1_1_core_1_1_window.html',1,'Ensum::Core']]],
-  ['winwindow',['WinWindow',['../class_ensum_1_1_core_1_1_win_window.html',1,'Ensum::Core']]],
-  ['write',['Write',['../class_ensum_1_1_utils_1_1_console_log.html#a6d0cb31da153393c122cd5f9514eb6c9',1,'Ensum::Utils::ConsoleLog']]]
+  ['tick',['Tick',['../class_ensum_1_1_core_1_1_timer.html#a72e9509a79aad7d8ea103492c9c8124d',1,'Ensum::Core::Timer']]],
+  ['timer',['Timer',['../class_ensum_1_1_core_1_1_timer.html',1,'Ensum::Core']]],
+  ['totaltime',['TotalTime',['../class_ensum_1_1_core_1_1_timer.html#a41ef243e3c8538b48e50096f1bfe8ad3',1,'Ensum::Core::Timer']]]
 ];

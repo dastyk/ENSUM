@@ -2,6 +2,88 @@
 \label{class_ensum_1_1_components_1_1_scene_manager}\index{Ensum\+::\+Components\+::\+Scene\+Manager@{Ensum\+::\+Components\+::\+Scene\+Manager}}
 
 
+Manages all the scenes.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Manager.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_scene_manager_1_1_scene_data}{Scene\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \& \hyperlink{class_ensum_1_1_components_1_1_scene_manager_a4a71bb9192da118a71f1b81ca49742cb}{Create\+Scene} (\hyperlink{class_ensum_1_1_components_1_1_scene}{Scene} $\ast$scene)\hypertarget{class_ensum_1_1_components_1_1_scene_manager_a4a71bb9192da118a71f1b81ca49742cb}{}\label{class_ensum_1_1_components_1_1_scene_manager_a4a71bb9192da118a71f1b81ca49742cb}
+
+\begin{DoxyCompactList}\small\item\em Create the scene and return it\textquotesingle{}s entity. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_scene_manager_ab970d3716b08c39b9b8c5484dea11595}{Remove\+Scene} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&scene\+Entity)\hypertarget{class_ensum_1_1_components_1_1_scene_manager_ab970d3716b08c39b9b8c5484dea11595}{}\label{class_ensum_1_1_components_1_1_scene_manager_ab970d3716b08c39b9b8c5484dea11595}
+
+\begin{DoxyCompactList}\small\item\em Remove the scene component from the entity. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_scene_manager_aea9f13488931b4448778e5563685428e}{Set\+Update} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&scene\+Entity, bool update)\hypertarget{class_ensum_1_1_components_1_1_scene_manager_aea9f13488931b4448778e5563685428e}{}\label{class_ensum_1_1_components_1_1_scene_manager_aea9f13488931b4448778e5563685428e}
+
+\begin{DoxyCompactList}\small\item\em Specifies whether the scene should be updated each frame. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_scene_manager_ab909746d9a5de0620ca9c47f0bc13be6}{Frame} () const \hypertarget{class_ensum_1_1_components_1_1_scene_manager_ab909746d9a5de0620ca9c47f0bc13be6}{}\label{class_ensum_1_1_components_1_1_scene_manager_ab909746d9a5de0620ca9c47f0bc13be6}
+
+\begin{DoxyCompactList}\small\item\em Do the framework for all active scenes. \end{DoxyCompactList}\item 
+\hyperlink{class_ensum_1_1_components_1_1_entity_manager}{Entity\+Manager} \& \hyperlink{class_ensum_1_1_components_1_1_scene_manager_a7fdc5d47c5b8fe03807fe472b038a56f}{Get\+Entity\+Manager} ()\hypertarget{class_ensum_1_1_components_1_1_scene_manager_a7fdc5d47c5b8fe03807fe472b038a56f}{}\label{class_ensum_1_1_components_1_1_scene_manager_a7fdc5d47c5b8fe03807fe472b038a56f}
+
+\begin{DoxyCompactList}\small\item\em Return a reference to the entity manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_scene_manager_a383a468319c93280ce8ac0bbb920ab87}{\+\_\+\+Allocate} (uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Allocate more memory for scenedata. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_scene_manager_a8102cfd9f4fed62a06e564dc016b6c46}{\+\_\+\+Destroy} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Delete an entry in the memory block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ensum_1_1_components_1_1_entity_manager}{Entity\+Manager} {\bfseries \+\_\+entity\+Manager}\hypertarget{class_ensum_1_1_components_1_1_scene_manager_aa4f54931996a70ad663bbcfc3a4f7024}{}\label{class_ensum_1_1_components_1_1_scene_manager_aa4f54931996a70ad663bbcfc3a4f7024}
+
+\item 
+\hyperlink{struct_ensum_1_1_components_1_1_scene_manager_1_1_scene_data}{Scene\+Data} {\bfseries \+\_\+scene\+Data}\hypertarget{class_ensum_1_1_components_1_1_scene_manager_a8b83f00b84c55e4bae12d95a588671aa}{}\label{class_ensum_1_1_components_1_1_scene_manager_a8b83f00b84c55e4bae12d95a588671aa}
+
+\item 
+std\+::unordered\+\_\+map$<$ \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity}, uint32\+\_\+t, \hyperlink{struct_ensum_1_1_components_1_1_entity_hasher}{Entity\+Hasher} $>$ $\ast$ {\bfseries \+\_\+entity\+To\+Index}\hypertarget{class_ensum_1_1_components_1_1_scene_manager_afe20076d039658cc2f4cad3c22b644bc}{}\label{class_ensum_1_1_components_1_1_scene_manager_afe20076d039658cc2f4cad3c22b644bc}
+
+\item 
+\hyperlink{class_ensum_1_1_input_1_1_input}{Input\+::\+Input} $\ast$ {\bfseries \+\_\+input}\hypertarget{class_ensum_1_1_components_1_1_scene_manager_a997e4d367f66c9f80d27e027999f6802}{}\label{class_ensum_1_1_components_1_1_scene_manager_a997e4d367f66c9f80d27e027999f6802}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages all the scenes. 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Components\+::\+Scene\+Manager@{Ensum\+::\+Components\+::\+Scene\+Manager}!\+\_\+\+Allocate@{\+\_\+\+Allocate}}
+\index{\+\_\+\+Allocate@{\+\_\+\+Allocate}!Ensum\+::\+Components\+::\+Scene\+Manager@{Ensum\+::\+Components\+::\+Scene\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Allocate(uint32\+\_\+t size)}{_Allocate(uint32_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Scene\+Manager\+::\+\_\+\+Allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_scene_manager_a383a468319c93280ce8ac0bbb920ab87}{}\label{class_ensum_1_1_components_1_1_scene_manager_a383a468319c93280ce8ac0bbb920ab87}
+
+
+Allocate more memory for scenedata. 
+
+\index{Ensum\+::\+Components\+::\+Scene\+Manager@{Ensum\+::\+Components\+::\+Scene\+Manager}!\+\_\+\+Destroy@{\+\_\+\+Destroy}}
+\index{\+\_\+\+Destroy@{\+\_\+\+Destroy}!Ensum\+::\+Components\+::\+Scene\+Manager@{Ensum\+::\+Components\+::\+Scene\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Destroy(uint32\+\_\+t index)}{_Destroy(uint32_t index)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Scene\+Manager\+::\+\_\+\+Destroy (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_scene_manager_a8102cfd9f4fed62a06e564dc016b6c46}{}\label{class_ensum_1_1_components_1_1_scene_manager_a8102cfd9f4fed62a06e564dc016b6c46}
+
+
+Delete an entry in the memory block. 
+
+The deleted entry is replaced by the last in the block. 
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
 Includes/\+Ensum\+\_\+components/Scene\+Manager.\+h\end{DoxyCompactItemize}
