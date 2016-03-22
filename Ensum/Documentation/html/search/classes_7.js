@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['timer',['Timer',['../class_ensum_1_1_core_1_1_timer.html',1,'Ensum::Core']]]
+  ['options',['Options',['../class_ensum_1_1_utils_1_1_options.html',1,'Ensum::Utils']]]
 ];

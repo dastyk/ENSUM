@@ -1,0 +1,100 @@
+\hypertarget{class_ensum_1_1string}{}\section{Ensum\+:\+:string Class Reference}
+\label{class_ensum_1_1string}\index{Ensum\+::string@{Ensum\+::string}}
+
+
+A wrapper class for std\+::string.  
+
+
+
+
+{\ttfamily \#include $<$ensumstring.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries string} (const char $\ast$str)\hypertarget{class_ensum_1_1string_a1efde732b942cf5b4a9aeff02836c7f4}{}\label{class_ensum_1_1string_a1efde732b942cf5b4a9aeff02836c7f4}
+
+\item 
+{\bfseries string} (const \hyperlink{class_ensum_1_1string}{string} \&other)\hypertarget{class_ensum_1_1string_a941a6aeb4f7e6f8a61a375a19ada9e36}{}\label{class_ensum_1_1string_a941a6aeb4f7e6f8a61a375a19ada9e36}
+
+\item 
+{\bfseries string} (const long \&other)\hypertarget{class_ensum_1_1string_ab94e9717ef713acd5981ad9d2c9d0a5e}{}\label{class_ensum_1_1string_ab94e9717ef713acd5981ad9d2c9d0a5e}
+
+\item 
+{\bfseries string} (const double \&other)\hypertarget{class_ensum_1_1string_ad2d7d12b303783eb4ecc32a389e1c42b}{}\label{class_ensum_1_1string_ad2d7d12b303783eb4ecc32a389e1c42b}
+
+\item 
+{\bfseries string} (const bool \&other)\hypertarget{class_ensum_1_1string_a82ccf9bec24664a575b8e9c70cbd7d99}{}\label{class_ensum_1_1string_a82ccf9bec24664a575b8e9c70cbd7d99}
+
+\item 
+\hyperlink{class_ensum_1_1string}{string} \hyperlink{class_ensum_1_1string_a13098a5e0f0fd18baeffa5bc8b35494d}{operator+} (const \hyperlink{class_ensum_1_1string}{string} \&str) const 
+\item 
+\hyperlink{class_ensum_1_1string}{string} \hyperlink{class_ensum_1_1string_aa9f884ae697a27d375d6dc71fd5a1602}{operator+} (const char $\ast$str) const 
+\item 
+\hyperlink{class_ensum_1_1string_a4ef9b111d0bcd2cbd6ef125449253209}{operator const char $\ast$} ()\hypertarget{class_ensum_1_1string_a4ef9b111d0bcd2cbd6ef125449253209}{}\label{class_ensum_1_1string_a4ef9b111d0bcd2cbd6ef125449253209}
+
+\begin{DoxyCompactList}\small\item\em convertion operator to char. \end{DoxyCompactList}\item 
+\hyperlink{class_ensum_1_1string}{string} \& \hyperlink{class_ensum_1_1string_ae48b8f643d8cd3ff379a51484ea738d1}{operator=} (const char $\ast$str)\hypertarget{class_ensum_1_1string_ae48b8f643d8cd3ff379a51484ea738d1}{}\label{class_ensum_1_1string_ae48b8f643d8cd3ff379a51484ea738d1}
+
+\begin{DoxyCompactList}\small\item\em = operator char. \end{DoxyCompactList}\item 
+\hyperlink{class_ensum_1_1string}{string} \& \hyperlink{class_ensum_1_1string_a7903e871b1cf12584d746536241fa7ea}{operator=} (const \hyperlink{class_ensum_1_1string}{string} \&other)\hypertarget{class_ensum_1_1string_a7903e871b1cf12584d746536241fa7ea}{}\label{class_ensum_1_1string_a7903e871b1cf12584d746536241fa7ea}
+
+\begin{DoxyCompactList}\small\item\em = operator string. \end{DoxyCompactList}\item 
+const bool \hyperlink{class_ensum_1_1string_a6b5ab08eb5ef197bedb9e55e2eca0754}{operator==} (const char $\ast$str)\hypertarget{class_ensum_1_1string_a6b5ab08eb5ef197bedb9e55e2eca0754}{}\label{class_ensum_1_1string_a6b5ab08eb5ef197bedb9e55e2eca0754}
+
+\begin{DoxyCompactList}\small\item\em == operator char. \end{DoxyCompactList}\item 
+const bool \hyperlink{class_ensum_1_1string_a6429683caad1908c30cb77b4aa00ff4f}{operator==} (const \hyperlink{class_ensum_1_1string}{string} \&other)\hypertarget{class_ensum_1_1string_a6429683caad1908c30cb77b4aa00ff4f}{}\label{class_ensum_1_1string_a6429683caad1908c30cb77b4aa00ff4f}
+
+\begin{DoxyCompactList}\small\item\em == operator string. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{class_ensum_1_1string_ae136b1638499649ef96441b26baa840a}{c\+\_\+str} ()\hypertarget{class_ensum_1_1string_ae136b1638499649ef96441b26baa840a}{}\label{class_ensum_1_1string_ae136b1638499649ef96441b26baa840a}
+
+\begin{DoxyCompactList}\small\item\em returns const char$\ast$. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1string_ad183e0697bed62d8e5639d17a5288a15}{transform} ()\hypertarget{class_ensum_1_1string_ad183e0697bed62d8e5639d17a5288a15}{}\label{class_ensum_1_1string_ad183e0697bed62d8e5639d17a5288a15}
+
+\begin{DoxyCompactList}\small\item\em transforms all letters in string to lowercase. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1string_a27c098c250b2df7ed3fa935e0d318fe2}{clear} ()\hypertarget{class_ensum_1_1string_a27c098c250b2df7ed3fa935e0d318fe2}{}\label{class_ensum_1_1string_a27c098c250b2df7ed3fa935e0d318fe2}
+
+\begin{DoxyCompactList}\small\item\em clears the string. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1string_af373cc0f29c09f8df78e3b96d279b609}{push\+\_\+back} (const char str)\hypertarget{class_ensum_1_1string_af373cc0f29c09f8df78e3b96d279b609}{}\label{class_ensum_1_1string_af373cc0f29c09f8df78e3b96d279b609}
+
+\begin{DoxyCompactList}\small\item\em Adds char to end of string. \end{DoxyCompactList}\item 
+const uint32\+\_\+t \hyperlink{class_ensum_1_1string_a04acaefb945a58e8443e8ca8bb9e44a4}{size} ()\hypertarget{class_ensum_1_1string_a04acaefb945a58e8443e8ca8bb9e44a4}{}\label{class_ensum_1_1string_a04acaefb945a58e8443e8ca8bb9e44a4}
+
+\begin{DoxyCompactList}\small\item\em Returns the size of the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string $\ast$ {\bfseries \+\_\+string}\hypertarget{class_ensum_1_1string_aab7e7b28d0303d683f579b84754e761f}{}\label{class_ensum_1_1string_aab7e7b28d0303d683f579b84754e761f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A wrapper class for std\+::string. 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::string@{Ensum\+::string}!operator+@{operator+}}
+\index{operator+@{operator+}!Ensum\+::string@{Ensum\+::string}}
+\subsubsection[{\texorpdfstring{operator+(const string \&str) const }{operator+(const string &str) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string} Ensum\+::string\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} \&}]{str}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_ensum_1_1string_a13098a5e0f0fd18baeffa5bc8b35494d}{}\label{class_ensum_1_1string_a13098a5e0f0fd18baeffa5bc8b35494d}
+
+\begin{DoxyItemize}
+\item operator between strings. 
+\end{DoxyItemize}\index{Ensum\+::string@{Ensum\+::string}!operator+@{operator+}}
+\index{operator+@{operator+}!Ensum\+::string@{Ensum\+::string}}
+\subsubsection[{\texorpdfstring{operator+(const char $\ast$str) const }{operator+(const char *str) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string} Ensum\+::string\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_ensum_1_1string_aa9f884ae697a27d375d6dc71fd5a1602}{}\label{class_ensum_1_1string_aa9f884ae697a27d375d6dc71fd5a1602}
+
+\begin{DoxyItemize}
+\item operator string and char. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/ensumstring.\+h\end{DoxyCompactItemize}

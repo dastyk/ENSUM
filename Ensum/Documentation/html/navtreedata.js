@@ -19,7 +19,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-".html"
+".html",
+"struct_ensum_1_1_components_1_1_entity.html#af839a9836c7ae43b1a1d5216119cea2d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

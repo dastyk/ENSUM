@@ -1,0 +1,185 @@
+\hypertarget{class_ensum_1_1_file_handler_1_1ini}{}\section{Ensum\+:\+:File\+Handler\+:\+:ini Class Reference}
+\label{class_ensum_1_1_file_handler_1_1ini}\index{Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}}
+
+
+A wrapper class for ini files.  
+
+
+
+
+{\ttfamily \#include $<$Ini.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_ensum_1_1_file_handler_1_1ini_1_1_key}{Key}
+\item 
+struct \hyperlink{struct_ensum_1_1_file_handler_1_1ini_1_1_section}{Section}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries ini} (const \hyperlink{class_ensum_1_1string}{string} \&path)\hypertarget{class_ensum_1_1_file_handler_1_1ini_a966aac9f2602195dd3f9c8353061c191}{}\label{class_ensum_1_1_file_handler_1_1ini_a966aac9f2602195dd3f9c8353061c191}
+
+\item 
+\hyperlink{class_ensum_1_1string}{string} \hyperlink{class_ensum_1_1_file_handler_1_1ini_a794d0729d8ac92954dc6adcfdc10888c}{Get} (const \hyperlink{class_ensum_1_1string}{string} \&section, const \hyperlink{class_ensum_1_1string}{string} \&name, const \hyperlink{class_ensum_1_1string}{string} \&default\+\_\+value) const 
+\begin{DoxyCompactList}\small\item\em Looks up the value of the given name and section and returns it as a string. \end{DoxyCompactList}\item 
+long \hyperlink{class_ensum_1_1_file_handler_1_1ini_a53a1834bf3a13d38c166e417ac1d2973}{Get\+Integer} (const \hyperlink{class_ensum_1_1string}{string} \&section, const \hyperlink{class_ensum_1_1string}{string} \&name, long default\+\_\+value) const 
+\begin{DoxyCompactList}\small\item\em Looks up the value of the given name and section and returns it as a integer. \end{DoxyCompactList}\item 
+double \hyperlink{class_ensum_1_1_file_handler_1_1ini_af0f24b8866a8c16c6b09d6f707a676b7}{Get\+Real} (const \hyperlink{class_ensum_1_1string}{string} \&section, const \hyperlink{class_ensum_1_1string}{string} \&name, double default\+\_\+value) const 
+\begin{DoxyCompactList}\small\item\em Looks up the value of the given name and section and returns it as a real. \end{DoxyCompactList}\item 
+bool \hyperlink{class_ensum_1_1_file_handler_1_1ini_a8a2d73e88459187df0c5b9d2880a08eb}{Get\+Boolean} (const \hyperlink{class_ensum_1_1string}{string} \&section, const \hyperlink{class_ensum_1_1string}{string} \&name, bool default\+\_\+value) const 
+\begin{DoxyCompactList}\small\item\em Looks up the value of the given name and section and returns it as a boolean. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_file_handler_1_1ini_a7981581cf337fa3829dc95bc3def5a72}{Set} (const \hyperlink{class_ensum_1_1string}{string} \&section, const \hyperlink{class_ensum_1_1string}{string} \&name, const \hyperlink{class_ensum_1_1string}{string} \&value)
+\begin{DoxyCompactList}\small\item\em Set the string value of given name in given section. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_file_handler_1_1ini_a1ed4f9fa3abb4a1ce94fafd64d348af6}{Set\+Integer} (const \hyperlink{class_ensum_1_1string}{string} \&section, const \hyperlink{class_ensum_1_1string}{string} \&name, long value)
+\begin{DoxyCompactList}\small\item\em Set the integer value of given name in given section. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_file_handler_1_1ini_ae628d6053f8e94a6acc8499961741317}{Set\+Real} (const \hyperlink{class_ensum_1_1string}{string} \&section, const \hyperlink{class_ensum_1_1string}{string} \&name, double value)
+\begin{DoxyCompactList}\small\item\em Set the real value of given name in given section. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_file_handler_1_1ini_ac31a3463aeec3b6c378e2b5a8f73de8f}{Set\+Boolean} (const \hyperlink{class_ensum_1_1string}{string} \&section, const \hyperlink{class_ensum_1_1string}{string} \&name, bool value)
+\begin{DoxyCompactList}\small\item\em Set the boolean value of given name in given section. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_ensum_1_1_file_handler_1_1ini_a413fd1029742025232f53d3020280245}{\+\_\+\+Parse\+Data} (std\+::ifstream \&file)
+\begin{DoxyCompactList}\small\item\em Reads the ini file to buffer. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_file_handler_1_1ini_ace94f563974a671c5249548934688c88}{\+\_\+\+Write\+Data} (std\+::ofstream \&file)\hypertarget{class_ensum_1_1_file_handler_1_1ini_ace94f563974a671c5249548934688c88}{}\label{class_ensum_1_1_file_handler_1_1ini_ace94f563974a671c5249548934688c88}
+
+\begin{DoxyCompactList}\small\item\em Writes the buffer to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{struct_ensum_1_1_file_handler_1_1ini_1_1_section}{Section} $>$ $\ast$ {\bfseries \+\_\+sections}\hypertarget{class_ensum_1_1_file_handler_1_1ini_a3088b323acff5e13750fb5d9242b2f91}{}\label{class_ensum_1_1_file_handler_1_1ini_a3088b323acff5e13750fb5d9242b2f91}
+
+\item 
+\hyperlink{class_ensum_1_1string}{string} {\bfseries \+\_\+path}\hypertarget{class_ensum_1_1_file_handler_1_1ini_a3d544c876f6837be6ca027db706cbba6}{}\label{class_ensum_1_1_file_handler_1_1ini_a3d544c876f6837be6ca027db706cbba6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A wrapper class for ini files. 
+
+This class stores the values in given ini file and saves any new values on delete. 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}!\+\_\+\+Parse\+Data@{\+\_\+\+Parse\+Data}}
+\index{\+\_\+\+Parse\+Data@{\+\_\+\+Parse\+Data}!Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Parse\+Data(std\+::ifstream \&file)}{_ParseData(std::ifstream &file)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+File\+Handler\+::ini\+::\+\_\+\+Parse\+Data (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_file_handler_1_1ini_a413fd1029742025232f53d3020280245}{}\label{class_ensum_1_1_file_handler_1_1ini_a413fd1029742025232f53d3020280245}
+
+
+Reads the ini file to buffer. 
+
+You can\textquotesingle{}t really call this parsing, but hey it works. \index{Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}!Get@{Get}}
+\index{Get@{Get}!Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}}
+\subsubsection[{\texorpdfstring{Get(const string \&section, const string \&name, const string \&default\+\_\+value) const }{Get(const string &section, const string &name, const string &default_value) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string} Ensum\+::\+File\+Handler\+::ini\+::\+Get (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} \&}]{section, }
+\item[{const {\bf string} \&}]{name, }
+\item[{const {\bf string} \&}]{default\+\_\+value}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ensum_1_1_file_handler_1_1ini_a794d0729d8ac92954dc6adcfdc10888c}{}\label{class_ensum_1_1_file_handler_1_1ini_a794d0729d8ac92954dc6adcfdc10888c}
+
+
+Looks up the value of the given name and section and returns it as a string. 
+
+If the sectino/name was not found, the default\+\_\+value will be returned. \index{Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}!Get\+Boolean@{Get\+Boolean}}
+\index{Get\+Boolean@{Get\+Boolean}!Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}}
+\subsubsection[{\texorpdfstring{Get\+Boolean(const string \&section, const string \&name, bool default\+\_\+value) const }{GetBoolean(const string &section, const string &name, bool default_value) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Ensum\+::\+File\+Handler\+::ini\+::\+Get\+Boolean (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} \&}]{section, }
+\item[{const {\bf string} \&}]{name, }
+\item[{bool}]{default\+\_\+value}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ensum_1_1_file_handler_1_1ini_a8a2d73e88459187df0c5b9d2880a08eb}{}\label{class_ensum_1_1_file_handler_1_1ini_a8a2d73e88459187df0c5b9d2880a08eb}
+
+
+Looks up the value of the given name and section and returns it as a boolean. 
+
+If the sectino/name was not found, the default\+\_\+value will be returned. \index{Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}!Get\+Integer@{Get\+Integer}}
+\index{Get\+Integer@{Get\+Integer}!Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}}
+\subsubsection[{\texorpdfstring{Get\+Integer(const string \&section, const string \&name, long default\+\_\+value) const }{GetInteger(const string &section, const string &name, long default_value) const }}]{\setlength{\rightskip}{0pt plus 5cm}long Ensum\+::\+File\+Handler\+::ini\+::\+Get\+Integer (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} \&}]{section, }
+\item[{const {\bf string} \&}]{name, }
+\item[{long}]{default\+\_\+value}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ensum_1_1_file_handler_1_1ini_a53a1834bf3a13d38c166e417ac1d2973}{}\label{class_ensum_1_1_file_handler_1_1ini_a53a1834bf3a13d38c166e417ac1d2973}
+
+
+Looks up the value of the given name and section and returns it as a integer. 
+
+If the sectino/name was not found, the default\+\_\+value will be returned. \index{Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}!Get\+Real@{Get\+Real}}
+\index{Get\+Real@{Get\+Real}!Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}}
+\subsubsection[{\texorpdfstring{Get\+Real(const string \&section, const string \&name, double default\+\_\+value) const }{GetReal(const string &section, const string &name, double default_value) const }}]{\setlength{\rightskip}{0pt plus 5cm}double Ensum\+::\+File\+Handler\+::ini\+::\+Get\+Real (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} \&}]{section, }
+\item[{const {\bf string} \&}]{name, }
+\item[{double}]{default\+\_\+value}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ensum_1_1_file_handler_1_1ini_af0f24b8866a8c16c6b09d6f707a676b7}{}\label{class_ensum_1_1_file_handler_1_1ini_af0f24b8866a8c16c6b09d6f707a676b7}
+
+
+Looks up the value of the given name and section and returns it as a real. 
+
+If the sectino/name was not found, the default\+\_\+value will be returned. \index{Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}!Set@{Set}}
+\index{Set@{Set}!Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}}
+\subsubsection[{\texorpdfstring{Set(const string \&section, const string \&name, const string \&value)}{Set(const string &section, const string &name, const string &value)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+File\+Handler\+::ini\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} \&}]{section, }
+\item[{const {\bf string} \&}]{name, }
+\item[{const {\bf string} \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_file_handler_1_1ini_a7981581cf337fa3829dc95bc3def5a72}{}\label{class_ensum_1_1_file_handler_1_1ini_a7981581cf337fa3829dc95bc3def5a72}
+
+
+Set the string value of given name in given section. 
+
+If the sectino/name was not found they are added. \index{Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}!Set\+Boolean@{Set\+Boolean}}
+\index{Set\+Boolean@{Set\+Boolean}!Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}}
+\subsubsection[{\texorpdfstring{Set\+Boolean(const string \&section, const string \&name, bool value)}{SetBoolean(const string &section, const string &name, bool value)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+File\+Handler\+::ini\+::\+Set\+Boolean (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} \&}]{section, }
+\item[{const {\bf string} \&}]{name, }
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_file_handler_1_1ini_ac31a3463aeec3b6c378e2b5a8f73de8f}{}\label{class_ensum_1_1_file_handler_1_1ini_ac31a3463aeec3b6c378e2b5a8f73de8f}
+
+
+Set the boolean value of given name in given section. 
+
+If the sectino/name was not found they are added. \index{Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}!Set\+Integer@{Set\+Integer}}
+\index{Set\+Integer@{Set\+Integer}!Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}}
+\subsubsection[{\texorpdfstring{Set\+Integer(const string \&section, const string \&name, long value)}{SetInteger(const string &section, const string &name, long value)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+File\+Handler\+::ini\+::\+Set\+Integer (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} \&}]{section, }
+\item[{const {\bf string} \&}]{name, }
+\item[{long}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_file_handler_1_1ini_a1ed4f9fa3abb4a1ce94fafd64d348af6}{}\label{class_ensum_1_1_file_handler_1_1ini_a1ed4f9fa3abb4a1ce94fafd64d348af6}
+
+
+Set the integer value of given name in given section. 
+
+If the sectino/name was not found they are added. \index{Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}!Set\+Real@{Set\+Real}}
+\index{Set\+Real@{Set\+Real}!Ensum\+::\+File\+Handler\+::ini@{Ensum\+::\+File\+Handler\+::ini}}
+\subsubsection[{\texorpdfstring{Set\+Real(const string \&section, const string \&name, double value)}{SetReal(const string &section, const string &name, double value)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+File\+Handler\+::ini\+::\+Set\+Real (
+\begin{DoxyParamCaption}
+\item[{const {\bf string} \&}]{section, }
+\item[{const {\bf string} \&}]{name, }
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_file_handler_1_1ini_ae628d6053f8e94a6acc8499961741317}{}\label{class_ensum_1_1_file_handler_1_1ini_ae628d6053f8e94a6acc8499961741317}
+
+
+Set the real value of given name in given section. 
+
+If the sectino/name was not found they are added. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/\+Ensum\+\_\+filehandler/Ini.\+h\end{DoxyCompactItemize}

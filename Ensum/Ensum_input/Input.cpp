@@ -1,6 +1,7 @@
 #include "Ensum_input\Input.h"
 #include "Safe_Delete.h"
 #include "Ensum_utils\Exception.h"
+#include "Ensum_utils\Options.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
@@ -45,8 +46,8 @@ namespace Ensum
 			RECT r;
 			GetClientRect(_hwnd, &r);
 
-			uint32_t wW = 800;
-			uint32_t wH = 640;
+			uint32_t wW = Utils::Options::GetIntegerOption("Screen", "Width", 800);
+			uint32_t wH = Utils::Options::GetIntegerOption("Screen", "Height", 640);
 
 			GetCursorPos(&p);
 
@@ -61,7 +62,7 @@ namespace Ensum
 
 
 
-			if (false)
+			if (Utils::Options::GetBooleanOption("Screen", "Fullscreen", false))
 			{
 				wW = GetSystemMetrics(SM_CXSCREEN);
 				wH = GetSystemMetrics(SM_CYSCREEN);
@@ -70,9 +71,9 @@ namespace Ensum
 			{
 				_lastMousePosX = _mousePosX = wW / 2;
 				_lastMousePosY = _mousePosY = wH / 2;
-			/*	GetWindowRect(_hwnd, &r);
+				GetWindowRect(_hwnd, &r);
 				uint32_t wX = r.left;
-				uint32_t wY = r.top;*/
+				uint32_t wY = r.top;
 				p.x = _mousePosX;
 				p.y = _mousePosY;
 				ClientToScreen(_hwnd, &p);
@@ -185,7 +186,7 @@ namespace Ensum
 				uint32_t wW = 800;
 				uint32_t wH = 640;
 
-				if (false)
+				if (Utils::Options::GetBooleanOption("Screen", "Fullscreen", false))
 				{
 					wW = GetSystemMetrics(SM_CXSCREEN);
 					wH = GetSystemMetrics(SM_CYSCREEN);
@@ -218,7 +219,7 @@ namespace Ensum
 				clipping.right = 800;
 				clipping.top = 0;
 				clipping.bottom = 640;
-				if (false)
+				if (Utils::Options::GetBooleanOption("Screen", "Fullscreen", false))
 				{
 					clipping.right = GetSystemMetrics(SM_CXSCREEN);
 					clipping.bottom = GetSystemMetrics(SM_CYSCREEN);

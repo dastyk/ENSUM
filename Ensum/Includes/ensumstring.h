@@ -12,7 +12,9 @@
 #	define ENSUM_TEMPLATE extern
 #endif
 namespace Ensum
-{
+{	/** A wrapper class for std::string.
+	*
+	*/
 	class ENSUM_EXPORT string
 	{
 	public:
@@ -26,20 +28,56 @@ namespace Ensum
 
 		~string() { delete _string; }
 
-		//string& operator+(const string& str) { *this + str; return *this; }
+		/** + operator between strings.
+		* 
+		*/
+		string operator+(const string& str)const { return string(((*(this->_string)) + (*(str._string))).c_str()); }
+		/** + operator string and char.
+		*
+		*/
 		string operator+(const char* str)const { return string(((*(this->_string)) + str).c_str()); }
-		operator const char*() { return this->c_str(); }
+		/** convertion operator to char.
+		*
+		*/
+		operator const char*() { return this->_string->c_str(); }
 
+		/** = operator char.
+		*
+		*/
 		string& operator=(const char* str) { (*(this->_string)) = str; return *this; }
+		/** = operator string.
+		*
+		*/
 		string& operator=(const string& other) { (*(this->_string)) = (*(other._string)); return *this; }
 
+		/** == operator char.
+		*
+		*/
 		const bool operator==(const char* str) { return (*(this->_string)) == str; }
+		/** == operator string.
+		*
+		*/
 		const bool operator==(const string& other) { return (*(this->_string)) == (*(other._string)); }
 
+		/** returns const char*.
+		*
+		*/
 		const char* c_str() { return _string->c_str(); }
+		/** transforms all letters in string to lowercase.
+		*
+		*/
 		const void transform() { std::transform((*_string).begin(), (*_string).end(), (*_string).begin(), ::tolower); }
+		/** clears the string.
+		*
+		*/
 		const void clear() { _string->clear(); }
+		/** Adds char to end of string.
+		*
+		*/
 		const void push_back(const char str) { _string->push_back(str); }
+		/** Returns the size of the string.
+		*
+		*/
 		const uint32_t size() { return static_cast<uint32_t>(_string->size()); }
 	private:
 		std::string* _string;

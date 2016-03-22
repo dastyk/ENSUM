@@ -11,20 +11,18 @@ namespace Ensum
 {
 	namespace FileHandler
 	{
-		ini::ini(const string& path) : _sections(nullptr), _path(path), _datasize(0)
+		ini::ini(const string& path) : _sections(nullptr), _path(path)
 		{
 			_sections = new std::vector<Section>;
 
 			std::ifstream file;
 
 			file.open(_path, std::ios::in);
-			if (!file.is_open()) 
-			{
-				SAFE_DELETE(_sections); 
-				Exception("Failed to open file", _path.c_str());
-			}
+			if (file.is_open()) 
+				_ParseData(file);
+			
 
-			_ParseData(file);
+	
 			file.close();
 
 		}

@@ -14,17 +14,22 @@ var annotated_dup =
         [ "Window", "class_ensum_1_1_core_1_1_window.html", "class_ensum_1_1_core_1_1_window" ],
         [ "WinWindow", "class_ensum_1_1_core_1_1_win_window.html", "class_ensum_1_1_core_1_1_win_window" ]
       ] ],
+      [ "FileHandler", null, [
+        [ "ini", "class_ensum_1_1_file_handler_1_1ini.html", "class_ensum_1_1_file_handler_1_1ini" ]
+      ] ],
       [ "Input", null, [
         [ "Input", "class_ensum_1_1_input_1_1_input.html", "class_ensum_1_1_input_1_1_input" ]
       ] ],
       [ "Utils", null, [
         [ "ConsoleLog", "class_ensum_1_1_utils_1_1_console_log.html", "class_ensum_1_1_utils_1_1_console_log" ],
-        [ "Delegate", "class_ensum_1_1_utils_1_1_delegate.html", null ],
-        [ "Delegate< ReturnType(ParamTypes...)>", "class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4.html", "class_ensum_1_1_utils_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4" ],
-        [ "Event", "class_ensum_1_1_utils_1_1_event.html", null ],
-        [ "Event< ReturnType(Arguments...)>", "class_ensum_1_1_utils_1_1_event_3_01_return_type_07_arguments_8_8_8_08_4.html", "class_ensum_1_1_utils_1_1_event_3_01_return_type_07_arguments_8_8_8_08_4" ],
-        [ "Exce", "class_ensum_1_1_utils_1_1_exce.html", "class_ensum_1_1_utils_1_1_exce" ]
-      ] ]
+        [ "Exce", "class_ensum_1_1_utils_1_1_exce.html", "class_ensum_1_1_utils_1_1_exce" ],
+        [ "Options", "class_ensum_1_1_utils_1_1_options.html", "class_ensum_1_1_utils_1_1_options" ]
+      ] ],
+      [ "Delegate", "class_ensum_1_1_delegate.html", null ],
+      [ "Delegate< ReturnType(ParamTypes...)>", "class_ensum_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4.html", "class_ensum_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4" ],
+      [ "Event", "class_ensum_1_1_event.html", null ],
+      [ "Event< ReturnType(Arguments...)>", "class_ensum_1_1_event_3_01_return_type_07_arguments_8_8_8_08_4.html", "class_ensum_1_1_event_3_01_return_type_07_arguments_8_8_8_08_4" ],
+      [ "string", "class_ensum_1_1string.html", "class_ensum_1_1string" ]
     ] ],
     [ "MetaData", "struct_meta_data.html", "struct_meta_data" ]
 ];

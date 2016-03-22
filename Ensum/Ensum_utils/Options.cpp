@@ -13,16 +13,7 @@ namespace Ensum
 		Options::Options() : _file(nullptr)
 		{
 			ConsoleLog::DumpToConsole("Creating options instance");
-			try{ _file = new FileHandler::ini("config.ini"); }
-			catch(const Utils::Exce& e)
-			{
-				SAFE_DELETE(_file);
-				e;
-				std::ofstream file;
-				file.open("config.ini", std::ios::out | std::ios::trunc);
-				file.close();
-				_file = new FileHandler::ini("config.ini");
-			}
+			_file = new FileHandler::ini("config.ini"); 
 		}
 		Options::~Options()
 		{

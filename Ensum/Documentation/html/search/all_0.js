@@ -5,6 +5,10 @@ var searchData=
   ['_5fentity',['_entity',['../class_ensum_1_1_components_1_1_scene.html#a8d36e81874a5b07e3edbd8720b8b289e',1,'Ensum::Components::Scene']]],
   ['_5fentitymanager',['_entityManager',['../class_ensum_1_1_components_1_1_scene.html#af7eb8e3279c5b6768f442ae05b44e75f',1,'Ensum::Components::Scene']]],
   ['_5fgc',['_GC',['../class_ensum_1_1_components_1_1_scene_manager.html#a156f50b0273598415c52dabae19ae334',1,'Ensum::Components::SceneManager']]],
+  ['_5fgetbooleanoption',['_GetBooleanOption',['../class_ensum_1_1_utils_1_1_options.html#a8c9a977bf971aa38af289af707a46490',1,'Ensum::Utils::Options']]],
+  ['_5fgetintegeroption',['_GetIntegerOption',['../class_ensum_1_1_utils_1_1_options.html#a69b79cff0d5ad861b9f2be3bb296648f',1,'Ensum::Utils::Options']]],
+  ['_5fgetrealoption',['_GetRealOption',['../class_ensum_1_1_utils_1_1_options.html#a3d79094def64e9e7bdbbe1c4532458e1',1,'Ensum::Utils::Options']]],
+  ['_5fgetstringoption',['_GetStringOption',['../class_ensum_1_1_utils_1_1_options.html#a741ecb0fda0375aa961d57108435c239',1,'Ensum::Utils::Options']]],
   ['_5fkeydown',['_KeyDown',['../class_ensum_1_1_input_1_1_input.html#ad8eda827bc3b8f09c907daabd5514c22',1,'Ensum::Input::Input']]],
   ['_5fkeytokey',['_keyToKey',['../class_ensum_1_1_input_1_1_input.html#a230c41d8d2b8a4df41d432036310c1ab',1,'Ensum::Input::Input']]],
   ['_5fkeyup',['_KeyUp',['../class_ensum_1_1_input_1_1_input.html#a5918ced1e19d0a221e8ca01a672c93d7',1,'Ensum::Input::Input']]],
@@ -12,5 +16,11 @@ var searchData=
   ['_5fmousekeytomousekey',['_mousekeyToMousekey',['../class_ensum_1_1_input_1_1_input.html#a254dcd129224a0604bd0a5e4cb45b7e6',1,'Ensum::Input::Input']]],
   ['_5fmouseup',['_MouseUp',['../class_ensum_1_1_input_1_1_input.html#a471b38d0c16fa0250334beb664456d3b',1,'Ensum::Input::Input']]],
   ['_5fonmousemove',['_OnMouseMove',['../class_ensum_1_1_input_1_1_input.html#a75f307dacc5078275fdd6851b7d32bbd',1,'Ensum::Input::Input']]],
-  ['_5fonmousescroll',['_OnMouseScroll',['../class_ensum_1_1_input_1_1_input.html#a4d32c8a55126504bea66acf1a7622e85',1,'Ensum::Input::Input']]]
+  ['_5fonmousescroll',['_OnMouseScroll',['../class_ensum_1_1_input_1_1_input.html#a4d32c8a55126504bea66acf1a7622e85',1,'Ensum::Input::Input']]],
+  ['_5fparsedata',['_ParseData',['../class_ensum_1_1_file_handler_1_1ini.html#a413fd1029742025232f53d3020280245',1,'Ensum::FileHandler::ini']]],
+  ['_5fsetbooleanoption',['_SetBooleanOption',['../class_ensum_1_1_utils_1_1_options.html#ae7f2dc1a114d67fbe049454f6bb1aa1e',1,'Ensum::Utils::Options']]],
+  ['_5fsetintegeroption',['_SetIntegerOption',['../class_ensum_1_1_utils_1_1_options.html#a8ed2a91a05fbabe8e83916adea5b2b96',1,'Ensum::Utils::Options']]],
+  ['_5fsetrealoption',['_SetRealOption',['../class_ensum_1_1_utils_1_1_options.html#a1e6721c6556806ea91df7739c63e9ba2',1,'Ensum::Utils::Options']]],
+  ['_5fsetstringoption',['_SetStringOption',['../class_ensum_1_1_utils_1_1_options.html#a7ba0b31a187c20ffec4725b5f1fd9003',1,'Ensum::Utils::Options']]],
+  ['_5fwritedata',['_WriteData',['../class_ensum_1_1_file_handler_1_1ini.html#ace94f563974a671c5249548934688c88',1,'Ensum::FileHandler::ini']]]
 ];

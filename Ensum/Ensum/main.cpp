@@ -46,6 +46,9 @@ class Game : public Components::Scene
 public:
 	Game(Components::EntityManager& entityManger, Input::Input* input, Components::SceneManager& scenemanager):Scene(entityManger,input) ,_sceneManager(scenemanager)
 	{
+	//	_input->LockMouseToWindow(true);
+		//_input->LockMouseToCenter(true);
+		//_input->HideCursor(true);
 		_input->Rebind(Input::Keys::Escape, Input::Keys::A);
 		_sceneManager.CreateScene(new Components::NullScene(_sceneManager.GetEntityManager(), _input));
 		_entityManager.Delete(_entity);

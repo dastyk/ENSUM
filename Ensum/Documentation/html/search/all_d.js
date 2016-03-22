@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['rebind',['Rebind',['../class_ensum_1_1_input_1_1_input.html#a44634caec75e410c5652cdb041a33d55',1,'Ensum::Input::Input::Rebind(Keys org, Keys to)'],['../class_ensum_1_1_input_1_1_input.html#a368908dcc45e31fed3cd6c7da59033d0',1,'Ensum::Input::Input::Rebind(MouseKeys org, MouseKeys to)']]],
-  ['removescene',['RemoveScene',['../class_ensum_1_1_components_1_1_scene_manager.html#ab970d3716b08c39b9b8c5484dea11595',1,'Ensum::Components::SceneManager']]],
-  ['reset',['Reset',['../class_ensum_1_1_core_1_1_timer.html#ae34e21c17fe8325daf806f2f30980fab',1,'Ensum::Core::Timer']]]
+  ['operator_20const_20char_20_2a',['operator const char *',['../class_ensum_1_1string.html#a4ef9b111d0bcd2cbd6ef125449253209',1,'Ensum::string']]],
+  ['operator_2b',['operator+',['../class_ensum_1_1string.html#a13098a5e0f0fd18baeffa5bc8b35494d',1,'Ensum::string::operator+(const string &amp;str) const '],['../class_ensum_1_1string.html#aa9f884ae697a27d375d6dc71fd5a1602',1,'Ensum::string::operator+(const char *str) const ']]],
+  ['operator_3d',['operator=',['../class_ensum_1_1string.html#ae48b8f643d8cd3ff379a51484ea738d1',1,'Ensum::string::operator=(const char *str)'],['../class_ensum_1_1string.html#a7903e871b1cf12584d746536241fa7ea',1,'Ensum::string::operator=(const string &amp;other)']]],
+  ['operator_3d_3d',['operator==',['../class_ensum_1_1string.html#a6b5ab08eb5ef197bedb9e55e2eca0754',1,'Ensum::string::operator==(const char *str)'],['../class_ensum_1_1string.html#a6429683caad1908c30cb77b4aa00ff4f',1,'Ensum::string::operator==(const string &amp;other)']]],
+  ['options',['Options',['../class_ensum_1_1_utils_1_1_options.html',1,'Ensum::Utils']]]
 ];
