@@ -3,11 +3,7 @@
 
 #pragma once
 #include "Ensum_components\Scene.h"
-#include <unordered_map>
-#include "dll_export.h"
-#include "Data_Meta.h"
-#include <random>
-
+#include "Manager.h"
 
 namespace Ensum
 {
@@ -17,14 +13,11 @@ namespace Ensum
 		*
 		*/
 
-		class ENSUM_COMPONENTS_EXPORT SceneManager
+		class ENSUM_COMPONENTS_EXPORT SceneManager : private Manager
 		{
 		private:
-			struct SceneData
+			struct SceneData : ManagerMetaData
 			{
-				MetaData meta;
-
-				Entity* entity;
 				Scene** scenePtr;
 				bool* sceneUpdate;
 			};
@@ -71,10 +64,8 @@ namespace Ensum
 			const void _GC();
 		private:
 			EntityManager _entityManager;
-			SceneData _sceneData;
-			std::unordered_map<Entity, uint32_t, EntityHasher>* _entityToIndex;
 			Input::Input* _input;
-			std::default_random_engine _generator;
+			SceneData* _datap;
 		};
 
 		//ENSUM_COMPONENTS_TEMPLATE template ENSUM_COMPONENTS_EXPORT const Entity& SceneManager::CreateScene<NullScene>(Input::Input* input);
