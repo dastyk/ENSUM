@@ -9,7 +9,7 @@ namespace Ensum
 	namespace Components
 	{
 		SceneManager::SceneManager() : 
-			Manager(new SceneData), 
+			Manager(new SceneData, _entManager),
 			_datap(((SceneData*)(_data)))
 		{
 			_Allocate(10);
@@ -88,7 +88,7 @@ namespace Ensum
 		}
 		EntityManager& SceneManager::GetEntityManager()
 		{
-			return _entityManager;
+			return _entManager;
 		}
 		const void SceneManager::_Allocate(uint32_t size)
 		{
@@ -131,22 +131,6 @@ namespace Ensum
 			_entityToIndex->erase(e);
 
 			_datap->used--;
-		}
-		const void SceneManager::_GC()
-		{
-			uint32_t alive_in_row = 0;
-			while (_datap->used > 0 && alive_in_row < 4U)
-			{
-				std::uniform_int_distribution<uint32_t> distribution(0U, _datap->used - 1U);
-				uint32_t i = distribution(_generator);
-				if (_entityManager.Alive(_datap->entity[i]))
-				{
-					alive_in_row++;
-					continue;
-				}
-				alive_in_row = 0;
-				_Destroy(i);
-			}
 		}
 	}
 }
