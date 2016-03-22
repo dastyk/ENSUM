@@ -10,7 +10,7 @@ namespace Ensum
 	{
 
 
-		WinWindow::WinWindow(Components::SceneManager& sceneManager) : Window(sceneManager), _hWnd(nullptr), _hInst(nullptr), _running(false), _wndCaption(L"Ensum"), _style(WS_OVERLAPPED | WS_CAPTION)
+		WinWindow::WinWindow(Components::SceneManager& sceneManager) : Window(sceneManager), _hWnd(nullptr), _hInst(nullptr), _style(WS_OVERLAPPED | WS_CAPTION)
 		{
 			_input = new Input::Input;
 		}

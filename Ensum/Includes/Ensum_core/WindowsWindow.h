@@ -38,9 +38,7 @@ namespace Ensum
 			HINSTANCE _hInst;
 			HWND _hWnd;
 			DWORD _style;
-			LPWSTR _wndCaption;
 
-			bool _running;
 		};
 
 

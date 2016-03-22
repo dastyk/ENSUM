@@ -73,6 +73,10 @@ namespace Ensum
 			Event<const void()> FrameStart;
 
 		protected:
+
+			bool _running;			
+			LPWSTR _wndCaption;
+
 			static Window* _instance;
 
 			Timer* _timer;
