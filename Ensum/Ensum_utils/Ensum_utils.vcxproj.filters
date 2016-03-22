@@ -7,18 +7,34 @@
     <Filter Include="Event">
       <UniqueIdentifier>{69384172-a9db-4b9a-b894-2cbb1c53d493}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Options">
+      <UniqueIdentifier>{2563bb23-73d7-462a-b6a3-71b91d32de6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Console">
+      <UniqueIdentifier>{2e5de611-1f34-4539-935e-cfe99866526d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_utils\dll_export.h" />
     <ClInclude Include="..\Includes\Ensum_utils\Exception.h">
       <Filter>Exception</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\Ensum_utils\ConsoleLog.h" />
     <ClInclude Include="..\Includes\Event.h">
       <Filter>Event</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_utils\ConsoleLog.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_utils\Options.h">
+      <Filter>Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleLog.cpp" />
+    <ClCompile Include="ConsoleLog.cpp">
+      <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Options.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

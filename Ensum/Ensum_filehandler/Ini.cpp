@@ -1,7 +1,7 @@
 #include "Ensum_filehandler\Ini.h"
 #include "Safe_Delete.h"
 #include "Ensum_utils\Exception.h"
-
+#include "Ensum_utils\ConsoleLog.h"
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
 #else
@@ -11,14 +11,14 @@ namespace Ensum
 {
 	namespace FileHandler
 	{
-		ini::ini(const string& path) : _sections(nullptr)
+		ini::ini(const string& path) : _sections(nullptr), _path(path), _datasize(0)
 		{
 			_sections = new std::vector<Section>;
 
 			std::ifstream file;
 
 			file.open(_path, std::ios::in);
-			if (!file.is_open()) Exception("Failed to open file %s", _path.c_str());
+			if (!file.is_open()) Exception("Failed to open file", _path.c_str());
 
 			_ParseData(file);
 			file.close();

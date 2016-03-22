@@ -21,7 +21,7 @@
 #include "Ensum_components\SceneManager.h"
 #include "Ensum_components\NullScene.h"
 #include "Ensum_utils\ConsoleLog.h"
-
+#include "Ensum_utils\Options.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_coreD.lib")
@@ -69,20 +69,23 @@ int WINAPI WinMain(HINSTANCE hInstance,
 {
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Memoryleak detection.
-													  _crtBreakAlloc = 0x00000109;
+	//										  _crtBreakAlloc = 172;
 #endif
 	Utils::ConsoleLog::CreateInstance();
+	Utils::Options::CreateInstance();
 
 	Components::SceneManager sceneManager;
 	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow(sceneManager));
 	
 	sceneManager.CreateScene(new Game(sceneManager.GetEntityManager(), w->GetInput(), sceneManager));
 
+	Utils::Options::SetIntegerOption("Test", "testo", 1337);
 
 	w->Start();
 
 
 	Core::Window::DeleteInstance();
+	Utils::Options::DeleteInstance();
 	Utils::ConsoleLog::DeleteInstance();
 
 	return 0;
