@@ -2,6 +2,7 @@
 #include "Ensum_utils\Exception.h"
 #include "Ensum_utils\ConsoleLog.h"
 #include "Safe_Delete.h"
+#include "Ensum_utils\Options.h"
 
 namespace Ensum
 {
@@ -51,9 +52,9 @@ namespace Ensum
 			wc.lpszClassName = _wndCaption;
 			wc.cbSize = sizeof(WNDCLASSEX);
 
-			bool fullscreen = false;
-			LONG windowWidth = (LONG)800;
-			LONG windowHeight = (LONG)640;
+			bool fullscreen = Utils::Options::GetBooleanOption("Screen", "Fullscreen", false);
+			LONG windowWidth = Utils::Options::GetIntegerOption("Screen", "Width", 800);
+			LONG windowHeight = Utils::Options::GetIntegerOption("Screen", "Height", 640);
 
 
 			// Register the window class.
@@ -178,6 +179,7 @@ namespace Ensum
 				}
 				catch (const Utils::Exce& e)
 				{
+					e;
 					Utils::ConsoleLog::DumpToConsole("Tried to get instance of window for input, but there was no window.");
 					return DefWindowProc(hwnd, umessage, wparam, lparam);
 				}

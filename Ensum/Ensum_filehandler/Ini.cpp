@@ -18,7 +18,11 @@ namespace Ensum
 			std::ifstream file;
 
 			file.open(_path, std::ios::in);
-			if (!file.is_open()) Exception("Failed to open file", _path.c_str());
+			if (!file.is_open()) 
+			{
+				SAFE_DELETE(_sections); 
+				Exception("Failed to open file", _path.c_str());
+			}
 
 			_ParseData(file);
 			file.close();

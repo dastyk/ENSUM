@@ -26,7 +26,7 @@ namespace Ensum
 	{
 
 
-		ENSUM_CORE_TEMPLATE template class ENSUM_CORE_EXPORT Utils::Event<const void()>;
+		ENSUM_CORE_TEMPLATE template class ENSUM_CORE_EXPORT Event<const void()>;
 
 		/** Fully abstract class for interfacting with the actual window.
 		*
@@ -70,7 +70,7 @@ namespace Ensum
 			*/
 			Input::Input* GetInput();
 		public:
-			Utils::Event<const void()> FrameStart;
+			Event<const void()> FrameStart;
 
 		protected:
 			static Window* _instance;

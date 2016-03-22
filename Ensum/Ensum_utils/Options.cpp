@@ -10,12 +10,13 @@ namespace Ensum
 		Options* Options::_instance = nullptr;
 
 
-		Options::Options()
+		Options::Options() : _file(nullptr)
 		{
 			ConsoleLog::DumpToConsole("Creating options instance");
 			try{ _file = new FileHandler::ini("config.ini"); }
 			catch(const Utils::Exce& e)
 			{
+				SAFE_DELETE(_file);
 				e;
 				std::ofstream file;
 				file.open("config.ini", std::ios::out | std::ios::trunc);
@@ -50,18 +51,22 @@ namespace Ensum
 		void Options::_SetIntegerOption(const string & section, const string & option, long value)
 		{
 			_file->SetInteger(section, option, value);
+			_OptionChange();
 		}
 		void Options::_SetRealOption(const string & section, const string & option, double value)
 		{
 			_file->SetReal(section, option, value);
+			_OptionChange();
 		}
 		void Options::_SetBooleanOption(const string & section, const string & option, bool value)
 		{
 			_file->SetReal(section, option, value);
+			_OptionChange();
 		}
 		void Options::_SetStringOption(const string & section, const string & option, const string & value)
 		{
 			_file->Set(section, option, value);
+			_OptionChange();
 		}
 		void Options::CreateInstance()
 		{
@@ -129,6 +134,19 @@ namespace Ensum
 			if (!_instance)
 				return;
 			return _instance->_SetStringOption(section, option, value);
+		}
+
+		void Options::Subscribe(Delegate<void()>& dele)
+		{
+			if (!_instance)
+				return;
+			_instance->_OptionChange += dele;
+		}
+		void Options::UnSubscribe(Delegate<void()>& dele)
+		{
+			if (!_instance)
+				return;
+			_instance->_OptionChange -= dele;
 		}
 	}
 }

@@ -3,6 +3,7 @@
 
 #pragma once
 #include "dll_export.h"
+#include "Event.h"
 #include "Ensum_filehandler\Ini.h"
 
 #ifdef _DEBUG
@@ -46,8 +47,13 @@ namespace Ensum
 			ENSUM_UTILS_EXPORT static void SetRealOption(const string& section, const string& option, double value);
 			ENSUM_UTILS_EXPORT static void SetBooleanOption(const string& section, const string& option, bool value);
 			ENSUM_UTILS_EXPORT static void SetStringOption(const string& section, const string& option, const string& value);
+			
+			ENSUM_UTILS_EXPORT static void Subscribe(Delegate<void()>& dele);
+			ENSUM_UTILS_EXPORT static void UnSubscribe(Delegate<void()>& dele);
 		private:
 			FileHandler::ini* _file;
+			Event<void()> _OptionChange;
+
 		};
 	}
 }

@@ -15,14 +15,14 @@ namespace Ensum
 			_secondsPerCount(static_cast<double>(1.0f / CLOCKS_PER_SEC)),
 			_stopped(!startImmediately)
 		{
-			try{ Core::Window::GetInstance()->FrameStart += Utils::Delegate<const void()>::Make<Timer, &Timer::Tick>(this); }
+			try{ Core::Window::GetInstance()->FrameStart += Delegate<const void()>::Make<Timer, &Timer::Tick>(this); }
 			catch (const Utils::Exce& e) { e; }
 		}
 
 
 		Timer::~Timer()
 		{
-			try { Core::Window::GetInstance()->FrameStart -= Utils::Delegate<const void()>::Make<Timer, &Timer::Tick>(this); }
+			try { Core::Window::GetInstance()->FrameStart -= Delegate<const void()>::Make<Timer, &Timer::Tick>(this); }
 			catch (const Utils::Exce& e) { e; }
 		}
 		const void Timer::Reset(bool startImmediately)

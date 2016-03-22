@@ -75,12 +75,15 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	Utils::Options::CreateInstance();
 
 	Components::SceneManager sceneManager;
+
+	//Utils::Options::SetIntegerOption("Screen", "Width", 1337);
+
+
 	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow(sceneManager));
 	
 	sceneManager.CreateScene(new Game(sceneManager.GetEntityManager(), w->GetInput(), sceneManager));
 
-	Utils::Options::SetIntegerOption("Test", "testo", 1337);
-
+	
 	w->Start();
 
 
