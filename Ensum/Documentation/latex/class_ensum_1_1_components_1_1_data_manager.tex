@@ -1,0 +1,125 @@
+\hypertarget{class_ensum_1_1_components_1_1_data_manager}{}\section{Ensum\+:\+:Components\+:\+:Data\+Manager Class Reference}
+\label{class_ensum_1_1_components_1_1_data_manager}\index{Ensum\+::\+Components\+::\+Data\+Manager@{Ensum\+::\+Components\+::\+Data\+Manager}}
+Inheritance diagram for Ensum\+:\+:Components\+:\+:Data\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ensum_1_1_components_1_1_data_manager}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_data}{Data}
+\begin{DoxyCompactList}\small\item\em A data struct used for indexing the strings and other growing datatypes in the value\+\_\+buffer. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer}{Data\+Buffer}
+\begin{DoxyCompactList}\small\item\em Struct for keeping track of the data entries a entity has been given. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_entity_data}{Entity\+Data}
+\begin{DoxyCompactList}\small\item\em The managers data struct. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_entry_header}{Entry\+Header}
+\begin{DoxyCompactList}\small\item\em The header struct, used for keeping track of the data entries a entity has. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_value}{Value}
+\begin{DoxyCompactList}\small\item\em The value struct, this is where the data is stored. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_value___buffer}{Value\+\_\+\+Buffer}
+\begin{DoxyCompactList}\small\item\em Points to the next free spot in the value\+\_\+buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Data\+Manager} (\hyperlink{class_ensum_1_1_components_1_1_entity_manager}{Entity\+Manager} \&ent\+Manager)\hypertarget{class_ensum_1_1_components_1_1_data_manager_ad388bb6d19c8eaca2d7c1fbfc3c2a889}{}\label{class_ensum_1_1_components_1_1_data_manager_ad388bb6d19c8eaca2d7c1fbfc3c2a889}
+
+\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_data_manager_ade29bf76080dd342aba5e559fdba012e}{Create\+Data} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)\hypertarget{class_ensum_1_1_components_1_1_data_manager_ade29bf76080dd342aba5e559fdba012e}{}\label{class_ensum_1_1_components_1_1_data_manager_ade29bf76080dd342aba5e559fdba012e}
+
+\begin{DoxyCompactList}\small\item\em Create the data component for the entity. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_data_manager_a9564b3867e85330db4e6b7b78d81645a}{Add\+Bool\+Value} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const \hyperlink{class_ensum_1_1string}{string} \&key, const bool val)\hypertarget{class_ensum_1_1_components_1_1_data_manager_a9564b3867e85330db4e6b7b78d81645a}{}\label{class_ensum_1_1_components_1_1_data_manager_a9564b3867e85330db4e6b7b78d81645a}
+
+\begin{DoxyCompactList}\small\item\em Add the bool value to the given entity and key. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_data_manager_afba14ae03a656e9aa5918fac195d479c}{Add\+Float\+Value} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const \hyperlink{class_ensum_1_1string}{string} \&key, const float val)\hypertarget{class_ensum_1_1_components_1_1_data_manager_afba14ae03a656e9aa5918fac195d479c}{}\label{class_ensum_1_1_components_1_1_data_manager_afba14ae03a656e9aa5918fac195d479c}
+
+\begin{DoxyCompactList}\small\item\em Add the float value to the given entity and key. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_data_manager_a0916658dd49bbf814965bfce50767906}{Add\+String\+Value} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const \hyperlink{class_ensum_1_1string}{string} \&key, const \hyperlink{class_ensum_1_1string}{string} \&val)\hypertarget{class_ensum_1_1_components_1_1_data_manager_a0916658dd49bbf814965bfce50767906}{}\label{class_ensum_1_1_components_1_1_data_manager_a0916658dd49bbf814965bfce50767906}
+
+\begin{DoxyCompactList}\small\item\em Add the string value to the given entity and key. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_data_manager_a2ef6ead291f631e756b19971e1391acf}{Set\+Bool\+Value} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const \hyperlink{class_ensum_1_1string}{string} \&key, const bool val)\hypertarget{class_ensum_1_1_components_1_1_data_manager_a2ef6ead291f631e756b19971e1391acf}{}\label{class_ensum_1_1_components_1_1_data_manager_a2ef6ead291f631e756b19971e1391acf}
+
+\begin{DoxyCompactList}\small\item\em Set the bool value to the given entity and key. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_data_manager_aecdd69439279eb2f1fb68250085ffc3a}{Set\+Float\+Value} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const \hyperlink{class_ensum_1_1string}{string} \&key, const float val)\hypertarget{class_ensum_1_1_components_1_1_data_manager_aecdd69439279eb2f1fb68250085ffc3a}{}\label{class_ensum_1_1_components_1_1_data_manager_aecdd69439279eb2f1fb68250085ffc3a}
+
+\begin{DoxyCompactList}\small\item\em Set the float value to the given entity and key. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_data_manager_a97f2560a6bfd6da8c7708737680f8607}{Set\+String\+Value} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const \hyperlink{class_ensum_1_1string}{string} \&key, const \hyperlink{class_ensum_1_1string}{string} \&val)\hypertarget{class_ensum_1_1_components_1_1_data_manager_a97f2560a6bfd6da8c7708737680f8607}{}\label{class_ensum_1_1_components_1_1_data_manager_a97f2560a6bfd6da8c7708737680f8607}
+
+\begin{DoxyCompactList}\small\item\em Set the string value to the given entity and key. \end{DoxyCompactList}\item 
+bool \hyperlink{class_ensum_1_1_components_1_1_data_manager_a1746cbced0b28fc0f4d09097f91e7959}{Get\+Bool\+Value} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const \hyperlink{class_ensum_1_1string}{string} \&key)\hypertarget{class_ensum_1_1_components_1_1_data_manager_a1746cbced0b28fc0f4d09097f91e7959}{}\label{class_ensum_1_1_components_1_1_data_manager_a1746cbced0b28fc0f4d09097f91e7959}
+
+\begin{DoxyCompactList}\small\item\em Get the bool value to the given entity and key. \end{DoxyCompactList}\item 
+float \hyperlink{class_ensum_1_1_components_1_1_data_manager_a47c2d9326214b16167d455f03a3473de}{Get\+Float\+Value} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const \hyperlink{class_ensum_1_1string}{string} \&key)\hypertarget{class_ensum_1_1_components_1_1_data_manager_a47c2d9326214b16167d455f03a3473de}{}\label{class_ensum_1_1_components_1_1_data_manager_a47c2d9326214b16167d455f03a3473de}
+
+\begin{DoxyCompactList}\small\item\em Get the float value to the given entity and key. \end{DoxyCompactList}\item 
+\hyperlink{class_ensum_1_1string}{string} \hyperlink{class_ensum_1_1_components_1_1_data_manager_ac7cd482c2e9aa4f1f88cc64301fa5b6b}{Get\+String\+Value} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const \hyperlink{class_ensum_1_1string}{string} \&key)\hypertarget{class_ensum_1_1_components_1_1_data_manager_ac7cd482c2e9aa4f1f88cc64301fa5b6b}{}\label{class_ensum_1_1_components_1_1_data_manager_ac7cd482c2e9aa4f1f88cc64301fa5b6b}
+
+\begin{DoxyCompactList}\small\item\em Get the string value to the given entity and key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_ensum_1_1_components_1_1_data_manager_abf17780149860893e39b561e1d98e1e2}{Data\+Type} \+: uint32\+\_\+t \{ {\bfseries B\+O\+OL}, 
+{\bfseries F\+L\+O\+AT}, 
+{\bfseries S\+T\+R\+I\+NG}
+ \}\hypertarget{class_ensum_1_1_components_1_1_data_manager_abf17780149860893e39b561e1d98e1e2}{}\label{class_ensum_1_1_components_1_1_data_manager_abf17780149860893e39b561e1d98e1e2}
+\begin{DoxyCompactList}\small\item\em enum class for the kinds of data that can be stored as an entry. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_data_manager_aa9f344da59b7fda790b79a9e453ba7c4}{\+\_\+\+Allocate} (uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Allocate more memory. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_data_manager_a6f5c2ed92eba2cb4d5c15c451cbf089c}{\+\_\+\+Destroy} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Delete an entry in the memory block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_entity_data}{Entity\+Data} $\ast$ \hyperlink{class_ensum_1_1_components_1_1_data_manager_a03fb52e21fcfdf08e9dd11a71da74385}{\+\_\+datap}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Components\+::\+Data\+Manager@{Ensum\+::\+Components\+::\+Data\+Manager}!\+\_\+\+Allocate@{\+\_\+\+Allocate}}
+\index{\+\_\+\+Allocate@{\+\_\+\+Allocate}!Ensum\+::\+Components\+::\+Data\+Manager@{Ensum\+::\+Components\+::\+Data\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Allocate(uint32\+\_\+t size)}{_Allocate(uint32_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Data\+Manager\+::\+\_\+\+Allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_components_1_1_data_manager_aa9f344da59b7fda790b79a9e453ba7c4}{}\label{class_ensum_1_1_components_1_1_data_manager_aa9f344da59b7fda790b79a9e453ba7c4}
+
+
+Allocate more memory. 
+
+
+
+Implements \hyperlink{class_ensum_1_1_components_1_1_manager_a1b593059210d09632c910a6abaae49c0}{Ensum\+::\+Components\+::\+Manager}.
+
+\index{Ensum\+::\+Components\+::\+Data\+Manager@{Ensum\+::\+Components\+::\+Data\+Manager}!\+\_\+\+Destroy@{\+\_\+\+Destroy}}
+\index{\+\_\+\+Destroy@{\+\_\+\+Destroy}!Ensum\+::\+Components\+::\+Data\+Manager@{Ensum\+::\+Components\+::\+Data\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Destroy(uint32\+\_\+t index)}{_Destroy(uint32_t index)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Data\+Manager\+::\+\_\+\+Destroy (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_components_1_1_data_manager_a6f5c2ed92eba2cb4d5c15c451cbf089c}{}\label{class_ensum_1_1_components_1_1_data_manager_a6f5c2ed92eba2cb4d5c15c451cbf089c}
+
+
+Delete an entry in the memory block. 
+
+The deleted entry is replaced by the last in the block. 
+
+Implements \hyperlink{class_ensum_1_1_components_1_1_manager_a5ba85395802e942ed8904ca18951e6b0}{Ensum\+::\+Components\+::\+Manager}.
+
+
+
+\subsection{Member Data Documentation}
+\index{Ensum\+::\+Components\+::\+Data\+Manager@{Ensum\+::\+Components\+::\+Data\+Manager}!\+\_\+datap@{\+\_\+datap}}
+\index{\+\_\+datap@{\+\_\+datap}!Ensum\+::\+Components\+::\+Data\+Manager@{Ensum\+::\+Components\+::\+Data\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+datap}{_datap}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Data}$\ast$ Ensum\+::\+Components\+::\+Data\+Manager\+::\+\_\+datap\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_data_manager_a03fb52e21fcfdf08e9dd11a71da74385}{}\label{class_ensum_1_1_components_1_1_data_manager_a03fb52e21fcfdf08e9dd11a71da74385}
+A reference pointer to avoid having to cast the basic datapointer all the time. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/\+Ensum\+\_\+components/Data\+Manager.\+h\end{DoxyCompactItemize}

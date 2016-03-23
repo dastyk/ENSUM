@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['_5fallocate',['_Allocate',['../class_ensum_1_1_components_1_1_scene_manager.html#a383a468319c93280ce8ac0bbb920ab87',1,'Ensum::Components::SceneManager']]],
-  ['_5fdestroy',['_Destroy',['../class_ensum_1_1_components_1_1_scene_manager.html#a8102cfd9f4fed62a06e564dc016b6c46',1,'Ensum::Components::SceneManager']]],
-  ['_5fgc',['_GC',['../class_ensum_1_1_components_1_1_scene_manager.html#a156f50b0273598415c52dabae19ae334',1,'Ensum::Components::SceneManager']]],
+  ['_5fallocate',['_Allocate',['../class_ensum_1_1_components_1_1_data_manager.html#aa9f344da59b7fda790b79a9e453ba7c4',1,'Ensum::Components::DataManager::_Allocate()'],['../class_ensum_1_1_components_1_1_manager.html#a1b593059210d09632c910a6abaae49c0',1,'Ensum::Components::Manager::_Allocate()'],['../class_ensum_1_1_components_1_1_scene_manager.html#a383a468319c93280ce8ac0bbb920ab87',1,'Ensum::Components::SceneManager::_Allocate()']]],
+  ['_5fdestroy',['_Destroy',['../class_ensum_1_1_components_1_1_data_manager.html#a6f5c2ed92eba2cb4d5c15c451cbf089c',1,'Ensum::Components::DataManager::_Destroy()'],['../class_ensum_1_1_components_1_1_manager.html#a5ba85395802e942ed8904ca18951e6b0',1,'Ensum::Components::Manager::_Destroy()'],['../class_ensum_1_1_components_1_1_scene_manager.html#a8102cfd9f4fed62a06e564dc016b6c46',1,'Ensum::Components::SceneManager::_Destroy()']]],
+  ['_5fgc',['_GC',['../class_ensum_1_1_components_1_1_manager.html#a646aca9437267a1da465862ba7cc77a3',1,'Ensum::Components::Manager']]],
   ['_5fgetbooleanoption',['_GetBooleanOption',['../class_ensum_1_1_utils_1_1_options.html#a8c9a977bf971aa38af289af707a46490',1,'Ensum::Utils::Options']]],
   ['_5fgetintegeroption',['_GetIntegerOption',['../class_ensum_1_1_utils_1_1_options.html#a69b79cff0d5ad861b9f2be3bb296648f',1,'Ensum::Utils::Options']]],
   ['_5fgetrealoption',['_GetRealOption',['../class_ensum_1_1_utils_1_1_options.html#a3d79094def64e9e7bdbbe1c4532458e1',1,'Ensum::Utils::Options']]],

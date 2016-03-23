@@ -119,6 +119,15 @@ $(document).ready(function(){initNavTree('class_ensum_1_1_components_1_1_scene_m
  <a href="class_ensum_1_1_components_1_1_scene_manager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_scene_manager_8h_source.html">SceneManager.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Ensum::Components::SceneManager:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_ensum_1_1_components_1_1_scene_manager.png" usemap="#Ensum::Components::SceneManager_map" alt=""/>
+  <map id="Ensum::Components::SceneManager_map" name="Ensum::Components::SceneManager_map">
+<area href="class_ensum_1_1_components_1_1_manager.html" title="Fully virtual base manager class. " alt="Ensum::Components::Manager" shape="rect" coords="0,0,217,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -156,28 +165,39 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a8102cfd9f4fed62a06e564dc016b6c46"><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a8102cfd9f4fed62a06e564dc016b6c46">_Destroy</a> (uint32_t index)</td></tr>
 <tr class="memdesc:a8102cfd9f4fed62a06e564dc016b6c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an entry in the memory block.  <a href="#a8102cfd9f4fed62a06e564dc016b6c46">More...</a><br /></td></tr>
 <tr class="separator:a8102cfd9f4fed62a06e564dc016b6c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a156f50b0273598415c52dabae19ae334"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a156f50b0273598415c52dabae19ae334"></a>
-const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a156f50b0273598415c52dabae19ae334">_GC</a> ()</td></tr>
-<tr class="memdesc:a156f50b0273598415c52dabae19ae334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks for destroyed entities and deletes them from the data block. <br /></td></tr>
-<tr class="separator:a156f50b0273598415c52dabae19ae334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab75b75d4c5936733c4af3840a4fc7f5c inherit pub_methods_class_ensum_1_1_components_1_1_manager"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_manager.html#ab75b75d4c5936733c4af3840a4fc7f5c">Manager</a> (<a class="el" href="struct_ensum_1_1_components_1_1_manager_1_1_manager_meta_data.html">ManagerMetaData</a> *data, <a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html">EntityManager</a> &amp;entManager)</td></tr>
+<tr class="memdesc:ab75b75d4c5936733c4af3840a4fc7f5c inherit pub_methods_class_ensum_1_1_components_1_1_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#ab75b75d4c5936733c4af3840a4fc7f5c">More...</a><br /></td></tr>
+<tr class="separator:ab75b75d4c5936733c4af3840a4fc7f5c inherit pub_methods_class_ensum_1_1_components_1_1_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a646aca9437267a1da465862ba7cc77a3 inherit pub_methods_class_ensum_1_1_components_1_1_manager"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a646aca9437267a1da465862ba7cc77a3"></a>
+virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_manager.html#a646aca9437267a1da465862ba7cc77a3">_GC</a> ()</td></tr>
+<tr class="memdesc:a646aca9437267a1da465862ba7cc77a3 inherit pub_methods_class_ensum_1_1_components_1_1_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks for destroyed entities and deletes them from the data block. <br /></td></tr>
+<tr class="separator:a646aca9437267a1da465862ba7cc77a3 inherit pub_methods_class_ensum_1_1_components_1_1_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aa4f54931996a70ad663bbcfc3a4f7024"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4f54931996a70ad663bbcfc3a4f7024"></a>
-<a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html">EntityManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_entityManager</b></td></tr>
-<tr class="separator:aa4f54931996a70ad663bbcfc3a4f7024"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b83f00b84c55e4bae12d95a588671aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b83f00b84c55e4bae12d95a588671aa"></a>
-<a class="el" href="struct_ensum_1_1_components_1_1_scene_manager_1_1_scene_data.html">SceneData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_sceneData</b></td></tr>
-<tr class="separator:a8b83f00b84c55e4bae12d95a588671aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe20076d039658cc2f4cad3c22b644bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe20076d039658cc2f4cad3c22b644bc"></a>
-std::unordered_map&lt; <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a>, uint32_t, <a class="el" href="struct_ensum_1_1_components_1_1_entity_hasher.html">EntityHasher</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_entityToIndex</b></td></tr>
-<tr class="separator:afe20076d039658cc2f4cad3c22b644bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be3bed380d7f6712e9c6c3bb71c048a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1be3bed380d7f6712e9c6c3bb71c048a"></a>
+<a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html">EntityManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a1be3bed380d7f6712e9c6c3bb71c048a">_entManager</a></td></tr>
+<tr class="memdesc:a1be3bed380d7f6712e9c6c3bb71c048a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks for destroyed entities and deletes them from the data block. <br /></td></tr>
+<tr class="separator:a1be3bed380d7f6712e9c6c3bb71c048a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a997e4d367f66c9f80d27e027999f6802"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a997e4d367f66c9f80d27e027999f6802"></a>
 <a class="el" href="class_ensum_1_1_input_1_1_input.html">Input::Input</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_input</b></td></tr>
 <tr class="separator:a997e4d367f66c9f80d27e027999f6802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60425dc8e0af4eab0fb80a1641626779"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60425dc8e0af4eab0fb80a1641626779"></a>
+<tr class="memitem:a249b282fedd2971d521e5a4a8922ceeb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a249b282fedd2971d521e5a4a8922ceeb"></a>
+<a class="el" href="struct_ensum_1_1_components_1_1_scene_manager_1_1_scene_data.html">SceneData</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_datap</b></td></tr>
+<tr class="separator:a249b282fedd2971d521e5a4a8922ceeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_ensum_1_1_components_1_1_manager"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_ensum_1_1_components_1_1_manager')"><img src="closed.png" alt="-"/>&#160;Private Attributes inherited from <a class="el" href="class_ensum_1_1_components_1_1_manager.html">Ensum::Components::Manager</a></td></tr>
+<tr class="memitem:aea13da4e297ed8c902ec32ef074e3e70 inherit pub_attribs_class_ensum_1_1_components_1_1_manager"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea13da4e297ed8c902ec32ef074e3e70"></a>
 std::default_random_engine&#160;</td><td class="memItemRight" valign="bottom"><b>_generator</b></td></tr>
-<tr class="separator:a60425dc8e0af4eab0fb80a1641626779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aea13da4e297ed8c902ec32ef074e3e70 inherit pub_attribs_class_ensum_1_1_components_1_1_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60e97a2c011d3fae42b2a7e36bd0ffb8 inherit pub_attribs_class_ensum_1_1_components_1_1_manager"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60e97a2c011d3fae42b2a7e36bd0ffb8"></a>
+std::unordered_map&lt; <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a>, uint32_t, <a class="el" href="struct_ensum_1_1_components_1_1_entity_hasher.html">EntityHasher</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_entityToIndex</b></td></tr>
+<tr class="separator:a60e97a2c011d3fae42b2a7e36bd0ffb8 inherit pub_attribs_class_ensum_1_1_components_1_1_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff9f92350f25612b092e0330941a8e4 inherit pub_attribs_class_ensum_1_1_components_1_1_manager"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ff9f92350f25612b092e0330941a8e4"></a>
+<a class="el" href="struct_ensum_1_1_components_1_1_manager_1_1_manager_meta_data.html">ManagerMetaData</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_data</b></td></tr>
+<tr class="separator:a6ff9f92350f25612b092e0330941a8e4 inherit pub_attribs_class_ensum_1_1_components_1_1_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f14f5ffe72655f9183283a98e3a0a3 inherit pub_attribs_class_ensum_1_1_components_1_1_manager"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24f14f5ffe72655f9183283a98e3a0a3"></a>
+<a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html">EntityManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>_entityManager</b></td></tr>
+<tr class="separator:a24f14f5ffe72655f9183283a98e3a0a3 inherit pub_attribs_class_ensum_1_1_components_1_1_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages all the scenes. </p>
@@ -199,12 +219,14 @@ std::default_random_engine&#160;</td><td class="memItemRight" valign="bottom"><b
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Allocate more memory for scenedata. </p>
+
+<p>Implements <a class="el" href="class_ensum_1_1_components_1_1_manager.html#a1b593059210d09632c910a6abaae49c0">Ensum::Components::Manager</a>.</p>
 
 </div>
 </div>
@@ -225,13 +247,15 @@ std::default_random_engine&#160;</td><td class="memItemRight" valign="bottom"><b
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Delete an entry in the memory block. </p>
 <p>The deleted entry is replaced by the last in the block. </p>
+
+<p>Implements <a class="el" href="class_ensum_1_1_components_1_1_manager.html#a5ba85395802e942ed8904ca18951e6b0">Ensum::Components::Manager</a>.</p>
 
 </div>
 </div>

@@ -7,9 +7,11 @@ var class_ensum_1_1string =
     [ "string", "class_ensum_1_1string.html#ad2d7d12b303783eb4ecc32a389e1c42b", null ],
     [ "string", "class_ensum_1_1string.html#a82ccf9bec24664a575b8e9c70cbd7d99", null ],
     [ "~string", "class_ensum_1_1string.html#a4046311a30d39a6c98110daf29fdfb8d", null ],
-    [ "c_str", "class_ensum_1_1string.html#ae136b1638499649ef96441b26baa840a", null ],
+    [ "c_str", "class_ensum_1_1string.html#a2d667ea4adbf4f9cd08011972176aacb", null ],
     [ "clear", "class_ensum_1_1string.html#a27c098c250b2df7ed3fa935e0d318fe2", null ],
-    [ "operator const char *", "class_ensum_1_1string.html#a4ef9b111d0bcd2cbd6ef125449253209", null ],
+    [ "GetHash", "class_ensum_1_1string.html#ac7c2bfe9a65ef8c2c850cdc80501ee34", null ],
+    [ "operator const char *", "class_ensum_1_1string.html#ae1473c4afee1fb83de48490a72f8266b", null ],
+    [ "operator const void *", "class_ensum_1_1string.html#a6fa9ce4490f285575c2d06a1e64a93a7", null ],
     [ "operator+", "class_ensum_1_1string.html#a13098a5e0f0fd18baeffa5bc8b35494d", null ],
     [ "operator+", "class_ensum_1_1string.html#aa9f884ae697a27d375d6dc71fd5a1602", null ],
     [ "operator=", "class_ensum_1_1string.html#ae48b8f643d8cd3ff379a51484ea738d1", null ],
@@ -17,7 +19,9 @@ var class_ensum_1_1string =
     [ "operator==", "class_ensum_1_1string.html#a6b5ab08eb5ef197bedb9e55e2eca0754", null ],
     [ "operator==", "class_ensum_1_1string.html#a6429683caad1908c30cb77b4aa00ff4f", null ],
     [ "push_back", "class_ensum_1_1string.html#af373cc0f29c09f8df78e3b96d279b609", null ],
-    [ "size", "class_ensum_1_1string.html#a04acaefb945a58e8443e8ca8bb9e44a4", null ],
+    [ "Resize", "class_ensum_1_1string.html#a2cb9f50ce1653a174433276cb1373fd6", null ],
+    [ "size", "class_ensum_1_1string.html#ac3c5ca17258824b74dc8da3d5b7602cd", null ],
     [ "transform", "class_ensum_1_1string.html#ad183e0697bed62d8e5639d17a5288a15", null ],
-    [ "_string", "class_ensum_1_1string.html#aab7e7b28d0303d683f579b84754e761f", null ]
+    [ "_string", "class_ensum_1_1string.html#aab7e7b28d0303d683f579b84754e761f", null ],
+    [ "hash", "class_ensum_1_1string.html#ac09465ae80a330532deb00843bf74f37", null ]
 ];

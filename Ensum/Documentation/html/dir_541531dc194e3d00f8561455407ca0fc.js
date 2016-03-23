@@ -1,5 +1,6 @@
 var dir_541531dc194e3d00f8561455407ca0fc =
 [
+    [ "DataManager.h", "_data_manager_8h_source.html", null ],
     [ "dll_export.h", "_ensum__components_2dll__export_8h_source.html", null ],
     [ "Entity.h", "_entity_8h_source.html", null ],
     [ "EntityManager.h", "_entity_manager_8h_source.html", null ],

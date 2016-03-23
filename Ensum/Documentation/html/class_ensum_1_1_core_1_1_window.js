@@ -7,7 +7,9 @@ var class_ensum_1_1_core_1_1_window =
     [ "Init", "class_ensum_1_1_core_1_1_window.html#a43f467e7e5ea83f3a9b990b6edc2ec46", null ],
     [ "Start", "class_ensum_1_1_core_1_1_window.html#aeafece8bb46d29de1de3ddf092662195", null ],
     [ "_input", "class_ensum_1_1_core_1_1_window.html#a6b2925a490f7a5a2417059660713bc19", null ],
+    [ "_running", "class_ensum_1_1_core_1_1_window.html#a6424445161cec33a48906e90270ba20b", null ],
     [ "_sceneManager", "class_ensum_1_1_core_1_1_window.html#a19281ff51aee4c5bd8a71f7a00786930", null ],
     [ "_timer", "class_ensum_1_1_core_1_1_window.html#aa27d25534350ec8e46cf2eae67c82ea5", null ],
+    [ "_wndCaption", "class_ensum_1_1_core_1_1_window.html#a42e780f298c4b0ea9f7f68f855f43e98", null ],
     [ "FrameStart", "class_ensum_1_1_core_1_1_window.html#a79041673278295fc966640f88d40c743", null ]
 ];

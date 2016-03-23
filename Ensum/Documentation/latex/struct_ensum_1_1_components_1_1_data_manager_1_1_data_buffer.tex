@@ -1,0 +1,47 @@
+\hypertarget{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer}{}\section{Ensum\+:\+:Components\+:\+:Data\+Manager\+:\+:Data\+Buffer Struct Reference}
+\label{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer}\index{Ensum\+::\+Components\+::\+Data\+Manager\+::\+Data\+Buffer@{Ensum\+::\+Components\+::\+Data\+Manager\+::\+Data\+Buffer}}
+
+
+Struct for keeping track of the data entries a entity has been given.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Data\+Buffer} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&ent)\hypertarget{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a1dcb14cba81346865107759292b46d2c}{}\label{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a1dcb14cba81346865107759292b46d2c}
+
+\item 
+const void \hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_abbdb72eacb423808f312810d5ce4556f}{Allocate} (uint32\+\_\+t size)\hypertarget{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_abbdb72eacb423808f312810d5ce4556f}{}\label{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_abbdb72eacb423808f312810d5ce4556f}
+
+\begin{DoxyCompactList}\small\item\em Grow the entry buffer. \end{DoxyCompactList}\item 
+const void \hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a0a35fa29a95fa628d4323d130c636da8}{Allocate\+And\+Resize\+Header} (uint32\+\_\+t size)\hypertarget{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a0a35fa29a95fa628d4323d130c636da8}{}\label{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a0a35fa29a95fa628d4323d130c636da8}
+
+\begin{DoxyCompactList}\small\item\em Grow the entry buffer and copy the header immediately. \end{DoxyCompactList}\item 
+const void \hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a1ec69ae3f18745283e3190ea663a17a2}{Header\+Resize} ()\hypertarget{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a1ec69ae3f18745283e3190ea663a17a2}{}\label{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a1ec69ae3f18745283e3190ea663a17a2}
+
+\begin{DoxyCompactList}\small\item\em Grow the header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ {\bfseries data}\hypertarget{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a9297555e082ec773d4e49060df1c6a91}{}\label{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a9297555e082ec773d4e49060df1c6a91}
+
+\item 
+uint32\+\_\+t {\bfseries capacity}\hypertarget{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a11b7c9123c55ad06806011412b6617f4}{}\label{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a11b7c9123c55ad06806011412b6617f4}
+
+\item 
+\hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_entry_header}{Entry\+Header} {\bfseries header}\hypertarget{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a49547b879ac0083ade12a7488c1b74d9}{}\label{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a49547b879ac0083ade12a7488c1b74d9}
+
+\item 
+\hyperlink{struct_ensum_1_1_components_1_1_data_manager_1_1_value___buffer}{Value\+\_\+\+Buffer} {\bfseries v\+\_\+buffer}\hypertarget{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a08464c56ea3a4a5fc34b3cb87534fbe0}{}\label{struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer_a08464c56ea3a4a5fc34b3cb87534fbe0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Struct for keeping track of the data entries a entity has been given. 
+
+The databuffer stores the header on the left side and the value\+\_\+buffer on the right side. When the buffers meet the size is increased. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/\+Ensum\+\_\+components/Data\+Manager.\+h\end{DoxyCompactItemize}

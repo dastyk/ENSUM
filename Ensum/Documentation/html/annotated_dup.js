@@ -2,9 +2,11 @@ var annotated_dup =
 [
     [ "Ensum", null, [
       [ "Components", null, [
+        [ "DataManager", "class_ensum_1_1_components_1_1_data_manager.html", "class_ensum_1_1_components_1_1_data_manager" ],
         [ "Entity", "struct_ensum_1_1_components_1_1_entity.html", "struct_ensum_1_1_components_1_1_entity" ],
         [ "EntityHasher", "struct_ensum_1_1_components_1_1_entity_hasher.html", "struct_ensum_1_1_components_1_1_entity_hasher" ],
         [ "EntityManager", "class_ensum_1_1_components_1_1_entity_manager.html", "class_ensum_1_1_components_1_1_entity_manager" ],
+        [ "Manager", "class_ensum_1_1_components_1_1_manager.html", "class_ensum_1_1_components_1_1_manager" ],
         [ "NullScene", "class_ensum_1_1_components_1_1_null_scene.html", "class_ensum_1_1_components_1_1_null_scene" ],
         [ "Scene", "class_ensum_1_1_components_1_1_scene.html", "class_ensum_1_1_components_1_1_scene" ],
         [ "SceneManager", "class_ensum_1_1_components_1_1_scene_manager.html", "class_ensum_1_1_components_1_1_scene_manager" ]

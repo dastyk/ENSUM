@@ -1,5 +1,9 @@
 var searchData=
 [
+  ['data',['Data',['../struct_ensum_1_1_components_1_1_data_manager_1_1_data.html',1,'Ensum::Components::DataManager']]],
+  ['databuffer',['DataBuffer',['../struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer.html',1,'Ensum::Components::DataManager']]],
+  ['datamanager',['DataManager',['../class_ensum_1_1_components_1_1_data_manager.html',1,'Ensum::Components']]],
+  ['datatype',['DataType',['../class_ensum_1_1_components_1_1_data_manager.html#abf17780149860893e39b561e1d98e1e2',1,'Ensum::Components::DataManager']]],
   ['delegate',['Delegate',['../class_ensum_1_1_delegate.html',1,'Ensum']]],
   ['delegate_3c_20returntype_28paramtypes_2e_2e_2e_29_3e',['Delegate&lt; ReturnType(ParamTypes...)&gt;',['../class_ensum_1_1_delegate_3_01_return_type_07_param_types_8_8_8_08_4.html',1,'Ensum']]],
   ['delete',['Delete',['../class_ensum_1_1_components_1_1_entity_manager.html#aaa8e8f7e613b8b8d8b707dd80a43aec5',1,'Ensum::Components::EntityManager']]],

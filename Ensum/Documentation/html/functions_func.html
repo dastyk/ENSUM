@@ -79,6 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>All</span></a></li>
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -136,13 +137,17 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
 <li>_Allocate()
-: <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a383a468319c93280ce8ac0bbb920ab87">Ensum::Components::SceneManager</a>
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#aa9f344da59b7fda790b79a9e453ba7c4">Ensum::Components::DataManager</a>
+, <a class="el" href="class_ensum_1_1_components_1_1_manager.html#a1b593059210d09632c910a6abaae49c0">Ensum::Components::Manager</a>
+, <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a383a468319c93280ce8ac0bbb920ab87">Ensum::Components::SceneManager</a>
 </li>
 <li>_Destroy()
-: <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a8102cfd9f4fed62a06e564dc016b6c46">Ensum::Components::SceneManager</a>
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#a6f5c2ed92eba2cb4d5c15c451cbf089c">Ensum::Components::DataManager</a>
+, <a class="el" href="class_ensum_1_1_components_1_1_manager.html#a5ba85395802e942ed8904ca18951e6b0">Ensum::Components::Manager</a>
+, <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a8102cfd9f4fed62a06e564dc016b6c46">Ensum::Components::SceneManager</a>
 </li>
 <li>_GC()
-: <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a156f50b0273598415c52dabae19ae334">Ensum::Components::SceneManager</a>
+: <a class="el" href="class_ensum_1_1_components_1_1_manager.html#a646aca9437267a1da465862ba7cc77a3">Ensum::Components::Manager</a>
 </li>
 <li>_GetBooleanOption()
 : <a class="el" href="class_ensum_1_1_utils_1_1_options.html#a8c9a977bf971aa38af289af707a46490">Ensum::Utils::Options</a>
@@ -196,24 +201,42 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>AddBoolValue()
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#a9564b3867e85330db4e6b7b78d81645a">Ensum::Components::DataManager</a>
+</li>
+<li>AddFloatValue()
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#afba14ae03a656e9aa5918fac195d479c">Ensum::Components::DataManager</a>
+</li>
+<li>AddStringValue()
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#a0916658dd49bbf814965bfce50767906">Ensum::Components::DataManager</a>
+</li>
 <li>AddToQue()
 : <a class="el" href="class_ensum_1_1_utils_1_1_console_log.html#abc61d8b873933eca1dce471498807839">Ensum::Utils::ConsoleLog</a>
 </li>
 <li>Alive()
 : <a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html#aa30d3768a9f92b138a52b7ac7c6045cc">Ensum::Components::EntityManager</a>
 </li>
+<li>Allocate()
+: <a class="el" href="struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer.html#abbdb72eacb423808f312810d5ce4556f">Ensum::Components::DataManager::DataBuffer</a>
+</li>
+<li>AllocateAndResizeHeader()
+: <a class="el" href="struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer.html#a0a35fa29a95fa628d4323d130c636da8">Ensum::Components::DataManager::DataBuffer</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>c_str()
-: <a class="el" href="class_ensum_1_1string.html#ae136b1638499649ef96441b26baa840a">Ensum::string</a>
+: <a class="el" href="class_ensum_1_1string.html#a2d667ea4adbf4f9cd08011972176aacb">Ensum::string</a>
 </li>
 <li>clear()
 : <a class="el" href="class_ensum_1_1string.html#a27c098c250b2df7ed3fa935e0d318fe2">Ensum::string</a>
 </li>
 <li>Create()
 : <a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html#a15c2795c73d625bcc2399bf59cea64b5">Ensum::Components::EntityManager</a>
+</li>
+<li>CreateData()
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#ade29bf76080dd342aba5e559fdba012e">Ensum::Components::DataManager</a>
 </li>
 <li>CreateInstance()
 : <a class="el" href="class_ensum_1_1_utils_1_1_console_log.html#a2081398f0762150043b92047fa97810a">Ensum::Utils::ConsoleLog</a>
@@ -248,7 +271,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>Frame()
-: <a class="el" href="class_ensum_1_1_components_1_1_scene.html#a4f12d73cbbd3e203bfc60eac07318985">Ensum::Components::Scene</a>
+: <a class="el" href="class_ensum_1_1_components_1_1_manager.html#a7327f9a28abf0011498ced0c86692a73">Ensum::Components::Manager</a>
+, <a class="el" href="class_ensum_1_1_components_1_1_scene.html#a4f12d73cbbd3e203bfc60eac07318985">Ensum::Components::Scene</a>
 , <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#ad33a35aa27eeae297a4f16c610205d8a">Ensum::Components::SceneManager</a>
 , <a class="el" href="class_ensum_1_1_core_1_1_window.html#a58af9c1b06e0fe12820f584f4638ae15">Ensum::Core::Window</a>
 , <a class="el" href="class_ensum_1_1_core_1_1_win_window.html#a3e828ccbc90f0d6ed81c2320277561e6">Ensum::Core::WinWindow</a>
@@ -270,11 +294,20 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>GetBooleanOption()
 : <a class="el" href="class_ensum_1_1_utils_1_1_options.html#ad0925b8894344c6d4425fbf0acde3852">Ensum::Utils::Options</a>
 </li>
+<li>GetBoolValue()
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#a1746cbced0b28fc0f4d09097f91e7959">Ensum::Components::DataManager</a>
+</li>
 <li>GetEntity()
 : <a class="el" href="class_ensum_1_1_components_1_1_scene.html#ab614d491401edd9db3584d4e61ef6416">Ensum::Components::Scene</a>
 </li>
 <li>GetEntityManager()
 : <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a7fdc5d47c5b8fe03807fe472b038a56f">Ensum::Components::SceneManager</a>
+</li>
+<li>GetFloatValue()
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#a47c2d9326214b16167d455f03a3473de">Ensum::Components::DataManager</a>
+</li>
+<li>GetHash()
+: <a class="el" href="class_ensum_1_1string.html#ac7c2bfe9a65ef8c2c850cdc80501ee34">Ensum::string</a>
 </li>
 <li>GetInput()
 : <a class="el" href="class_ensum_1_1_core_1_1_window.html#af746ffdd0281b2722d162fbf96c3542b">Ensum::Core::Window</a>
@@ -303,6 +336,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>GetStringOption()
 : <a class="el" href="class_ensum_1_1_utils_1_1_options.html#ac89c9d4c8e4dde0a1b07745c97d082a9">Ensum::Utils::Options</a>
 </li>
+<li>GetStringValue()
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#ac7cd482c2e9aa4f1f88cc64301fa5b6b">Ensum::Components::DataManager</a>
+</li>
 <li>GetTotalTimeAndStop()
 : <a class="el" href="class_ensum_1_1_core_1_1_timer.html#ae6a7f78e18573adc4378485519bc2daf">Ensum::Core::Timer</a>
 </li>
@@ -310,6 +346,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>HeaderResize()
+: <a class="el" href="struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer.html#a1ec69ae3f18745283e3190ea663a17a2">Ensum::Components::DataManager::DataBuffer</a>
+</li>
 <li>HideCursor()
 : <a class="el" href="class_ensum_1_1_input_1_1_input.html#a7474a1ff2d8dd75cc7b594514dd762ed">Ensum::Input::Input</a>
 </li>
@@ -357,6 +396,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>Manager()
+: <a class="el" href="class_ensum_1_1_components_1_1_manager.html#ab75b75d4c5936733c4af3840a4fc7f5c">Ensum::Components::Manager</a>
+</li>
 <li>MessageHandler()
 : <a class="el" href="class_ensum_1_1_input_1_1_input.html#aae4be7b638bbfbb75afd3bb8d782cbae">Ensum::Input::Input</a>
 </li>
@@ -365,16 +407,19 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
 <li>operator const char *()
-: <a class="el" href="class_ensum_1_1string.html#a4ef9b111d0bcd2cbd6ef125449253209">Ensum::string</a>
+: <a class="el" href="class_ensum_1_1string.html#ae1473c4afee1fb83de48490a72f8266b">Ensum::string</a>
+</li>
+<li>operator const void *()
+: <a class="el" href="class_ensum_1_1string.html#a6fa9ce4490f285575c2d06a1e64a93a7">Ensum::string</a>
 </li>
 <li>operator+()
-: <a class="el" href="class_ensum_1_1string.html#a13098a5e0f0fd18baeffa5bc8b35494d">Ensum::string</a>
+: <a class="el" href="class_ensum_1_1string.html#aa9f884ae697a27d375d6dc71fd5a1602">Ensum::string</a>
 </li>
 <li>operator=()
-: <a class="el" href="class_ensum_1_1string.html#a7903e871b1cf12584d746536241fa7ea">Ensum::string</a>
+: <a class="el" href="class_ensum_1_1string.html#ae48b8f643d8cd3ff379a51484ea738d1">Ensum::string</a>
 </li>
 <li>operator==()
-: <a class="el" href="class_ensum_1_1string.html#a6b5ab08eb5ef197bedb9e55e2eca0754">Ensum::string</a>
+: <a class="el" href="class_ensum_1_1string.html#a6429683caad1908c30cb77b4aa00ff4f">Ensum::string</a>
 </li>
 </ul>
 
@@ -399,6 +444,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>Reset()
 : <a class="el" href="class_ensum_1_1_core_1_1_timer.html#ae34e21c17fe8325daf806f2f30980fab">Ensum::Core::Timer</a>
 </li>
+<li>Resize()
+: <a class="el" href="class_ensum_1_1string.html#a2cb9f50ce1653a174433276cb1373fd6">Ensum::string</a>
+</li>
 </ul>
 
 
@@ -411,6 +459,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>SetBooleanOption()
 : <a class="el" href="class_ensum_1_1_utils_1_1_options.html#a68837babb89a589bc49180fd849b2c28">Ensum::Utils::Options</a>
+</li>
+<li>SetBoolValue()
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#a2ef6ead291f631e756b19971e1391acf">Ensum::Components::DataManager</a>
+</li>
+<li>SetFloatValue()
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#aecdd69439279eb2f1fb68250085ffc3a">Ensum::Components::DataManager</a>
 </li>
 <li>SetInteger()
 : <a class="el" href="class_ensum_1_1_file_handler_1_1ini.html#a1ed4f9fa3abb4a1ce94fafd64d348af6">Ensum::FileHandler::ini</a>
@@ -427,11 +481,14 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>SetStringOption()
 : <a class="el" href="class_ensum_1_1_utils_1_1_options.html#a67df741524fdcd73f377d3b65f9699c9">Ensum::Utils::Options</a>
 </li>
+<li>SetStringValue()
+: <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#a97f2560a6bfd6da8c7708737680f8607">Ensum::Components::DataManager</a>
+</li>
 <li>SetUpdate()
 : <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#aea9f13488931b4448778e5563685428e">Ensum::Components::SceneManager</a>
 </li>
 <li>size()
-: <a class="el" href="class_ensum_1_1string.html#a04acaefb945a58e8443e8ca8bb9e44a4">Ensum::string</a>
+: <a class="el" href="class_ensum_1_1string.html#ac3c5ca17258824b74dc8da3d5b7602cd">Ensum::string</a>
 </li>
 <li>Start()
 : <a class="el" href="class_ensum_1_1_core_1_1_timer.html#a3f8cd57aade8eb858d68ba376053df25">Ensum::Core::Timer</a>

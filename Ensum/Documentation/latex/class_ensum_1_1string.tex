@@ -31,9 +31,12 @@ A wrapper class for std\+::string.
 \item 
 \hyperlink{class_ensum_1_1string}{string} \hyperlink{class_ensum_1_1string_aa9f884ae697a27d375d6dc71fd5a1602}{operator+} (const char $\ast$str) const 
 \item 
-\hyperlink{class_ensum_1_1string_a4ef9b111d0bcd2cbd6ef125449253209}{operator const char $\ast$} ()\hypertarget{class_ensum_1_1string_a4ef9b111d0bcd2cbd6ef125449253209}{}\label{class_ensum_1_1string_a4ef9b111d0bcd2cbd6ef125449253209}
+\hyperlink{class_ensum_1_1string_ae1473c4afee1fb83de48490a72f8266b}{operator const char $\ast$} () const \hypertarget{class_ensum_1_1string_ae1473c4afee1fb83de48490a72f8266b}{}\label{class_ensum_1_1string_ae1473c4afee1fb83de48490a72f8266b}
 
-\begin{DoxyCompactList}\small\item\em convertion operator to char. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em convertion operator to char$\ast$. \end{DoxyCompactList}\item 
+\hyperlink{class_ensum_1_1string_a6fa9ce4490f285575c2d06a1e64a93a7}{operator const void $\ast$} () const \hypertarget{class_ensum_1_1string_a6fa9ce4490f285575c2d06a1e64a93a7}{}\label{class_ensum_1_1string_a6fa9ce4490f285575c2d06a1e64a93a7}
+
+\begin{DoxyCompactList}\small\item\em convertion operator to void$\ast$. \end{DoxyCompactList}\item 
 \hyperlink{class_ensum_1_1string}{string} \& \hyperlink{class_ensum_1_1string_ae48b8f643d8cd3ff379a51484ea738d1}{operator=} (const char $\ast$str)\hypertarget{class_ensum_1_1string_ae48b8f643d8cd3ff379a51484ea738d1}{}\label{class_ensum_1_1string_ae48b8f643d8cd3ff379a51484ea738d1}
 
 \begin{DoxyCompactList}\small\item\em = operator char. \end{DoxyCompactList}\item 
@@ -46,7 +49,7 @@ const bool \hyperlink{class_ensum_1_1string_a6b5ab08eb5ef197bedb9e55e2eca0754}{o
 const bool \hyperlink{class_ensum_1_1string_a6429683caad1908c30cb77b4aa00ff4f}{operator==} (const \hyperlink{class_ensum_1_1string}{string} \&other)\hypertarget{class_ensum_1_1string_a6429683caad1908c30cb77b4aa00ff4f}{}\label{class_ensum_1_1string_a6429683caad1908c30cb77b4aa00ff4f}
 
 \begin{DoxyCompactList}\small\item\em == operator string. \end{DoxyCompactList}\item 
-const char $\ast$ \hyperlink{class_ensum_1_1string_ae136b1638499649ef96441b26baa840a}{c\+\_\+str} ()\hypertarget{class_ensum_1_1string_ae136b1638499649ef96441b26baa840a}{}\label{class_ensum_1_1string_ae136b1638499649ef96441b26baa840a}
+const char $\ast$ \hyperlink{class_ensum_1_1string_a2d667ea4adbf4f9cd08011972176aacb}{c\+\_\+str} () const \hypertarget{class_ensum_1_1string_a2d667ea4adbf4f9cd08011972176aacb}{}\label{class_ensum_1_1string_a2d667ea4adbf4f9cd08011972176aacb}
 
 \begin{DoxyCompactList}\small\item\em returns const char$\ast$. \end{DoxyCompactList}\item 
 const void \hyperlink{class_ensum_1_1string_ad183e0697bed62d8e5639d17a5288a15}{transform} ()\hypertarget{class_ensum_1_1string_ad183e0697bed62d8e5639d17a5288a15}{}\label{class_ensum_1_1string_ad183e0697bed62d8e5639d17a5288a15}
@@ -58,13 +61,22 @@ const void \hyperlink{class_ensum_1_1string_a27c098c250b2df7ed3fa935e0d318fe2}{c
 const void \hyperlink{class_ensum_1_1string_af373cc0f29c09f8df78e3b96d279b609}{push\+\_\+back} (const char str)\hypertarget{class_ensum_1_1string_af373cc0f29c09f8df78e3b96d279b609}{}\label{class_ensum_1_1string_af373cc0f29c09f8df78e3b96d279b609}
 
 \begin{DoxyCompactList}\small\item\em Adds char to end of string. \end{DoxyCompactList}\item 
-const uint32\+\_\+t \hyperlink{class_ensum_1_1string_a04acaefb945a58e8443e8ca8bb9e44a4}{size} ()\hypertarget{class_ensum_1_1string_a04acaefb945a58e8443e8ca8bb9e44a4}{}\label{class_ensum_1_1string_a04acaefb945a58e8443e8ca8bb9e44a4}
+const uint32\+\_\+t \hyperlink{class_ensum_1_1string_ac3c5ca17258824b74dc8da3d5b7602cd}{size} () const \hypertarget{class_ensum_1_1string_ac3c5ca17258824b74dc8da3d5b7602cd}{}\label{class_ensum_1_1string_ac3c5ca17258824b74dc8da3d5b7602cd}
 
-\begin{DoxyCompactList}\small\item\em Returns the size of the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the size of the string. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1string_a2cb9f50ce1653a174433276cb1373fd6}{Resize} (uint32\+\_\+t \hyperlink{class_ensum_1_1string_ac3c5ca17258824b74dc8da3d5b7602cd}{size})\hypertarget{class_ensum_1_1string_a2cb9f50ce1653a174433276cb1373fd6}{}\label{class_ensum_1_1string_a2cb9f50ce1653a174433276cb1373fd6}
+
+\begin{DoxyCompactList}\small\item\em Resize the string. \end{DoxyCompactList}\item 
+const uint32\+\_\+t \hyperlink{class_ensum_1_1string_ac7c2bfe9a65ef8c2c850cdc80501ee34}{Get\+Hash} () const \hypertarget{class_ensum_1_1string_ac7c2bfe9a65ef8c2c850cdc80501ee34}{}\label{class_ensum_1_1string_ac7c2bfe9a65ef8c2c850cdc80501ee34}
+
+\begin{DoxyCompactList}\small\item\em Returns a hash of the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string $\ast$ {\bfseries \+\_\+string}\hypertarget{class_ensum_1_1string_aab7e7b28d0303d683f579b84754e761f}{}\label{class_ensum_1_1string_aab7e7b28d0303d683f579b84754e761f}
+
+\item 
+std\+::hash$<$ std\+::string $>$ {\bfseries hash}\hypertarget{class_ensum_1_1string_ac09465ae80a330532deb00843bf74f37}{}\label{class_ensum_1_1string_ac09465ae80a330532deb00843bf74f37}
 
 \end{DoxyCompactItemize}
 

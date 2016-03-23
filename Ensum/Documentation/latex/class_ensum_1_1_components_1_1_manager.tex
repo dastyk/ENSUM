@@ -1,0 +1,113 @@
+\hypertarget{class_ensum_1_1_components_1_1_manager}{}\section{Ensum\+:\+:Components\+:\+:Manager Class Reference}
+\label{class_ensum_1_1_components_1_1_manager}\index{Ensum\+::\+Components\+::\+Manager@{Ensum\+::\+Components\+::\+Manager}}
+
+
+Fully virtual base manager class.  
+
+
+
+
+{\ttfamily \#include $<$Manager.\+h$>$}
+
+Inheritance diagram for Ensum\+:\+:Components\+:\+:Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ensum_1_1_components_1_1_manager}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_manager_1_1_manager_meta_data}{Manager\+Meta\+Data}
+\begin{DoxyCompactList}\small\item\em The minimum data that all managers has to keep. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const void \hyperlink{class_ensum_1_1_components_1_1_manager_a7327f9a28abf0011498ced0c86692a73}{Frame} ()\hypertarget{class_ensum_1_1_components_1_1_manager_a7327f9a28abf0011498ced0c86692a73}{}\label{class_ensum_1_1_components_1_1_manager_a7327f9a28abf0011498ced0c86692a73}
+
+\begin{DoxyCompactList}\small\item\em Do the framework for all active scenes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ensum_1_1_components_1_1_manager_ab75b75d4c5936733c4af3840a4fc7f5c}{Manager} (\hyperlink{struct_ensum_1_1_components_1_1_manager_1_1_manager_meta_data}{Manager\+Meta\+Data} $\ast$data, \hyperlink{class_ensum_1_1_components_1_1_entity_manager}{Entity\+Manager} \&ent\+Manager)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_components_1_1_manager_a1b593059210d09632c910a6abaae49c0}{\+\_\+\+Allocate} (uint32\+\_\+t size)=0
+\begin{DoxyCompactList}\small\item\em Allocate more memory for scenedata. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_components_1_1_manager_a5ba85395802e942ed8904ca18951e6b0}{\+\_\+\+Destroy} (uint32\+\_\+t index)=0
+\begin{DoxyCompactList}\small\item\em Delete an entry in the memory block. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_components_1_1_manager_a646aca9437267a1da465862ba7cc77a3}{\+\_\+\+GC} ()\hypertarget{class_ensum_1_1_components_1_1_manager_a646aca9437267a1da465862ba7cc77a3}{}\label{class_ensum_1_1_components_1_1_manager_a646aca9437267a1da465862ba7cc77a3}
+
+\begin{DoxyCompactList}\small\item\em Looks for destroyed entities and deletes them from the data block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::default\+\_\+random\+\_\+engine {\bfseries \+\_\+generator}\hypertarget{class_ensum_1_1_components_1_1_manager_aea13da4e297ed8c902ec32ef074e3e70}{}\label{class_ensum_1_1_components_1_1_manager_aea13da4e297ed8c902ec32ef074e3e70}
+
+\item 
+std\+::unordered\+\_\+map$<$ \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity}, uint32\+\_\+t, \hyperlink{struct_ensum_1_1_components_1_1_entity_hasher}{Entity\+Hasher} $>$ $\ast$ {\bfseries \+\_\+entity\+To\+Index}\hypertarget{class_ensum_1_1_components_1_1_manager_a60e97a2c011d3fae42b2a7e36bd0ffb8}{}\label{class_ensum_1_1_components_1_1_manager_a60e97a2c011d3fae42b2a7e36bd0ffb8}
+
+\item 
+\hyperlink{struct_ensum_1_1_components_1_1_manager_1_1_manager_meta_data}{Manager\+Meta\+Data} $\ast$ {\bfseries \+\_\+data}\hypertarget{class_ensum_1_1_components_1_1_manager_a6ff9f92350f25612b092e0330941a8e4}{}\label{class_ensum_1_1_components_1_1_manager_a6ff9f92350f25612b092e0330941a8e4}
+
+\item 
+\hyperlink{class_ensum_1_1_components_1_1_entity_manager}{Entity\+Manager} \& {\bfseries \+\_\+entity\+Manager}\hypertarget{class_ensum_1_1_components_1_1_manager_a24f14f5ffe72655f9183283a98e3a0a3}{}\label{class_ensum_1_1_components_1_1_manager_a24f14f5ffe72655f9183283a98e3a0a3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fully virtual base manager class. 
+
+This is to enforce the structure of the managers. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ensum\+::\+Components\+::\+Manager@{Ensum\+::\+Components\+::\+Manager}!Manager@{Manager}}
+\index{Manager@{Manager}!Ensum\+::\+Components\+::\+Manager@{Ensum\+::\+Components\+::\+Manager}}
+\subsubsection[{\texorpdfstring{Manager(\+Manager\+Meta\+Data $\ast$data, Entity\+Manager \&ent\+Manager)}{Manager(ManagerMetaData *data, EntityManager &entManager)}}]{\setlength{\rightskip}{0pt plus 5cm}Ensum\+::\+Components\+::\+Manager\+::\+Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Manager\+Meta\+Data} $\ast$}]{data, }
+\item[{{\bf Entity\+Manager} \&}]{ent\+Manager}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_ensum_1_1_components_1_1_manager_ab75b75d4c5936733c4af3840a4fc7f5c}{}\label{class_ensum_1_1_components_1_1_manager_ab75b75d4c5936733c4af3840a4fc7f5c}
+
+
+The constructor. 
+
+The data pointer is the specific managers own struct. (Created with new). 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Components\+::\+Manager@{Ensum\+::\+Components\+::\+Manager}!\+\_\+\+Allocate@{\+\_\+\+Allocate}}
+\index{\+\_\+\+Allocate@{\+\_\+\+Allocate}!Ensum\+::\+Components\+::\+Manager@{Ensum\+::\+Components\+::\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Allocate(uint32\+\_\+t size)=0}{_Allocate(uint32_t size)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const void Ensum\+::\+Components\+::\+Manager\+::\+\_\+\+Allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_ensum_1_1_components_1_1_manager_a1b593059210d09632c910a6abaae49c0}{}\label{class_ensum_1_1_components_1_1_manager_a1b593059210d09632c910a6abaae49c0}
+
+
+Allocate more memory for scenedata. 
+
+
+
+Implemented in \hyperlink{class_ensum_1_1_components_1_1_data_manager_aa9f344da59b7fda790b79a9e453ba7c4}{Ensum\+::\+Components\+::\+Data\+Manager}, and \hyperlink{class_ensum_1_1_components_1_1_scene_manager_a383a468319c93280ce8ac0bbb920ab87}{Ensum\+::\+Components\+::\+Scene\+Manager}.
+
+\index{Ensum\+::\+Components\+::\+Manager@{Ensum\+::\+Components\+::\+Manager}!\+\_\+\+Destroy@{\+\_\+\+Destroy}}
+\index{\+\_\+\+Destroy@{\+\_\+\+Destroy}!Ensum\+::\+Components\+::\+Manager@{Ensum\+::\+Components\+::\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Destroy(uint32\+\_\+t index)=0}{_Destroy(uint32_t index)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const void Ensum\+::\+Components\+::\+Manager\+::\+\_\+\+Destroy (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_ensum_1_1_components_1_1_manager_a5ba85395802e942ed8904ca18951e6b0}{}\label{class_ensum_1_1_components_1_1_manager_a5ba85395802e942ed8904ca18951e6b0}
+
+
+Delete an entry in the memory block. 
+
+The deleted entry is replaced by the last in the block. 
+
+Implemented in \hyperlink{class_ensum_1_1_components_1_1_data_manager_a6f5c2ed92eba2cb4d5c15c451cbf089c}{Ensum\+::\+Components\+::\+Data\+Manager}, and \hyperlink{class_ensum_1_1_components_1_1_scene_manager_a8102cfd9f4fed62a06e564dc016b6c46}{Ensum\+::\+Components\+::\+Scene\+Manager}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Includes/\+Ensum\+\_\+components/Manager.\+h\end{DoxyCompactItemize}

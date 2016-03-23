@@ -12,14 +12,23 @@ namespace Ensum
 {
 	namespace Components
 	{
+		/** Fully virtual base manager class.
+		* This is to enforce the structure of the managers.
+		*/
 		class ENSUM_COMPONENTS_EXPORT Manager
 		{
 		protected:
+			/** The minimum data that all managers has to keep.
+			* When creating a manager inherit from this struct.
+			*/
 			struct ManagerMetaData : public MetaData
 			{
 				Entity* entity;
 			};
 
+			/** The constructor.
+			* The data pointer is the specific managers own struct. (Created with new).
+			*/
 			Manager(ManagerMetaData* data, EntityManager& entManager) :
 				_entityToIndex(new std::unordered_map<Entity, uint32_t, EntityHasher>), 
 				_data(data),
@@ -32,8 +41,9 @@ namespace Ensum
 			{ 
 				delete _entityToIndex; _entityToIndex = nullptr;
 				if(_data)
-					std::free(_data->buffer);
-				delete _data; _data = nullptr;
+					operator delete(_data->buffer);
+				delete _data; 
+				_data = nullptr;
 		
 			};
 

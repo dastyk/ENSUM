@@ -19,15 +19,25 @@ namespace Ensum
 		class ENSUM_COMPONENTS_EXPORT DataManager : public Manager
 		{
 		private:
+			/** enum class for the kinds of data that can be stored as an entry.
+			*
+			*/
 			enum class DataType : uint32_t
 			{
 				BOOL, FLOAT, STRING
 			};
+			/** A data struct used for indexing the strings and other growing datatypes in the value_buffer.
+			*
+			*/
 			struct Data
 			{
 				uint16_t offset;
 				uint16_t size;
 			};
+			/** The value struct, this is where the data is stored.
+			* The union clumps the memorylocation of all the members to the same position.
+			* They share the same spot.
+			*/
 			struct Value
 			{
 				union
@@ -37,7 +47,9 @@ namespace Ensum
 					Data data; // str
 				};
 			};
-
+			/** The header struct, used for keeping track of the data entries a entity has.
+			*
+			*/
 			struct EntryHeader
 			{
 				uint8_t capacity = 0;
@@ -49,13 +61,17 @@ namespace Ensum
 				Value* value;
 			};
 
+			/** Points to the next free spot in the value_buffer.
+			*
+			*/
 			struct Value_Buffer
 			{
 				uint32_t size = 0;
 			};
 
 			/** Struct for keeping track of the data entries a entity has been given.
-			*
+			* The databuffer stores the header on the left side and the value_buffer on the right side.
+			* When the buffers meet the size is increased.
 			*/
 			struct DataBuffer
 			{
@@ -82,12 +98,14 @@ namespace Ensum
 				const void HeaderResize();
 			};
 
-
+			/** The managers data struct.
+			*
+			*/
 			struct EntityData : public ManagerMetaData
 			{
 				DataBuffer** dataBuff;
 			};
-			EntityData* _datap;
+			EntityData* _datap; /*!< A reference pointer to avoid having to cast the basic datapointer all the time. */
 
 		public:
 			DataManager(EntityManager& entManager);

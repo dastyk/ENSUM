@@ -15,7 +15,7 @@ namespace Ensum
 		static const uint32_t ENTITY_GENERATION_BITS = 8;
 		static const uint32_t ENTITY_GENERATION_MASK = 0xff000000;
 
-		/** Entity is essentially a id, divided into generation and index.
+		/** Entity is essentially an id, divided into generation and index.
 		*
 		*/
 		struct ENSUM_COMPONENTS_EXPORT Entity
