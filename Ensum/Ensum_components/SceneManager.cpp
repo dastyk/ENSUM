@@ -96,7 +96,7 @@ namespace Ensum
 
 			SceneData* new_data = new SceneData;
 			const unsigned bytes = size * (sizeof(Entity) + sizeof(Scene*) + sizeof(bool));
-			new_data->buffer = std::malloc(bytes);
+			new_data->buffer = operator new(bytes);
 			new_data->used = _datap->used;
 			new_data->allocated = size;
 
@@ -109,7 +109,7 @@ namespace Ensum
 			memcpy(new_data->sceneUpdate, _datap->sceneUpdate, _datap->used * sizeof(bool));
 
 
-			std::free(_datap->buffer);
+			operator delete(_datap->buffer);
 			delete _data;
 			_data = new_data;
 			_datap = (SceneData*)_data;

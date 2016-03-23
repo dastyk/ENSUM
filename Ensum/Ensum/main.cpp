@@ -49,9 +49,13 @@ public:
 		//_input->HideCursor(true);
 		_input->Rebind(Input::Keys::Escape, Input::Keys::A);
 		_sceneManager.CreateScene(new Components::NullScene(_sceneManager.GetEntityManager(), _input));
-		_entityManager.Delete(_entity);
+		//_entityManager.Delete(_entity);
 
-		Components::DataManager man(_entityManager);
+		Components::Entity player = _entityManager.Create();
+		_dataManager.CreateData(player);
+
+		_dataManager.AddFloatValue(player, "Health", 100.0f);
+		float hp = _dataManager.GetFloatValue(player, "Health");
 	}
 	~Game()
 	{

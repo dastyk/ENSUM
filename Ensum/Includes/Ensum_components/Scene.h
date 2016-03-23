@@ -3,6 +3,7 @@
 
 #pragma once
 #include "Ensum_components\EntityManager.h"
+#include "Ensum_components\DataManager.h"
 #include "Ensum_input\Input.h"
 #include "dll_export.h"
 
@@ -23,7 +24,15 @@ namespace Ensum
 		class ENSUM_COMPONENTS_EXPORT Scene
 		{
 		protected:
-			Scene(EntityManager& entityManger, Input::Input* input) : _entityManager(entityManger), _input(input) { _entity = _entityManager.Create(); };
+			Scene(EntityManager& entityManger, Input::Input* input) :
+				_entityManager(entityManger), 
+				_input(input), 
+				_dataManager(entityManger),
+				_managers(new std::vector<Manager*>)
+			{ 
+				_entity = _entityManager.Create(); 
+				_managers->push_back(&_dataManager);
+			};
 		public:
 			/** Returns the scenes entity.
 			*
@@ -32,14 +41,22 @@ namespace Ensum
 			/** The frame function for the scene.
 			*
 			*/
-			virtual const void Frame() {};
+			virtual const void Frame() 
+			{
+				for (auto& m : *_managers)
+				{
+					m->Frame();
+				}
+			};
 
-			virtual ~Scene() { _entityManager.Delete(_entity); };
+			virtual ~Scene() { _entityManager.Delete(_entity); delete _managers; };
 		protected:
 			Entity _entity; /*!< The scenes own entity */
 			EntityManager& _entityManager; /*!< A reference to the entitymanager created in scenemanager */
 			Input::Input* _input;
 			// Create new instance of all other managers here.
+			DataManager _dataManager;
+			std::vector<Manager*>* _managers;
 		};
 
 	}
