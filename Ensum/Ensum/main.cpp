@@ -22,6 +22,7 @@
 #include "Ensum_components\NullScene.h"
 #include "Ensum_utils\ConsoleLog.h"
 #include "Ensum_utils\Options.h"
+#include "Ensum_components\DataManager.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_coreD.lib")
@@ -38,9 +39,6 @@
 using namespace Ensum;
 
 
-
-
-
 class Game : public Components::Scene
 {
 public:
@@ -52,6 +50,8 @@ public:
 		_input->Rebind(Input::Keys::Escape, Input::Keys::A);
 		_sceneManager.CreateScene(new Components::NullScene(_sceneManager.GetEntityManager(), _input));
 		_entityManager.Delete(_entity);
+
+		Components::DataManager man(_entityManager);
 	}
 	~Game()
 	{
@@ -72,7 +72,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 {
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Memoryleak detection.
-	//										  _crtBreakAlloc = 172;
+	//							  _crtBreakAlloc = 281;
 #endif
 	Utils::ConsoleLog::CreateInstance();
 	Utils::Options::CreateInstance();

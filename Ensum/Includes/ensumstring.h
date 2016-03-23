@@ -36,11 +36,14 @@ namespace Ensum
 		*
 		*/
 		string operator+(const char* str)const { return string(((*(this->_string)) + str).c_str()); }
-		/** convertion operator to char.
+		/** convertion operator to char*.
 		*
 		*/
-		operator const char*() { return this->_string->c_str(); }
-
+		operator const char*()const { return this->_string->c_str(); }
+		/** convertion operator to void*.
+		*
+		*/
+		operator const void*()const { return (void*)this->_string->c_str(); }
 		/** = operator char.
 		*
 		*/
@@ -62,7 +65,7 @@ namespace Ensum
 		/** returns const char*.
 		*
 		*/
-		const char* c_str() { return _string->c_str(); }
+		const char* c_str() const { return _string->c_str(); }
 		/** transforms all letters in string to lowercase.
 		*
 		*/
@@ -78,10 +81,30 @@ namespace Ensum
 		/** Returns the size of the string.
 		*
 		*/
-		const uint32_t size() { return static_cast<uint32_t>(_string->size()); }
+		const uint32_t size() const { return static_cast<uint32_t>(_string->size()); }
+		/** Resize the string.
+		*
+		*/
+		const void Resize(uint32_t size) { _string->resize(size); }
+		/** Returns a hash of the string.
+		*
+		*/
+		const uint32_t GetHash() const
+		{
+			//uint32_t out = 0;
+			//uint32_t size = static_cast<uint32_t>(_string->size());
+			//for (auto& c : (*_string))
+			//{
+			//	out <<= 1;
+			//	out |= (uint32_t)c;
+			//}
+			//return out;
+
+			return static_cast<uint32_t>(hash(*(_string)));
+		}
 	private:
 		std::string* _string;
-
+		std::hash<std::string> hash;
 	};
 }
 #endif

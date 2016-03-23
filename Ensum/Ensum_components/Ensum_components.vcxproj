@@ -151,11 +151,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="NullScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Includes\Ensum_components\DataManager.h" />
     <ClInclude Include="..\Includes\Ensum_components\dll_export.h" />
     <ClInclude Include="..\Includes\Ensum_components\Entity.h" />
     <ClInclude Include="..\Includes\Ensum_components\EntityManager.h" />

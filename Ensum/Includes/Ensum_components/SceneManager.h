@@ -58,6 +58,9 @@ namespace Ensum
 			* The deleted entry is replaced by the last in the block.
 			*/
 			const void _Destroy(uint32_t index);
+			/** Looks for destroyed entities and deletes them from the data block.
+			* 
+			*/
 		private:
 			EntityManager _entManager;
 			Input::Input* _input;

@@ -16,6 +16,9 @@
     <Filter Include="SceneManager\Scenes\NullScene">
       <UniqueIdentifier>{5e998bcc-2b7a-4622-8996-67551e404952}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DataManager">
+      <UniqueIdentifier>{46b8b4ce-21e2-4344-a63b-41c1b8731559}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_components\EntityManager.h">
@@ -35,6 +38,9 @@
     <ClInclude Include="..\Includes\Ensum_components\SceneManager.h">
       <Filter>SceneManager</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_components\DataManager.h">
+      <Filter>DataManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntityManager.cpp">
@@ -45,6 +51,9 @@
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager.cpp">
+      <Filter>DataManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

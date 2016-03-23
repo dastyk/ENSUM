@@ -6,7 +6,7 @@
 #include "Data_Meta.h"
 #include <random>
 #include <unordered_map>
-#include "Entity.h"
+#include "Ensum_components\EntityManager.h"
 
 namespace Ensum
 {
@@ -31,7 +31,8 @@ namespace Ensum
 			virtual ~Manager() 
 			{ 
 				delete _entityToIndex; _entityToIndex = nullptr;
-				std::free(_data->buffer);
+				if(_data)
+					std::free(_data->buffer);
 				delete _data; _data = nullptr;
 		
 			};
