@@ -1,5 +1,5 @@
 #include "Ensum_core\WindowsWindow.h"
-#include "Ensum_utils\Exception.h"
+#include "Exception.h"
 #include "Ensum_utils\ConsoleLog.h"
 #include "Safe_Delete.h"
 #include "Ensum_utils\Options.h"
@@ -83,7 +83,7 @@ namespace Ensum
 			if (!_hWnd)
 			{
 				DWORD error = GetLastError();
-				Exception("Could not create the window. Error: " + std::to_string(error));
+				Exception(string("Could not create the window. Error: ") + std::to_string(error).c_str());
 			}
 
 			if (fullscreen)
@@ -148,6 +148,17 @@ namespace Ensum
 			}
 		}
 
+		const HWND WinWindow::GetHwnd() const
+		{
+			return _hWnd;
+		}
+
+		const HWND WinWindow::GetWindow()
+		{
+			if (!_instance) Exception("No window found.");
+			return ((WinWindow*)_instance)->GetHwnd();
+		}
+
 
 
 
@@ -177,7 +188,7 @@ namespace Ensum
 				{
 					return Window::GetInstance()->GetInput()->MessageHandler(hwnd, umessage, wparam, lparam);
 				}
-				catch (const Utils::Exce& e)
+				catch (const Exce& e)
 				{
 					e;
 					Utils::ConsoleLog::DumpToConsole("Tried to get instance of window for input, but there was no window.");

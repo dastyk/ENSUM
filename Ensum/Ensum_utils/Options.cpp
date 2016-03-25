@@ -1,7 +1,7 @@
 #include "Ensum_utils\Options.h"
 #include "Safe_Delete.h"
 #include "Ensum_utils\ConsoleLog.h"
-#include "Ensum_utils\Exception.h"
+#include "Exception.h"
 
 namespace Ensum
 {
@@ -65,7 +65,7 @@ namespace Ensum
 				if (!_instance)
 					_instance = new Options;
 			}
-			catch (const Utils::Exce& e) { e.Print(); SAFE_DELETE(_instance); }
+			catch (const Exce& e) { e.Print(); SAFE_DELETE(_instance); }
 		}
 		void Options::DeleteInstance()
 		{

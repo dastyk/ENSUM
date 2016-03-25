@@ -1,5 +1,5 @@
 #include "Ensum_utils\ConsoleLog.h"
-#include "Ensum_utils\Exception.h"
+#include "Exception.h"
 #include "Safe_Delete.h"
 namespace Ensum
 {
@@ -27,7 +27,7 @@ namespace Ensum
 			printf("<----||Console Initialized||---->\n\n");
 
 
-			_toPrint = new std::deque<std::string>;
+			_toPrint = new std::deque<string>;
 			if (!_toPrint) Exception("Could not create print que.");
 
 
@@ -66,7 +66,7 @@ namespace Ensum
 
 				if (!_instance) Exception("Could not create consolelog.");
 			}
-			catch (const Utils::Exce& e)
+			catch (const Exce& e)
 			{
 				ConsoleLog::DeleteInstance();
 				e.Print();
@@ -82,7 +82,7 @@ namespace Ensum
 			{
 				SAFE_DELETE(_instance);
 			}
-			catch (const Utils::Exce& e)
+			catch (const Exce& e)
 			{
 				e.Print();
 			}
@@ -106,7 +106,7 @@ namespace Ensum
 				delete buffer;
 			}
 		}
-		const void ConsoleLog::AddToQue(const std::string& data)
+		const void ConsoleLog::AddToQue(const string& data)
 		{
 			WaitForSingleObject(_writeMutex, INFINITE);
 			_toPrint->push_back(data);
@@ -122,7 +122,7 @@ namespace Ensum
 				{
 					WaitForSingleObject(_writeMutex, INFINITE);
 
-					const std::string& d = _toPrint->front();
+					const string& d = _toPrint->front();
 					
 					printf(d.c_str());			
 					printf("\n");

@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Exception">
-      <UniqueIdentifier>{e15e9934-379d-498a-8d8c-9a4239856206}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Event">
       <UniqueIdentifier>{69384172-a9db-4b9a-b894-2cbb1c53d493}</UniqueIdentifier>
     </Filter>
@@ -16,9 +13,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_utils\dll_export.h" />
-    <ClInclude Include="..\Includes\Ensum_utils\Exception.h">
-      <Filter>Exception</Filter>
-    </ClInclude>
     <ClInclude Include="..\Includes\Event.h">
       <Filter>Event</Filter>
     </ClInclude>

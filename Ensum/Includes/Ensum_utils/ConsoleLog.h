@@ -6,7 +6,7 @@
 #include <thread>
 #include <process.h>
 #include <stdint.h>
-
+#include "ensumstring.h"
 #include "dll_export.h"
 #include <Windows.h>
 
@@ -27,7 +27,7 @@ namespace Ensum
 			ConsoleLog();
 			static ConsoleLog* _instance;
 
-			std::deque<std::string>* _toPrint;
+			std::deque<string>* _toPrint;
 
 
 			HANDLE _threadHandle;
@@ -54,7 +54,7 @@ namespace Ensum
 			/** Adds the string data to the que.
 			*
 			*/
-			const void AddToQue(const std::string& data);
+			const void AddToQue(const string& data);
 
 			/** Writes the first items in the que to the console, then deletes it.
 			* This is used in the thread.

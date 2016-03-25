@@ -34,6 +34,9 @@ namespace Ensum
 			*/
 			virtual const void Start();
 
+			const HWND GetHwnd()const;
+
+			static const HWND GetWindow();
 		protected:
 			HINSTANCE _hInst;
 			HWND _hWnd;

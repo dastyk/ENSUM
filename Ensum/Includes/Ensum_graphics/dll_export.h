@@ -7,10 +7,10 @@
 //disable warnings on member not being exported
 //#pragma warning (disable : 4251)
 
-#ifdef ENSUM_COMPONENTS_EXPORTS
-#	define ENSUM_COMPONENTS_EXPORT __declspec(dllexport)
-#	define ENSUM_COMPONENTS_TEMPLATE
+#ifdef ENSUM_GRAPHICS_EXPORTS
+#	define ENSUM_GRAPHICS_EXPORT __declspec(dllexport)
+#	define ENSUM_GRAPHICS_TEMPLATE
 #else
-#	define ENSUM_COMPONENTS_EXPORT __declspec(dllimport)
-#	define ENSUM_COMPONENTS_TEMPLATE extern
+#	define ENSUM_GRAPHICS_EXPORT __declspec(dllimport)
+#	define ENSUM_GRAPHICS_TEMPLATE extern
 #endif // ENSUM_UTILS_EXPORTS

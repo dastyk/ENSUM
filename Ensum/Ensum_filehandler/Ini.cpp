@@ -1,12 +1,7 @@
 #include "Ensum_filehandler\Ini.h"
 #include "Safe_Delete.h"
-#include "Ensum_utils\Exception.h"
-#include "Ensum_utils\ConsoleLog.h"
-#ifdef _DEBUG
-#pragma comment(lib, "Ensum_utilsD.lib")
-#else
-#pragma comment(lib, "Ensum_utils.lib")
-#endif
+#include "Exception.h"
+
 namespace Ensum
 {
 	namespace FileHandler

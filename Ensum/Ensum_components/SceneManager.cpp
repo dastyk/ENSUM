@@ -1,5 +1,5 @@
 #include "Ensum_components\SceneManager.h"
-#include "Ensum_utils\Exception.h"
+#include "Exception.h"
 #include "Ensum_utils\ConsoleLog.h"
 #include "Safe_Delete.h"
 
@@ -52,7 +52,7 @@ namespace Ensum
 			const Entity& ent = scene->GetEntity();
 			Utils::ConsoleLog::DumpToConsole("Creating Scene with id: %d", ent.ID);
 			
-			uint32_t index = (*_entityToIndex)[ent] = _entityToIndex->size();
+			uint32_t index = (*_entityToIndex)[ent] = (uint32_t)_entityToIndex->size();
 			_datap->entity[index] = ent;
 			_datap->scenePtr[index] = scene;
 			_datap->sceneUpdate[index] = true;
@@ -95,7 +95,7 @@ namespace Ensum
 			if (size <= _datap->allocated) Exception("Alloc should only increase.");
 
 			SceneData* new_data = new SceneData;
-			const unsigned bytes = size * (sizeof(Entity) + sizeof(Scene*) + sizeof(bool));
+			size_t bytes = static_cast<size_t>(size * (sizeof(Entity) + sizeof(Scene*) + sizeof(bool)));
 			new_data->buffer = operator new(bytes);
 			new_data->used = _datap->used;
 			new_data->allocated = size;
@@ -116,7 +116,7 @@ namespace Ensum
 		}
 		const void SceneManager::_Destroy(uint32_t index)
 		{
-			unsigned last = _datap->used - 1;
+			uint32_t last = _datap->used - 1;
 			const Entity& e = _datap->entity[index];
 			const Entity& last_e = _datap->entity[last];
 

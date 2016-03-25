@@ -23,17 +23,20 @@
 #include "Ensum_utils\ConsoleLog.h"
 #include "Ensum_utils\Options.h"
 #include "Ensum_components\DataManager.h"
+#include "Ensum_graphics\D3D11.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_coreD.lib")
 #pragma comment(lib, "Ensum_componentsD.lib")
 #pragma comment(lib, "Ensum_utilsD.lib")
 #pragma comment(lib, "Ensum_inputD.lib")
+#pragma comment(lib, "Ensum_graphicsD.lib")
 #else
 #pragma comment(lib, "Ensum_core.lib")
 #pragma comment(lib, "Ensum_components.lib")
 #pragma comment(lib, "Ensum_utils.lib")
 #pragma comment(lib, "Ensum_input.lib")
+#pragma comment(lib, "Ensum_graphics.lib")
 #endif
 
 using namespace Ensum;
@@ -81,6 +84,9 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	Utils::ConsoleLog::CreateInstance();
 	Utils::Options::CreateInstance();
 
+
+
+
 	Components::SceneManager sceneManager;
 
 	//Utils::Options::SetIntegerOption("Screen", "Width", 1337);
@@ -88,12 +94,15 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow(sceneManager));
 	
+	Graphics::D3D11::CreateInstance(Core::WinWindow::GetWindow());
+
+
 	sceneManager.CreateScene(new Game(sceneManager.GetEntityManager(), w->GetInput(), sceneManager));
 
 	
 	w->Start();
 
-
+	Graphics::D3D11::DeleteInstance();
 	Core::Window::DeleteInstance();
 	Utils::Options::DeleteInstance();
 	Utils::ConsoleLog::DeleteInstance();

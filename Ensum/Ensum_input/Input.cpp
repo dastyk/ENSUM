@@ -1,6 +1,6 @@
 #include "Ensum_input\Input.h"
 #include "Safe_Delete.h"
-#include "Ensum_utils\Exception.h"
+#include "Exception.h"
 #include "Ensum_utils\Options.h"
 
 #ifdef _DEBUG
@@ -99,7 +99,7 @@ namespace Ensum
 				keyCode = find->second;
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_KEYS)
-				Exception("Key out of range. KeyCode: " + std::to_string(key));
+				Exception(string("Key out of range. KeyCode: ") + std::to_string(key).c_str());
 
 			return _keys[key];
 		}
@@ -110,7 +110,7 @@ namespace Ensum
 				keyCode = find->second;
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_KEYS)
-				Exception("Key out of range. KeyCode: " + std::to_string(key));
+				Exception(string("Key out of range. KeyCode: ") + std::to_string(key).c_str());
 			if (!_keyPressed[key])
 				return false;
 			_keyPressed[key] = false;
@@ -133,7 +133,7 @@ namespace Ensum
 				keyCode = find->second;
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_MOUSEKEYS)
-				Exception("MouseKey out of range. KeyCode: " + std::to_string(key));
+				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(key).c_str());
 			return _mouseKeys[key];
 		}
 		const bool Input::IsMouseKeyPushed(MouseKeys keyCode)
@@ -143,7 +143,7 @@ namespace Ensum
 				keyCode = find->second;
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_MOUSEKEYS)
-				Exception("MouseKey out of range. KeyCode: " + std::to_string(key));
+				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(key).c_str());
 			if (!_mouseKeyPressed[key])
 				return false;
 			_mouseKeyPressed[key] = false;
@@ -260,10 +260,10 @@ namespace Ensum
 		const void Input::Rebind(Keys org, Keys to)
 		{
 			if (static_cast<uint8_t>(org) >= NUM_KEYS)
-				Exception("Key out of range. KeyCode: " + std::to_string(static_cast<uint8_t>(org)));
+				Exception(string("Key out of range. KeyCode: ") + std::to_string(static_cast<uint8_t>(org)).c_str());
 			const uint8_t bto = static_cast<uint8_t>(to);
 			if (static_cast<uint8_t>(to) >= NUM_KEYS)
-				Exception("Key out of range. KeyCode: " + std::to_string(static_cast<uint8_t>(to)));
+				Exception(string("Key out of range. KeyCode: ") + std::to_string(static_cast<uint8_t>(to)).c_str());
 
 			(*_keyToKey)[org] = to;
 
@@ -275,10 +275,10 @@ namespace Ensum
 		const void Input::Rebind(MouseKeys org, MouseKeys to)
 		{
 			if (static_cast<uint8_t>(org) >= NUM_MOUSEKEYS)
-				Exception("MouseKey out of range. KeyCode: " + std::to_string(static_cast<uint8_t>(org)));
+				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(static_cast<uint8_t>(org)).c_str());
 			const uint8_t bto = static_cast<uint8_t>(to);
 			if (static_cast<uint8_t>(to) >= NUM_MOUSEKEYS)
-				Exception("MouseKey out of range. KeyCode: " + std::to_string(static_cast<uint8_t>(to)));
+				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(static_cast<uint8_t>(to)).c_str());
 
 			(*_mousekeyToMousekey)[org] = to;
 
@@ -374,7 +374,7 @@ namespace Ensum
 		{
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_KEYS)
-				Exception("Key out of range. KeyCode: " + std::to_string(key));
+				Exception(string("Key out of range. KeyCode: ") + std::to_string(key).c_str());
 			_keyPressed[key] = _keys[key] = true;
 			return void();
 		}
@@ -382,7 +382,7 @@ namespace Ensum
 		{
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_KEYS)
-				Exception("Key out of range. KeyCode: " + std::to_string(key));
+				Exception(string("Key out of range. KeyCode: ") + std::to_string(key).c_str());
 			_keyPressed[key] = _keys[key] = false;
 			return void();
 		}
@@ -390,7 +390,7 @@ namespace Ensum
 		{
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_MOUSEKEYS)
-				Exception("MouseKey out of range. KeyCode: " + std::to_string(key));
+				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(key).c_str());
 			_mouseKeyPressed[key] = _mouseKeys[key] = true;
 			return void();
 		}
@@ -398,7 +398,7 @@ namespace Ensum
 		{
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_MOUSEKEYS)
-				Exception("MouseKey out of range. KeyCode: " + std::to_string(key));
+				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(key).c_str());
 			_mouseKeyPressed[key] = _mouseKeys[key] = false;
 			return void();
 		}

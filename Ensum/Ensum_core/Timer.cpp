@@ -1,6 +1,6 @@
 #include "Ensum_core\Timer.h"
 #include "Ensum_core\Window.h"
-#include "Ensum_utils\Exception.h"
+#include "Exception.h"
 namespace Ensum
 {
 	namespace Core
@@ -16,14 +16,14 @@ namespace Ensum
 			_stopped(!startImmediately)
 		{
 			try{ Core::Window::GetInstance()->FrameStart += Delegate<const void()>::Make<Timer, &Timer::Tick>(this); }
-			catch (const Utils::Exce& e) { e; }
+			catch (const Exce& e) { e; }
 		}
 
 
 		Timer::~Timer()
 		{
 			try { Core::Window::GetInstance()->FrameStart -= Delegate<const void()>::Make<Timer, &Timer::Tick>(this); }
-			catch (const Utils::Exce& e) { e; }
+			catch (const Exce& e) { e; }
 		}
 		const void Timer::Reset(bool startImmediately)
 		{

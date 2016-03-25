@@ -3,7 +3,7 @@
 #pragma once
 #include "Ensum_components\Manager.h"
 #include "ensumstring.h"
-#include "Ensum_utils\Exception.h"
+#include "Exception.h"
 #include "Ensum_utils\ConsoleLog.h"
 
 #ifdef _DEBUG
@@ -22,7 +22,7 @@ namespace Ensum
 			/** enum class for the kinds of data that can be stored as an entry.
 			*
 			*/
-			enum class DataType : uint32_t
+			enum class DataType : uint8_t
 			{
 				BOOL, FLOAT, STRING
 			};
@@ -54,7 +54,7 @@ namespace Ensum
 			{
 				uint8_t capacity = 0;
 				uint8_t entryCount = 0;
-				uint16_t entrySize = sizeof(uint32_t) + sizeof(DataType) + sizeof(Value);
+				uint8_t entrySize = sizeof(uint32_t) + sizeof(DataType) + sizeof(Value);
 
 				uint32_t* keys;
 				DataType* type;
@@ -66,7 +66,7 @@ namespace Ensum
 			*/
 			struct Value_Buffer
 			{
-				uint32_t size = 0;
+				size_t size = 0;
 			};
 
 			/** Struct for keeping track of the data entries a entity has been given.
@@ -76,7 +76,7 @@ namespace Ensum
 			struct DataBuffer
 			{
 				void* data;
-				uint32_t capacity;
+				size_t capacity;
 
 				EntryHeader header;
 				Value_Buffer v_buffer;
@@ -87,11 +87,11 @@ namespace Ensum
 				/** Grow the entry buffer.
 				*
 				*/
-				const void Allocate(uint32_t size);
+				const void Allocate(size_t size);
 				/** Grow the entry buffer and copy the header immediately.
 				*
 				*/
-				const void AllocateAndResizeHeader(uint32_t size);
+				const void AllocateAndResizeHeader(size_t size);
 				/** Grow the header.
 				*
 				*/

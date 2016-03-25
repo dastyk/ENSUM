@@ -1,7 +1,7 @@
 #include "Ensum_components\EntityManager.h"
 
 #include "Ensum_utils\ConsoleLog.h"
-#include "Ensum_utils\Exception.h"
+#include "Exception.h"
 #include "Safe_Delete.h"
 
 #ifdef _DEBUG

@@ -1,6 +1,6 @@
 #include "Ensum_core\Window.h"
 #include "Safe_Delete.h"
-#include "Ensum_utils\Exception.h"
+#include "Exception.h"
 #include "Ensum_utils\ConsoleLog.h"
 
 namespace Ensum
@@ -28,7 +28,7 @@ namespace Ensum
 
 				Utils::ConsoleLog::DumpToConsole("Window Created.");
 			}
-			catch (const Utils::Exce& e)
+			catch (const Exce& e)
 			{
 				Window::DeleteInstance();
 				e.Print();
@@ -47,7 +47,7 @@ namespace Ensum
 			{
 				SAFE_DELETE(_instance);
 			}
-			catch (const Utils::Exce& e)
+			catch (const Exce& e)
 			{
 				e.Print();
 
