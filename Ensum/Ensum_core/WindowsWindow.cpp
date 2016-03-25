@@ -9,13 +9,72 @@ namespace Ensum
 	namespace Core
 	{
 
+		const void WinWindow::_MessageHandling()
+		{
+			MSG msg;
+			// Handle the windows messages.
+			while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+			{
+				TranslateMessage(&msg);
+				DispatchMessage(&msg);
+			}
+		}
+		const void WinWindow::_Resize()
+		{
+			LONG windowWidth = (LONG)Utils::Options::GetIntegerOption("Screen", "Width", 800);
+			LONG windowHeight = (LONG)Utils::Options::GetIntegerOption("Screen", "Height", 640);
+			int windowPosX = 0;
+			int windowPosY = 0;
+			if (!Utils::Options::GetBooleanOption("Screen", "Fullscreen", false))
+			{
 
+				windowPosX = (GetSystemMetrics(SM_CXSCREEN) - (int)windowWidth) / 2;
+				windowPosY = (GetSystemMetrics(SM_CYSCREEN) - (int)windowHeight) / 2;
+
+				SetWindowLongPtr(_hWnd, GWL_STYLE, _style);
+				RECT rc = { 0, 0, windowWidth, windowHeight };
+				AdjustWindowRect(&rc, _style, FALSE);
+
+
+				SetWindowPos(_hWnd, 0, windowPosX, windowPosY, rc.right - rc.left, rc.bottom - rc.top, SWP_SHOWWINDOW);
+				SetForegroundWindow(_hWnd);
+				SetFocus(_hWnd);
+				int r = ChangeDisplaySettings(0, 0) == DISP_CHANGE_SUCCESSFUL;
+			}
+			else
+			{
+
+				SetWindowLongPtr(_hWnd, GWL_STYLE,
+					WS_SYSMENU | WS_POPUP | WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_VISIBLE);
+
+				windowWidth = (long)GetSystemMetrics(SM_CXSCREEN);
+				windowHeight = (long)GetSystemMetrics(SM_CYSCREEN);
+				SetWindowPos(_hWnd, 0, windowPosX, windowPosY, windowWidth, windowHeight, SWP_SHOWWINDOW);
+				SetForegroundWindow(_hWnd);
+				SetFocus(_hWnd);
+
+
+				DEVMODE dmWindowSettings;
+				// If full Window set the Window to maximum size of the users desktop and 32bit.
+				memset(&dmWindowSettings, 0, sizeof(dmWindowSettings));
+				dmWindowSettings.dmSize = sizeof(dmWindowSettings);
+				dmWindowSettings.dmPelsWidth = (unsigned long)windowWidth;
+				dmWindowSettings.dmPelsHeight = (unsigned long)windowHeight;
+				dmWindowSettings.dmBitsPerPel = 32;
+				dmWindowSettings.dmFields = DM_BITSPERPEL | DM_PELSWIDTH | DM_PELSHEIGHT;
+
+				int r = ChangeDisplaySettings(&dmWindowSettings, 0) == DISP_CHANGE_SUCCESSFUL;
+			}
+			return void();
+		}
 		WinWindow::WinWindow(Components::SceneManager& sceneManager) : Window(sceneManager), _hWnd(nullptr), _hInst(nullptr), _style(WS_OVERLAPPED | WS_CAPTION)
 		{
 			_input = new Input::Input;
+			
+
 		}
 
-		const void WinWindow::Frame()
+		const void WinWindow::_Frame()
 		{
 			if (_input->IsKeyDown(Input::Keys::Escape))
 				_running = false;
@@ -26,6 +85,7 @@ namespace Ensum
 
 		WinWindow::~WinWindow()
 		{
+		
 			DestroyWindow(_hWnd);
 			SAFE_DELETE(_input);
 		}
@@ -82,8 +142,8 @@ namespace Ensum
 				NULL);
 			if (!_hWnd)
 			{
-				DWORD error = GetLastError();
-				Exception(string("Could not create the window. Error: ") + std::to_string(error).c_str());
+				DWORD error =  GetLastError();
+				Exception("Could not create the window. Error: %d", error);
 			}
 
 			if (fullscreen)
@@ -126,27 +186,7 @@ namespace Ensum
 			return void();
 		}
 
-		const void WinWindow::Start()
-		{
-			_running = true;
-			MSG msg;
-			_timer->Start();
-			while (_running)
-			{
-				_input->Frame();
-				// Handle the windows messages.
-				while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
-				{
-					TranslateMessage(&msg);
-					DispatchMessage(&msg);
-				}
 
-				FrameStart();
-				//Utils::ConsoleLog::DumpToConsole("Delta: %.5f", _timer->Delta());
-				// Do the frame processing.
-				Frame();
-			}
-		}
 
 		const HWND WinWindow::GetHwnd() const
 		{

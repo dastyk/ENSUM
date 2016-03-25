@@ -161,10 +161,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="D3D11.cpp" />
+    <ClCompile Include="Direct3D11.cpp" />
     <ClCompile Include="Graphics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_graphics\D3D11.h" />
+    <ClInclude Include="..\Includes\Ensum_graphics\Direct3D11.h" />
     <ClInclude Include="..\Includes\Ensum_graphics\dll_export.h" />
     <ClInclude Include="..\Includes\Ensum_graphics\Graphics.h" />
   </ItemGroup>

@@ -107,14 +107,18 @@ namespace Ensum
 			/** Subscribe to the OptionsChange event.
 			* When a change occurs in options this event is called.
 			*/
-			ENSUM_UTILS_EXPORT static void Subscribe(Delegate<void()>& dele);
+			ENSUM_UTILS_EXPORT static void Subscribe(Delegate<const void()>& dele);
 			/** UnSubscribe to the OptionsChange event.
 			* 
 			*/
-			ENSUM_UTILS_EXPORT static void UnSubscribe(Delegate<void()>& dele);
+			ENSUM_UTILS_EXPORT static void UnSubscribe(Delegate<const void()>& dele);
+			/** Notify all subscribers of change.
+			*
+			*/
+			ENSUM_UTILS_EXPORT static void NotifyChange();
 		private:
 			FileHandler::ini* _file;
-			Event<void()> _OptionChange;
+			Event<const void()> _OptionChange;
 
 		};
 	}

@@ -4,13 +4,6 @@
 #include "Ensum_components\Manager.h"
 #include "ensumstring.h"
 #include "Exception.h"
-#include "Ensum_utils\ConsoleLog.h"
-
-#ifdef _DEBUG
-#pragma comment(lib, "Ensum_utilsD.lib")
-#else
-#pragma comment(lib, "Ensum_utils.lib")
-#endif
 
 namespace Ensum
 {
@@ -150,15 +143,15 @@ namespace Ensum
 			/** Get the bool value to the given entity and key.
 			*
 			*/
-			bool GetBoolValue(const Entity& entity, const string& key);
+			bool GetBoolValue(const Entity& entity, const string& key, bool default_value);
 			/** Get the float value to the given entity and key.
 			*
 			*/
-			float GetFloatValue(const Entity& entity, const string& key);
+			float GetFloatValue(const Entity& entity, const string& key, float default_value);
 			/** Get the string value to the given entity and key.
 			*
 			*/
-			string GetStringValue(const Entity& entity, const string& key);
+			string GetStringValue(const Entity& entity, const string& key, string default_value);
 
 
 		private:

@@ -8,18 +8,25 @@ namespace Ensum
 	{
 		ini::ini(const string& path) : _sections(nullptr), _path(path)
 		{
-			_sections = new std::vector<Section>;
+			try
+			{
+				_sections = new std::vector<Section>;
 
-			std::ifstream file;
+				std::ifstream file;
 
-			file.open(_path, std::ios::in);
-			if (file.is_open()) 
-				_ParseData(file);
-			
+				file.open(_path, std::ios::in);
+				if (file.is_open())
+					_ParseData(file);
 
-	
-			file.close();
 
+
+				file.close();
+			}
+			catch (const Exce& e)
+			{
+				SAFE_DELETE(_sections);
+				throw e;
+			}
 		}
 
 
@@ -163,10 +170,10 @@ namespace Ensum
 		{
 			for (auto& section : *_sections)
 			{
-				file << (string("[") + section.name) + "]\n";
+				file << std::string("[" + std::string(section.name.c_str()) + "]\n");
 				for (auto& key : section.keys)
 				{
-					file << (key.name + "=" + key.value + "\n");
+					file << (std::string(key.name.c_str()) + "=" + std::string(key.value.c_str()) + "\n");
 				}
 				file << "\n";
 			}

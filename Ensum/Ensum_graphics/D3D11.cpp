@@ -2,7 +2,7 @@
 #include "Safe_Delete.h"
 #include "Exception.h"
 #include "Ensum_utils\ConsoleLog.h"
-
+#include "Ensum_utils\Options.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
@@ -14,70 +14,57 @@ namespace Ensum
 	namespace Graphics
 	{
 
-		DWORD WINAPI ThreadEntryPoint(LPVOID lpParam)
+		D3D11::D3D11() : Graphics("DirectX11")
 		{
-			Graphics* g = (Graphics*)lpParam;
-
-			g->Start();
-
-			return 1;
-		}
-
-		D3D11::D3D11(HWND hwnd) : Graphics()
-		{
-
-		
+			
 		}
 
 
 		D3D11::~D3D11()
 		{
-		
+			
 		}
-		void D3D11::CreateInstance(HWND hwnd)
+		const void D3D11::OnCreateDevice()
 		{
-			try 
+			_D3D11.Start();
+		}
+		const void D3D11::OnDestroyDevice()
+		{
+			_D3D11.Shutdown();
+		}
+		const void D3D11::_OnOptionsChange()
+		{
+			WaitForSingleObject(_optionsChangeMutex, INFINITE);
+			bool f = _fullscreen;
+			unsigned w = _width;
+			unsigned h = _height;
+
+			_fullscreen = Utils::Options::GetBooleanOption("Screen", "Fullscreen", false);
+			_width = (unsigned)Utils::Options::GetIntegerOption("Screen", "Width", 800);
+			_height = (unsigned)Utils::Options::GetIntegerOption("Screen", "Height", 640);
+			_vsync = Utils::Options::GetBooleanOption("Graphics", "Vsync", false);
+
+			if (_fullscreen != f || _width != w || _height != h)
 			{
-				if (!_instance)
-				{
-					
-					_instance = new D3D11(hwnd);
-					_instance->Init();
-
-					Utils::ConsoleLog::DumpToConsole("Creating graphics instance. Type: DirectX11");
-				}
+			
+				_D3D11.Resize();
 			}
-			catch (const Exce& e)
-			{
-				e.Print();
-				if(_instance) _instance->Shutdown();
-				SAFE_DELETE(_instance);
-			}
+			ReleaseMutex(_optionsChangeMutex);
+			
 		}
-		void D3D11::DeleteInstance()
+		const void D3D11::_BeginFrame(void)
 		{
-			if (!_instance) Exception("No instance of the grahpics found.");
+			ID3D11DeviceContext* deviceContext = _D3D11.GetDeviceContext();
+			if (!deviceContext)
+				return;
 
-			Utils::ConsoleLog::DumpToConsole("Deleting the graphics instance.");
-			_instance->Shutdown();
-			SAFE_DELETE(_instance);
+			static float clearColor[4] = { 0.0f, 0.0f, 0.25f, 1.0f };
 
+			deviceContext->ClearRenderTargetView(_D3D11.GetBackBufferRTV(), clearColor);
 		}
-		const void D3D11::Init()
+		const void D3D11::_EndFrame(void)
 		{
-			_threadHandle = CreateThread(
-				NULL,                   // default security attributes
-				0,                      // use default stack size  
-				ThreadEntryPoint,       // thread function name
-				this,          // argument to thread function 
-				0,                      // use default creation flags 
-				&_threadAddress);   // returns the thread identifier 
-		}
-		const void D3D11::Shutdown()
-		{
-			_shutdown = true;
-			WaitForSingleObject(_threadHandle, INFINITE);
-			CloseHandle(_threadHandle);
+			_D3D11.GetSwapChain()->Present(_vsync, 0);
 		}
 		const void D3D11::_Frame()
 		{

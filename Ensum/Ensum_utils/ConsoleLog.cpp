@@ -103,7 +103,7 @@ namespace Ensum
 			
 				_instance->AddToQue(buffer);
 				
-				delete buffer;
+				delete[] buffer;
 			}
 		}
 		const void ConsoleLog::AddToQue(const string& data)

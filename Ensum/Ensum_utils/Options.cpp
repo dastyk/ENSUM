@@ -13,7 +13,8 @@ namespace Ensum
 		Options::Options() : _file(nullptr)
 		{
 			ConsoleLog::DumpToConsole("Creating options instance");
-			_file = new FileHandler::ini("config.ini"); 
+			_file = new FileHandler::ini("config.ini");
+
 		}
 		Options::~Options()
 		{
@@ -42,22 +43,18 @@ namespace Ensum
 		void Options::_SetIntegerOption(const string & section, const string & option, long value)
 		{
 			_file->SetInteger(section, option, value);
-			_OptionChange();
 		}
 		void Options::_SetRealOption(const string & section, const string & option, double value)
 		{
 			_file->SetReal(section, option, value);
-			_OptionChange();
 		}
 		void Options::_SetBooleanOption(const string & section, const string & option, bool value)
 		{
-			_file->SetReal(section, option, value);
-			_OptionChange();
+			_file->SetBoolean(section, option, value);
 		}
 		void Options::_SetStringOption(const string & section, const string & option, const string & value)
 		{
 			_file->Set(section, option, value);
-			_OptionChange();
 		}
 		void Options::CreateInstance()
 		{
@@ -65,12 +62,16 @@ namespace Ensum
 				if (!_instance)
 					_instance = new Options;
 			}
-			catch (const Exce& e) { e.Print(); SAFE_DELETE(_instance); }
+			catch (const Exce& e)
+			{
+				e.Print();
+				SAFE_DELETE(_instance);
+			}
+
 		}
 		void Options::DeleteInstance()
 		{
-			if (_instance)
-				SAFE_DELETE(_instance);
+			SAFE_DELETE(_instance);
 		}
 		long Options::GetIntegerOption(const string & section, const string & option, long default_value)
 		{
@@ -105,39 +106,45 @@ namespace Ensum
 		{
 			if (!_instance)
 				return;
-			return _instance->_SetIntegerOption(section, option, value);
+			_instance->_SetIntegerOption(section, option, value);
 		}
 
 		void Options::SetRealOption(const string & section, const string & option, double value)
 		{
 			if (!_instance)
 				return;
-			return _instance->_SetRealOption(section, option, value);
+			_instance->_SetRealOption(section, option, value);
 		}
 		void Options::SetBooleanOption(const string & section, const string & option, bool value)
 		{
 			if (!_instance)
 				return;
-			return _instance->_SetBooleanOption(section, option, value);
+			_instance->_SetBooleanOption(section, option, value);
 		}
 		void Options::SetStringOption(const string & section, const string & option, const string & value)
 		{
 			if (!_instance)
 				return;
-			return _instance->_SetStringOption(section, option, value);
+			_instance->_SetStringOption(section, option, value);
 		}
 
-		void Options::Subscribe(Delegate<void()>& dele)
+		void Options::Subscribe(Delegate<const void()>& dele)
 		{
 			if (!_instance)
 				return;
 			_instance->_OptionChange += dele;
 		}
-		void Options::UnSubscribe(Delegate<void()>& dele)
+		void Options::UnSubscribe(Delegate<const void()>& dele)
 		{
 			if (!_instance)
 				return;
 			_instance->_OptionChange -= dele;
+		}
+		void Options::NotifyChange()
+		{
+			if (!_instance)
+				return;
+			_instance->_OptionChange();
 		}
 	}
 }

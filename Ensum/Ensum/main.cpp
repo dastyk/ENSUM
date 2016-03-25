@@ -59,6 +59,24 @@ public:
 
 		_dataManager.AddFloatValue(player, "Health", 100.0f);
 		float hp = _dataManager.GetFloatValue(player, "Health");
+
+		//Utils::Options::SetIntegerOption("Screen", "Width", 1337);
+
+	}
+
+	const void Frame()
+	{
+		Components::Scene::Frame();
+		if (_input->IsKeyPushed(Input::Keys::F))
+		{
+			Utils::Options::SetBooleanOption("Screen", "Fullscreen", true);
+			Utils::Options::NotifyChange();
+		}
+		if (_input->IsKeyPushed(Input::Keys::G))
+		{
+			Utils::Options::SetBooleanOption("Screen", "Fullscreen", false);
+			Utils::Options::NotifyChange();
+		}
 	}
 	~Game()
 	{
@@ -79,7 +97,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 {
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Memoryleak detection.
-	//							  _crtBreakAlloc = 281;
+	//						  _crtBreakAlloc = 178;
 #endif
 	Utils::ConsoleLog::CreateInstance();
 	Utils::Options::CreateInstance();
@@ -94,7 +112,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow(sceneManager));
 	
-	Graphics::D3D11::CreateInstance(Core::WinWindow::GetWindow());
+	Graphics::Graphics::CreateInstance(new Graphics::D3D11());
 
 
 	sceneManager.CreateScene(new Game(sceneManager.GetEntityManager(), w->GetInput(), sceneManager));

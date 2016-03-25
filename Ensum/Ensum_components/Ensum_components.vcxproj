@@ -164,6 +164,7 @@
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="NullScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="TransformManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_components\DataManager.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="..\Includes\Ensum_components\NullScene.h" />
     <ClInclude Include="..\Includes\Ensum_components\Scene.h" />
     <ClInclude Include="..\Includes\Ensum_components\SceneManager.h" />
+    <ClInclude Include="..\Includes\Ensum_components\TransformManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

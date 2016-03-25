@@ -7,6 +7,9 @@
     <Filter Include="D3D11">
       <UniqueIdentifier>{5072c0dc-e200-4e74-9f32-e26880ba12d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="D3D11\Helpers">
+      <UniqueIdentifier>{1e479bd7-da11-4e9f-9013-623dd94a47cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics.cpp">
@@ -14,6 +17,9 @@
     </ClCompile>
     <ClCompile Include="D3D11.cpp">
       <Filter>D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="Direct3D11.cpp">
+      <Filter>D3D11\Helpers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -23,6 +29,9 @@
     <ClInclude Include="..\Includes\Ensum_graphics\dll_export.h" />
     <ClInclude Include="..\Includes\Ensum_graphics\D3D11.h">
       <Filter>D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_graphics\Direct3D11.h">
+      <Filter>D3D11\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

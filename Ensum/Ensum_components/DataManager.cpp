@@ -1,5 +1,12 @@
 #include "Ensum_components\DataManager.h"
 #include "Safe_Delete.h"
+#include "Ensum_utils\ConsoleLog.h"
+
+#ifdef _DEBUG
+#pragma comment(lib, "Ensum_utilsD.lib")
+#else
+#pragma comment(lib, "Ensum_utils.lib")
+#endif
 
 namespace Ensum
 {
@@ -21,6 +28,9 @@ namespace Ensum
 		}
 		const void DataManager::CreateData(const Entity & entity)
 		{
+			auto find = _entityToIndex->find(entity);
+			if(find != _entityToIndex->end())
+				return;
 			if (!_entityManager.Alive(entity))
 			{
 				Utils::ConsoleLog::DumpToConsole("Tried to bind datacomponent to a dead entity. Entity: %d", entity.ID);
@@ -218,7 +228,7 @@ namespace Ensum
 				Utils::ConsoleLog::DumpToConsole("Entity data entry key could not be found. Entity: %d Key: %s.", entity.ID, key.c_str());
 			}
 		}
-		bool DataManager::GetBoolValue(const Entity & entity, const string & key)
+		bool DataManager::GetBoolValue(const Entity & entity, const string & key, bool default_value)
 		{
 			auto& find = _entityToIndex->find(entity);
 			if (find != _entityToIndex->end())
@@ -240,9 +250,9 @@ namespace Ensum
 				}
 				Utils::ConsoleLog::DumpToConsole("Entity data entry key could not be found. Entity: %d Key: %s.", entity.ID, key.c_str());
 			}
-			return false;
+			return default_value;
 		}
-		float DataManager::GetFloatValue(const Entity & entity, const string & key)
+		float DataManager::GetFloatValue(const Entity & entity, const string & key, float default_value)
 		{
 			auto& find = _entityToIndex->find(entity);
 			if (find != _entityToIndex->end())
@@ -264,9 +274,9 @@ namespace Ensum
 				}
 				Utils::ConsoleLog::DumpToConsole("Entity data entry key could not be found. Entity: %d Key: %s.", entity.ID, key.c_str());
 			}
-			return 0.0f;
+			return default_value;
 		}
-		string DataManager::GetStringValue(const Entity & entity, const string & key)
+		string DataManager::GetStringValue(const Entity & entity, const string & key, string default_value)
 		{
 			auto& find = _entityToIndex->find(entity);
 			if (find != _entityToIndex->end())
@@ -293,7 +303,7 @@ namespace Ensum
 
 				Utils::ConsoleLog::DumpToConsole("Entity data entry key could not be found. Entity: %d Key: %s.", entity.ID, key.c_str());
 			}
-			return "";
+			return default_value;
 		}
 		const void DataManager::_Allocate(uint32_t size)
 		{

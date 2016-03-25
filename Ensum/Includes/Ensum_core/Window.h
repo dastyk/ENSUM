@@ -39,7 +39,15 @@ namespace Ensum
 			/** The frame function.
 			* Put the gamelogic here.
 			*/
-			virtual const void Frame() = 0;
+			virtual const void _Frame() = 0;
+			/** Handle messages.
+			*
+			*/
+			virtual const void _MessageHandling() = 0;
+			/** Called when options have changed.
+			*
+			*/
+			virtual const void _Resize() = 0;
 		public:
 			virtual ~Window();
 
@@ -60,10 +68,10 @@ namespace Ensum
 			*
 			*/
 			virtual const void Init() = 0;
-			/** Start the message loop.
+			/** Start the Game loop.
 			*
 			*/
-			virtual const void Start() = 0;
+			virtual const void Start();
 
 			/** Returns a pointer to the input.
 			*
@@ -73,7 +81,6 @@ namespace Ensum
 			Event<const void()> FrameStart;
 
 		protected:
-
 			bool _running;			
 			LPWSTR _wndCaption;
 

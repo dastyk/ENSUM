@@ -20,7 +20,15 @@ namespace Ensum
 			/** The frame function.
 			* Put the gamelogic here.
 			*/
-			virtual const void Frame();
+			virtual const void _Frame();
+			/** Handle messages.
+			*
+			*/
+			virtual const void _MessageHandling();
+			/** Called when options have changed.
+			*
+			*/
+			virtual const void _Resize();
 		public:
 			WinWindow(Components::SceneManager& sceneManager);
 			virtual ~WinWindow();
@@ -29,13 +37,15 @@ namespace Ensum
 			*
 			*/
 			virtual const void Init();
-			/** Start the message loop.
-			* 
-			*/
-			virtual const void Start();
 
+			/** Returns the HWND instance.
+			*
+			*/
 			const HWND GetHwnd()const;
 
+			/** Static func, for getting the hwnd.
+			*
+			*/
 			static const HWND GetWindow();
 		protected:
 			HINSTANCE _hInst;

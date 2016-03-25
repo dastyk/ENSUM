@@ -2,6 +2,7 @@
 #include "Safe_Delete.h"
 #include "Exception.h"
 #include "Ensum_utils\ConsoleLog.h"
+#include "Ensum_utils\Options.h"
 
 namespace Ensum
 {
@@ -11,11 +12,14 @@ namespace Ensum
 
 		Window::Window(Components::SceneManager& sceneManager) : _timer(nullptr),_sceneManager(sceneManager), _running(false), _wndCaption(L"Ensum")
 		{
+			Utils::Options::Subscribe(Delegate<const void()>::Make<Window, &Window::_Resize>(this));
 		}
+
 
 
 		Window::~Window()
 		{
+			Utils::Options::UnSubscribe(Delegate<const void()>::Make<Window, &Window::_Resize>(this));
 			SAFE_DELETE(_timer);		
 		}
 		Window * Window::CreateWin(Window * window)
@@ -30,8 +34,9 @@ namespace Ensum
 			}
 			catch (const Exce& e)
 			{
-				Window::DeleteInstance();
 				e.Print();
+				Window::DeleteInstance();
+				throw e;
 			}
 
 			return _instance;
@@ -50,9 +55,29 @@ namespace Ensum
 			catch (const Exce& e)
 			{
 				e.Print();
-
+				throw e;
 			}
 			
+		}
+
+		const void Window::Start()
+		{
+
+			_running = true;
+
+			_timer->Start();
+			while (_running)
+			{
+				_input->Frame();
+
+				_MessageHandling();
+
+				FrameStart();
+				//Utils::ConsoleLog::DumpToConsole("Delta: %.5f", _timer->Delta());
+				// Do the frame processing.
+				_Frame();
+			}
+
 		}
 
 		Input::Input * Window::GetInput()
