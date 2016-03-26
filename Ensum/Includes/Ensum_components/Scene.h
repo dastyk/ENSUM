@@ -2,6 +2,7 @@
 #define _SCENE_H_
 
 #pragma once
+#include "Ensum_components\TransformManager.h"
 #include "Ensum_components\EntityManager.h"
 #include "Ensum_components\DataManager.h"
 #include "Ensum_input\Input.h"
@@ -27,11 +28,13 @@ namespace Ensum
 			Scene(EntityManager& entityManger, Input::Input* input) :
 				_entityManager(entityManger), 
 				_input(input), 
-				_dataManager(entityManger),
+				_data(entityManger),
+				_transform(entityManger),
 				_managers(new std::vector<Manager*>)
 			{ 
 				_entity = _entityManager.Create(); 
-				_managers->push_back(&_dataManager);
+				_managers->push_back(&_data);
+				_managers->push_back(&_transform);
 			};
 		public:
 			/** Returns the scenes entity.
@@ -55,8 +58,9 @@ namespace Ensum
 			EntityManager& _entityManager; /*!< A reference to the entitymanager created in scenemanager */
 			Input::Input* _input;
 			// Create new instance of all other managers here.
-			DataManager _dataManager;
 			std::vector<Manager*>* _managers;
+			DataManager _data;
+			TransformManager _transform;
 		};
 
 	}

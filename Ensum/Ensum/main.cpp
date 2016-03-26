@@ -55,12 +55,14 @@ public:
 		//_entityManager.Delete(_entity);
 
 		Components::Entity player = _entityManager.Create();
-		_dataManager.CreateData(player);
+		_data.CreateData(player);
 
-		_dataManager.AddFloatValue(player, "Health", 100.0f);
-		float hp = _dataManager.GetFloatValue(player, "Health");
+		_data.AddFloatValue(player, "Health", 100.0f);
+		float hp = _data.GetFloatValue(player, "Health", 0.0f);
 
 		//Utils::Options::SetIntegerOption("Screen", "Width", 1337);
+
+		_transform.CreateTransform(player);
 
 	}
 
