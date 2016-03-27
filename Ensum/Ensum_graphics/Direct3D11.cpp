@@ -2,6 +2,7 @@
 #include "Exception.h"
 #include "Ensum_utils\Options.h"
 #include "Ensum_core\WindowsWindow.h"
+#include "Ensum_utils\ConsoleLog.h"
 #include "Safe_Delete.h"
 
 #ifdef _DEBUG

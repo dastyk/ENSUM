@@ -32,15 +32,12 @@ namespace Ensum
 				DirectX::XMFLOAT4X4* World; // Concatenation of local and parent World (final world)
 
 				DirectX::XMFLOAT3* PositionL;
-			//	DirectX::XMFLOAT3* PositionW;
 				DirectX::XMFLOAT3* Rotation;
 				DirectX::XMFLOAT3* Scale;
 
 				DirectX::XMFLOAT3* Forward;
 				DirectX::XMFLOAT3* Up;
 				DirectX::XMFLOAT3* Right;
-
-				bool* restrictMovements;
 			};
 			TransformComponents* _datap; /*!< A reference pointer to avoid having to cast the basic datapointer all the time. */
 		public:
@@ -57,7 +54,7 @@ namespace Ensum
 			* If relativeToParent is false, the local pos of the child will be translated to the parents space.
 			* Think of it as welding the entity to the parent.
 			*/
-			const void BindChild(const Entity& parent, const Entity& child, bool relativeToParent);
+			const void BindChild(const Entity& parent, const Entity& child, bool relativeToParent = false);
 			/** Unbind an entity as child.
 			* The childs local transform will be translated to world pos.
 			* So it does not teleport away.
@@ -66,6 +63,35 @@ namespace Ensum
 
 
 
+			const void MoveForward(const Entity& entity, const float amount);
+			const void MoveBackward(const Entity& entity, const float amount);
+			const void MoveRight(const Entity& entity, const float amount);
+			const void MoveLeft(const Entity& entity, const float amount);
+			const void MoveUp(const Entity& entity, const float amount);
+			const void MoveDown(const Entity& entity, const float amount);
+			const void MoveAlongVector(const Entity& entity, const DirectX::XMVECTOR amount);
+			const void MoveAlongVector(const Entity& entity, DirectX::XMVECTOR dir, float amount);
+			const void RotateYaw(const Entity& entity, const float radians);
+			const void RotatePitch(const Entity& entity, const float radians);
+			const void RotateRoll(const Entity& entity, const float radians);
+
+			const void SetPosition(const Entity& entity, const DirectX::XMFLOAT3& position);
+			const void SetPosition(const Entity& entity, const DirectX::XMVECTOR& position);
+			const void SetRotation(const Entity& entity, const DirectX::XMFLOAT3& rotation);
+			const void SetRotation(const Entity& entity, const DirectX::XMVECTOR& rotation);
+			const void SetScale(const Entity& entity, const DirectX::XMFLOAT3& scale);
+			const void SetScale(const Entity& entity, const DirectX::XMVECTOR& scale);
+			const void SetForward(const Entity& entity, const DirectX::XMFLOAT3& forward);
+			const void SetForward(const Entity& entity, const DirectX::XMVECTOR& forward);
+
+			const DirectX::XMVECTOR GetPosition(const Entity& entity);
+			const DirectX::XMVECTOR GetRotation(const Entity& entity);
+			const DirectX::XMVECTOR GetScale(const Entity& entity);
+			const DirectX::XMVECTOR GetForward(const Entity& entity);
+			const DirectX::XMVECTOR GetRight(const Entity& entity);
+			const DirectX::XMVECTOR GetUp(const Entity& entity);
+
+		
 		private:
 			/** Allocate more memory
 			*

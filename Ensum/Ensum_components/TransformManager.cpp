@@ -46,24 +46,24 @@ namespace Ensum
 			uint32_t index = (*_entityToIndex)[entity] = static_cast<uint32_t>(_entityToIndex->size());
 			_datap->entity[index] = entity;
 
-			DirectX::XMStoreFloat4x4(&(_datap->Local[index]), DirectX::XMMatrixIdentity());
-			DirectX::XMStoreFloat4x4(&(_datap->World[index]), DirectX::XMMatrixIdentity());
+			using namespace DirectX;
+
+			XMStoreFloat4x4(&(_datap->Local[index]), XMMatrixIdentity());
+			XMStoreFloat4x4(&(_datap->World[index]), XMMatrixIdentity());
 
 			_datap->Parent[index] = -1;
 			_datap->FirstChild[index] = -1;
 			_datap->PrevSibling[index] = -1;
 			_datap->NextSibling[index] = -1;
 
-			_datap->PositionL[index] = DirectX::XMFLOAT3(0.0f, 0.0f, 0.0f);
-		//	_datap->PositionW[index] = DirectX::XMFLOAT3(0.0f, 0.0f, 0.0f);
-			_datap->Rotation[index] = DirectX::XMFLOAT3(0.0f, 0.0f, 0.0f);
-			_datap->Scale[index] = DirectX::XMFLOAT3(1.0f, 1.0f, 1.0f);
+			_datap->PositionL[index] = XMFLOAT3(0.0f, 0.0f, 0.0f);
+			_datap->Rotation[index] = XMFLOAT3(0.0f, 0.0f, 0.0f);
+			_datap->Scale[index] = XMFLOAT3(1.0f, 1.0f, 1.0f);
 
-			_datap->Forward[index] = DirectX::XMFLOAT3(0.0f, 0.0f, 1.0f);
-			_datap->Up[index] = DirectX::XMFLOAT3(0.0f, 1.0f, 0.0f);
-			_datap->Right[index] = DirectX::XMFLOAT3(1.0f, 0.0f, 0.0f);
+			_datap->Forward[index] = XMFLOAT3(0.0f, 0.0f, 1.0f);
+			_datap->Up[index] = XMFLOAT3(0.0f, 1.0f, 0.0f);
+			_datap->Right[index] = XMFLOAT3(1.0f, 0.0f, 0.0f);
 
-			_datap->restrictMovements[index] = false;
 			_datap->used++;
 		}
 		const void TransformManager::BindChild(const Entity & parent, const Entity & child, bool relativeToParent)
@@ -89,12 +89,408 @@ namespace Ensum
 			_UnbindChild(childi->second);
 
 		}
+		const void TransformManager::MoveForward(const Entity & entity, const float amount)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+
+
+			using namespace DirectX;
+
+			XMVECTOR forward = XMLoadFloat3(&_datap->Forward[i]);
+			XMVECTOR position = XMLoadFloat3(&_datap->PositionL[i]);
+
+			position += forward * amount;
+
+			XMStoreFloat3(&_datap->PositionL[i], position);
+
+			_Transform(i);
+		}
+		const void TransformManager::MoveBackward(const Entity & entity, const float amount)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return; 
+			
+			uint32_t i = find->second;
+
+			using namespace DirectX;
+
+			XMVECTOR forward = XMLoadFloat3(&_datap->Forward[i]);
+			XMVECTOR position = XMLoadFloat3(&_datap->PositionL[i]);
+
+			position -= forward * amount;
+
+			XMStoreFloat3(&_datap->PositionL[i], position);
+
+			_Transform(i);
+		}
+		const void TransformManager::MoveRight(const Entity & entity, const float amount)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+			using namespace DirectX;
+			XMVECTOR Right = XMLoadFloat3(&_datap->Right[i]);
+			XMVECTOR position = XMLoadFloat3(&_datap->PositionL[i]);
+
+			position += Right * amount;
+
+			XMStoreFloat3(&_datap->PositionL[i], position);
+
+			_Transform(i);
+		}
+		const void TransformManager::MoveLeft(const Entity & entity, const float amount)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+			uint32_t i = find->second;
+			using namespace DirectX;
+			XMVECTOR Right = XMLoadFloat3(&_datap->Right[i]);
+			XMVECTOR position = XMLoadFloat3(&_datap->PositionL[i]);
+
+			position -= Right * amount;
+
+			XMStoreFloat3(&_datap->PositionL[i], position);
+
+			_Transform(i);
+		}
+		const void TransformManager::MoveUp(const Entity & entity, const float amount)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+			using namespace DirectX;
+			XMVECTOR Up = XMLoadFloat3(&_datap->Up[i]);
+			XMVECTOR position = XMLoadFloat3(&_datap->PositionL[i]);
+
+			position += Up * amount;
+
+			XMStoreFloat3(&_datap->PositionL[i], position);
+
+			_Transform(i);
+		}
+		const void TransformManager::MoveDown(const Entity & entity, const float amount)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+			using namespace DirectX;
+			XMVECTOR Up = XMLoadFloat3(&_datap->Up[i]);
+			XMVECTOR position = XMLoadFloat3(&_datap->PositionL[i]);
+
+			position -= Up * amount;
+
+			XMStoreFloat3(&_datap->PositionL[i], position);
+
+			_Transform(i);
+		}
+		const void TransformManager::MoveAlongVector(const Entity & entity, const DirectX::XMVECTOR amount)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+			using namespace DirectX;
+			XMVECTOR position = XMLoadFloat3(&_datap->PositionL[i]);
+
+			position += amount;
+
+			XMStoreFloat3(&_datap->PositionL[i], position);
+
+			_Transform(i);
+		}
+		const void TransformManager::MoveAlongVector(const Entity & entity, DirectX::XMVECTOR dir, float amount)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+			using namespace DirectX;
+			XMVECTOR position = XMLoadFloat3(&_datap->PositionL[i]);
+			dir = XMVector3Normalize(dir);
+
+			position += dir*amount;
+
+			XMStoreFloat3(&_datap->PositionL[i], position);
+
+			_Transform(i);
+		}
+		const void TransformManager::RotateYaw(const Entity & entity, const float radians)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+			using namespace DirectX;
+			float& yaw = _datap->Rotation[i].y;
+			yaw = fmod(yaw + radians, XM_2PI);
+
+			_Transform(i);
+		}
+		const void TransformManager::RotatePitch(const Entity & entity, const float radians)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+			using namespace DirectX;
+			float& pitch = _datap->Rotation[i].x;
+			pitch = fmod(pitch + radians, XM_2PI);
+
+			_Transform(i);
+		}
+		const void TransformManager::RotateRoll(const Entity & entity, const float radians)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+		
+			uint32_t i = find->second;
+			using namespace DirectX;
+			float& roll = _datap->Rotation[i].z;
+			roll = fmod(roll + radians, XM_2PI);
+
+			_Transform(i);
+		}
+		const void TransformManager::SetPosition(const Entity & entity, const DirectX::XMFLOAT3 & position)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+
+			_datap->PositionL[i] = position;
+
+			_Transform(i);
+		}
+		const void TransformManager::SetPosition(const Entity & entity, const DirectX::XMVECTOR & position)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+
+			XMStoreFloat3(&_datap->PositionL[i], position);
+
+			_Transform(i);
+		}
+		const void TransformManager::SetRotation(const Entity & entity, const DirectX::XMFLOAT3 & rotation)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			uint32_t i = find->second;
+
+			_datap->Rotation[i] = rotation;
+
+			_Transform(i);
+		}
+		const void TransformManager::SetRotation(const Entity & entity, const DirectX::XMVECTOR & rotation)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+			uint32_t i = find->second;
+
+			XMStoreFloat3(&_datap->Rotation[i], rotation);
+
+			_Transform(i);
+		}
+		const void TransformManager::SetScale(const Entity & entity, const DirectX::XMFLOAT3 & scale)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+			uint32_t i = find->second;
+
+			_datap->Scale[i] = scale;
+
+			_Transform(i);
+		}
+		const void TransformManager::SetScale(const Entity & entity, const DirectX::XMVECTOR & scale)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+			uint32_t i = find->second;
+
+			XMStoreFloat3(&_datap->Scale[i], scale);
+
+			_Transform(i);
+		}
+		const void TransformManager::SetForward(const Entity & entity, const DirectX::XMFLOAT3 & forwardf)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+		
+
+			uint32_t i = find->second;
+			using namespace DirectX;
+
+			XMVECTOR forward = XMLoadFloat3(&forwardf);
+
+			XMVECTOR ndir = XMVector3Normalize(forward);
+
+			uint32_t parent = _datap->Parent[i];
+			if (parent != -1)
+			{
+				XMMATRIX parentWorld = XMLoadFloat4x4(&_datap->World[parent]);
+				parentWorld = XMMatrixInverse(nullptr, parentWorld);
+				ndir = XMVector3Normalize(XMVector3TransformNormal(ndir, parentWorld));
+			}
+
+
+			XMVECTOR defaultUp = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+			XMVECTOR defaultForward = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+			XMVECTOR defaultRight = XMVectorSet(1.0f, 0.0f, 0.0f, 0.0f);
+			float angleY = 0.0f;
+			if (!(XMVectorGetX(XMVector3Length(XMVector3AngleBetweenNormals(forward, defaultUp))) < 0.0001))
+			{
+				XMVECTOR projToXZ = XMVector3Normalize(forward - (defaultUp * XMVector3Dot(defaultUp, forward)));
+				angleY = XMVectorGetX(XMVector3AngleBetweenNormals(projToXZ, defaultForward));
+			}
+			float angleX = 0.0f;
+			if (!(XMVectorGetX(XMVector3Length(XMVector3AngleBetweenNormals(forward, defaultForward))) < 0.0001))
+			{
+				XMVECTOR projToXY = XMVector3Normalize(forward - (defaultForward * XMVector3Dot(defaultForward, forward)));
+				angleX = XM_PIDIV2 - XMVectorGetX(XMVector3AngleBetweenNormals(projToXY, defaultUp));
+			}
+
+			_datap->Rotation[i].x = angleX;
+			_datap->Rotation[i].y = angleY;
+
+			_Transform(i);
+		}
+		const void TransformManager::SetForward(const Entity & entity, const DirectX::XMVECTOR & forward)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+
+			uint32_t i = find->second;
+			using namespace DirectX;
+			XMVECTOR ndir = XMVector3Normalize(forward);
+
+			uint32_t parent = _datap->Parent[i];
+			if (parent != -1)
+			{
+				XMMATRIX parentWorld = XMLoadFloat4x4(&_datap->World[parent]);
+				parentWorld = XMMatrixInverse(nullptr, parentWorld);
+				ndir = XMVector3Normalize(XMVector3TransformNormal(ndir, parentWorld));
+			}
+
+
+
+			XMVECTOR defaultUp = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+			XMVECTOR defaultForward = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+			XMVECTOR defaultRight = XMVectorSet(1.0f, 0.0f, 0.0f, 0.0f);
+			float angleY = 0.0f;
+			if (!(XMVectorGetX(XMVector3Length(XMVector3AngleBetweenNormals(forward, defaultUp))) < 0.0001))
+			{
+				XMVECTOR projToXZ = XMVector3Normalize(forward - (defaultUp * XMVector3Dot(defaultUp, forward)));
+				angleY = XMVectorGetX(XMVector3AngleBetweenNormals(projToXZ, defaultForward));
+			}
+			float angleX = 0.0f;
+			if (!(XMVectorGetX(XMVector3Length(XMVector3AngleBetweenNormals(forward, defaultForward))) < 0.0001))
+			{
+				XMVECTOR projToXY = XMVector3Normalize(forward - (defaultForward * XMVector3Dot(defaultForward, forward)));
+				angleX = XM_PIDIV2 - XMVectorGetX(XMVector3AngleBetweenNormals(projToXY, defaultUp));
+			}
+
+
+			_datap->Rotation[i].x = angleX;
+			_datap->Rotation[i].y = angleY;
+
+			_Transform(i);
+		}
+
+		const DirectX::XMVECTOR TransformManager::GetPosition(const Entity & entity)
+		{
+			using namespace DirectX;
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+
+			uint32_t i = find->second;
+
+			XMMATRIX world = XMLoadFloat4x4(&_datap->World[i]);
+			return  XMVector3TransformCoord(XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f), world);
+			
+		}
+		const DirectX::XMVECTOR TransformManager::GetRotation(const Entity & entity)
+		{
+			using namespace DirectX;
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+
+			uint32_t i = find->second;
+
+			return XMLoadFloat3(&_datap->Rotation[i]);
+		}
+		const DirectX::XMVECTOR TransformManager::GetScale(const Entity & entity)
+		{
+			using namespace DirectX;
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return XMVectorSet(1.0f, 1.0f, 1.0f, 0.0f);
+
+			uint32_t i = find->second;
+
+			return XMLoadFloat3(&_datap->Scale[i]);
+		}
+		const DirectX::XMVECTOR TransformManager::GetForward(const Entity & entity)
+		{
+			using namespace DirectX;
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return XMVECTOR();
+			return XMVECTOR();
+		}
+		const DirectX::XMVECTOR TransformManager::GetRight(const Entity & entity)
+		{
+			using namespace DirectX;
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return XMVECTOR();
+			return XMVECTOR();
+		}
+		const DirectX::XMVECTOR TransformManager::GetUp(const Entity & entity)
+		{
+			using namespace DirectX;
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return XMVECTOR();
+			return XMVECTOR();
+		}
 		const void TransformManager::_Allocate(uint32_t size)
 		{
+			using namespace DirectX;
 			if (size <= _datap->allocated) Exception("Alloc should only increase.");
 
 			TransformComponents* new_data = new TransformComponents;
-			size_t bytes = static_cast<size_t>(size * (sizeof(Entity) + sizeof(uint32_t) * 4 + sizeof(DirectX::XMFLOAT4X4) * 2 + sizeof(DirectX::XMFLOAT3) * 7 + sizeof(bool)));
+			size_t bytes = static_cast<size_t>(size * (sizeof(Entity) + sizeof(uint32_t) * 4 + sizeof(XMFLOAT4X4) * 2 + sizeof(XMFLOAT3) * 7 + sizeof(bool)));
 			new_data->buffer = operator new(bytes);
 			new_data->used = _datap->used;
 			new_data->allocated = size;
@@ -106,19 +502,16 @@ namespace Ensum
 			new_data->PrevSibling = (uint32_t*)(new_data->FirstChild + static_cast<size_t>(size));
 			new_data->NextSibling = (uint32_t*)(new_data->PrevSibling + static_cast<size_t>(size));
 
-			new_data->Local = (DirectX::XMFLOAT4X4*)(new_data->NextSibling + static_cast<size_t>(size));
-			new_data->World = (DirectX::XMFLOAT4X4*)(new_data->Local + static_cast<size_t>(size));
+			new_data->Local = (XMFLOAT4X4*)(new_data->NextSibling + static_cast<size_t>(size));
+			new_data->World = (XMFLOAT4X4*)(new_data->Local + static_cast<size_t>(size));
 
-			new_data->PositionL = (DirectX::XMFLOAT3*)(new_data->World + static_cast<size_t>(size));
-			//new_data->PositionW = (DirectX::XMFLOAT3*)(new_data->PositionL + static_cast<size_t>(size));
-			new_data->Rotation = (DirectX::XMFLOAT3*)(new_data->PositionL + static_cast<size_t>(size));
-			new_data->Scale = (DirectX::XMFLOAT3*)(new_data->Rotation + static_cast<size_t>(size));
+			new_data->PositionL = (XMFLOAT3*)(new_data->World + static_cast<size_t>(size));
+			new_data->Rotation = (XMFLOAT3*)(new_data->PositionL + static_cast<size_t>(size));
+			new_data->Scale = (XMFLOAT3*)(new_data->Rotation + static_cast<size_t>(size));
 
-			new_data->Forward = (DirectX::XMFLOAT3*)(new_data->Scale + static_cast<size_t>(size));
-			new_data->Up = (DirectX::XMFLOAT3*)(new_data->Forward + static_cast<size_t>(size));
-			new_data->Right = (DirectX::XMFLOAT3*)(new_data->Up + static_cast<size_t>(size));
-
-			new_data->restrictMovements = (bool*)(new_data->Right + static_cast<size_t>(size));
+			new_data->Forward = (XMFLOAT3*)(new_data->Scale + static_cast<size_t>(size));
+			new_data->Up = (XMFLOAT3*)(new_data->Forward + static_cast<size_t>(size));
+			new_data->Right = (XMFLOAT3*)(new_data->Up + static_cast<size_t>(size));
 
 			memcpy(new_data->entity, _datap->entity, _datap->used * sizeof(Entity));
 
@@ -127,19 +520,17 @@ namespace Ensum
 			memcpy(new_data->PrevSibling, _datap->PrevSibling, _datap->used * sizeof(uint32_t));
 			memcpy(new_data->NextSibling, _datap->NextSibling, _datap->used * sizeof(uint32_t));
 
-			memcpy(new_data->Local, _datap->Local, _datap->used * sizeof(DirectX::XMFLOAT4X4));
-			memcpy(new_data->World, _datap->World, _datap->used * sizeof(DirectX::XMFLOAT4X4));
+			memcpy(new_data->Local, _datap->Local, _datap->used * sizeof(XMFLOAT4X4));
+			memcpy(new_data->World, _datap->World, _datap->used * sizeof(XMFLOAT4X4));
 			
-			memcpy(new_data->PositionL, _datap->PositionL, _datap->used * sizeof(DirectX::XMFLOAT3));
-		//	memcpy(new_data->PositionW, _datap->PositionW, _datap->used * sizeof(DirectX::XMFLOAT3));
-			memcpy(new_data->Rotation, _datap->Rotation, _datap->used * sizeof(DirectX::XMFLOAT3));
-			memcpy(new_data->Scale, _datap->Scale, _datap->used * sizeof(DirectX::XMFLOAT3));
+			memcpy(new_data->PositionL, _datap->PositionL, _datap->used * sizeof(XMFLOAT3));
+			memcpy(new_data->Rotation, _datap->Rotation, _datap->used * sizeof(XMFLOAT3));
+			memcpy(new_data->Scale, _datap->Scale, _datap->used * sizeof(XMFLOAT3));
 
-			memcpy(new_data->Forward, _datap->Forward, _datap->used * sizeof(DirectX::XMFLOAT3));
-			memcpy(new_data->Up, _datap->Up, _datap->used * sizeof(DirectX::XMFLOAT3));
-			memcpy(new_data->Right, _datap->Right, _datap->used * sizeof(DirectX::XMFLOAT3));
+			memcpy(new_data->Forward, _datap->Forward, _datap->used * sizeof(XMFLOAT3));
+			memcpy(new_data->Up, _datap->Up, _datap->used * sizeof(XMFLOAT3));
+			memcpy(new_data->Right, _datap->Right, _datap->used * sizeof(XMFLOAT3));
 
-			memcpy(new_data->restrictMovements, _datap->restrictMovements, _datap->used * sizeof(bool));
 
 			operator delete(_datap->buffer);
 			delete _data;
@@ -163,7 +554,6 @@ namespace Ensum
 			_datap->World[index] = _datap->World[last];
 
 			_datap->PositionL[index] = _datap->PositionL[last];
-			//_datap->PositionW[index] = _datap->PositionW[last];
 			_datap->Rotation[index] = _datap->Rotation[last];
 			_datap->Scale[index] = _datap->Scale[last];
 
@@ -171,7 +561,6 @@ namespace Ensum
 			_datap->Up[index] = _datap->Up[last];
 			_datap->Right[index] = _datap->Right[last];
 
-			_datap->restrictMovements[index] = _datap->restrictMovements[last];
 
 			(*_entityToIndex)[last_e] = index;
 			_entityToIndex->erase(e);
@@ -254,89 +643,192 @@ namespace Ensum
 		}
 		const void TransformManager::_TransformToParentLocal(uint32_t parent, uint32_t child)
 		{
-			DirectX::XMMATRIX parentWorld = DirectX::XMLoadFloat4x4(&_datap->World[parent]);
-			DirectX::XMMATRIX invParentWorld = DirectX::XMMatrixInverse(nullptr, parentWorld);
-			DirectX::XMMATRIX childWorld = DirectX::XMLoadFloat4x4(&_datap->World[child]);
-			DirectX::XMVECTOR childLocalPos = DirectX::XMLoadFloat3(&_datap->PositionL[child]);
-			DirectX::XMVECTOR childWorldPos = DirectX::XMVector3Transform(childLocalPos, childWorld);
+			using namespace DirectX;
 
+			XMMATRIX parentWorld = XMLoadFloat4x4(&_datap->World[parent]);
+			XMMATRIX invParentWorld = XMMatrixInverse(nullptr, parentWorld);
+			XMVECTOR pscale = XMVectorSet(1.0f, 1.0f, 1.0f, 0.0f);
+			do
+			{
+				pscale *= XMLoadFloat3(&_datap->Scale[parent]);
+				parent = _datap->Parent[parent];
+			} while (parent != -1);
+
+			XMMATRIX childWorld = XMLoadFloat4x4(&_datap->Local[child]);
+			XMVECTOR childWorldPos = XMLoadFloat3(&_datap->PositionL[child]);
+
+			// Transform the child local matrix.
 			childWorld *= invParentWorld;
-			DirectX::XMStoreFloat4x4(&_datap->Local[child], childWorld);
+			XMStoreFloat4x4(&_datap->Local[child], childWorld);
+
+			// Transform the childs local pos.
+			childWorldPos = XMVector3TransformCoord(childWorldPos, invParentWorld);
+			XMStoreFloat3(&_datap->PositionL[child], childWorldPos);
+	
+			// Transform the childs local scale.
+			XMVECTOR scale = XMLoadFloat3(&_datap->Scale[child]);
+			scale = XMVectorDivide(scale, pscale);
+			XMStoreFloat3(&_datap->Scale[child], scale);
+
+			// Transform the childs local forward.
+			XMVECTOR forward = XMLoadFloat3(&_datap->Forward[child]);
+			forward = XMVector3Normalize(XMVector3TransformNormal(forward, invParentWorld));
+			XMStoreFloat3(&_datap->Forward[child], forward);
+
+			// Transform the childs local up.
+			XMVECTOR Up = XMLoadFloat3(&_datap->Up[child]);
+			Up = XMVector3Normalize(XMVector3TransformNormal(Up, invParentWorld));
+			XMStoreFloat3(&_datap->Up[child], Up);
+
+			// Transform the childs local right.
+			XMStoreFloat3(&_datap->Right[child], XMVector3Cross(forward, Up));
+
 
 		
-			childWorldPos = DirectX::XMVector3Transform(childWorldPos, invParentWorld);
-			DirectX::XMStoreFloat3(&_datap->PositionL[child], childWorldPos);
+			XMVECTOR defaultRight = XMVectorSet(1.0f, 0.0f, 0.0f, 0.0f);
+			XMVECTOR defaultUp = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+			XMVECTOR defaultForward = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+		
+			float angleY = 0.0f;
+			if (!(XMVectorGetX(XMVector3Length(XMVector3AngleBetweenNormals(forward, defaultUp))) < 0.0001))
+			{
+				XMVECTOR projToXZ = XMVector3Normalize(forward - (defaultUp * XMVector3Dot(defaultUp, forward)));
+				angleY = XMVectorGetX(XMVector3AngleBetweenNormals(projToXZ, defaultForward));
+			}
+			float angleX = 0.0f;
+			if (!(XMVectorGetX(XMVector3Length(XMVector3AngleBetweenNormals(forward, defaultForward))) < 0.0001))
+			{
+				XMVECTOR projToXY = XMVector3Normalize(forward - (defaultForward * XMVector3Dot(defaultForward, forward)));
+				angleX = XM_PIDIV2 - XMVectorGetX(XMVector3AngleBetweenNormals(projToXY, defaultUp));
+			}
+			float angleZ = 0.0f;
+			if (!(XMVectorGetX(XMVector3Length(XMVector3AngleBetweenNormals(Up, defaultForward))) < 0.0001))
+			{
+				XMVECTOR projToXY = XMVector3Normalize(Up - (defaultForward * XMVector3Dot(defaultForward, Up)));
+				float angleZ = XM_PIDIV2 - XMVectorGetX(XMVector3AngleBetweenNormals(projToXY, defaultRight));
 
 
+			}
 
-
-			// Hmm, wonder what to do with rotation and scale....
-
+			XMStoreFloat3(&_datap->Rotation[child], XMVectorSet(angleX, angleY, angleZ, 0.0f));
+			
 		}
 		const void TransformManager::_TransformFromParentLocal(uint32_t parent, uint32_t child)
 		{
-			DirectX::XMMATRIX parentWorld = DirectX::XMLoadFloat4x4(&_datap->World[parent]);
+			using namespace DirectX;
+			XMMATRIX parentWorld = XMLoadFloat4x4(&_datap->World[parent]);
+			XMMATRIX localWorld = XMLoadFloat4x4(&_datap->Local[child]);
 
-			DirectX::XMMATRIX localWorld = DirectX::XMLoadFloat4x4(&_datap->Local[child]);
-
+			// Transform the childs local matrix.
 			localWorld *= parentWorld;
-			DirectX::XMStoreFloat4x4(&_datap->Local[child], localWorld);
+			XMStoreFloat4x4(&_datap->Local[child], localWorld);
 
-			DirectX::XMVECTOR childLocalPos = DirectX::XMLoadFloat3(&_datap->PositionL[child]);
-			childLocalPos = DirectX::XMVector3Transform(childLocalPos, parentWorld);
-			DirectX::XMStoreFloat3(&_datap->PositionL[child], childLocalPos);
+			// Transform the childs local pos.
+			XMVECTOR childLocalPos = XMLoadFloat3(&_datap->PositionL[child]);
+			childLocalPos = XMVector3TransformCoord(childLocalPos, parentWorld);
+			XMStoreFloat3(&_datap->PositionL[child], childLocalPos);
 
-			// Hmm, wonder what to do with rotation and scale....
+			// Transform the childs local scale.
+			XMVECTOR scale = XMLoadFloat3(&_datap->Scale[child]);
+			do
+			{
+				scale *= XMLoadFloat3(&_datap->Scale[parent]);
+				parent = _datap->Parent[parent];
+			} while (parent != -1);
+			XMStoreFloat3(&_datap->Scale[child], scale);
+
+			// Transform the childs local forward.
+			XMVECTOR forward = XMLoadFloat3(&_datap->Forward[child]);
+			forward = XMVector3Normalize(XMVector3TransformNormal(forward, parentWorld));
+			XMStoreFloat3(&_datap->Forward[child], forward);
+
+			// Transform the childs local up.
+			XMVECTOR Up = XMLoadFloat3(&_datap->Up[child]);
+			Up = XMVector3Normalize(XMVector3TransformNormal(Up, parentWorld));
+			XMStoreFloat3(&_datap->Up[child], Up);
+
+			// Transform the childs local right.
+			XMStoreFloat3(&_datap->Right[child], XMVector3Cross(forward, Up));
+
+
+
+			XMVECTOR defaultRight = XMVectorSet(1.0f, 0.0f, 0.0f, 0.0f);
+			XMVECTOR defaultUp = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+			XMVECTOR defaultForward = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+
+			float angleY = 0.0f;
+			if (!(XMVectorGetX(XMVector3Length(XMVector3AngleBetweenNormals(forward, defaultUp))) < 0.0001))
+			{
+				XMVECTOR projToXZ = XMVector3Normalize(forward - (defaultUp * XMVector3Dot(defaultUp, forward)));
+				angleY = XMVectorGetX(XMVector3AngleBetweenNormals(projToXZ, defaultForward));
+			}
+			float angleX = 0.0f;
+			if (!(XMVectorGetX(XMVector3Length(XMVector3AngleBetweenNormals(forward, defaultForward))) < 0.0001))
+			{
+				XMVECTOR projToXY = XMVector3Normalize(forward - (defaultForward * XMVector3Dot(defaultForward, forward)));
+				angleX = XM_PIDIV2 - XMVectorGetX(XMVector3AngleBetweenNormals(projToXY, defaultUp));
+			}
+			float angleZ = 0.0f;
+			if (!(XMVectorGetX(XMVector3Length(XMVector3AngleBetweenNormals(Up, defaultForward))) < 0.0001))
+			{
+				XMVECTOR projToXY = XMVector3Normalize(Up - (defaultForward * XMVector3Dot(defaultForward, Up)));
+				float angleZ = XM_PIDIV2 - XMVectorGetX(XMVector3AngleBetweenNormals(projToXY, defaultRight));
+
+
+			}
+
+			XMStoreFloat3(&_datap->Rotation[child], XMVectorSet(angleX, angleY, angleZ, 0.0f));
 		}
 
 		const void TransformManager::_Transform(uint32_t index)
 		{
+			using namespace DirectX;
 			// Load everything
-			DirectX::XMVECTOR localPos = DirectX::XMLoadFloat3(&_datap->PositionL[index]);
-			DirectX::XMVECTOR localRot = DirectX::XMLoadFloat3(&_datap->Rotation[index]);
-			DirectX::XMVECTOR localScale = DirectX::XMLoadFloat3(&_datap->Scale[index]);
-			DirectX::XMMATRIX parentWorld;
+			XMVECTOR localPos = XMLoadFloat3(&_datap->PositionL[index]);
+			XMVECTOR localRot = XMLoadFloat3(&_datap->Rotation[index]);
+			XMVECTOR localScale = XMLoadFloat3(&_datap->Scale[index]);
+			XMMATRIX parentWorld;
 
 			// Calc matrices.
-			DirectX::XMMATRIX localWorld = DirectX::XMMatrixScalingFromVector(localScale);
-			DirectX::XMMATRIX rotma = DirectX::XMMatrixRotationRollPitchYawFromVector(localRot);
+			XMMATRIX localWorld = XMMatrixScalingFromVector(localScale);
+			XMMATRIX rotma = XMMatrixRotationRollPitchYawFromVector(localRot);
 			localWorld *= rotma;
-			localWorld *= DirectX::XMMatrixTranslationFromVector(localPos);
+			localWorld *= XMMatrixTranslationFromVector(localPos);
 
 			// Calc the forward, up and right vectors.
-			DirectX::XMVECTOR forward = DirectX::XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
-			DirectX::XMVECTOR up = DirectX::XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+			XMVECTOR forward = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+			XMVECTOR up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
 
-			forward = DirectX::XMVector3TransformNormal(forward, localWorld);
-			up = DirectX::XMVector3TransformNormal(up, localWorld);
+			forward = XMVector3TransformNormal(forward, localWorld);
+			up = XMVector3TransformNormal(up, localWorld);
 
-			forward = DirectX::XMVector3Normalize(forward);
-			up = DirectX::XMVector3Normalize(up);
+			forward = XMVector3Normalize(forward);
+			up = XMVector3Normalize(up);
 
-			DirectX::XMVECTOR right = DirectX::XMVector3Cross(up, forward);
+			XMVECTOR right = XMVector3Cross(up, forward);
 
 
 			// Store the new values.
-			DirectX::XMStoreFloat4x4(&_datap->Local[index], localWorld);
-			DirectX::XMStoreFloat3(&_datap->Forward[index], forward);
-			DirectX::XMStoreFloat3(&_datap->Up[index], up);
-			DirectX::XMStoreFloat3(&_datap->Right[index], right);
+			XMStoreFloat4x4(&_datap->Local[index], localWorld);
+			XMStoreFloat3(&_datap->Forward[index], forward);
+			XMStoreFloat3(&_datap->Up[index], up);
+			XMStoreFloat3(&_datap->Right[index], right);
 
 			uint32_t parent = _datap->Parent[index];
 			if (parent != -1)
 			{
 				// Entity has a parent, so take that into account.
-				parentWorld = DirectX::XMLoadFloat4x4(&_datap->World[parent]);
+				parentWorld = XMLoadFloat4x4(&_datap->World[parent]);
 				localWorld *= parentWorld;
 			}
-			DirectX::XMStoreFloat4x4(&_datap->World[index], localWorld);
+			XMStoreFloat4x4(&_datap->World[index], localWorld);
 
 			uint32_t child = _datap->FirstChild[index];
 			
 			if (child != -1)
 			{	
 				// Entity had children, update their transforms aswell. (We won't do this recursively for some performance boost)
-				std::vector<DirectX::XMMATRIX> parentWorldTemp;
+				std::vector<XMMATRIX> parentWorldTemp;
 				parentWorldTemp.reserve(10);
 				std::vector<uint32_t> childTemp;
 				childTemp.reserve(10);
@@ -345,19 +837,35 @@ namespace Ensum
 				again:
 				while (child != -1)
 				{
-					localPos = DirectX::XMLoadFloat3(&_datap->PositionL[index]);
-					localRot = DirectX::XMLoadFloat3(&_datap->Rotation[index]);
-					localScale = DirectX::XMLoadFloat3(&_datap->Scale[index]);
+					localPos = XMLoadFloat3(&_datap->PositionL[index]);
+					localRot = XMLoadFloat3(&_datap->Rotation[index]);
+					localScale = XMLoadFloat3(&_datap->Scale[index]);
 
-					localWorld = DirectX::XMMatrixScalingFromVector(localScale);
-					localWorld *= DirectX::XMMatrixRotationRollPitchYawFromVector(localRot);
-					localWorld *= DirectX::XMMatrixTranslationFromVector(localPos);
+					localWorld = XMMatrixScalingFromVector(localScale);
+					localWorld *= XMMatrixRotationRollPitchYawFromVector(localRot);
+					localWorld *= XMMatrixTranslationFromVector(localPos);
+					
+					// Calc the forward, up and right vectors.
+					forward = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+					up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
 
-					DirectX::XMStoreFloat4x4(&_datap->Local[index], localWorld);
+					forward = XMVector3TransformNormal(forward, localWorld);
+					up = XMVector3TransformNormal(up, localWorld);
+
+					forward = XMVector3Normalize(forward);
+					up = XMVector3Normalize(up);
+
+					right = XMVector3Cross(up, forward);
+
+					// Store the new values.
+					XMStoreFloat4x4(&_datap->Local[index], localWorld);
+					XMStoreFloat3(&_datap->Forward[index], forward);
+					XMStoreFloat3(&_datap->Up[index], up);
+					XMStoreFloat3(&_datap->Right[index], right);
 
 					localWorld *= parentWorld;
 
-					DirectX::XMStoreFloat4x4(&_datap->World[index], localWorld);
+					XMStoreFloat4x4(&_datap->World[index], localWorld);
 
 					uint32_t c2 = _datap->FirstChild[child];
 					if (c2 != -1)

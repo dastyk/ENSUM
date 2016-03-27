@@ -62,8 +62,19 @@ public:
 
 		//Utils::Options::SetIntegerOption("Screen", "Width", 1337);
 
+		Components::Entity ent = _entityManager.Create();
+
+		_transform.CreateTransform(ent);
 		_transform.CreateTransform(player);
 
+		_transform.SetPosition(player, DirectX::XMFLOAT3(2.0f, 0.0f, 0.0f));
+		_transform.SetPosition(ent, DirectX::XMFLOAT3(1.0f, 0.0f, 0.0f));
+
+		_transform.SetForward(player, DirectX::XMFLOAT3(1.0f, 0.0f, 0.0f));
+		//_transform.SetForward(player, DirectX::XMFLOAT3(-1.0f, 0.0f, 1.0f));
+
+		_transform.BindChild(player, ent);
+		_transform.UnbindChild(ent);
 	}
 
 	const void Frame()
