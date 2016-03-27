@@ -75,14 +75,14 @@ namespace Ensum
 			const void RotatePitch(const Entity& entity, const float radians);
 			const void RotateRoll(const Entity& entity, const float radians);
 
-			const void SetPosition(const Entity& entity, const DirectX::XMFLOAT3& position);
-			const void SetPosition(const Entity& entity, const DirectX::XMVECTOR& position);
+			const void SetPosition(const Entity& entity, const DirectX::XMFLOAT3& position, bool relativeToParent = false);
+			const void SetPosition(const Entity& entity, const DirectX::XMVECTOR& position, bool relativeToParent = false);
 			const void SetRotation(const Entity& entity, const DirectX::XMFLOAT3& rotation);
 			const void SetRotation(const Entity& entity, const DirectX::XMVECTOR& rotation);
-			const void SetScale(const Entity& entity, const DirectX::XMFLOAT3& scale);
-			const void SetScale(const Entity& entity, const DirectX::XMVECTOR& scale);
-			const void SetForward(const Entity& entity, const DirectX::XMFLOAT3& forward);
-			const void SetForward(const Entity& entity, const DirectX::XMVECTOR& forward);
+			const void SetScale(const Entity& entity, const DirectX::XMFLOAT3& scale, bool relativeToParent = false);
+			const void SetScale(const Entity& entity, const DirectX::XMVECTOR& scale, bool relativeToParent = false);
+			const void SetForward(const Entity& entity, const DirectX::XMFLOAT3& forward, bool relativeToParent = false);
+			const void SetForward(const Entity& entity, const DirectX::XMVECTOR& forward, bool relativeToParent = false);
 
 			const DirectX::XMVECTOR GetPosition(const Entity& entity);
 			const DirectX::XMVECTOR GetRotation(const Entity& entity);
@@ -115,7 +115,44 @@ namespace Ensum
 			*/
 			const void _UnbindChild(uint32_t child);
 
-			/** Transform to parents local.  
+
+
+			const void _MoveForward(uint32_t index, const float amount);
+			const void _MoveBackward(uint32_t index, const float amount);
+			const void _MoveRight(uint32_t index, const float amount);
+			const void _MoveLeft(uint32_t index, const float amount);
+			const void _MoveUp(uint32_t index, const float amount);
+			const void _MoveDown(uint32_t index, const float amount);
+			const void _MoveAlongVector(uint32_t index, const DirectX::XMVECTOR amount);
+			const void _MoveAlongVector(uint32_t index, DirectX::XMVECTOR dir, float amount);
+			const void _RotateYaw(uint32_t index, const float radians);
+			const void _RotatePitch(uint32_t index, const float radians);
+			const void _RotateRoll(uint32_t index, const float radians);
+					   
+			const void _SetPosition(uint32_t index, const DirectX::XMFLOAT3& position, bool relativeToParent = false);
+			const void _SetPosition(uint32_t index, const DirectX::XMVECTOR& position, bool relativeToParent = false);
+			const void _SetRotation(uint32_t index, const DirectX::XMFLOAT3& rotation);
+			const void _SetRotation(uint32_t index, const DirectX::XMVECTOR& rotation);
+			const void _SetScale(uint32_t index, const DirectX::XMFLOAT3& scale, bool relativeToParent = false);
+			const void _SetScale(uint32_t index, const DirectX::XMVECTOR& scale, bool relativeToParent = false);
+			const void _SetForward(uint32_t index, const DirectX::XMFLOAT3& forward, bool relativeToParent = false);
+			const void _SetForward(uint32_t index, const DirectX::XMVECTOR& forward, bool relativeToParent = false);
+
+			const DirectX::XMVECTOR _GetPosition(uint32_t index);
+			const DirectX::XMVECTOR _GetRotation(uint32_t index);
+			const DirectX::XMVECTOR _GetScale(uint32_t index);
+			const DirectX::XMVECTOR _GetForward(uint32_t index);
+			const DirectX::XMVECTOR _GetRight(uint32_t index);
+			const DirectX::XMVECTOR _GetUp(uint32_t index);
+
+
+
+
+
+
+
+
+			/** Transform to parents local.
 			* Eg. If child is at pos (1,0) and parent at (2,0), we want the child local to be (-1,0) but world to be (1,0)
 			* It is assumed that the indices exist.
 			*/
