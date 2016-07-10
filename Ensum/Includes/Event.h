@@ -140,7 +140,10 @@ namespace Ensum
 		{
 			_callbacks->remove(func);
 		}
-
+		void Clear()
+		{
+			_callbacks->clear();
+		}
 	private:
 		Event& operator=(const Event& rhs);
 		Event(const Event& other);

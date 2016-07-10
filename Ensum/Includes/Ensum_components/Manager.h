@@ -54,6 +54,16 @@ namespace Ensum
 			{
 				_GC();
 			}
+			/** Public destroy function.
+			*
+			*/
+			virtual const void Destroy(const Entity& entity)
+			{
+				auto& find = _entityToIndex->find(entity);
+				if (find == _entityToIndex->end())
+					return;
+				_Destroy(find->second);
+			}
 		protected:
 			/** Allocate more memory for scenedata
 			*

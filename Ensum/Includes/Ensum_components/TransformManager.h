@@ -17,6 +17,7 @@ namespace Ensum
 			public Manager
 		{
 		//	friend class PhysicsComp; // Physics comp now have access to private members in transformmanager.
+			friend class CameraManager;
 		private:
 			/** The managers data struct.
 			*
@@ -61,8 +62,10 @@ namespace Ensum
 			*/
 			const void UnbindChild(const Entity& child);
 
-
-
+			/** Move forward-x, right-y, up-z
+			*
+			*/
+			const void Move(const Entity& entity, const DirectX::XMFLOAT3& direction);
 			const void MoveForward(const Entity& entity, const float amount);
 			const void MoveBackward(const Entity& entity, const float amount);
 			const void MoveRight(const Entity& entity, const float amount);
@@ -71,6 +74,7 @@ namespace Ensum
 			const void MoveDown(const Entity& entity, const float amount);
 			const void MoveAlongVector(const Entity& entity, const DirectX::XMVECTOR amount);
 			const void MoveAlongVector(const Entity& entity, DirectX::XMVECTOR dir, float amount);
+			const void Rotate(const Entity& entity, const DirectX::XMFLOAT3& radians);
 			const void RotateYaw(const Entity& entity, const float radians);
 			const void RotatePitch(const Entity& entity, const float radians);
 			const void RotateRoll(const Entity& entity, const float radians);
@@ -101,6 +105,11 @@ namespace Ensum
 			* The deleted entry is replaced by the last in the block.
 			*/
 			const void _Destroy(uint32_t index);
+
+			/** Create a transform component for the entity.
+			*(The private version.)
+			*/
+			const uint32_t _CreateTransform(const Entity& entity);
 			/** Bind a entity as child to another. (The private version.)
 			* If relativeToParent is true, the current local pos of the child will be the same.
 			* If relativeToParent is false, the local pos of the child will be translated to the parents space.
@@ -115,8 +124,10 @@ namespace Ensum
 			*/
 			const void _UnbindChild(uint32_t child);
 
-
-
+			/** Move forward-x, right-y, up-z
+			*
+			*/
+			const void _Move(uint32_t index, const DirectX::XMFLOAT3& direction);
 			const void _MoveForward(uint32_t index, const float amount);
 			const void _MoveBackward(uint32_t index, const float amount);
 			const void _MoveRight(uint32_t index, const float amount);
@@ -125,6 +136,7 @@ namespace Ensum
 			const void _MoveDown(uint32_t index, const float amount);
 			const void _MoveAlongVector(uint32_t index, const DirectX::XMVECTOR amount);
 			const void _MoveAlongVector(uint32_t index, DirectX::XMVECTOR dir, float amount);
+			const void _Rotate(uint32_t index, const DirectX::XMFLOAT3& radians);
 			const void _RotateYaw(uint32_t index, const float radians);
 			const void _RotatePitch(uint32_t index, const float radians);
 			const void _RotateRoll(uint32_t index, const float radians);
@@ -138,16 +150,14 @@ namespace Ensum
 			const void _SetForward(uint32_t index, const DirectX::XMFLOAT3& forward, bool relativeToParent = false);
 			const void _SetForward(uint32_t index, const DirectX::XMVECTOR& forward, bool relativeToParent = false);
 
+
+
 			const DirectX::XMVECTOR _GetPosition(uint32_t index);
 			const DirectX::XMVECTOR _GetRotation(uint32_t index);
 			const DirectX::XMVECTOR _GetScale(uint32_t index);
 			const DirectX::XMVECTOR _GetForward(uint32_t index);
 			const DirectX::XMVECTOR _GetRight(uint32_t index);
 			const DirectX::XMVECTOR _GetUp(uint32_t index);
-
-
-
-
 
 
 

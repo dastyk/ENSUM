@@ -6,6 +6,7 @@
 #include <Windows.h>
 #include <unordered_map>
 #include <windowsx.h>
+#include "ensumstring.h"
 
 namespace Ensum
 {
@@ -203,6 +204,9 @@ namespace Ensum
 
 			XButton1 = 0x4,
 			XButton2 = 0x5,
+
+			ScrollUp = 0x6,
+			ScrollDown = 0x7
 		};
 
 		/** Stores the states of the mouse and keyboard.
@@ -224,30 +228,16 @@ namespace Ensum
 			/** Returns whether specified key is down.
 			*
 			*/
-			const bool IsKeyDown(Keys keyCode)const;
-			/** Returns whether specified was pushed.
+			const bool IsKeyDown(const string& key)const;
+			/** Returns whether specified key was pushed.
 			*
 			*/
-			const bool IsKeyPushed(Keys keyCode);
+			const bool IsKeyPushed(const string& key);
 
-			/** Returns whether the scrollwheel was scrolled down this frame.
+			/** Returns the scroll delta. (negative is down, positive is up)
 			*
 			*/
-			const bool IsScrollDown(int32_t&delta);
-			/** Returns whether the scrollwheel was scrolled up this frame.
-			* If returned true delta is the amount scrolled. Negative down.
-			*/
-			const bool IsScrollUp(int32_t& delta);
-			
-			/** Returns whether specified mousekey is down.
-			*  If returned true delta is the amount scrolled. Positive up.
-			*/
-			const bool IsMouseKeyDown(MouseKeys keyCode)const;
-			/** Returns whether specified mousekey is pushed.
-			*
-			*/
-			const bool IsMouseKeyPushed(MouseKeys keyCode);
-
+			const float GetScrollDelta()const;
 			/** Returns the posisiton of the mouse, relative to the draw area of the window.
 			* 0,0 is the upper left corner.
 			*/
@@ -270,14 +260,14 @@ namespace Ensum
 			*/
 			const void HideCursor(bool show)const;
 
-			/** Rebinds the key org to the key to.
+			/** Sets the key to use for the given string key.
 			*
 			*/
-			const void Rebind(Keys org, Keys to);
-			/** Rebind the mousekey org to the mousekey to.
+			const void Rebind(const string& key, Keys to);
+			/**  Sets the mouse key to use for the given string key.
 			*
 			*/
-			const void Rebind(MouseKeys org, MouseKeys to);
+			const void Rebind(const string& key, MouseKeys to);
 
 			//const void Rebind(Keys org, MouseKeys to);
 			//const void Rebind(MouseKeys org, Keys to);
@@ -334,8 +324,11 @@ namespace Ensum
 			bool _mouseLockedToCenter;
 			int32_t _scrollDelta;
 
-			std::unordered_map<Keys, Keys>* _keyToKey; /*!< Key rebinding map */
-			std::unordered_map<MouseKeys, MouseKeys>* _mousekeyToMousekey;/*!< Mousekey rebinding map */
+			//std::unordered_map<Keys, Keys>* _keyToKey; /*!< Key rebinding map */
+			//std::unordered_map<MouseKeys, MouseKeys>* _mousekeyToMousekey;/*!< Mousekey rebinding map */
+
+			std::unordered_map<uint32_t, Keys>* _hashToKey;/*!< Key rebinding map */
+			std::unordered_map<uint32_t, MouseKeys>* _hashToMouseKey;/*!< Mousekey rebinding map */
 		};
 	}
 }

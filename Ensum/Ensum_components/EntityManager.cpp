@@ -22,11 +22,15 @@ namespace Ensum
 
 			_generation = new std::vector<uint8_t>;
 			if (!_generation) Exception("Could not create generation vector.");
+
+			_destroyCallback = new std::vector<Event<const void(const Entity& entity)>>;
+			if (!_destroyCallback) Exception("Could not create destroyCallback vector.");
 		}
 
 
 		EntityManager::~EntityManager()
 		{
+			SAFE_DELETE(_destroyCallback);
 			SAFE_DELETE(_freeIndices);
 			SAFE_DELETE(_generation);
 		}
@@ -54,6 +58,14 @@ namespace Ensum
 			}
 			return (index | (*_generation)[index] << ENTITY_INDEX_BITS);
 		}
+		const void EntityManager::AddDeleteCallback(const Entity & entity, Delegate<const void (const Entity& entity)>& callback)
+		{
+			if (Alive(entity))
+			{
+				const uint32_t idx = entity.Index();
+				(*_destroyCallback)[idx]+=callback;
+			}
+		}
 		const bool EntityManager::Alive(const Entity & entity) const
 		{
 			uint8_t t = entity.Generation();
@@ -68,6 +80,11 @@ namespace Ensum
 			{
 				const uint32_t idx = entity.Index();
 				(*_generation)[idx]++;
+				if (idx < _destroyCallback->size())
+				{
+					(*_destroyCallback)[idx](entity);
+					(*_destroyCallback)[idx].Clear();
+				}
 				_freeIndices->push_back(idx);
 			}
 		}

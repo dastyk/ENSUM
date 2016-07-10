@@ -29,42 +29,16 @@ namespace Ensum
 			auto find = _entityToIndex->find(entity);
 			if (find != _entityToIndex->end())
 				return;
-
-			if (_data->used + 1 >= _data->allocated)
-				_Allocate(_data->allocated * 2 + 10);
-
 			if (!_entityManager.Alive(entity))
 			{
 				Utils::ConsoleLog::DumpToConsole("Tried to bind transformcomponent to a dead entity. Entity: %d", entity.ID);
 				return;
 			}
 
-			
-
 			Utils::ConsoleLog::DumpToConsole("Creating transformcomponent for Entity: %d", entity.ID);
 
-			uint32_t index = (*_entityToIndex)[entity] = static_cast<uint32_t>(_entityToIndex->size());
-			_datap->entity[index] = entity;
-
-			using namespace DirectX;
-
-			XMStoreFloat4x4(&(_datap->Local[index]), XMMatrixIdentity());
-			XMStoreFloat4x4(&(_datap->World[index]), XMMatrixIdentity());
-
-			_datap->Parent[index] = -1;
-			_datap->FirstChild[index] = -1;
-			_datap->PrevSibling[index] = -1;
-			_datap->NextSibling[index] = -1;
-
-			_datap->PositionL[index] = XMFLOAT3(0.0f, 0.0f, 0.0f);
-			_datap->Rotation[index] = XMFLOAT3(0.0f, 0.0f, 0.0f);
-			_datap->Scale[index] = XMFLOAT3(1.0f, 1.0f, 1.0f);
-
-			_datap->Forward[index] = XMFLOAT3(0.0f, 0.0f, 1.0f);
-			_datap->Up[index] = XMFLOAT3(0.0f, 1.0f, 0.0f);
-			_datap->Right[index] = XMFLOAT3(1.0f, 0.0f, 0.0f);
-
-			_datap->used++;
+			_CreateTransform(entity);
+			
 		}
 		const void TransformManager::BindChild(const Entity & parent, const Entity & child, bool relativeToParent)
 		{
@@ -88,6 +62,14 @@ namespace Ensum
 
 			_UnbindChild(childi->second);
 
+		}
+		const void TransformManager::Move(const Entity & entity, const DirectX::XMFLOAT3& direction)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+
+			_Move(find->second, direction);
 		}
 		const void TransformManager::MoveForward(const Entity & entity, const float amount)
 		{
@@ -144,6 +126,13 @@ namespace Ensum
 			if (find == _entityToIndex->end())
 				return;
 			_MoveAlongVector(find->second, dir, amount);
+		}
+		const void TransformManager::Rotate(const Entity & entity, const DirectX::XMFLOAT3 & radians)
+		{
+			auto find = _entityToIndex->find(entity);
+			if (find == _entityToIndex->end())
+				return;
+			_Rotate(find->second, radians);
 		}
 		const void TransformManager::RotateYaw(const Entity & entity, const float radians)
 		{
@@ -354,6 +343,37 @@ namespace Ensum
 
 			_datap->used--;
 		}
+		const uint32_t TransformManager::_CreateTransform(const Entity& entity)
+		{
+			if (_data->used + 1 >= _data->allocated)
+				_Allocate(_data->allocated * 2 + 10);
+
+	
+			uint32_t index = (*_entityToIndex)[entity] = static_cast<uint32_t>(_entityToIndex->size());
+			_datap->entity[index] = entity;
+
+			using namespace DirectX;
+
+			XMStoreFloat4x4(&(_datap->Local[index]), XMMatrixIdentity());
+			XMStoreFloat4x4(&(_datap->World[index]), XMMatrixIdentity());
+
+			_datap->Parent[index] = -1;
+			_datap->FirstChild[index] = -1;
+			_datap->PrevSibling[index] = -1;
+			_datap->NextSibling[index] = -1;
+
+			_datap->PositionL[index] = XMFLOAT3(0.0f, 0.0f, 0.0f);
+			_datap->Rotation[index] = XMFLOAT3(0.0f, 0.0f, 0.0f);
+			_datap->Scale[index] = XMFLOAT3(1.0f, 1.0f, 1.0f);
+
+			_datap->Forward[index] = XMFLOAT3(0.0f, 0.0f, 1.0f);
+			_datap->Up[index] = XMFLOAT3(0.0f, 1.0f, 0.0f);
+			_datap->Right[index] = XMFLOAT3(1.0f, 0.0f, 0.0f);
+
+			_datap->used++;
+
+			return index;
+		}
 		const void TransformManager::_BindChild(uint32_t parent, uint32_t child, bool relativeToParent)
 		{
 
@@ -429,6 +449,24 @@ namespace Ensum
 
 		}
 		
+		const void TransformManager::_Move(uint32_t index, const DirectX::XMFLOAT3& direction)
+		{
+			using namespace DirectX;
+
+			XMVECTOR Forward = XMLoadFloat3(&_datap->Forward[index]);
+			XMVECTOR Right = XMLoadFloat3(&_datap->Right[index]);
+			XMVECTOR Up = XMLoadFloat3(&_datap->Up[index]);
+			XMVECTOR position = XMLoadFloat3(&_datap->PositionL[index]);
+
+			position += Forward * direction.x;
+			position += Right * direction.y;
+			position += Up * direction.z;
+
+			XMStoreFloat3(&_datap->PositionL[index], position);
+
+			_Transform(index);
+		}
+
 		inline const void TransformManager::_MoveForward(uint32_t index, const float amount)
 		{
 			using namespace DirectX;
@@ -522,6 +560,19 @@ namespace Ensum
 			position += dir*amount;
 
 			XMStoreFloat3(&_datap->PositionL[index], position);
+
+			_Transform(index);
+		}
+		inline const void TransformManager::_Rotate(uint32_t index, const DirectX::XMFLOAT3 & radians)
+		{
+			using namespace DirectX;
+
+			float& pitch = _datap->Rotation[index].x;
+			pitch = fmod(pitch + radians.x, XM_2PI);
+			float& yaw = _datap->Rotation[index].y;
+			yaw = fmod(yaw + radians.y, XM_2PI);
+			float& roll = _datap->Rotation[index].z;
+			roll = fmod(roll + radians.z, XM_2PI);
 
 			_Transform(index);
 		}

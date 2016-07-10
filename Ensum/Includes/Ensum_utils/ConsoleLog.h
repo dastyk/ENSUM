@@ -50,7 +50,11 @@ namespace Ensum
 			* This is a formated string. (See documentation for printf).
 			*/
 			const static void DumpToConsole(const char* message, ...);
-
+			/** Adds the message and optional args to the que.
+			* Use this static function when writing to the console.
+			* This is a formated string. (See documentation for printf).
+			*/
+			const static void DumpToConsole(const WCHAR* message, ...);
 			/** Adds the string data to the que.
 			*
 			*/

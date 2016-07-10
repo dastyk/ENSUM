@@ -18,7 +18,7 @@ namespace Ensum
 
 		SceneManager::~SceneManager()
 		{
-			for (auto& scene : (*_entityToIndex))
+			for (auto scene : (*_entityToIndex))
 			{
 				SAFE_DELETE(_datap->scenePtr[scene.second]);
 			}

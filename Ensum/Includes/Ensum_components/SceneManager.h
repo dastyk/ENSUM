@@ -23,7 +23,7 @@ namespace Ensum
 			};
 		public:
 			SceneManager();
-			~SceneManager();
+			virtual ~SceneManager();
 
 			/** Create the scene and return it's entity.
 			*

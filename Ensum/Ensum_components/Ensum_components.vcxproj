@@ -22,7 +22,7 @@
     <ProjectGuid>{AE3E29DF-23A3-4550-9971-1F8DA277C234}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Ensum_components</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -160,6 +160,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="NullScene.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="TransformManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Includes\Ensum_components\CameraManager.h" />
     <ClInclude Include="..\Includes\Ensum_components\DataManager.h" />
     <ClInclude Include="..\Includes\Ensum_components\dll_export.h" />
     <ClInclude Include="..\Includes\Ensum_components\Entity.h" />

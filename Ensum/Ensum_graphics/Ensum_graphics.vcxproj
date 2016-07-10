@@ -22,7 +22,7 @@
     <ProjectGuid>{3A5052C9-1D82-4564-8698-A982CE56CDB2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Ensum_graphics</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -161,12 +161,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="D3D11.cpp" />
+    <ClCompile Include="D3D12.cpp" />
     <ClCompile Include="Direct3D11.cpp" />
+    <ClCompile Include="Direct3D12.cpp" />
     <ClCompile Include="Graphics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_graphics\D3D11.h" />
+    <ClInclude Include="..\Includes\Ensum_graphics\D3D12.h" />
     <ClInclude Include="..\Includes\Ensum_graphics\Direct3D11.h" />
+    <ClInclude Include="..\Includes\Ensum_graphics\Direct3D12.h" />
     <ClInclude Include="..\Includes\Ensum_graphics\dll_export.h" />
     <ClInclude Include="..\Includes\Ensum_graphics\Graphics.h" />
   </ItemGroup>

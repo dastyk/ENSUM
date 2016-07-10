@@ -22,6 +22,9 @@
     <Filter Include="TransformManager">
       <UniqueIdentifier>{d947432d-c0c2-4d02-87be-5b4a38277602}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CameraManager">
+      <UniqueIdentifier>{09af42d7-9d66-4651-86d3-32232393d6ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_components\EntityManager.h">
@@ -47,6 +50,9 @@
     <ClInclude Include="..\Includes\Ensum_components\TransformManager.h">
       <Filter>TransformManager</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_components\CameraManager.h">
+      <Filter>CameraManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntityManager.cpp">
@@ -63,6 +69,9 @@
     </ClCompile>
     <ClCompile Include="TransformManager.cpp">
       <Filter>TransformManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>CameraManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

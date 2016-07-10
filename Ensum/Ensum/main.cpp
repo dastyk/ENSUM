@@ -11,7 +11,7 @@
 #ifndef DBG_NEW
 #define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
 #define new DBG_NEW
-#endif
+#endif // DBG_NEW
 #endif  // _DEBUG
 
 
@@ -23,7 +23,7 @@
 #include "Ensum_utils\ConsoleLog.h"
 #include "Ensum_utils\Options.h"
 #include "Ensum_components\DataManager.h"
-#include "Ensum_graphics\D3D11.h"
+#include "Ensum_graphics\D3D12.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_coreD.lib")
@@ -47,10 +47,10 @@ class Game : public Components::Scene
 public:
 	Game(Components::EntityManager& entityManger, Input::Input* input, Components::SceneManager& scenemanager):Scene(entityManger,input) ,_sceneManager(scenemanager)
 	{
-	//	_input->LockMouseToWindow(true);
-		//_input->LockMouseToCenter(true);
-		//_input->HideCursor(true);
-		_input->Rebind(Input::Keys::Escape, Input::Keys::A);
+		_input->LockMouseToWindow(true);
+		_input->LockMouseToCenter(true);
+		_input->HideCursor(true);
+		_input->Rebind("Exit", Input::Keys::Escape);
 		_sceneManager.CreateScene(new Components::NullScene(_sceneManager.GetEntityManager(), _input));
 		//_entityManager.Delete(_entity);
 
@@ -77,20 +77,20 @@ public:
 		_transform.UnbindChild(ent);
 	}
 
-	const void Frame()
-	{
-		Components::Scene::Frame();
-		if (_input->IsKeyPushed(Input::Keys::F))
-		{
-			Utils::Options::SetBooleanOption("Screen", "Fullscreen", true);
-			Utils::Options::NotifyChange();
-		}
-		if (_input->IsKeyPushed(Input::Keys::G))
-		{
-			Utils::Options::SetBooleanOption("Screen", "Fullscreen", false);
-			Utils::Options::NotifyChange();
-		}
-	}
+	//const void Frame()
+	//{
+	//	Components::Scene::Frame();
+	//	if (_input->IsKeyPushed(Input::Keys::F))
+	//	{
+	//		Utils::Options::SetBooleanOption("Screen", "Fullscreen", true);
+	//		Utils::Options::NotifyChange();
+	//	}
+	//	if (_input->IsKeyPushed(Input::Keys::G))
+	//	{
+	//		Utils::Options::SetBooleanOption("Screen", "Fullscreen", false);
+	//		Utils::Options::NotifyChange();
+	//	}
+	//}
 	~Game()
 	{
 	}
@@ -110,12 +110,10 @@ int WINAPI WinMain(HINSTANCE hInstance,
 {
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Memoryleak detection.
-	//						  _crtBreakAlloc = 178;
+		//					  _crtBreakAlloc = 409;
 #endif
 	Utils::ConsoleLog::CreateInstance();
 	Utils::Options::CreateInstance();
-
-
 
 
 	Components::SceneManager sceneManager;
@@ -125,15 +123,14 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow(sceneManager));
 	
-	Graphics::Graphics::CreateInstance(new Graphics::D3D11());
+	Graphics::Graphics::CreateInstance(new Graphics::D3D12());
 
 
 	sceneManager.CreateScene(new Game(sceneManager.GetEntityManager(), w->GetInput(), sceneManager));
-
 	
 	w->Start();
 
-	Graphics::D3D11::DeleteInstance();
+	Graphics::D3D12::DeleteInstance();
 	Core::Window::DeleteInstance();
 	Utils::Options::DeleteInstance();
 	Utils::ConsoleLog::DeleteInstance();

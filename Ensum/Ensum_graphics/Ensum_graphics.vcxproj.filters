@@ -10,6 +10,12 @@
     <Filter Include="D3D11\Helpers">
       <UniqueIdentifier>{1e479bd7-da11-4e9f-9013-623dd94a47cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="D3D12">
+      <UniqueIdentifier>{35d1c99d-a1fd-4291-adca-fb0ea9ba762a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3D12\Helpers">
+      <UniqueIdentifier>{3ab11f2b-e8f1-436b-bb53-87e989618c27}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics.cpp">
@@ -20,6 +26,12 @@
     </ClCompile>
     <ClCompile Include="Direct3D11.cpp">
       <Filter>D3D11\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Direct3D12.cpp">
+      <Filter>D3D12\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="D3D12.cpp">
+      <Filter>D3D12</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -32,6 +44,12 @@
     </ClInclude>
     <ClInclude Include="..\Includes\Ensum_graphics\Direct3D11.h">
       <Filter>D3D11\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_graphics\D3D12.h">
+      <Filter>D3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_graphics\Direct3D12.h">
+      <Filter>D3D12\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

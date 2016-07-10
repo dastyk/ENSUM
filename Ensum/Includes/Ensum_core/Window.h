@@ -72,7 +72,10 @@ namespace Ensum
 			*
 			*/
 			virtual const void Start();
-
+			/** Function for pausing and unpausing app.
+			*
+			*/
+			virtual const void Pause(bool paused);
 			/** Returns a pointer to the input.
 			*
 			*/
@@ -81,7 +84,8 @@ namespace Ensum
 			Event<const void()> FrameStart;
 
 		protected:
-			bool _running;			
+			bool _running;
+			bool _paused;
 			LPWSTR _wndCaption;
 
 			static Window* _instance;

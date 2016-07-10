@@ -76,7 +76,7 @@ namespace Ensum
 
 		const void WinWindow::_Frame()
 		{
-			if (_input->IsKeyDown(Input::Keys::Escape))
+			if (_input->IsKeyDown("Exit"))
 				_running = false;
 
 			_sceneManager.Frame();
@@ -87,7 +87,7 @@ namespace Ensum
 		{
 		
 			DestroyWindow(_hWnd);
-			SAFE_DELETE(_input);
+
 		}
 		const void WinWindow::Init()
 		{
@@ -182,7 +182,7 @@ namespace Ensum
 
 
 			_input->Init(_hWnd);
-
+			_input->Rebind("Exit", Input::Keys::Escape);
 			return void();
 		}
 
@@ -219,7 +219,14 @@ namespace Ensum
 				PostQuitMessage(0);
 				break;
 			}
-
+			case WM_ACTIVATE:
+			{
+				if(LOWORD(wparam) == WA_INACTIVE)
+					Window::GetInstance()->Pause(true);
+				else
+					Window::GetInstance()->Pause(false);
+				break;
+			}
 			// All other messages pass to the message handler in the system class.
 			default:
 			{

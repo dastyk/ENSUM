@@ -10,6 +10,7 @@ which could be represented by classes in their own right).
 
 #include "dll_export.h"
 #include <d3d11.h>
+#include <d3d11_1.h>
 #include <comdef.h>
 
 #pragma comment(lib, "d3d11.lib")

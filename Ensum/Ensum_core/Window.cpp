@@ -20,6 +20,7 @@ namespace Ensum
 		Window::~Window()
 		{
 			Utils::Options::UnSubscribe(Delegate<const void()>::Make<Window, &Window::_Resize>(this));
+			SAFE_DELETE(_input);
 			SAFE_DELETE(_timer);		
 		}
 		Window * Window::CreateWin(Window * window)
@@ -68,16 +69,28 @@ namespace Ensum
 			_timer->Start();
 			while (_running)
 			{
-				_input->Frame();
+				if (!_paused)
+				{
+					_input->Frame();
 
-				_MessageHandling();
+					_MessageHandling();
 
-				FrameStart();
-				//Utils::ConsoleLog::DumpToConsole("Delta: %.5f", _timer->Delta());
-				// Do the frame processing.
-				_Frame();
+					FrameStart();
+					//Utils::ConsoleLog::DumpToConsole("Delta: %.5f", _timer->Delta());
+					// Do the frame processing.
+					_Frame();
+				}
+				else
+					_MessageHandling();
 			}
 
+		}
+
+		const void Window::Pause(bool paused)
+		{
+			_paused = paused;
+			paused ? _timer->Stop() : _timer->Start();
+			return void();
 		}
 
 		Input::Input * Window::GetInput()

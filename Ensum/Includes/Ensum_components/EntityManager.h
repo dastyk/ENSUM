@@ -7,6 +7,7 @@
 #include <deque>
 #include "dll_export.h"
 #include "Ensum_components\Entity.h"
+#include "Event.h"
 
 namespace Ensum
 {
@@ -25,6 +26,10 @@ namespace Ensum
 			*
 			*/
 			Entity Create();
+			/** Add the callback for the entity.
+			*
+			*/
+			const void AddDeleteCallback(const Entity& entity, Delegate<const void (const Entity& entity)>& callback);
 			/** Determines whether or not the entity is alive.
 			*
 			*/
@@ -37,6 +42,7 @@ namespace Ensum
 		private:
 			std::vector<uint8_t>* _generation;
 			std::deque<uint32_t>* _freeIndices;
+			std::vector<Event<const void(const Entity& entity)>>* _destroyCallback;
 
 			static const uint16_t MINIMUM_FREE_INDICES = 1024U;
 		};

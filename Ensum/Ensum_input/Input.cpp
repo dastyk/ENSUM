@@ -2,6 +2,7 @@
 #include "Safe_Delete.h"
 #include "Exception.h"
 #include "Ensum_utils\Options.h"
+#include "Ensum_utils\ConsoleLog.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
@@ -23,8 +24,8 @@ namespace Ensum
 			_mouseLockedToScreen(false),
 			_mouseLockedToCenter(false)
 		{
-			_keyToKey = new std::unordered_map<Keys, Keys>;
-			_mousekeyToMousekey = new std::unordered_map<MouseKeys, MouseKeys>;
+			_hashToKey = new std::unordered_map<uint32_t, Keys>;
+			_hashToMouseKey = new std::unordered_map<uint32_t, MouseKeys>;
 
 			memset(_keys, 0, sizeof(_keys));
 			memset(_keyPressed, 0, sizeof(_keyPressed));
@@ -36,8 +37,8 @@ namespace Ensum
 
 		Input::~Input()
 		{
-			SAFE_DELETE(_keyToKey);
-			SAFE_DELETE(_mousekeyToMousekey);
+			SAFE_DELETE(_hashToKey);
+			SAFE_DELETE(_hashToMouseKey);
 		}
 		const void Input::Frame()
 		{
@@ -87,71 +88,57 @@ namespace Ensum
 			}
 
 			_scrollDelta = 0;
-
+			_mouseKeys[static_cast<uint8_t>(MouseKeys::ScrollUp)] = false;
+			_mouseKeys[static_cast<uint8_t>(MouseKeys::ScrollDown)] = false;
 			return void();
 		}
-		const bool Input::IsKeyDown(Keys keyCode) const
+		const bool Input::IsKeyDown(const string & key) const
 		{
-			auto find = _keyToKey->find(keyCode);
-			if (find != _keyToKey->end())
-				keyCode = find->second;
-			const uint8_t key = static_cast<uint8_t>(keyCode);
-			if (key >= NUM_KEYS)
-				Exception(string("Key out of range. KeyCode: ") + std::to_string(key).c_str());
+			uint32_t hash = key.GetHash();
+			auto findkey = _hashToKey->find(hash);
+			if (findkey != _hashToKey->end())
+			{
+				return _keys[static_cast<uint8_t>(findkey->second)];
+			}
+			auto findmousekey = _hashToMouseKey->find(hash);
+			if (findmousekey != _hashToMouseKey->end())
+			{
+				return _mouseKeys[static_cast<uint8_t>(findmousekey->second)];
+			}
+			return false;
+		}
+		const bool Input::IsKeyPushed(const string & key)
+		{
+			uint32_t hash = key.GetHash();
+			auto findkey = _hashToKey->find(hash);
+			if (findkey != _hashToKey->end())
+			{
+				uint8_t key = static_cast<uint8_t>(findkey->second);
+				if (!_keys[key])
+					return false;
+				if (_keyPressed[key])
+					return false;
 
-			return _keys[key];
-		}
-		const bool Input::IsKeyPushed(Keys keyCode)
-		{
-			auto find = _keyToKey->find(keyCode);
-			if (find != _keyToKey->end())
-				keyCode = find->second;
-			const uint8_t key = static_cast<uint8_t>(keyCode);
-			if (key >= NUM_KEYS)
-				Exception(string("Key out of range. KeyCode: ") + std::to_string(key).c_str());
-			if (!_keys[key])
-				return false;
-			if (_keyPressed[key])
-				return false;
+				_keyPressed[key] = true;
+				return true;
+			}
+			auto findmousekey = _hashToMouseKey->find(hash);
+			if (findmousekey != _hashToMouseKey->end())
+			{
+				uint8_t key = static_cast<uint8_t>(findmousekey->second);
+				if (!_mouseKeys[key])
+					return false;
+				if (_mouseKeyPressed[key])
+					return false;
 
-			_keyPressed[key] = true;
-			return true;
+				_mouseKeyPressed[key] = true;
+				return true;
+			}
+			return false;
 		}
-		const bool Input::IsScrollDown(int32_t & delta)
+		const float Input::GetScrollDelta() const
 		{
-			delta = _scrollDelta;
-			return _scrollDelta < 0? true : false;
-		}
-		const bool Input::IsScrollUp(int32_t & delta)
-		{
-			delta = _scrollDelta;
-			return _scrollDelta > 0 ? true : false;
-		}
-		const bool Input::IsMouseKeyDown(MouseKeys keyCode) const
-		{
-			auto find = _mousekeyToMousekey->find(keyCode);
-			if (find != _mousekeyToMousekey->end())
-				keyCode = find->second;
-			const uint8_t key = static_cast<uint8_t>(keyCode);
-			if (key >= NUM_MOUSEKEYS)
-				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(key).c_str());
-			return _mouseKeys[key];
-		}
-		const bool Input::IsMouseKeyPushed(MouseKeys keyCode)
-		{
-			auto find = _mousekeyToMousekey->find(keyCode);
-			if (find != _mousekeyToMousekey->end())
-				keyCode = find->second;
-			const uint8_t key = static_cast<uint8_t>(keyCode);
-			if (key >= NUM_MOUSEKEYS)
-				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(key).c_str());
-			if (!_mouseKeys[key])
-				return false;
-			if (_mouseKeyPressed[key])
-				return false;
-
-			_mouseKeyPressed[key] = true;
-			return true;
+			return (float)_scrollDelta;
 		}
 		const void Input::GetMousePos(int32_t & rX, int32_t & rY) const
 		{
@@ -261,36 +248,28 @@ namespace Ensum
 			else
 				while (ShowCursor(true) < 0);
 		}
-		const void Input::Rebind(Keys org, Keys to)
+		const void Input::Rebind(const string& key, Keys to)
 		{
-			if (static_cast<uint8_t>(org) >= NUM_KEYS)
-				Exception(string("Key out of range. KeyCode: ") + std::to_string(static_cast<uint8_t>(org)).c_str());
-			const uint8_t bto = static_cast<uint8_t>(to);
 			if (static_cast<uint8_t>(to) >= NUM_KEYS)
-				Exception(string("Key out of range. KeyCode: ") + std::to_string(static_cast<uint8_t>(to)).c_str());
-
-			(*_keyToKey)[org] = to;
-
-			auto find = _keyToKey->find(to);
-			if (find == _keyToKey->end())
-				(*_keyToKey)[to] = Keys::None;
+			{
+				Utils::ConsoleLog::DumpToConsole("Key out of range, Key: %d", static_cast<uint8_t>(to));
+				return;
+			}
+			uint32_t hash = key.GetHash();
+			(*_hashToKey)[hash] = to;
 			return void();
 		}
-		const void Input::Rebind(MouseKeys org, MouseKeys to)
+		const void Input::Rebind(const string& key, MouseKeys to)
 		{
-			if (static_cast<uint8_t>(org) >= NUM_MOUSEKEYS)
-				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(static_cast<uint8_t>(org)).c_str());
-			const uint8_t bto = static_cast<uint8_t>(to);
 			if (static_cast<uint8_t>(to) >= NUM_MOUSEKEYS)
-				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(static_cast<uint8_t>(to)).c_str());
-
-			(*_mousekeyToMousekey)[org] = to;
-
-			auto find = _mousekeyToMousekey->find(to);
-			if (find == _mousekeyToMousekey->end())
-				(*_mousekeyToMousekey)[to] = MouseKeys::None;
-
+			{
+				Utils::ConsoleLog::DumpToConsole("MouseKey out of range, Key: %d", static_cast<uint8_t>(to));
+				return;
+			}
+			uint32_t hash = key.GetHash();
+			(*_hashToMouseKey)[hash] = to;
 			return void();
+
 		}
 		const void Input::Init(HWND hwnd)
 		{
@@ -378,7 +357,7 @@ namespace Ensum
 		{
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_KEYS)
-				Exception(string("Key out of range. KeyCode: ") + std::to_string(key).c_str());
+				Utils::ConsoleLog::DumpToConsole("Key out of range. KeyCode: ", key);
 			_keys[key] = true;
 			return void();
 		}
@@ -386,7 +365,7 @@ namespace Ensum
 		{
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_KEYS)
-				Exception(string("Key out of range. KeyCode: ") + std::to_string(key).c_str());
+				Utils::ConsoleLog::DumpToConsole("Key out of range. KeyCode: ", key);
 			_keyPressed[key] = _keys[key] = false;
 			return void();
 		}
@@ -394,7 +373,7 @@ namespace Ensum
 		{
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_MOUSEKEYS)
-				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(key).c_str());
+				Utils::ConsoleLog::DumpToConsole("MouseKey out of range. KeyCode: ", key);
 			_mouseKeys[key] = true;
 			return void();
 		}
@@ -402,7 +381,7 @@ namespace Ensum
 		{
 			const uint8_t key = static_cast<uint8_t>(keyCode);
 			if (key >= NUM_MOUSEKEYS)
-				Exception(string("MouseKey out of range. KeyCode: ") + std::to_string(key).c_str());
+				Utils::ConsoleLog::DumpToConsole("MouseKey out of range. KeyCode: ", key);
 			_mouseKeyPressed[key] = _mouseKeys[key] = false;
 			return void();
 		}
@@ -414,6 +393,10 @@ namespace Ensum
 		}
 		const void Input::_OnMouseScroll(int32_t delta)
 		{
+			if (delta > 0)
+				_mouseKeys[static_cast<uint8_t>(MouseKeys::ScrollUp)] = true;
+			else if(delta < 0)
+				_mouseKeys[static_cast<uint8_t>(MouseKeys::ScrollDown)] = true;
 			_scrollDelta = delta;
 			return void();
 		}

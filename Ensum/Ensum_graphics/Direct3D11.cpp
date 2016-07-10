@@ -31,31 +31,49 @@ const void Direct3D11::Start()
 	}
 
 	IDXGIAdapter *dxgiAdapter = nullptr;
-	hr = dxgiFactory->EnumAdapters(0, &dxgiAdapter);
-	if (FAILED(hr.Error()))
+	uint16_t i = 0;
+
+	std::vector<IDXGIAdapter*> adapterList;
+	while(dxgiFactory->EnumAdapters(i, &dxgiAdapter) != DXGI_ERROR_NOT_FOUND)
 	{
-		SAFE_RELEASE(dxgiFactory);
-		Exception("Failed to get adapter. Error: %S", hr.ErrorMessage());
+		DXGI_ADAPTER_DESC desc;
+		dxgiAdapter->GetDesc(&desc);
+
+		std::wstring text = L"---Adapter: ";
+		text += desc.Description;
+		text += L"\n";
+
+		Utils::ConsoleLog::DumpToConsole(text.c_str());
+		adapterList.push_back(dxgiAdapter);
+		i++;
 	}
-	hr = dxgiAdapter->EnumOutputs(0, &_DXGIOutput);
-	if (FAILED(hr.Error()))
+
+	i = 0;
+	while (adapterList[0]->EnumOutputs(i, &_DXGIOutput) != DXGI_ERROR_NOT_FOUND)
 	{
-		SAFE_RELEASE(dxgiFactory);
-		SAFE_RELEASE(dxgiAdapter);
-		Exception("Failed to get output. Error: %S", hr.ErrorMessage());
+		DXGI_OUTPUT_DESC desc;
+		_DXGIOutput->GetDesc(&desc);
+
+		std::wstring text = L"---Output: ";
+		text += desc.DeviceName;
+		text += L"\n";
+
+		Utils::ConsoleLog::DumpToConsole(text.c_str());
+
+		i++;
 	}
 
 	unsigned deviceFlags = 0;
 
 #if defined(DEBUG) || defined(_DEBUG)
-	deviceFlags |= D3D11_CREATE_DEVICE_DEBUG;
+	//deviceFlags |= D3D11_CREATE_DEVICE_DEBUG;
 #endif
 
 	D3D_FEATURE_LEVEL featureLevels[] = { D3D_FEATURE_LEVEL_11_1, D3D_FEATURE_LEVEL_11_0 };
 	unsigned numFeatureLevels = sizeof(featureLevels) / sizeof(featureLevels[0]);
 
 	hr = D3D11CreateDevice(
-		dxgiAdapter,
+		adapterList[0],
 		D3D_DRIVER_TYPE_UNKNOWN,
 		NULL,
 		deviceFlags,
@@ -69,7 +87,8 @@ const void Direct3D11::Start()
 	if (FAILED(hr.Error()))
 	{
 		SAFE_RELEASE(dxgiFactory);
-		SAFE_RELEASE(dxgiAdapter);
+		for (auto a : adapterList)
+			SAFE_RELEASE(a);
 		SAFE_RELEASE(_DXGIOutput);
 		Exception("Failed to create device. Error: %S", hr.ErrorMessage());
 	}
@@ -97,7 +116,8 @@ const void Direct3D11::Start()
 	if (FAILED(hr.Error()))
 	{
 		SAFE_RELEASE(dxgiFactory);
-		SAFE_RELEASE(dxgiAdapter);
+		for (auto a : adapterList)
+			SAFE_RELEASE(a);
 		SAFE_RELEASE(_DXGIOutput);		
 		SAFE_RELEASE(_d3dDevice);
 		SAFE_RELEASE(_d3dDeviceContext);
@@ -108,7 +128,8 @@ const void Direct3D11::Start()
 	// I'll just handle Alt+Enter myself, thank you.
 	dxgiFactory->MakeWindowAssociation(_hWnd, DXGI_MWA_NO_WINDOW_CHANGES | DXGI_MWA_NO_ALT_ENTER);
 
-	SAFE_RELEASE(dxgiAdapter);
+	for (auto a : adapterList)
+		SAFE_RELEASE(a);
 	SAFE_RELEASE(dxgiFactory);
 
 	Resize();

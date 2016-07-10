@@ -106,6 +106,17 @@ namespace Ensum
 				delete[] buffer;
 			}
 		}
+		const void ConsoleLog::DumpToConsole(const WCHAR * message, ...)
+		{
+			std::wstring wstrValue;
+			wstrValue = message;
+
+			std::string strValue;
+			strValue.assign(wstrValue.begin(), wstrValue.end());  // convert wstring to string
+
+			DumpToConsole(strValue.c_str());
+			return void();
+		}
 		const void ConsoleLog::AddToQue(const string& data)
 		{
 			WaitForSingleObject(_writeMutex, INFINITE);
