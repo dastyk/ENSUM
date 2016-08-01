@@ -30,7 +30,7 @@ namespace Ensum
 			*/
 			virtual const void _Resize();
 		public:
-			WinWindow(Components::SceneManager& sceneManager);
+			WinWindow(Delegate<const void()>& sceneManagerFrame);
 			virtual ~WinWindow();
 
 			/** Initialization for the window.

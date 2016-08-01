@@ -8,16 +8,14 @@
 
 #include "Ensum_core\Timer.h"
 #include "Ensum_input\Input.h"
-#include "Ensum_components\SceneManager.h"
+#include "Event.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
 #pragma comment(lib, "Ensum_inputD.lib")
-#pragma comment(lib, "Ensum_componentsD.lib")
 #else
 #pragma comment(lib, "Ensum_utils.lib")
 #pragma comment(lib, "Ensum_input.lib")
-#pragma comment(lib, "Ensum_components.lib")
 #endif
 
 namespace Ensum
@@ -27,14 +25,13 @@ namespace Ensum
 
 
 		ENSUM_CORE_TEMPLATE template class ENSUM_CORE_EXPORT Event<const void()>;
-
 		/** Fully abstract class for interfacting with the actual window.
 		*
 		*/
 		class ENSUM_CORE_EXPORT Window
 		{
 		protected:
-			Window(Components::SceneManager& sceneManager);
+			Window(Delegate<const void()>& sceneManagerFrame);
 
 			/** The frame function.
 			* Put the gamelogic here.
@@ -94,7 +91,7 @@ namespace Ensum
 
 			Input::Input* _input;
 
-			Components::SceneManager& _sceneManager;
+			Event<const void()> _sceneManagerFrame;
 		};
 	}
 }

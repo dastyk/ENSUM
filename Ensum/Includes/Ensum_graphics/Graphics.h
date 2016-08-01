@@ -6,6 +6,14 @@
 #include <process.h>
 #include <Windows.h>
 #include "ensumstring.h"
+#include "Ensum_filehandler\Mesh.h"
+
+
+#ifdef _DEBUG
+#pragma comment(lib, "Ensum_filehandlerD.lib")
+#else
+#pragma comment(lib, "Ensum_filehandler.lib")
+#endif
 
 namespace Ensum
 {
@@ -14,10 +22,12 @@ namespace Ensum
 	{	/** The graphics interface.
 		* When an instance of the graphics is created it will connect with a sceneprovider
 		* which in turn provides the graphics with render jobs.
-		* The graphics is multithreaded and will only interact with the rest when gathering jobs.
+		* The graphics is runs on its own thread and will only interact with the rest when gathering jobs.
 		*/
 		class ENSUM_GRAPHICS_EXPORT Graphics
 		{
+		public:
+
 		protected:
 			Graphics(const string& type);
 	
@@ -34,6 +44,7 @@ namespace Ensum
 			unsigned _height;
 			bool _vsync;
 			string _type;
+
 		public:
 			virtual ~Graphics();
 
@@ -45,7 +56,7 @@ namespace Ensum
 			*
 			*/
 			static const void DeleteInstance();
-
+			static FileHandler::MeshData CreateMeshData(FileHandler::Mesh& mesh);
 			/** Enters the render loop.
 			* This should only be called inside the thread.
 			*/
@@ -71,7 +82,13 @@ namespace Ensum
 			*
 			*/
 			virtual const void StopThread();
+			/** Loads a mesh and creates a vertex and indexbuffer
+			* ID of mesh is returned.
+			* Use flag to indicate loading and unloading for mesh.
+			*/
+		/*	virtual const uint32_t _LoadMesh(char* path, uint32_t& numSubMeshes, uint32_t flag = LOAD_MESH_FLAGS_ALLOW_UNLOAD_AT_RUNTIME);*/
 		protected:
+			
 			/** Called when the options have changed.
 			*
 			*/

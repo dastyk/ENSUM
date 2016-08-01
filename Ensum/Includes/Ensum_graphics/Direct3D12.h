@@ -24,6 +24,17 @@ namespace Ensum
 
 		class ENSUM_GRAPHICS_EXPORT Direct3D12
 		{
+		public:
+			struct VertexBuffer
+			{
+				ComPtr<ID3D12Resource> buffer;
+				D3D12_VERTEX_BUFFER_VIEW view;
+			};
+			struct IndexBuffer
+			{
+				ComPtr<ID3D12Resource> buffer;
+				D3D12_INDEX_BUFFER_VIEW view;
+			};
 		private:
 				
 
@@ -71,10 +82,13 @@ namespace Ensum
 			* 
 			*/
 			const void SwapBackBuffer(uint32_t syncInterval = 0, uint32_t flags = 0);
-			/** Indicates a state transition from present to render target on the backbuffer resource.
+			/** Waits for all commands to finsih.
 			*
 			*/
 			const void FlushCommandQueue();
+			/** Indicates a state transition from present to render target on the backbuffer resource.
+			*
+			*/
 			const void TransitionBackBufferToRenderTarget();
 			/** Indicates a state transition from render target to present on the backbuffer resource.
 			*
@@ -96,10 +110,15 @@ namespace Ensum
 			* If specDepthStencilView is true then depthstencilview in sdsv will be used instead of default.
 			*/
 			const void SetBackBufferAsRenderTarget(bool specDepthStencilView = false, const D3D12_CPU_DESCRIPTOR_HANDLE sdsv = D3D12_CPU_DESCRIPTOR_HANDLE());
+			/** Create a buffer
+			* 
+			*/
+			ComPtr<ID3D12Resource> CreateDefaultBuffer(const void *initData, uint64_t byteSize, ComPtr<ID3D12Resource>& uploadBuffer);
 		private:
-			D3D12_CPU_DESCRIPTOR_HANDLE CurrentBackBufferView()const;
-			D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView()const;
-			ID3D12Resource* CurrentBackBuffer()const;
+			D3D12_CPU_DESCRIPTOR_HANDLE _CurrentBackBufferView()const;
+			D3D12_CPU_DESCRIPTOR_HANDLE _DepthStencilView()const;
+			ID3D12Resource* _CurrentBackBuffer()const;
+		
 		private:
 			/** Create the commands objects.
 			* This includes the CommandQueue, CommandListAllocator and CommandList.

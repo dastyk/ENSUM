@@ -74,6 +74,11 @@ namespace Ensum
 				SAFE_DELETE(_instance);
 			}
 		}
+		FileHandler::MeshData Graphics::CreateMeshData(FileHandler::Mesh & mesh)
+		{
+			if (!_instance) Exception("No graphics instance found");
+			return FileHandler::MeshData();
+		}
 		const void Graphics::Start()
 		{
 			try

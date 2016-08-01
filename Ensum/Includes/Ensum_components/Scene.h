@@ -6,6 +6,7 @@
 #include "Ensum_components\EntityManager.h"
 #include "Ensum_components\CameraManager.h"
 #include "Ensum_components\DataManager.h"
+#include "Ensum_components\StaticMeshManager.h"
 #include "Ensum_input\Input.h"
 #include "dll_export.h"
 
@@ -32,12 +33,14 @@ namespace Ensum
 				_data(entityManger),
 				_transform(entityManger),
 				_camera(entityManger, _transform, *_input),
+				_staticMeshes(entityManger),
 				_managers(new std::vector<Manager*>)
 			{ 
 				_entity = _entityManager.Create(); 
 				_managers->push_back(&_data);
 				_managers->push_back(&_transform);
 				_managers->push_back(&_camera);
+				_managers->push_back(&_staticMeshes);
 			};
 		public:
 			/** Returns the scenes entity.
@@ -60,11 +63,15 @@ namespace Ensum
 			Entity _entity; /*!< The scenes own entity */
 			EntityManager& _entityManager; /*!< A reference to the entitymanager created in scenemanager */
 			Input::Input* _input;
-			// Create new instance of all other managers here.
+			/** Create new instance of all other managers here.
+			* Every new manager needs to be initiated in the constructor
+			* and added to the managers vector.
+			*/
 			std::vector<Manager*>* _managers;
 			DataManager _data;
 			TransformManager _transform;
 			CameraManager _camera;
+			StaticMeshManager _staticMeshes;
 		};
 
 	}

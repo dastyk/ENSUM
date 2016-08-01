@@ -5,6 +5,7 @@
 #include "Ensum_utils\ConsoleLog.h"
 #include "Ensum_utils\Options.h"
 
+
 #ifdef _DEBUG
 #pragma comment(lib, "Ensum_utilsD.lib")
 #pragma comment(lib, "Ensum_coreD.lib")
@@ -105,8 +106,16 @@ namespace Ensum
 			CreateDepthStencilBufferView();
 
 
+			ResetCommandLists();
 
-			return void();
+			_cmdList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(
+				_depthStencilBuffer.Get(),
+				D3D12_RESOURCE_STATE_COMMON,
+				D3D12_RESOURCE_STATE_DEPTH_WRITE));
+
+			CloseCommandLists();
+
+			return void();  
 		}
 
 		const void Direct3D12::Shutdown()
@@ -156,13 +165,9 @@ namespace Ensum
 
 		const void Direct3D12::TransitionBackBufferToRenderTarget()
 		{
+		
 			_cmdList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(
-				_depthStencilBuffer.Get(),
-				D3D12_RESOURCE_STATE_COMMON,
-				D3D12_RESOURCE_STATE_DEPTH_WRITE));
-
-			_cmdList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(
-				CurrentBackBuffer(),
+				_CurrentBackBuffer(),
 				D3D12_RESOURCE_STATE_PRESENT, 
 				D3D12_RESOURCE_STATE_RENDER_TARGET));
 			return void();
@@ -170,7 +175,7 @@ namespace Ensum
 		const void Direct3D12::TransitionBackBufferToPresent()
 		{
 			_cmdList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(
-				CurrentBackBuffer(),
+				_CurrentBackBuffer(),
 				D3D12_RESOURCE_STATE_RENDER_TARGET,
 				D3D12_RESOURCE_STATE_PRESENT));
 			return void();
@@ -184,35 +189,82 @@ namespace Ensum
 
 		const void Direct3D12::ClearBackBuffer(const float colorRGBA[4], uint32_t numRects, const D3D12_RECT * pRects)
 		{
-			_cmdList->ClearRenderTargetView(CurrentBackBufferView(), colorRGBA, numRects, pRects);
+			_cmdList->ClearRenderTargetView(_CurrentBackBufferView(), colorRGBA, numRects, pRects);
 			return void();
 		}
 
 		const void Direct3D12::ClearDepthStencilView(D3D12_CLEAR_FLAGS flags, float depth, uint8_t stencil, uint32_t numRects, const D3D12_RECT * pRects)
 		{
-			_cmdList->ClearDepthStencilView(DepthStencilView(), flags, depth, stencil, numRects, pRects);
+			_cmdList->ClearDepthStencilView(_DepthStencilView(), flags, depth, stencil, numRects, pRects);
 			return void();
 		}
 
 		const void Direct3D12::SetBackBufferAsRenderTarget(bool specDepthStencilView, const D3D12_CPU_DESCRIPTOR_HANDLE sdsv)
 		{
-			D3D12_CPU_DESCRIPTOR_HANDLE dsv = specDepthStencilView ? sdsv : DepthStencilView();
-			_cmdList->OMSetRenderTargets(1, &CurrentBackBufferView(), true, &dsv);
+			D3D12_CPU_DESCRIPTOR_HANDLE dsv = specDepthStencilView ? sdsv : _DepthStencilView();
+			_cmdList->OMSetRenderTargets(1, &_CurrentBackBufferView(), true, &dsv);
 			return void();
 		}
+		ComPtr<ID3D12Resource> Direct3D12::CreateDefaultBuffer(const void * initData, uint64_t byteSize, ComPtr<ID3D12Resource>& uploadBuffer)
+		{
+			ComPtr<ID3D12Resource> dB;
 
-		D3D12_CPU_DESCRIPTOR_HANDLE Direct3D12::CurrentBackBufferView() const
+			ThrowIfFailed(_device->CreateCommittedResource(
+				&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT),
+				D3D12_HEAP_FLAG_NONE,
+				&CD3DX12_RESOURCE_DESC::Buffer(byteSize),
+				D3D12_RESOURCE_STATE_COMMON,
+				nullptr,
+				IID_PPV_ARGS(&dB)
+			));
+
+			ThrowIfFailed(_device->CreateCommittedResource(
+				&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD),
+				D3D12_HEAP_FLAG_NONE,
+				&CD3DX12_RESOURCE_DESC::Buffer(byteSize),
+				D3D12_RESOURCE_STATE_GENERIC_READ,
+				nullptr,
+				IID_PPV_ARGS(&uploadBuffer)
+			));
+
+			D3D12_SUBRESOURCE_DATA data = {};
+			data.pData = initData;
+			data.SlicePitch = data.RowPitch = byteSize;
+
+
+			_cmdList->ResourceBarrier(1,
+				&CD3DX12_RESOURCE_BARRIER::Transition(
+					dB.Get(),
+					D3D12_RESOURCE_STATE_COMMON,
+					D3D12_RESOURCE_STATE_COPY_DEST));
+
+			UpdateSubresources<1>(
+				_cmdList.Get(),
+				dB.Get(), uploadBuffer.Get(),
+				0, 0, 1,
+				&data);
+
+			_cmdList->ResourceBarrier(1,
+				&CD3DX12_RESOURCE_BARRIER::Transition(
+					dB.Get(),
+					D3D12_RESOURCE_STATE_COPY_DEST,
+					D3D12_RESOURCE_STATE_GENERIC_READ));
+
+			return dB;
+		}
+		D3D12_CPU_DESCRIPTOR_HANDLE Direct3D12::_CurrentBackBufferView() const
 		{
 			return CD3D12_CPU_DESCRIPTOR_HANDLE(_rtvHeap->GetCPUDescriptorHandleForHeapStart(), _currBackBuffer, _rtvDescriptorSize);
 		}
-		D3D12_CPU_DESCRIPTOR_HANDLE Direct3D12::DepthStencilView() const
+		D3D12_CPU_DESCRIPTOR_HANDLE Direct3D12::_DepthStencilView() const
 		{
 			return _dsvHeap->GetCPUDescriptorHandleForHeapStart();
 		}
-		ID3D12Resource * Direct3D12::CurrentBackBuffer() const
+		ID3D12Resource * Direct3D12::_CurrentBackBuffer() const
 		{
 			return _swapChainBuffer[_currBackBuffer].Get();
 		}
+		
 		const void Direct3D12::CreateCommandObjects()
 		{
 
@@ -330,7 +382,7 @@ namespace Ensum
 				&optClear,
 				IID_PPV_ARGS(&_depthStencilBuffer)));
 
-			_device->CreateDepthStencilView(_depthStencilBuffer.Get(), nullptr, DepthStencilView());
+			_device->CreateDepthStencilView(_depthStencilBuffer.Get(), nullptr, _DepthStencilView());
 
 
 

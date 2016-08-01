@@ -10,8 +10,9 @@ namespace Ensum
 	{
 		Window* Window::_instance = nullptr;
 
-		Window::Window(Components::SceneManager& sceneManager) : _timer(nullptr),_sceneManager(sceneManager), _running(false), _wndCaption(L"Ensum")
+		Window::Window(Delegate<const void()>& sceneManagerFrame) : _timer(nullptr), _running(false), _wndCaption(L"Ensum")
 		{
+			_sceneManagerFrame += sceneManagerFrame;
 			Utils::Options::Subscribe(Delegate<const void()>::Make<Window, &Window::_Resize>(this));
 		}
 

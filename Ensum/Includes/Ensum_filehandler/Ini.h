@@ -1,4 +1,4 @@
-#ifndef _INI_H_
+﻿#ifndef _INI_H_
 #define _INI_H_
 
 #pragma once
@@ -11,6 +11,7 @@ namespace Ensum
 {
 	namespace FileHandler
 	{
+		// TODO: Make a system for one lua to be used på multiple users.
 		/** A wrapper class for ini files.
 		* This class stores the values in given ini file and saves any new values on delete.
 		*/

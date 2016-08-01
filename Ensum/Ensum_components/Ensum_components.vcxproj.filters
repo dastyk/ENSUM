@@ -25,6 +25,9 @@
     <Filter Include="CameraManager">
       <UniqueIdentifier>{09af42d7-9d66-4651-86d3-32232393d6ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="StaticMeshManager">
+      <UniqueIdentifier>{ba19ba82-a282-43a8-b42e-3e3a0940d84e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_components\EntityManager.h">
@@ -53,6 +56,12 @@
     <ClInclude Include="..\Includes\Ensum_components\CameraManager.h">
       <Filter>CameraManager</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_components\StaticMeshManager.h">
+      <Filter>StaticMeshManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Mesh.h">
+      <Filter>StaticMeshManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntityManager.cpp">
@@ -72,6 +81,9 @@
     </ClCompile>
     <ClCompile Include="CameraManager.cpp">
       <Filter>CameraManager</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMeshManager.cpp">
+      <Filter>StaticMeshManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

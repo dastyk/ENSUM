@@ -165,6 +165,7 @@
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="NullScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="StaticMeshManager.cpp" />
     <ClCompile Include="TransformManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -177,7 +178,9 @@
     <ClInclude Include="..\Includes\Ensum_components\NullScene.h" />
     <ClInclude Include="..\Includes\Ensum_components\Scene.h" />
     <ClInclude Include="..\Includes\Ensum_components\SceneManager.h" />
+    <ClInclude Include="..\Includes\Ensum_components\StaticMeshManager.h" />
     <ClInclude Include="..\Includes\Ensum_components\TransformManager.h" />
+    <ClInclude Include="..\Includes\Mesh.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

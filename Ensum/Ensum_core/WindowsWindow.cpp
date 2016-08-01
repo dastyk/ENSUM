@@ -67,7 +67,7 @@ namespace Ensum
 			}
 			return void();
 		}
-		WinWindow::WinWindow(Components::SceneManager& sceneManager) : Window(sceneManager), _hWnd(nullptr), _hInst(nullptr), _style(WS_OVERLAPPED | WS_CAPTION)
+		WinWindow::WinWindow(Delegate<const void()>& sceneManagerFrame) : Window(sceneManagerFrame), _hWnd(nullptr), _hInst(nullptr), _style(WS_OVERLAPPED | WS_CAPTION)
 		{
 			_input = new Input::Input;
 			
@@ -79,7 +79,7 @@ namespace Ensum
 			if (_input->IsKeyDown("Exit"))
 				_running = false;
 
-			_sceneManager.Frame();
+			_sceneManagerFrame();
 		}
 
 

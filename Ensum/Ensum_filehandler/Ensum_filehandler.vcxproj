@@ -161,10 +161,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ini.cpp" />
+    <ClCompile Include="Mesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_filehandler\dll_export.h" />
     <ClInclude Include="..\Includes\Ensum_filehandler\Ini.h" />
+    <ClInclude Include="..\Includes\Ensum_filehandler\Mesh.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

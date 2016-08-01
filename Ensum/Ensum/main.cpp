@@ -120,8 +120,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	//Utils::Options::SetIntegerOption("Screen", "Width", 1337);
 
-
-	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow(sceneManager));
+	Delegate<const void()> del = Delegate<const void()>::Make<Components::SceneManager, &Components::SceneManager::Frame>(&sceneManager);
+	Core::Window* w = Core::Window::CreateWin(new Core::WinWindow(del));
 	
 	Graphics::Graphics::CreateInstance(new Graphics::D3D12());
 

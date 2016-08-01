@@ -52,4 +52,7 @@
       <Filter>D3D12\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
 </Project>

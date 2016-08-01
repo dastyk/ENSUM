@@ -4,6 +4,11 @@
 #pragma once
 #include "Direct3D12.h"
 #include "Ensum_graphics\Graphics.h"
+#include "Data_Meta.h"
+#include <unordered_map>
+
+#include <DirectXMath.h>
+
 
 namespace Ensum
 {
@@ -12,6 +17,19 @@ namespace Ensum
 
 		class ENSUM_GRAPHICS_EXPORT D3D12 : public Graphics
 		{
+		protected:
+			struct Vertex
+			{
+				DirectX::XMFLOAT3 Position;
+				DirectX::XMFLOAT2 TexCoord;
+				DirectX::XMFLOAT3 Normal;
+			};
+			struct BufferData
+			{
+				Direct3D12::VertexBuffer vertexBuffer;
+				Direct3D12::IndexBuffer indexBuffer;
+			};
+			
 		public:
 			D3D12();
 			virtual ~D3D12();
@@ -24,7 +42,15 @@ namespace Ensum
 			*
 			*/
 			virtual const void OnDestroyDevice();
-
+			/** Loads a mesh and creates a vertex and indexbuffer
+			* ID of mesh is returned.
+			* Use flag to indicate loading and unloading for mesh.
+			*/
+		protected:
+			/** Interleave the vertex data
+			* 
+			*/
+		//	virtual const void _InterleaveVertexData(const FileHandler::Mesh &mesh, void **vertexData, uint64_t& vertexDataSize, void **indexData, uint64_t& indexDataSize);
 		protected:
 			/** Options change func.
 			*

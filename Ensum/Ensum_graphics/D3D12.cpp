@@ -29,11 +29,10 @@ namespace Ensum
 
 			_viewPort.TopLeftX = 0.0f;
 			_viewPort.TopLeftY = 0.0f;
-			_viewPort.Width = (uint32_t)Utils::Options::GetIntegerOption("Screen", "Width", 800);
-			_viewPort.Height = (uint32_t)Utils::Options::GetIntegerOption("Screen", "Height", 640);
+			_viewPort.Width = (float)Utils::Options::GetIntegerOption("Screen", "Width", 800);
+			_viewPort.Height = (float)Utils::Options::GetIntegerOption("Screen", "Height", 640);
 			_viewPort.MinDepth = 0.0f;
 			_viewPort.MaxDepth = 1.0f;
-
 			return void();
 		}
 
@@ -43,6 +42,50 @@ namespace Ensum
 			return void();
 		}
 
+//		const D3D12::MeshData* D3D12::LoadMesh(char* path, uint32_t& id, uint32_t flag)
+//		{
+//			string t = path;
+//			id = t.GetHash();
+//			auto& find = _loadedMeshes.find(id);
+//			if (find == _loadedMeshes.end())
+//			{
+//				auto& lmesh = _loadedMeshes[id];
+//
+//
+//				FileHandler::Mesh mesh(path);
+//				void* vertexData, *indexData;
+//				uint64_t vertexDataSize, indexDataSize;
+//				ComPtr<ID3D12Resource> vertexUp, indexUp;
+//
+//				_InterleaveVertexData(mesh, &vertexData, vertexDataSize, &indexData, indexDataSize);
+//
+//				lmesh.vertexBuffer.buffer = _D3D12.CreateDefaultBuffer(vertexData, vertexDataSize, vertexUp);
+//				//lmesh.indexBuffer.buffer = _D3D12.CreateDefaultBuffer(indexData, indexDataSize, indexUp);
+//
+//				lmesh.vertexBuffer.view.BufferLocation = lmesh.vertexBuffer.buffer->GetGPUVirtualAddress();
+//				lmesh.vertexBuffer.view.StrideInBytes = sizeof(Vertex);
+//				lmesh.vertexBuffer.view.SizeInBytes = vertexDataSize;
+//
+//				lmesh.indexBuffer.view.BufferLocation = lmesh.indexBuffer.buffer->GetGPUVirtualAddress();
+//				lmesh.indexBuffer.view.Format = DXGI_FORMAT_R32_UINT;
+//				lmesh.indexBuffer.view.SizeInBytes = indexDataSize;
+//
+//				lmesh.flag = flag;
+//				lmesh.subs++;
+//
+//				return &lmesh;
+//
+//			}
+//	
+//			return &find->second;
+//			
+//		}
+
+	/*	const void D3D12::_InterleaveVertexData(const FileHandler::Mesh &mesh, void ** vertexData, uint64_t & vertexDataSize, void ** indexData, uint64_t & indexDataSize)
+		{
+			return void();
+		}
+*/
 		const void D3D12::_OnOptionsChange()
 		{
 			return void();
@@ -50,6 +93,7 @@ namespace Ensum
 
 		const void D3D12::_BeginFrame(void)
 		{
+			_D3D12.FlushCommandQueue();
 			_D3D12.ResetCommandLists();
 
 			_D3D12.TransitionBackBufferToRenderTarget();
@@ -73,7 +117,7 @@ namespace Ensum
 
 			_D3D12.SwapBackBuffer();
 
-			_D3D12.FlushCommandQueue();
+			
 			return void();
 		}
 

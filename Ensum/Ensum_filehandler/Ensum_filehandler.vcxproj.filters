@@ -4,16 +4,25 @@
     <Filter Include="LuaReader">
       <UniqueIdentifier>{d50ac597-59f0-4419-b985-23c59354ce08}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ModelLoader">
+      <UniqueIdentifier>{ea92edf5-f8cb-49e9-b6e2-aa3591419fab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Includes\Ensum_filehandler\dll_export.h" />
     <ClInclude Include="..\Includes\Ensum_filehandler\Ini.h">
       <Filter>LuaReader</Filter>
     </ClInclude>
+    <ClInclude Include="..\Includes\Ensum_filehandler\Mesh.h">
+      <Filter>ModelLoader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ini.cpp">
       <Filter>LuaReader</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>ModelLoader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
