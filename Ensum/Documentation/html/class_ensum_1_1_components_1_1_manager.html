@@ -125,8 +125,11 @@ Inheritance diagram for Ensum::Components::Manager:</div>
  <div class="center">
   <img src="class_ensum_1_1_components_1_1_manager.png" usemap="#Ensum::Components::Manager_map" alt=""/>
   <map id="Ensum::Components::Manager_map" name="Ensum::Components::Manager_map">
-<area href="class_ensum_1_1_components_1_1_data_manager.html" alt="Ensum::Components::DataManager" shape="rect" coords="0,56,217,80"/>
-<area href="class_ensum_1_1_components_1_1_scene_manager.html" title="Manages all the scenes. " alt="Ensum::Components::SceneManager" shape="rect" coords="227,56,444,80"/>
+<area href="class_ensum_1_1_components_1_1_camera_manager.html" title="Camera component, holds the view, projection, etc. " alt="Ensum::Components::CameraManager" shape="rect" coords="0,56,243,80"/>
+<area href="class_ensum_1_1_components_1_1_data_manager.html" alt="Ensum::Components::DataManager" shape="rect" coords="253,56,496,80"/>
+<area href="class_ensum_1_1_components_1_1_scene_manager.html" title="Manages all the scenes. " alt="Ensum::Components::SceneManager" shape="rect" coords="506,56,749,80"/>
+<area href="class_ensum_1_1_components_1_1_static_mesh_manager.html" title="Handles meshes for entities. " alt="Ensum::Components::StaticMeshManager" shape="rect" coords="759,56,1002,80"/>
+<area href="class_ensum_1_1_components_1_1_transform_manager.html" title="Handles the transform of the entities. " alt="Ensum::Components::TransformManager" shape="rect" coords="1012,56,1255,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -142,6 +145,10 @@ Public Member Functions</h2></td></tr>
 virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_manager.html#a7327f9a28abf0011498ced0c86692a73">Frame</a> ()</td></tr>
 <tr class="memdesc:a7327f9a28abf0011498ced0c86692a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do the framework for all active scenes. <br /></td></tr>
 <tr class="separator:a7327f9a28abf0011498ced0c86692a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be559f70a5fc91769be008493948d61"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3be559f70a5fc91769be008493948d61"></a>
+virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_manager.html#a3be559f70a5fc91769be008493948d61">Destroy</a> (const <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;entity)</td></tr>
+<tr class="memdesc:a3be559f70a5fc91769be008493948d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public destroy function. <br /></td></tr>
+<tr class="separator:a3be559f70a5fc91769be008493948d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -240,7 +247,7 @@ std::unordered_map&lt; <a class="el" href="struct_ensum_1_1_components_1_1_entit
 
 <p>Allocate more memory for scenedata. </p>
 
-<p>Implemented in <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#aa9f344da59b7fda790b79a9e453ba7c4">Ensum::Components::DataManager</a>, and <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a383a468319c93280ce8ac0bbb920ab87">Ensum::Components::SceneManager</a>.</p>
+<p>Implemented in <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#aa9f344da59b7fda790b79a9e453ba7c4">Ensum::Components::DataManager</a>, <a class="el" href="class_ensum_1_1_components_1_1_transform_manager.html#a90703a5b97caaafee225459ca872c446">Ensum::Components::TransformManager</a>, <a class="el" href="class_ensum_1_1_components_1_1_camera_manager.html#a1ccb090150e77084806fa903bc5006e5">Ensum::Components::CameraManager</a>, <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a383a468319c93280ce8ac0bbb920ab87">Ensum::Components::SceneManager</a>, and <a class="el" href="class_ensum_1_1_components_1_1_static_mesh_manager.html#a470c7fb98f91c55b803ef8d2dd7a4803">Ensum::Components::StaticMeshManager</a>.</p>
 
 </div>
 </div>
@@ -269,12 +276,12 @@ std::unordered_map&lt; <a class="el" href="struct_ensum_1_1_components_1_1_entit
 <p>Delete an entry in the memory block. </p>
 <p>The deleted entry is replaced by the last in the block. </p>
 
-<p>Implemented in <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#a6f5c2ed92eba2cb4d5c15c451cbf089c">Ensum::Components::DataManager</a>, and <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a8102cfd9f4fed62a06e564dc016b6c46">Ensum::Components::SceneManager</a>.</p>
+<p>Implemented in <a class="el" href="class_ensum_1_1_components_1_1_data_manager.html#a6f5c2ed92eba2cb4d5c15c451cbf089c">Ensum::Components::DataManager</a>, <a class="el" href="class_ensum_1_1_components_1_1_transform_manager.html#a47f354c8a26b83d12809611516be65c7">Ensum::Components::TransformManager</a>, <a class="el" href="class_ensum_1_1_components_1_1_camera_manager.html#a7a4aff38cf9e0fa2d504e0836d06efe7">Ensum::Components::CameraManager</a>, <a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html#a8102cfd9f4fed62a06e564dc016b6c46">Ensum::Components::SceneManager</a>, and <a class="el" href="class_ensum_1_1_components_1_1_static_mesh_manager.html#a3d7684a00092ff8d467425a9f1ba7e5c">Ensum::Components::StaticMeshManager</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Includes/Ensum_components/<a class="el" href="_manager_8h_source.html">Manager.h</a></li>
+<li>C:/Users/peter/Source/Repos/ENSUM/Ensum/Includes/Ensum_components/<a class="el" href="_manager_8h_source.html">Manager.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

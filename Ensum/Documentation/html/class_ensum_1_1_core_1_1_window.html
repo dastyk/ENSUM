@@ -137,10 +137,14 @@ Public Member Functions</h2></td></tr>
 virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_core_1_1_window.html#a43f467e7e5ea83f3a9b990b6edc2ec46">Init</a> ()=0</td></tr>
 <tr class="memdesc:a43f467e7e5ea83f3a9b990b6edc2ec46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization for the window. <br /></td></tr>
 <tr class="separator:a43f467e7e5ea83f3a9b990b6edc2ec46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeafece8bb46d29de1de3ddf092662195"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeafece8bb46d29de1de3ddf092662195"></a>
-virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_core_1_1_window.html#aeafece8bb46d29de1de3ddf092662195">Start</a> ()=0</td></tr>
-<tr class="memdesc:aeafece8bb46d29de1de3ddf092662195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the message loop. <br /></td></tr>
-<tr class="separator:aeafece8bb46d29de1de3ddf092662195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be80d0faaa9082f32df2416c8a0f42b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2be80d0faaa9082f32df2416c8a0f42b"></a>
+virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_core_1_1_window.html#a2be80d0faaa9082f32df2416c8a0f42b">Start</a> ()</td></tr>
+<tr class="memdesc:a2be80d0faaa9082f32df2416c8a0f42b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the Game loop. <br /></td></tr>
+<tr class="separator:a2be80d0faaa9082f32df2416c8a0f42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b417072a3e324cf5101f1b90a82f317"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b417072a3e324cf5101f1b90a82f317"></a>
+virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_core_1_1_window.html#a2b417072a3e324cf5101f1b90a82f317">Pause</a> (bool paused)</td></tr>
+<tr class="memdesc:a2b417072a3e324cf5101f1b90a82f317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for pausing and unpausing app. <br /></td></tr>
+<tr class="separator:a2b417072a3e324cf5101f1b90a82f317"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af746ffdd0281b2722d162fbf96c3542b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af746ffdd0281b2722d162fbf96c3542b"></a>
 <a class="el" href="class_ensum_1_1_input_1_1_input.html">Input::Input</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_core_1_1_window.html#af746ffdd0281b2722d162fbf96c3542b">GetInput</a> ()</td></tr>
 <tr class="memdesc:af746ffdd0281b2722d162fbf96c3542b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the input. <br /></td></tr>
@@ -168,18 +172,29 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a64e2b8f8d5728eb941f54cc1577fcb0a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64e2b8f8d5728eb941f54cc1577fcb0a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Window</b> (<a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html">Components::SceneManager</a> &amp;sceneManager)</td></tr>
-<tr class="separator:a64e2b8f8d5728eb941f54cc1577fcb0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58af9c1b06e0fe12820f584f4638ae15"><td class="memItemLeft" align="right" valign="top">virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_core_1_1_window.html#a58af9c1b06e0fe12820f584f4638ae15">Frame</a> ()=0</td></tr>
-<tr class="memdesc:a58af9c1b06e0fe12820f584f4638ae15"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frame function.  <a href="#a58af9c1b06e0fe12820f584f4638ae15">More...</a><br /></td></tr>
-<tr class="separator:a58af9c1b06e0fe12820f584f4638ae15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7a0135f3a3488acdc78a37ce6413b3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7a0135f3a3488acdc78a37ce6413b3b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Window</b> (<a class="el" href="class_ensum_1_1_delegate.html">Delegate</a>&lt; const void()&gt; &amp;sceneManagerFrame)</td></tr>
+<tr class="separator:ac7a0135f3a3488acdc78a37ce6413b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c16f115d465bf013410573d1b935f5"><td class="memItemLeft" align="right" valign="top">virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_core_1_1_window.html#ae3c16f115d465bf013410573d1b935f5">_Frame</a> ()=0</td></tr>
+<tr class="memdesc:ae3c16f115d465bf013410573d1b935f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frame function.  <a href="#ae3c16f115d465bf013410573d1b935f5">More...</a><br /></td></tr>
+<tr class="separator:ae3c16f115d465bf013410573d1b935f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a045101d73101ee67672ff02472277487"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a045101d73101ee67672ff02472277487"></a>
+virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_core_1_1_window.html#a045101d73101ee67672ff02472277487">_MessageHandling</a> ()=0</td></tr>
+<tr class="memdesc:a045101d73101ee67672ff02472277487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle messages. <br /></td></tr>
+<tr class="separator:a045101d73101ee67672ff02472277487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f14f3c446fb696f33217327b0b2da5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f14f3c446fb696f33217327b0b2da5a"></a>
+virtual const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_core_1_1_window.html#a8f14f3c446fb696f33217327b0b2da5a">_Resize</a> ()=0</td></tr>
+<tr class="memdesc:a8f14f3c446fb696f33217327b0b2da5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when options have changed. <br /></td></tr>
+<tr class="separator:a8f14f3c446fb696f33217327b0b2da5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a6424445161cec33a48906e90270ba20b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6424445161cec33a48906e90270ba20b"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_running</b></td></tr>
 <tr class="separator:a6424445161cec33a48906e90270ba20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49015186ceadd7d1e12c4b4d2f506242"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49015186ceadd7d1e12c4b4d2f506242"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_paused</b></td></tr>
+<tr class="separator:a49015186ceadd7d1e12c4b4d2f506242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42e780f298c4b0ea9f7f68f855f43e98"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42e780f298c4b0ea9f7f68f855f43e98"></a>
 LPWSTR&#160;</td><td class="memItemRight" valign="bottom"><b>_wndCaption</b></td></tr>
 <tr class="separator:a42e780f298c4b0ea9f7f68f855f43e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,9 +204,9 @@ LPWSTR&#160;</td><td class="memItemRight" valign="bottom"><b>_wndCaption</b></td
 <tr class="memitem:a6b2925a490f7a5a2417059660713bc19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b2925a490f7a5a2417059660713bc19"></a>
 <a class="el" href="class_ensum_1_1_input_1_1_input.html">Input::Input</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_input</b></td></tr>
 <tr class="separator:a6b2925a490f7a5a2417059660713bc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19281ff51aee4c5bd8a71f7a00786930"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19281ff51aee4c5bd8a71f7a00786930"></a>
-<a class="el" href="class_ensum_1_1_components_1_1_scene_manager.html">Components::SceneManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>_sceneManager</b></td></tr>
-<tr class="separator:a19281ff51aee4c5bd8a71f7a00786930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3590c66ab2e35d39305d587db08aeae5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3590c66ab2e35d39305d587db08aeae5"></a>
+<a class="el" href="class_ensum_1_1_event.html">Event</a>&lt; const void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_sceneManagerFrame</b></td></tr>
+<tr class="separator:a3590c66ab2e35d39305d587db08aeae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
@@ -202,6 +217,34 @@ static <a class="el" href="class_ensum_1_1_core_1_1_window.html">Window</a> *&#1
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Fully abstract class for interfacting with the actual window. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae3c16f115d465bf013410573d1b935f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const void Ensum::Core::Window::_Frame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The frame function. </p>
+<p>Put the gamelogic here. </p>
+
+<p>Implemented in <a class="el" href="class_ensum_1_1_core_1_1_win_window.html#a309cbdef995b8ca8638fe297987ce852">Ensum::Core::WinWindow</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ac6e8b05158fca2587cdfe23dabf35baf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -228,36 +271,8 @@ static <a class="el" href="class_ensum_1_1_core_1_1_window.html">Window</a> *&#1
 
 </div>
 </div>
-<a class="anchor" id="a58af9c1b06e0fe12820f584f4638ae15"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const void Ensum::Core::Window::Frame </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The frame function. </p>
-<p>Put the gamelogic here. </p>
-
-<p>Implemented in <a class="el" href="class_ensum_1_1_core_1_1_win_window.html#a3e828ccbc90f0d6ed81c2320277561e6">Ensum::Core::WinWindow</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Includes/Ensum_core/<a class="el" href="_window_8h_source.html">Window.h</a></li>
+<li>C:/Users/peter/Source/Repos/ENSUM/Ensum/Includes/Ensum_core/<a class="el" href="_window_8h_source.html">Window.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

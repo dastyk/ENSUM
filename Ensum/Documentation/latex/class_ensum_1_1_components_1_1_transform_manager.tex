@@ -1,0 +1,391 @@
+\hypertarget{class_ensum_1_1_components_1_1_transform_manager}{}\section{Ensum\+:\+:Components\+:\+:Transform\+Manager Class Reference}
+\label{class_ensum_1_1_components_1_1_transform_manager}\index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+
+
+Handles the transform of the entities.  
+
+
+
+
+{\ttfamily \#include $<$Transform\+Manager.\+h$>$}
+
+Inheritance diagram for Ensum\+:\+:Components\+:\+:Transform\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ensum_1_1_components_1_1_transform_manager}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_transform_manager_1_1_transform_components}{Transform\+Components}
+\begin{DoxyCompactList}\small\item\em The managers data struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Transform\+Manager} (\hyperlink{class_ensum_1_1_components_1_1_entity_manager}{Entity\+Manager} \&ent\+Manager)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a6d9111abc5ab4fba9e31cf7b8096233b}{}\label{class_ensum_1_1_components_1_1_transform_manager_a6d9111abc5ab4fba9e31cf7b8096233b}
+
+\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a484089df7e71d762e6df10d70df01b97}{Create\+Transform} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a484089df7e71d762e6df10d70df01b97}{}\label{class_ensum_1_1_components_1_1_transform_manager_a484089df7e71d762e6df10d70df01b97}
+
+\begin{DoxyCompactList}\small\item\em Create a transform component for the entity. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a2d240e72b697be19aecae1527599480e}{Bind\+Child} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&parent, const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&child, bool relative\+To\+Parent=false)
+\begin{DoxyCompactList}\small\item\em Bind a entity as child to another. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_ab7dc49fe8a330efbe10c8b55f0bc0398}{Unbind\+Child} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&child)
+\begin{DoxyCompactList}\small\item\em Unbind an entity as child. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a62314eeafd1d1368b82b1ea3002d3a71}{Move} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&direction)
+\begin{DoxyCompactList}\small\item\em Move forward-\/x, right-\/y, up-\/z. \end{DoxyCompactList}\item 
+const void {\bfseries Move\+Forward} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_ae1748b0c5be7ff6c45ded730504f1b2e}{}\label{class_ensum_1_1_components_1_1_transform_manager_ae1748b0c5be7ff6c45ded730504f1b2e}
+
+\item 
+const void {\bfseries Move\+Backward} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a7a9d054f27c3b05bd8622e88f476142c}{}\label{class_ensum_1_1_components_1_1_transform_manager_a7a9d054f27c3b05bd8622e88f476142c}
+
+\item 
+const void {\bfseries Move\+Right} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a9155f3880b1ac2ef76fbf2e77d56537c}{}\label{class_ensum_1_1_components_1_1_transform_manager_a9155f3880b1ac2ef76fbf2e77d56537c}
+
+\item 
+const void {\bfseries Move\+Left} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a9e65ded7e7f3eb7415534c8e25f75502}{}\label{class_ensum_1_1_components_1_1_transform_manager_a9e65ded7e7f3eb7415534c8e25f75502}
+
+\item 
+const void {\bfseries Move\+Up} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a41e6739af3127f254d0ba4b3d6d5467b}{}\label{class_ensum_1_1_components_1_1_transform_manager_a41e6739af3127f254d0ba4b3d6d5467b}
+
+\item 
+const void {\bfseries Move\+Down} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a675ee13a589930176c0b5bf4c3fa0a04}{}\label{class_ensum_1_1_components_1_1_transform_manager_a675ee13a589930176c0b5bf4c3fa0a04}
+
+\item 
+const void {\bfseries Move\+Along\+Vector} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a243adff170f09f90e170cdce154c1434}{}\label{class_ensum_1_1_components_1_1_transform_manager_a243adff170f09f90e170cdce154c1434}
+
+\item 
+const void {\bfseries Move\+Along\+Vector} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR dir, float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a53f28a815293ffa0c2f07d03a594c54e}{}\label{class_ensum_1_1_components_1_1_transform_manager_a53f28a815293ffa0c2f07d03a594c54e}
+
+\item 
+const void {\bfseries Rotate} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&radians)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_af12d20ba876189b13c67b8ab056993b5}{}\label{class_ensum_1_1_components_1_1_transform_manager_af12d20ba876189b13c67b8ab056993b5}
+
+\item 
+const void {\bfseries Rotate\+Yaw} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const float radians)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a1fca568d1223c92a34e41b0d2b02f46a}{}\label{class_ensum_1_1_components_1_1_transform_manager_a1fca568d1223c92a34e41b0d2b02f46a}
+
+\item 
+const void {\bfseries Rotate\+Pitch} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const float radians)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a4fe43a20b760088ab0a8eddf64d70e21}{}\label{class_ensum_1_1_components_1_1_transform_manager_a4fe43a20b760088ab0a8eddf64d70e21}
+
+\item 
+const void {\bfseries Rotate\+Roll} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const float radians)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_ad7a14a0b253c62017263d6a92e911e10}{}\label{class_ensum_1_1_components_1_1_transform_manager_ad7a14a0b253c62017263d6a92e911e10}
+
+\item 
+const void {\bfseries Set\+Position} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&position, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a401b2f17c82370f173c034d78b7fd700}{}\label{class_ensum_1_1_components_1_1_transform_manager_a401b2f17c82370f173c034d78b7fd700}
+
+\item 
+const void {\bfseries Set\+Position} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \&position, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a1b930b81981049c5394f188baab3c1bd}{}\label{class_ensum_1_1_components_1_1_transform_manager_a1b930b81981049c5394f188baab3c1bd}
+
+\item 
+const void {\bfseries Set\+Rotation} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&rotation)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_ac770f58d61a7369814e607b43072824f}{}\label{class_ensum_1_1_components_1_1_transform_manager_ac770f58d61a7369814e607b43072824f}
+
+\item 
+const void {\bfseries Set\+Rotation} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \&rotation)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a2a4e2c7374de1f26f6ac7fca0b22c9de}{}\label{class_ensum_1_1_components_1_1_transform_manager_a2a4e2c7374de1f26f6ac7fca0b22c9de}
+
+\item 
+const void {\bfseries Set\+Scale} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&scale, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a0b4cf5a20533bf1efb65fbc0e9c9d3bf}{}\label{class_ensum_1_1_components_1_1_transform_manager_a0b4cf5a20533bf1efb65fbc0e9c9d3bf}
+
+\item 
+const void {\bfseries Set\+Scale} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \&scale, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_afc32dc7d90e2a180f2d8cf0d5838fbc0}{}\label{class_ensum_1_1_components_1_1_transform_manager_afc32dc7d90e2a180f2d8cf0d5838fbc0}
+
+\item 
+const void {\bfseries Set\+Forward} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&forward, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_ac6f1ab9da36867b8ceadf235e1029893}{}\label{class_ensum_1_1_components_1_1_transform_manager_ac6f1ab9da36867b8ceadf235e1029893}
+
+\item 
+const void {\bfseries Set\+Forward} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \&forward, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_ab28a6fe03a0e3da6098006e52655a924}{}\label{class_ensum_1_1_components_1_1_transform_manager_ab28a6fe03a0e3da6098006e52655a924}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries Get\+Position} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a1f88872efff1d4f46e96b9eb1f1ad42a}{}\label{class_ensum_1_1_components_1_1_transform_manager_a1f88872efff1d4f46e96b9eb1f1ad42a}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries Get\+Rotation} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a63544a06e7e1092d99c2f41bb19f8016}{}\label{class_ensum_1_1_components_1_1_transform_manager_a63544a06e7e1092d99c2f41bb19f8016}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries Get\+Scale} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a5d84f5fdf153d6097537fc04090d0004}{}\label{class_ensum_1_1_components_1_1_transform_manager_a5d84f5fdf153d6097537fc04090d0004}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries Get\+Forward} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_ae952c3520ee76be6f170f7ca087fa14f}{}\label{class_ensum_1_1_components_1_1_transform_manager_ae952c3520ee76be6f170f7ca087fa14f}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries Get\+Right} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a80bc26bf87027ec5c7cb3a9b8f4d2b45}{}\label{class_ensum_1_1_components_1_1_transform_manager_a80bc26bf87027ec5c7cb3a9b8f4d2b45}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries Get\+Up} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a0915707915f8e5443a1e37b2f1121aae}{}\label{class_ensum_1_1_components_1_1_transform_manager_a0915707915f8e5443a1e37b2f1121aae}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a90703a5b97caaafee225459ca872c446}{\+\_\+\+Allocate} (uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Allocate more memory. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a47f354c8a26b83d12809611516be65c7}{\+\_\+\+Destroy} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Delete an entry in the memory block. \end{DoxyCompactList}\item 
+const uint32\+\_\+t \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a68fa8f539fb52e6945dd82902b61b3c5}{\+\_\+\+Create\+Transform} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)
+\begin{DoxyCompactList}\small\item\em Create a transform component for the entity. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a7222458e2c7ec382f73343a67aa0aee6}{\+\_\+\+Bind\+Child} (uint32\+\_\+t parent, uint32\+\_\+t child, bool relative\+To\+Parent)
+\begin{DoxyCompactList}\small\item\em Bind a entity as child to another. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a08e37f57af9622645b28139b4f7e3792}{\+\_\+\+Unbind\+Child} (uint32\+\_\+t child)
+\begin{DoxyCompactList}\small\item\em Unbind an entity as child. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a62fe544a73f4a09469d79872f8611024}{\+\_\+\+Move} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&direction)
+\begin{DoxyCompactList}\small\item\em Move forward-\/x, right-\/y, up-\/z. \end{DoxyCompactList}\item 
+const void {\bfseries \+\_\+\+Move\+Forward} (uint32\+\_\+t index, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_aa39d072fd2599b7a5ebd62bc272996ba}{}\label{class_ensum_1_1_components_1_1_transform_manager_aa39d072fd2599b7a5ebd62bc272996ba}
+
+\item 
+const void {\bfseries \+\_\+\+Move\+Backward} (uint32\+\_\+t index, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a50656a39c711957ab5269e67f3f0c5e9}{}\label{class_ensum_1_1_components_1_1_transform_manager_a50656a39c711957ab5269e67f3f0c5e9}
+
+\item 
+const void {\bfseries \+\_\+\+Move\+Right} (uint32\+\_\+t index, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a200e1df71fffc9bf21212a3c92d71cc6}{}\label{class_ensum_1_1_components_1_1_transform_manager_a200e1df71fffc9bf21212a3c92d71cc6}
+
+\item 
+const void {\bfseries \+\_\+\+Move\+Left} (uint32\+\_\+t index, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_aed03886aff53b5937ff458f4fe8bd135}{}\label{class_ensum_1_1_components_1_1_transform_manager_aed03886aff53b5937ff458f4fe8bd135}
+
+\item 
+const void {\bfseries \+\_\+\+Move\+Up} (uint32\+\_\+t index, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_aefdabf28a594cfbee912e7c33dc3904f}{}\label{class_ensum_1_1_components_1_1_transform_manager_aefdabf28a594cfbee912e7c33dc3904f}
+
+\item 
+const void {\bfseries \+\_\+\+Move\+Down} (uint32\+\_\+t index, const float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a2eacf57922ea1a0fdba9817e783d11b6}{}\label{class_ensum_1_1_components_1_1_transform_manager_a2eacf57922ea1a0fdba9817e783d11b6}
+
+\item 
+const void {\bfseries \+\_\+\+Move\+Along\+Vector} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_ad4ed93621abcdd070336fccffd160333}{}\label{class_ensum_1_1_components_1_1_transform_manager_ad4ed93621abcdd070336fccffd160333}
+
+\item 
+const void {\bfseries \+\_\+\+Move\+Along\+Vector} (uint32\+\_\+t index, Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR dir, float amount)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_aef05093bb6428418b461151150b00c50}{}\label{class_ensum_1_1_components_1_1_transform_manager_aef05093bb6428418b461151150b00c50}
+
+\item 
+const void {\bfseries \+\_\+\+Rotate} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&radians)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a94e359a45bfaa598f8c08b9e31cc8025}{}\label{class_ensum_1_1_components_1_1_transform_manager_a94e359a45bfaa598f8c08b9e31cc8025}
+
+\item 
+const void {\bfseries \+\_\+\+Rotate\+Yaw} (uint32\+\_\+t index, const float radians)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a54777efdcd5b6d082cc20147c21e5348}{}\label{class_ensum_1_1_components_1_1_transform_manager_a54777efdcd5b6d082cc20147c21e5348}
+
+\item 
+const void {\bfseries \+\_\+\+Rotate\+Pitch} (uint32\+\_\+t index, const float radians)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_ae46a70a55aa5f080b15f2290633f243d}{}\label{class_ensum_1_1_components_1_1_transform_manager_ae46a70a55aa5f080b15f2290633f243d}
+
+\item 
+const void {\bfseries \+\_\+\+Rotate\+Roll} (uint32\+\_\+t index, const float radians)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a64bbc7d142674869532b422c57b31a11}{}\label{class_ensum_1_1_components_1_1_transform_manager_a64bbc7d142674869532b422c57b31a11}
+
+\item 
+const void {\bfseries \+\_\+\+Set\+Position} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&position, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a830889e8aa1ab8dd5c84c1da08a65eca}{}\label{class_ensum_1_1_components_1_1_transform_manager_a830889e8aa1ab8dd5c84c1da08a65eca}
+
+\item 
+const void {\bfseries \+\_\+\+Set\+Position} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \&position, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a77609ace7a0622232b84a60d236fb75c}{}\label{class_ensum_1_1_components_1_1_transform_manager_a77609ace7a0622232b84a60d236fb75c}
+
+\item 
+const void {\bfseries \+\_\+\+Set\+Rotation} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&rotation)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a802d57c893c0c261b3f12702ab52943f}{}\label{class_ensum_1_1_components_1_1_transform_manager_a802d57c893c0c261b3f12702ab52943f}
+
+\item 
+const void {\bfseries \+\_\+\+Set\+Rotation} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \&rotation)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a4bc5b1864100fc3cf85fe50d8719f07e}{}\label{class_ensum_1_1_components_1_1_transform_manager_a4bc5b1864100fc3cf85fe50d8719f07e}
+
+\item 
+const void {\bfseries \+\_\+\+Set\+Scale} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&scale, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a0c99c23b7e4329a4717021394fa9e4b9}{}\label{class_ensum_1_1_components_1_1_transform_manager_a0c99c23b7e4329a4717021394fa9e4b9}
+
+\item 
+const void {\bfseries \+\_\+\+Set\+Scale} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \&scale, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a77af7e15d39f11c5a5ea9608d36aab3a}{}\label{class_ensum_1_1_components_1_1_transform_manager_a77af7e15d39f11c5a5ea9608d36aab3a}
+
+\item 
+const void {\bfseries \+\_\+\+Set\+Forward} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&forward, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a4d23fb876a394beb48d2c11531215897}{}\label{class_ensum_1_1_components_1_1_transform_manager_a4d23fb876a394beb48d2c11531215897}
+
+\item 
+const void {\bfseries \+\_\+\+Set\+Forward} (uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \&forward, bool relative\+To\+Parent=false)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_af6e6e9cd9eb807841adb9828c5e0fa8e}{}\label{class_ensum_1_1_components_1_1_transform_manager_af6e6e9cd9eb807841adb9828c5e0fa8e}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries \+\_\+\+Get\+Position} (uint32\+\_\+t index)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a96b1da90d26422c620abaab2f3d496fc}{}\label{class_ensum_1_1_components_1_1_transform_manager_a96b1da90d26422c620abaab2f3d496fc}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries \+\_\+\+Get\+Rotation} (uint32\+\_\+t index)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_af09798cd8daa7a687e384004ebf697f5}{}\label{class_ensum_1_1_components_1_1_transform_manager_af09798cd8daa7a687e384004ebf697f5}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries \+\_\+\+Get\+Scale} (uint32\+\_\+t index)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a05cdff28571a120d279fd0428f08b5fd}{}\label{class_ensum_1_1_components_1_1_transform_manager_a05cdff28571a120d279fd0428f08b5fd}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries \+\_\+\+Get\+Forward} (uint32\+\_\+t index)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_aa137f5b348c0c8844abce56c47b5f564}{}\label{class_ensum_1_1_components_1_1_transform_manager_aa137f5b348c0c8844abce56c47b5f564}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries \+\_\+\+Get\+Right} (uint32\+\_\+t index)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_aba2e3fb3988acbcd49d07d2299e0a93d}{}\label{class_ensum_1_1_components_1_1_transform_manager_aba2e3fb3988acbcd49d07d2299e0a93d}
+
+\item 
+const Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR {\bfseries \+\_\+\+Get\+Up} (uint32\+\_\+t index)\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a52a759a25c0129168670fc572693656f}{}\label{class_ensum_1_1_components_1_1_transform_manager_a52a759a25c0129168670fc572693656f}
+
+\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a50bed80577a1a6b97b9dbbf1fea2bc93}{\+\_\+\+Transform\+To\+Parent\+Local} (uint32\+\_\+t parent, uint32\+\_\+t child)
+\begin{DoxyCompactList}\small\item\em Transform to parents local. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_a860ac4eb9d36ae8c4077225f8323102f}{\+\_\+\+Transform\+From\+Parent\+Local} (uint32\+\_\+t parent, uint32\+\_\+t child)
+\begin{DoxyCompactList}\small\item\em Transform from parents local. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_transform_manager_abba8eea1db8554cb1aba12bc7eb57d1d}{\+\_\+\+Transform} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Transform has changed, so update everything. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_ensum_1_1_components_1_1_transform_manager_1_1_transform_components}{Transform\+Components} $\ast$ \hyperlink{class_ensum_1_1_components_1_1_transform_manager_aacb8cd9eb6f473b5b83f48c69a5e893d}{\+\_\+datap}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Camera\+Manager}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_afae5bf9a900e8c5bc70c9332785e8465}{}\label{class_ensum_1_1_components_1_1_transform_manager_afae5bf9a900e8c5bc70c9332785e8465}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Handles the transform of the entities. 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!\+\_\+\+Allocate@{\+\_\+\+Allocate}}
+\index{\+\_\+\+Allocate@{\+\_\+\+Allocate}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Allocate(uint32\+\_\+t size)}{_Allocate(uint32_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+\_\+\+Allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a90703a5b97caaafee225459ca872c446}{}\label{class_ensum_1_1_components_1_1_transform_manager_a90703a5b97caaafee225459ca872c446}
+
+
+Allocate more memory. 
+
+
+
+Implements \hyperlink{class_ensum_1_1_components_1_1_manager_a1b593059210d09632c910a6abaae49c0}{Ensum\+::\+Components\+::\+Manager}.
+
+\index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!\+\_\+\+Bind\+Child@{\+\_\+\+Bind\+Child}}
+\index{\+\_\+\+Bind\+Child@{\+\_\+\+Bind\+Child}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Bind\+Child(uint32\+\_\+t parent, uint32\+\_\+t child, bool relative\+To\+Parent)}{_BindChild(uint32_t parent, uint32_t child, bool relativeToParent)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+\_\+\+Bind\+Child (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{parent, }
+\item[{uint32\+\_\+t}]{child, }
+\item[{bool}]{relative\+To\+Parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a7222458e2c7ec382f73343a67aa0aee6}{}\label{class_ensum_1_1_components_1_1_transform_manager_a7222458e2c7ec382f73343a67aa0aee6}
+
+
+Bind a entity as child to another. 
+
+(The private version.) If relative\+To\+Parent is true, the current local pos of the child will be the same. If relative\+To\+Parent is false, the local pos of the child will be translated to the parents space. It is assumed that the indices exist. Think of it as welding the entity to the parent. \index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!\+\_\+\+Create\+Transform@{\+\_\+\+Create\+Transform}}
+\index{\+\_\+\+Create\+Transform@{\+\_\+\+Create\+Transform}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Create\+Transform(const Entity \&entity)}{_CreateTransform(const Entity &entity)}}]{\setlength{\rightskip}{0pt plus 5cm}const uint32\+\_\+t Ensum\+::\+Components\+::\+Transform\+Manager\+::\+\_\+\+Create\+Transform (
+\begin{DoxyParamCaption}
+\item[{const {\bf Entity} \&}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a68fa8f539fb52e6945dd82902b61b3c5}{}\label{class_ensum_1_1_components_1_1_transform_manager_a68fa8f539fb52e6945dd82902b61b3c5}
+
+
+Create a transform component for the entity. 
+
+(The private version.) \index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!\+\_\+\+Destroy@{\+\_\+\+Destroy}}
+\index{\+\_\+\+Destroy@{\+\_\+\+Destroy}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Destroy(uint32\+\_\+t index)}{_Destroy(uint32_t index)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+\_\+\+Destroy (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a47f354c8a26b83d12809611516be65c7}{}\label{class_ensum_1_1_components_1_1_transform_manager_a47f354c8a26b83d12809611516be65c7}
+
+
+Delete an entry in the memory block. 
+
+The deleted entry is replaced by the last in the block. 
+
+Implements \hyperlink{class_ensum_1_1_components_1_1_manager_a5ba85395802e942ed8904ca18951e6b0}{Ensum\+::\+Components\+::\+Manager}.
+
+\index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!\+\_\+\+Move@{\+\_\+\+Move}}
+\index{\+\_\+\+Move@{\+\_\+\+Move}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Move(uint32\+\_\+t index, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&direction)}{_Move(uint32_t index, const DirectX::XMFLOAT3 &direction)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+\_\+\+Move (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index, }
+\item[{const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&}]{direction}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a62fe544a73f4a09469d79872f8611024}{}\label{class_ensum_1_1_components_1_1_transform_manager_a62fe544a73f4a09469d79872f8611024}
+
+
+Move forward-\/x, right-\/y, up-\/z. 
+
+\index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!\+\_\+\+Transform@{\+\_\+\+Transform}}
+\index{\+\_\+\+Transform@{\+\_\+\+Transform}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Transform(uint32\+\_\+t index)}{_Transform(uint32_t index)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+\_\+\+Transform (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_abba8eea1db8554cb1aba12bc7eb57d1d}{}\label{class_ensum_1_1_components_1_1_transform_manager_abba8eea1db8554cb1aba12bc7eb57d1d}
+
+
+Transform has changed, so update everything. 
+
+It is assumed that the indices exist. \index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!\+\_\+\+Transform\+From\+Parent\+Local@{\+\_\+\+Transform\+From\+Parent\+Local}}
+\index{\+\_\+\+Transform\+From\+Parent\+Local@{\+\_\+\+Transform\+From\+Parent\+Local}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Transform\+From\+Parent\+Local(uint32\+\_\+t parent, uint32\+\_\+t child)}{_TransformFromParentLocal(uint32_t parent, uint32_t child)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+\_\+\+Transform\+From\+Parent\+Local (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{parent, }
+\item[{uint32\+\_\+t}]{child}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a860ac4eb9d36ae8c4077225f8323102f}{}\label{class_ensum_1_1_components_1_1_transform_manager_a860ac4eb9d36ae8c4077225f8323102f}
+
+
+Transform from parents local. 
+
+(The reverse of the above.) It is assumed that the indices exist. \index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!\+\_\+\+Transform\+To\+Parent\+Local@{\+\_\+\+Transform\+To\+Parent\+Local}}
+\index{\+\_\+\+Transform\+To\+Parent\+Local@{\+\_\+\+Transform\+To\+Parent\+Local}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Transform\+To\+Parent\+Local(uint32\+\_\+t parent, uint32\+\_\+t child)}{_TransformToParentLocal(uint32_t parent, uint32_t child)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+\_\+\+Transform\+To\+Parent\+Local (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{parent, }
+\item[{uint32\+\_\+t}]{child}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a50bed80577a1a6b97b9dbbf1fea2bc93}{}\label{class_ensum_1_1_components_1_1_transform_manager_a50bed80577a1a6b97b9dbbf1fea2bc93}
+
+
+Transform to parents local. 
+
+Eg. If child is at pos (1,0) and parent at (2,0), we want the child local to be (-\/1,0) but world to be (1,0) It is assumed that the indices exist. \index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!\+\_\+\+Unbind\+Child@{\+\_\+\+Unbind\+Child}}
+\index{\+\_\+\+Unbind\+Child@{\+\_\+\+Unbind\+Child}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Unbind\+Child(uint32\+\_\+t child)}{_UnbindChild(uint32_t child)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+\_\+\+Unbind\+Child (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{child}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a08e37f57af9622645b28139b4f7e3792}{}\label{class_ensum_1_1_components_1_1_transform_manager_a08e37f57af9622645b28139b4f7e3792}
+
+
+Unbind an entity as child. 
+
+(The private version.) The childs local transform will be translated to world pos. So it does not teleport away. It is assumed that the indices exist. \index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!Bind\+Child@{Bind\+Child}}
+\index{Bind\+Child@{Bind\+Child}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{Bind\+Child(const Entity \&parent, const Entity \&child, bool relative\+To\+Parent=false)}{BindChild(const Entity &parent, const Entity &child, bool relativeToParent=false)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+Bind\+Child (
+\begin{DoxyParamCaption}
+\item[{const {\bf Entity} \&}]{parent, }
+\item[{const {\bf Entity} \&}]{child, }
+\item[{bool}]{relative\+To\+Parent = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a2d240e72b697be19aecae1527599480e}{}\label{class_ensum_1_1_components_1_1_transform_manager_a2d240e72b697be19aecae1527599480e}
+
+
+Bind a entity as child to another. 
+
+If relative\+To\+Parent is true, the current local pos of the child will be the same. If relative\+To\+Parent is false, the local pos of the child will be translated to the parents space. Think of it as welding the entity to the parent. \index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!Move@{Move}}
+\index{Move@{Move}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{Move(const Entity \&entity, const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&direction)}{Move(const Entity &entity, const DirectX::XMFLOAT3 &direction)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+Move (
+\begin{DoxyParamCaption}
+\item[{const {\bf Entity} \&}]{entity, }
+\item[{const Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T3 \&}]{direction}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_a62314eeafd1d1368b82b1ea3002d3a71}{}\label{class_ensum_1_1_components_1_1_transform_manager_a62314eeafd1d1368b82b1ea3002d3a71}
+
+
+Move forward-\/x, right-\/y, up-\/z. 
+
+\index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!Unbind\+Child@{Unbind\+Child}}
+\index{Unbind\+Child@{Unbind\+Child}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{Unbind\+Child(const Entity \&child)}{UnbindChild(const Entity &child)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Transform\+Manager\+::\+Unbind\+Child (
+\begin{DoxyParamCaption}
+\item[{const {\bf Entity} \&}]{child}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_ab7dc49fe8a330efbe10c8b55f0bc0398}{}\label{class_ensum_1_1_components_1_1_transform_manager_ab7dc49fe8a330efbe10c8b55f0bc0398}
+
+
+Unbind an entity as child. 
+
+The childs local transform will be translated to world pos. So it does not teleport away. 
+
+\subsection{Member Data Documentation}
+\index{Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}!\+\_\+datap@{\+\_\+datap}}
+\index{\+\_\+datap@{\+\_\+datap}!Ensum\+::\+Components\+::\+Transform\+Manager@{Ensum\+::\+Components\+::\+Transform\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+datap}{_datap}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform\+Components}$\ast$ Ensum\+::\+Components\+::\+Transform\+Manager\+::\+\_\+datap\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_transform_manager_aacb8cd9eb6f473b5b83f48c69a5e893d}{}\label{class_ensum_1_1_components_1_1_transform_manager_aacb8cd9eb6f473b5b83f48c69a5e893d}
+A reference pointer to avoid having to cast the basic datapointer all the time. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+components/Transform\+Manager.\+h\end{DoxyCompactItemize}

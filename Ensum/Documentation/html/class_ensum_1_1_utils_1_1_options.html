@@ -161,13 +161,17 @@ static ENSUM_UTILS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom
 static ENSUM_UTILS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_utils_1_1_options.html#a67df741524fdcd73f377d3b65f9699c9">SetStringOption</a> (const <a class="el" href="class_ensum_1_1string.html">string</a> &amp;section, const <a class="el" href="class_ensum_1_1string.html">string</a> &amp;option, const <a class="el" href="class_ensum_1_1string.html">string</a> &amp;value)</td></tr>
 <tr class="memdesc:a67df741524fdcd73f377d3b65f9699c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public write function. <br /></td></tr>
 <tr class="separator:a67df741524fdcd73f377d3b65f9699c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab567217a53d2ef200574271fa3c957b1"><td class="memItemLeft" align="right" valign="top">static ENSUM_UTILS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_utils_1_1_options.html#ab567217a53d2ef200574271fa3c957b1">Subscribe</a> (<a class="el" href="class_ensum_1_1_delegate.html">Delegate</a>&lt; void()&gt; &amp;dele)</td></tr>
-<tr class="memdesc:ab567217a53d2ef200574271fa3c957b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to the OptionsChange event.  <a href="#ab567217a53d2ef200574271fa3c957b1">More...</a><br /></td></tr>
-<tr class="separator:ab567217a53d2ef200574271fa3c957b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8945e45a27cd51401779bd92ae44fb2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8945e45a27cd51401779bd92ae44fb2"></a>
-static ENSUM_UTILS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_utils_1_1_options.html#ac8945e45a27cd51401779bd92ae44fb2">UnSubscribe</a> (<a class="el" href="class_ensum_1_1_delegate.html">Delegate</a>&lt; void()&gt; &amp;dele)</td></tr>
-<tr class="memdesc:ac8945e45a27cd51401779bd92ae44fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">UnSubscribe to the OptionsChange event. <br /></td></tr>
-<tr class="separator:ac8945e45a27cd51401779bd92ae44fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e7f1fc995faacdd3df031f1703eb163"><td class="memItemLeft" align="right" valign="top">static ENSUM_UTILS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_utils_1_1_options.html#a0e7f1fc995faacdd3df031f1703eb163">Subscribe</a> (<a class="el" href="class_ensum_1_1_delegate.html">Delegate</a>&lt; const void()&gt; &amp;dele)</td></tr>
+<tr class="memdesc:a0e7f1fc995faacdd3df031f1703eb163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to the OptionsChange event.  <a href="#a0e7f1fc995faacdd3df031f1703eb163">More...</a><br /></td></tr>
+<tr class="separator:a0e7f1fc995faacdd3df031f1703eb163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33199a658e631aa6e9a5a39de823c563"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33199a658e631aa6e9a5a39de823c563"></a>
+static ENSUM_UTILS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_utils_1_1_options.html#a33199a658e631aa6e9a5a39de823c563">UnSubscribe</a> (<a class="el" href="class_ensum_1_1_delegate.html">Delegate</a>&lt; const void()&gt; &amp;dele)</td></tr>
+<tr class="memdesc:a33199a658e631aa6e9a5a39de823c563"><td class="mdescLeft">&#160;</td><td class="mdescRight">UnSubscribe to the OptionsChange event. <br /></td></tr>
+<tr class="separator:a33199a658e631aa6e9a5a39de823c563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad51d23ce53015deecdd79180f1b92f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad51d23ce53015deecdd79180f1b92f0"></a>
+static ENSUM_UTILS_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_utils_1_1_options.html#aad51d23ce53015deecdd79180f1b92f0">NotifyChange</a> ()</td></tr>
+<tr class="memdesc:aad51d23ce53015deecdd79180f1b92f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify all subscribers of change. <br /></td></tr>
+<tr class="separator:aad51d23ce53015deecdd79180f1b92f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -209,9 +213,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ae10dba8ac3cb72c83e206ba2b74fa9c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae10dba8ac3cb72c83e206ba2b74fa9c3"></a>
 <a class="el" href="class_ensum_1_1_file_handler_1_1ini.html">FileHandler::ini</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_file</b></td></tr>
 <tr class="separator:ae10dba8ac3cb72c83e206ba2b74fa9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8387d551a3972a8c09097fdc7b35c057"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8387d551a3972a8c09097fdc7b35c057"></a>
-<a class="el" href="class_ensum_1_1_event.html">Event</a>&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_OptionChange</b></td></tr>
-<tr class="separator:a8387d551a3972a8c09097fdc7b35c057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01cff1997c3b03c78af3dcc611f8acd1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01cff1997c3b03c78af3dcc611f8acd1"></a>
+<a class="el" href="class_ensum_1_1_event.html">Event</a>&lt; const void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_OptionChange</b></td></tr>
+<tr class="separator:a01cff1997c3b03c78af3dcc611f8acd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -248,7 +252,7 @@ static <a class="el" href="class_ensum_1_1_utils_1_1_options.html">Options</a> *
 
 </div>
 </div>
-<a class="anchor" id="ab567217a53d2ef200574271fa3c957b1"></a>
+<a class="anchor" id="a0e7f1fc995faacdd3df031f1703eb163"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -258,7 +262,7 @@ static <a class="el" href="class_ensum_1_1_utils_1_1_options.html">Options</a> *
         <tr>
           <td class="memname">static ENSUM_UTILS_EXPORT void Ensum::Utils::Options::Subscribe </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_ensum_1_1_delegate.html">Delegate</a>&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_ensum_1_1_delegate.html">Delegate</a>&lt; const void()&gt; &amp;&#160;</td>
           <td class="paramname"><em>dele</em></td><td>)</td>
           <td></td>
         </tr>
@@ -276,7 +280,7 @@ static <a class="el" href="class_ensum_1_1_utils_1_1_options.html">Options</a> *
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Includes/Ensum_utils/<a class="el" href="_options_8h_source.html">Options.h</a></li>
+<li>C:/Users/peter/Source/Repos/ENSUM/Ensum/Includes/Ensum_utils/<a class="el" href="_options_8h_source.html">Options.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

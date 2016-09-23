@@ -1,0 +1,240 @@
+\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12}{}\section{Ensum\+:\+:Graphics\+:\+:Direct3\+D12 Class Reference}
+\label{class_ensum_1_1_graphics_1_1_direct3_d12}\index{Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_ensum_1_1_graphics_1_1_direct3_d12_1_1_c_d3_d12___c_p_u___d_e_s_c_r_i_p_t_o_r___h_a_n_d_l_e}{C\+D3\+D12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE}
+\item 
+struct \hyperlink{struct_ensum_1_1_graphics_1_1_direct3_d12_1_1_index_buffer}{Index\+Buffer}
+\item 
+struct \hyperlink{struct_ensum_1_1_graphics_1_1_direct3_d12_1_1_vertex_buffer}{Vertex\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_ab7149b342ff2557e9e4662856b773156}{Start} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_ab7149b342ff2557e9e4662856b773156}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_ab7149b342ff2557e9e4662856b773156}
+
+\begin{DoxyCompactList}\small\item\em Init Direct\+X12. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a08122d8124d9abfe0394f11811889698}{Shutdown} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a08122d8124d9abfe0394f11811889698}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a08122d8124d9abfe0394f11811889698}
+
+\begin{DoxyCompactList}\small\item\em Shutdown everything. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a6f548cfdf2179dd205e8f342f4a787c3}{Reset\+Command\+Lists} ()
+\begin{DoxyCompactList}\small\item\em Reset command lists. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a1ec3165b83d7d334911618e5399ba463}{Close\+Command\+Lists} ()
+\begin{DoxyCompactList}\small\item\em Closes the commandlist from more commands. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a860474f86765106018b843df44ee2705}{Swap\+Back\+Buffer} (uint32\+\_\+t sync\+Interval=0, uint32\+\_\+t flags=0)\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a860474f86765106018b843df44ee2705}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a860474f86765106018b843df44ee2705}
+
+\begin{DoxyCompactList}\small\item\em Swap the back and front buffer. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a32270d77585e93f05b15e1769e37434a}{Flush\+Command\+Queue} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a32270d77585e93f05b15e1769e37434a}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a32270d77585e93f05b15e1769e37434a}
+
+\begin{DoxyCompactList}\small\item\em Waits for all commands to finsih. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a1a27e56f7876cfbda9053c541723e2af}{Transition\+Back\+Buffer\+To\+Render\+Target} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a1a27e56f7876cfbda9053c541723e2af}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a1a27e56f7876cfbda9053c541723e2af}
+
+\begin{DoxyCompactList}\small\item\em Indicates a state transition from present to render target on the backbuffer resource. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a878c89936a686764b71ffa51d3b3ed3b}{Transition\+Back\+Buffer\+To\+Present} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a878c89936a686764b71ffa51d3b3ed3b}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a878c89936a686764b71ffa51d3b3ed3b}
+
+\begin{DoxyCompactList}\small\item\em Indicates a state transition from render target to present on the backbuffer resource. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a6d3a67e0619d6ac1938aa228783772cd}{Set\+View\+Port} (const D3\+D12\+\_\+\+V\+I\+E\+W\+P\+O\+RT $\ast$vp, uint8\+\_\+t num\+View\+Ports=1)\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a6d3a67e0619d6ac1938aa228783772cd}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a6d3a67e0619d6ac1938aa228783772cd}
+
+\begin{DoxyCompactList}\small\item\em Sets the given view port. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_af49d60fc2f5d8febbab527fb98d238e0}{Clear\+Back\+Buffer} (const float color\+R\+G\+BA\mbox{[}4\mbox{]}, uint32\+\_\+t num\+Rects=0, const D3\+D12\+\_\+\+R\+E\+CT $\ast$p\+Rects=nullptr)
+\begin{DoxyCompactList}\small\item\em Clears the current backbuffer. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_aad4daa8244f4db18cec290d009988df8}{Clear\+Depth\+Stencil\+View} (const D3\+D12\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+L\+A\+GS flags=D3\+D12\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+L\+A\+G\+\_\+\+D\+E\+P\+TH$\vert$D3\+D12\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+L\+A\+G\+\_\+\+S\+T\+E\+N\+C\+IL, float depth=1.\+0f, uint8\+\_\+t stencil=0, uint32\+\_\+t num\+Rects=0, const D3\+D12\+\_\+\+R\+E\+C\+T $\ast$p\+Rects=nullptr)
+\begin{DoxyCompactList}\small\item\em Clears the current backbuffer. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_ab7487166c3eda609467275b33a32e4b0}{Set\+Back\+Buffer\+As\+Render\+Target} (bool spec\+Depth\+Stencil\+View=false, const D3\+D12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE sdsv=D3\+D12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE())
+\begin{DoxyCompactList}\small\item\em Set the rendertarget to the current backbuffer. \end{DoxyCompactList}\item 
+Com\+Ptr$<$ I\+D3\+D12\+Resource $>$ \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_ad0bea02aef7160843feb2e88c1d977ad}{Create\+Default\+Buffer} (const void $\ast$init\+Data, uint64\+\_\+t byte\+Size, Com\+Ptr$<$ I\+D3\+D12\+Resource $>$ \&upload\+Buffer)
+\begin{DoxyCompactList}\small\item\em Create a buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+D3\+D12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE {\bfseries \+\_\+\+Current\+Back\+Buffer\+View} () const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a901935b6b5ff44e8ae0e640e15aa6eeb}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a901935b6b5ff44e8ae0e640e15aa6eeb}
+
+\item 
+D3\+D12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE {\bfseries \+\_\+\+Depth\+Stencil\+View} () const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_aacc8548cb29544da36fd7f630f1b2432}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_aacc8548cb29544da36fd7f630f1b2432}
+
+\item 
+I\+D3\+D12\+Resource $\ast$ {\bfseries \+\_\+\+Current\+Back\+Buffer} () const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a4713894e9e589355456707eca90b1491}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a4713894e9e589355456707eca90b1491}
+
+\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a07a634e382d491a818b86f247750211f}{Create\+Command\+Objects} ()
+\begin{DoxyCompactList}\small\item\em Create the commands objects. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a70deb180be1a0be106627007f965bb8e}{Create\+Swap\+Chain} ()
+\begin{DoxyCompactList}\small\item\em Create the swapchain. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a8d46f8eb874ef368b441f46772661567}{Create\+Rtv\+And\+Dsv\+Descriptor\+Heaps} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a8d46f8eb874ef368b441f46772661567}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a8d46f8eb874ef368b441f46772661567}
+
+\begin{DoxyCompactList}\small\item\em Create Desciptor\+Heaps for R\+TV and D\+SV. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a9401f92eff74f48b9d3a9249de6c4764}{Create\+Render\+Target\+Views} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a9401f92eff74f48b9d3a9249de6c4764}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a9401f92eff74f48b9d3a9249de6c4764}
+
+\begin{DoxyCompactList}\small\item\em Create Render target views for swapchain. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d12_a87b31766c3f9641ecdd4ff9ffe84f30d}{Create\+Depth\+Stencil\+Buffer\+View} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a87b31766c3f9641ecdd4ff9ffe84f30d}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a87b31766c3f9641ecdd4ff9ffe84f30d}
+
+\begin{DoxyCompactList}\small\item\em Create the Depth stencil buffer/view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Com\+Ptr$<$ I\+D\+X\+G\+I\+Factory4 $>$ {\bfseries \+\_\+dxgi\+Factory}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a8805759c5176e916d4879643c03493f4}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a8805759c5176e916d4879643c03493f4}
+
+\item 
+Com\+Ptr$<$ I\+D3\+D12\+Device $>$ {\bfseries \+\_\+device}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a8e10faf109b0db839652413b7a826899}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a8e10faf109b0db839652413b7a826899}
+
+\item 
+Com\+Ptr$<$ I\+D3\+D12\+Fence $>$ {\bfseries \+\_\+fence}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_aa0662a390b2af9df9a59123843931180}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_aa0662a390b2af9df9a59123843931180}
+
+\item 
+Com\+Ptr$<$ I\+D3\+D12\+Command\+Queue $>$ {\bfseries \+\_\+cmd\+Queue}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a264668465ad97536e0989d1aea398194}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a264668465ad97536e0989d1aea398194}
+
+\item 
+Com\+Ptr$<$ I\+D3\+D12\+Command\+Allocator $>$ {\bfseries \+\_\+cmd\+List\+Alloc}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a5bdf8937ebc2f6db81372ad6d599463c}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a5bdf8937ebc2f6db81372ad6d599463c}
+
+\item 
+Com\+Ptr$<$ I\+D3\+D12\+Graphics\+Command\+List $>$ {\bfseries \+\_\+cmd\+List}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a6cabb16a09e3766e12199b526abf0c10}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a6cabb16a09e3766e12199b526abf0c10}
+
+\item 
+Com\+Ptr$<$ I\+D\+X\+G\+I\+Swap\+Chain $>$ {\bfseries \+\_\+swap\+Chain}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a7fc633c1ac1cfbde4d3f2e7b11daf64e}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a7fc633c1ac1cfbde4d3f2e7b11daf64e}
+
+\item 
+Com\+Ptr$<$ I\+D3\+D12\+Descriptor\+Heap $>$ {\bfseries \+\_\+rtv\+Heap}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_ab05041546dfce3f0e895a1a14c021116}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_ab05041546dfce3f0e895a1a14c021116}
+
+\item 
+Com\+Ptr$<$ I\+D3\+D12\+Descriptor\+Heap $>$ {\bfseries \+\_\+dsv\+Heap}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a65c2626929173beef0d62601db0b82b9}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a65c2626929173beef0d62601db0b82b9}
+
+\item 
+Com\+Ptr$<$ I\+D3\+D12\+Resource $>$ $\ast$ {\bfseries \+\_\+swap\+Chain\+Buffer}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_afa1eb2b3a095f2d556a709d0a65707ec}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_afa1eb2b3a095f2d556a709d0a65707ec}
+
+\item 
+Com\+Ptr$<$ I\+D3\+D12\+Resource $>$ {\bfseries \+\_\+depth\+Stencil\+Buffer}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a386d13fbf418115b4d07d1c058731058}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a386d13fbf418115b4d07d1c058731058}
+
+\item 
+D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT {\bfseries \+\_\+back\+Buffer\+Format}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a7e8d898236addb07219f01e9077852a5}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a7e8d898236addb07219f01e9077852a5}
+
+\item 
+D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT {\bfseries \+\_\+depth\+Stencil\+Format}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_aff551eeb2976060b9ddfa9cadf0b1b2f}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_aff551eeb2976060b9ddfa9cadf0b1b2f}
+
+\item 
+uint8\+\_\+t {\bfseries \+\_\+curr\+Back\+Buffer}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_ac84539a8513c9e48ddb30bc5c2f78df2}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_ac84539a8513c9e48ddb30bc5c2f78df2}
+
+\item 
+uint8\+\_\+t {\bfseries \+\_\+swap\+Chain\+Buffer\+Count}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a9690485845ab9cd4b948bf4880a18745}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a9690485845ab9cd4b948bf4880a18745}
+
+\item 
+uint64\+\_\+t {\bfseries \+\_\+current\+Fence}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a903f85029c462a7c7c6309bcb1571f33}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a903f85029c462a7c7c6309bcb1571f33}
+
+\item 
+uint32\+\_\+t {\bfseries \+\_\+rtv\+Descriptor\+Size}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a470bf2946815486a0771a163eaac207a}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a470bf2946815486a0771a163eaac207a}
+
+\item 
+uint32\+\_\+t {\bfseries \+\_\+dsv\+Descriptor\+Size}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a05c8971888185026c5de5d743b5b8a29}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a05c8971888185026c5de5d743b5b8a29}
+
+\item 
+uint32\+\_\+t {\bfseries \+\_\+cbv\+Descriptor\+Size}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a1f02c1d3ba4c7c8747e3c21d13f2922b}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a1f02c1d3ba4c7c8747e3c21d13f2922b}
+
+\item 
+uint32\+\_\+t {\bfseries \+\_\+4x\+Msaa\+Quality}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a85664c4db41623196d27697b26f43c53}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a85664c4db41623196d27697b26f43c53}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}!Clear\+Back\+Buffer@{Clear\+Back\+Buffer}}
+\index{Clear\+Back\+Buffer@{Clear\+Back\+Buffer}!Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}}
+\subsubsection[{\texorpdfstring{Clear\+Back\+Buffer(const float color\+R\+G\+BA[4], uint32\+\_\+t num\+Rects=0, const D3\+D12\+\_\+\+R\+E\+C\+T $\ast$p\+Rects=nullptr)}{ClearBackBuffer(const float colorRGBA[4], uint32_t numRects=0, const D3D12_RECT *pRects=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Graphics\+::\+Direct3\+D12\+::\+Clear\+Back\+Buffer (
+\begin{DoxyParamCaption}
+\item[{const float}]{color\+R\+G\+BA\mbox{[}4\mbox{]}, }
+\item[{uint32\+\_\+t}]{num\+Rects = {\ttfamily 0}, }
+\item[{const D3\+D12\+\_\+\+R\+E\+CT $\ast$}]{p\+Rects = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_af49d60fc2f5d8febbab527fb98d238e0}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_af49d60fc2f5d8febbab527fb98d238e0}
+
+
+Clears the current backbuffer. 
+
+p\+Rects specifices the areas to clear. \index{Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}!Clear\+Depth\+Stencil\+View@{Clear\+Depth\+Stencil\+View}}
+\index{Clear\+Depth\+Stencil\+View@{Clear\+Depth\+Stencil\+View}!Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}}
+\subsubsection[{\texorpdfstring{Clear\+Depth\+Stencil\+View(const D3\+D12\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+L\+A\+G\+S flags=\+D3\+D12\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+L\+A\+G\+\_\+\+D\+E\+P\+TH\texttt{"|}D3\+D12\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+L\+A\+G\+\_\+\+S\+T\+E\+N\+C\+I\+L, float depth=1.\+0f, uint8\+\_\+t stencil=0, uint32\+\_\+t num\+Rects=0, const D3\+D12\+\_\+\+R\+E\+C\+T $\ast$p\+Rects=nullptr)}{ClearDepthStencilView(const D3D12_CLEAR_FLAGS flags=D3D12_CLEAR_FLAG_DEPTH|D3D12_CLEAR_FLAG_STENCIL, float depth=1.0f, uint8_t stencil=0, uint32_t numRects=0, const D3D12_RECT *pRects=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Graphics\+::\+Direct3\+D12\+::\+Clear\+Depth\+Stencil\+View (
+\begin{DoxyParamCaption}
+\item[{const D3\+D12\+\_\+\+C\+L\+E\+A\+R\+\_\+\+F\+L\+A\+GS}]{flags = {\ttfamily D3D12\+\_\+CLEAR\+\_\+FLAG\+\_\+DEPTH$\vert$D3D12\+\_\+CLEAR\+\_\+FLAG\+\_\+STENCIL}, }
+\item[{float}]{depth = {\ttfamily 1.0f}, }
+\item[{uint8\+\_\+t}]{stencil = {\ttfamily 0}, }
+\item[{uint32\+\_\+t}]{num\+Rects = {\ttfamily 0}, }
+\item[{const D3\+D12\+\_\+\+R\+E\+CT $\ast$}]{p\+Rects = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_aad4daa8244f4db18cec290d009988df8}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_aad4daa8244f4db18cec290d009988df8}
+
+
+Clears the current backbuffer. 
+
+p\+Rects specifices the areas to clear. \index{Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}!Close\+Command\+Lists@{Close\+Command\+Lists}}
+\index{Close\+Command\+Lists@{Close\+Command\+Lists}!Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}}
+\subsubsection[{\texorpdfstring{Close\+Command\+Lists()}{CloseCommandLists()}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Graphics\+::\+Direct3\+D12\+::\+Close\+Command\+Lists (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a1ec3165b83d7d334911618e5399ba463}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a1ec3165b83d7d334911618e5399ba463}
+
+
+Closes the commandlist from more commands. 
+
+This also executes the commands. \index{Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}!Create\+Command\+Objects@{Create\+Command\+Objects}}
+\index{Create\+Command\+Objects@{Create\+Command\+Objects}!Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}}
+\subsubsection[{\texorpdfstring{Create\+Command\+Objects()}{CreateCommandObjects()}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Graphics\+::\+Direct3\+D12\+::\+Create\+Command\+Objects (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a07a634e382d491a818b86f247750211f}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a07a634e382d491a818b86f247750211f}
+
+
+Create the commands objects. 
+
+This includes the Command\+Queue, Command\+List\+Allocator and Command\+List. \index{Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}!Create\+Default\+Buffer@{Create\+Default\+Buffer}}
+\index{Create\+Default\+Buffer@{Create\+Default\+Buffer}!Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}}
+\subsubsection[{\texorpdfstring{Create\+Default\+Buffer(const void $\ast$init\+Data, uint64\+\_\+t byte\+Size, Com\+Ptr$<$ I\+D3\+D12\+Resource $>$ \&upload\+Buffer)}{CreateDefaultBuffer(const void *initData, uint64_t byteSize, ComPtr< ID3D12Resource > &uploadBuffer)}}]{\setlength{\rightskip}{0pt plus 5cm}Com\+Ptr$<$I\+D3\+D12\+Resource$>$ Ensum\+::\+Graphics\+::\+Direct3\+D12\+::\+Create\+Default\+Buffer (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{init\+Data, }
+\item[{uint64\+\_\+t}]{byte\+Size, }
+\item[{Com\+Ptr$<$ I\+D3\+D12\+Resource $>$ \&}]{upload\+Buffer}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_ad0bea02aef7160843feb2e88c1d977ad}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_ad0bea02aef7160843feb2e88c1d977ad}
+
+
+Create a buffer. 
+
+\index{Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}!Create\+Swap\+Chain@{Create\+Swap\+Chain}}
+\index{Create\+Swap\+Chain@{Create\+Swap\+Chain}!Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}}
+\subsubsection[{\texorpdfstring{Create\+Swap\+Chain()}{CreateSwapChain()}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Graphics\+::\+Direct3\+D12\+::\+Create\+Swap\+Chain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a70deb180be1a0be106627007f965bb8e}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a70deb180be1a0be106627007f965bb8e}
+
+
+Create the swapchain. 
+
+\index{Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}!Reset\+Command\+Lists@{Reset\+Command\+Lists}}
+\index{Reset\+Command\+Lists@{Reset\+Command\+Lists}!Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}}
+\subsubsection[{\texorpdfstring{Reset\+Command\+Lists()}{ResetCommandLists()}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Graphics\+::\+Direct3\+D12\+::\+Reset\+Command\+Lists (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_a6f548cfdf2179dd205e8f342f4a787c3}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_a6f548cfdf2179dd205e8f342f4a787c3}
+
+
+Reset command lists. 
+
+Reset the commandlistallocator and commandlist. \index{Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}!Set\+Back\+Buffer\+As\+Render\+Target@{Set\+Back\+Buffer\+As\+Render\+Target}}
+\index{Set\+Back\+Buffer\+As\+Render\+Target@{Set\+Back\+Buffer\+As\+Render\+Target}!Ensum\+::\+Graphics\+::\+Direct3\+D12@{Ensum\+::\+Graphics\+::\+Direct3\+D12}}
+\subsubsection[{\texorpdfstring{Set\+Back\+Buffer\+As\+Render\+Target(bool spec\+Depth\+Stencil\+View=false, const D3\+D12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+L\+E sdsv=\+D3\+D12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+L\+E())}{SetBackBufferAsRenderTarget(bool specDepthStencilView=false, const D3D12_CPU_DESCRIPTOR_HANDLE sdsv=D3D12_CPU_DESCRIPTOR_HANDLE())}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Graphics\+::\+Direct3\+D12\+::\+Set\+Back\+Buffer\+As\+Render\+Target (
+\begin{DoxyParamCaption}
+\item[{bool}]{spec\+Depth\+Stencil\+View = {\ttfamily false}, }
+\item[{const D3\+D12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE}]{sdsv = {\ttfamily D3D12\+\_\+CPU\+\_\+DESCRIPTOR\+\_\+HANDLE()}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d12_ab7487166c3eda609467275b33a32e4b0}{}\label{class_ensum_1_1_graphics_1_1_direct3_d12_ab7487166c3eda609467275b33a32e4b0}
+
+
+Set the rendertarget to the current backbuffer. 
+
+If spec\+Depth\+Stencil\+View is true then depthstencilview in sdsv will be used instead of default. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+graphics/Direct3\+D12.\+h\end{DoxyCompactItemize}

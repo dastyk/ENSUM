@@ -125,6 +125,10 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html#a15c2795c73d625bcc2399bf59cea64b5">Create</a> ()</td></tr>
 <tr class="memdesc:a15c2795c73d625bcc2399bf59cea64b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an entity, and returns it. <br /></td></tr>
 <tr class="separator:a15c2795c73d625bcc2399bf59cea64b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87651038fca34e5dac4641c3d257c486"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87651038fca34e5dac4641c3d257c486"></a>
+const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html#a87651038fca34e5dac4641c3d257c486">AddDeleteCallback</a> (const <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;entity, <a class="el" href="class_ensum_1_1_delegate.html">Delegate</a>&lt; const void(const <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;entity)&gt; &amp;callback)</td></tr>
+<tr class="memdesc:a87651038fca34e5dac4641c3d257c486"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the callback for the entity. <br /></td></tr>
+<tr class="separator:a87651038fca34e5dac4641c3d257c486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa30d3768a9f92b138a52b7ac7c6045cc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa30d3768a9f92b138a52b7ac7c6045cc"></a>
 const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_entity_manager.html#aa30d3768a9f92b138a52b7ac7c6045cc">Alive</a> (const <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;entity) const </td></tr>
 <tr class="memdesc:aa30d3768a9f92b138a52b7ac7c6045cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether or not the entity is alive. <br /></td></tr>
@@ -142,6 +146,9 @@ std::vector&lt; uint8_t &gt; *&#160;</td><td class="memItemRight" valign="bottom
 <tr class="memitem:aa90213c24c2e4f8f8c09f9cf1c21a613"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa90213c24c2e4f8f8c09f9cf1c21a613"></a>
 std::deque&lt; uint32_t &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_freeIndices</b></td></tr>
 <tr class="separator:aa90213c24c2e4f8f8c09f9cf1c21a613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f9c14dc1c320228130200a49fa08b9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f9c14dc1c320228130200a49fa08b9b"></a>
+std::vector&lt; <a class="el" href="class_ensum_1_1_event.html">Event</a>&lt; const void(const <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;entity)&gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_destroyCallback</b></td></tr>
+<tr class="separator:a1f9c14dc1c320228130200a49fa08b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -152,7 +159,7 @@ static const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>MINI
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages all entities in all scenes. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>Includes/Ensum_components/<a class="el" href="_entity_manager_8h_source.html">EntityManager.h</a></li>
+<li>C:/Users/peter/Source/Repos/ENSUM/Ensum/Includes/Ensum_components/<a class="el" href="_entity_manager_8h_source.html">EntityManager.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

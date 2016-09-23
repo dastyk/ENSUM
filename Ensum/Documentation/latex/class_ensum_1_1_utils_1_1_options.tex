@@ -41,11 +41,14 @@ static E\+N\+S\+U\+M\+\_\+\+U\+T\+I\+L\+S\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{
 static E\+N\+S\+U\+M\+\_\+\+U\+T\+I\+L\+S\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{class_ensum_1_1_utils_1_1_options_a67df741524fdcd73f377d3b65f9699c9}{Set\+String\+Option} (const \hyperlink{class_ensum_1_1string}{string} \&section, const \hyperlink{class_ensum_1_1string}{string} \&option, const \hyperlink{class_ensum_1_1string}{string} \&value)\hypertarget{class_ensum_1_1_utils_1_1_options_a67df741524fdcd73f377d3b65f9699c9}{}\label{class_ensum_1_1_utils_1_1_options_a67df741524fdcd73f377d3b65f9699c9}
 
 \begin{DoxyCompactList}\small\item\em Public write function. \end{DoxyCompactList}\item 
-static E\+N\+S\+U\+M\+\_\+\+U\+T\+I\+L\+S\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{class_ensum_1_1_utils_1_1_options_ab567217a53d2ef200574271fa3c957b1}{Subscribe} (\hyperlink{class_ensum_1_1_delegate}{Delegate}$<$ void()$>$ \&dele)
+static E\+N\+S\+U\+M\+\_\+\+U\+T\+I\+L\+S\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{class_ensum_1_1_utils_1_1_options_a0e7f1fc995faacdd3df031f1703eb163}{Subscribe} (\hyperlink{class_ensum_1_1_delegate}{Delegate}$<$ const void()$>$ \&dele)
 \begin{DoxyCompactList}\small\item\em Subscribe to the Options\+Change event. \end{DoxyCompactList}\item 
-static E\+N\+S\+U\+M\+\_\+\+U\+T\+I\+L\+S\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{class_ensum_1_1_utils_1_1_options_ac8945e45a27cd51401779bd92ae44fb2}{Un\+Subscribe} (\hyperlink{class_ensum_1_1_delegate}{Delegate}$<$ void()$>$ \&dele)\hypertarget{class_ensum_1_1_utils_1_1_options_ac8945e45a27cd51401779bd92ae44fb2}{}\label{class_ensum_1_1_utils_1_1_options_ac8945e45a27cd51401779bd92ae44fb2}
+static E\+N\+S\+U\+M\+\_\+\+U\+T\+I\+L\+S\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{class_ensum_1_1_utils_1_1_options_a33199a658e631aa6e9a5a39de823c563}{Un\+Subscribe} (\hyperlink{class_ensum_1_1_delegate}{Delegate}$<$ const void()$>$ \&dele)\hypertarget{class_ensum_1_1_utils_1_1_options_a33199a658e631aa6e9a5a39de823c563}{}\label{class_ensum_1_1_utils_1_1_options_a33199a658e631aa6e9a5a39de823c563}
 
-\begin{DoxyCompactList}\small\item\em Un\+Subscribe to the Options\+Change event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Un\+Subscribe to the Options\+Change event. \end{DoxyCompactList}\item 
+static E\+N\+S\+U\+M\+\_\+\+U\+T\+I\+L\+S\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{class_ensum_1_1_utils_1_1_options_aad51d23ce53015deecdd79180f1b92f0}{Notify\+Change} ()\hypertarget{class_ensum_1_1_utils_1_1_options_aad51d23ce53015deecdd79180f1b92f0}{}\label{class_ensum_1_1_utils_1_1_options_aad51d23ce53015deecdd79180f1b92f0}
+
+\begin{DoxyCompactList}\small\item\em Notify all subscribers of change. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -79,7 +82,7 @@ void \hyperlink{class_ensum_1_1_utils_1_1_options_a7ba0b31a187c20ffec4725b5f1fd9
 \hyperlink{class_ensum_1_1_file_handler_1_1ini}{File\+Handler\+::ini} $\ast$ {\bfseries \+\_\+file}\hypertarget{class_ensum_1_1_utils_1_1_options_ae10dba8ac3cb72c83e206ba2b74fa9c3}{}\label{class_ensum_1_1_utils_1_1_options_ae10dba8ac3cb72c83e206ba2b74fa9c3}
 
 \item 
-\hyperlink{class_ensum_1_1_event}{Event}$<$ void()$>$ {\bfseries \+\_\+\+Option\+Change}\hypertarget{class_ensum_1_1_utils_1_1_options_a8387d551a3972a8c09097fdc7b35c057}{}\label{class_ensum_1_1_utils_1_1_options_a8387d551a3972a8c09097fdc7b35c057}
+\hyperlink{class_ensum_1_1_event}{Event}$<$ const void()$>$ {\bfseries \+\_\+\+Option\+Change}\hypertarget{class_ensum_1_1_utils_1_1_options_a01cff1997c3b03c78af3dcc611f8acd1}{}\label{class_ensum_1_1_utils_1_1_options_a01cff1997c3b03c78af3dcc611f8acd1}
 
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
@@ -107,11 +110,11 @@ Create the options instance.
 
 If options are not used all clients will simply use default values. \index{Ensum\+::\+Utils\+::\+Options@{Ensum\+::\+Utils\+::\+Options}!Subscribe@{Subscribe}}
 \index{Subscribe@{Subscribe}!Ensum\+::\+Utils\+::\+Options@{Ensum\+::\+Utils\+::\+Options}}
-\subsubsection[{\texorpdfstring{Subscribe(\+Delegate$<$ void()$>$ \&dele)}{Subscribe(Delegate< void()> &dele)}}]{\setlength{\rightskip}{0pt plus 5cm}static E\+N\+S\+U\+M\+\_\+\+U\+T\+I\+L\+S\+\_\+\+E\+X\+P\+O\+RT void Ensum\+::\+Utils\+::\+Options\+::\+Subscribe (
+\subsubsection[{\texorpdfstring{Subscribe(\+Delegate$<$ const void()$>$ \&dele)}{Subscribe(Delegate< const void()> &dele)}}]{\setlength{\rightskip}{0pt plus 5cm}static E\+N\+S\+U\+M\+\_\+\+U\+T\+I\+L\+S\+\_\+\+E\+X\+P\+O\+RT void Ensum\+::\+Utils\+::\+Options\+::\+Subscribe (
 \begin{DoxyParamCaption}
-\item[{{\bf Delegate}$<$ void()$>$ \&}]{dele}
+\item[{{\bf Delegate}$<$ const void()$>$ \&}]{dele}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_ensum_1_1_utils_1_1_options_ab567217a53d2ef200574271fa3c957b1}{}\label{class_ensum_1_1_utils_1_1_options_ab567217a53d2ef200574271fa3c957b1}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_ensum_1_1_utils_1_1_options_a0e7f1fc995faacdd3df031f1703eb163}{}\label{class_ensum_1_1_utils_1_1_options_a0e7f1fc995faacdd3df031f1703eb163}
 
 
 Subscribe to the Options\+Change event. 
@@ -120,4 +123,4 @@ When a change occurs in options this event is called.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Includes/\+Ensum\+\_\+utils/Options.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+utils/Options.\+h\end{DoxyCompactItemize}

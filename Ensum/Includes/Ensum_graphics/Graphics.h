@@ -56,6 +56,9 @@ namespace Ensum
 			*
 			*/
 			static const void DeleteInstance();
+			/** Interleaves the meshdata and orders the creation of buffers for the mesh.
+			* 
+			*/
 			static FileHandler::MeshData CreateMeshData(FileHandler::Mesh& mesh);
 			/** Enters the render loop.
 			* This should only be called inside the thread.
@@ -82,11 +85,6 @@ namespace Ensum
 			*
 			*/
 			virtual const void StopThread();
-			/** Loads a mesh and creates a vertex and indexbuffer
-			* ID of mesh is returned.
-			* Use flag to indicate loading and unloading for mesh.
-			*/
-		/*	virtual const uint32_t _LoadMesh(char* path, uint32_t& numSubMeshes, uint32_t flag = LOAD_MESH_FLAGS_ALLOW_UNLOAD_AT_RUNTIME);*/
 		protected:
 			
 			/** Called when the options have changed.

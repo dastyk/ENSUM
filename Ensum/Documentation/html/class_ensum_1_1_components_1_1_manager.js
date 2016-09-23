@@ -6,6 +6,7 @@ var class_ensum_1_1_components_1_1_manager =
     [ "_Allocate", "class_ensum_1_1_components_1_1_manager.html#a1b593059210d09632c910a6abaae49c0", null ],
     [ "_Destroy", "class_ensum_1_1_components_1_1_manager.html#a5ba85395802e942ed8904ca18951e6b0", null ],
     [ "_GC", "class_ensum_1_1_components_1_1_manager.html#a646aca9437267a1da465862ba7cc77a3", null ],
+    [ "Destroy", "class_ensum_1_1_components_1_1_manager.html#a3be559f70a5fc91769be008493948d61", null ],
     [ "Frame", "class_ensum_1_1_components_1_1_manager.html#a7327f9a28abf0011498ced0c86692a73", null ],
     [ "_data", "class_ensum_1_1_components_1_1_manager.html#a6ff9f92350f25612b092e0330941a8e4", null ],
     [ "_entityManager", "class_ensum_1_1_components_1_1_manager.html#a24f14f5ffe72655f9183283a98e3a0a3", null ],

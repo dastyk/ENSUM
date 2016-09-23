@@ -1,0 +1,151 @@
+\hypertarget{class_ensum_1_1_graphics_1_1_graphics}{}\section{Ensum\+:\+:Graphics\+:\+:Graphics Class Reference}
+\label{class_ensum_1_1_graphics_1_1_graphics}\index{Ensum\+::\+Graphics\+::\+Graphics@{Ensum\+::\+Graphics\+::\+Graphics}}
+
+
+The graphics interface.  
+
+
+
+
+{\ttfamily \#include $<$Graphics.\+h$>$}
+
+Inheritance diagram for Ensum\+:\+:Graphics\+:\+:Graphics\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ensum_1_1_graphics_1_1_graphics}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_a79cd1971eb83f2b53707a1f71c764c9b}{Start} ()
+\begin{DoxyCompactList}\small\item\em Enters the render loop. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_a22a9971757d8c9f56e4006ac50219995}{On\+Create\+Device} ()=0\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a22a9971757d8c9f56e4006ac50219995}{}\label{class_ensum_1_1_graphics_1_1_graphics_a22a9971757d8c9f56e4006ac50219995}
+
+\begin{DoxyCompactList}\small\item\em Implements the device creation. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_af26be2e7d907fc3ebaa587d12be9870c}{On\+Destroy\+Device} ()=0\hypertarget{class_ensum_1_1_graphics_1_1_graphics_af26be2e7d907fc3ebaa587d12be9870c}{}\label{class_ensum_1_1_graphics_1_1_graphics_af26be2e7d907fc3ebaa587d12be9870c}
+
+\begin{DoxyCompactList}\small\item\em Implements the device destruction. \end{DoxyCompactList}\item 
+virtual const \hyperlink{class_ensum_1_1string}{string} \& \hyperlink{class_ensum_1_1_graphics_1_1_graphics_ab336b7193886a85365b831eb34ecdc96}{Get\+Graphics\+Type} ()\hypertarget{class_ensum_1_1_graphics_1_1_graphics_ab336b7193886a85365b831eb34ecdc96}{}\label{class_ensum_1_1_graphics_1_1_graphics_ab336b7193886a85365b831eb34ecdc96}
+
+\begin{DoxyCompactList}\small\item\em Returns what graphics type the current instance is. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_af653ac5e04559d540521f297c1b45109}{Start\+Thread} ()\hypertarget{class_ensum_1_1_graphics_1_1_graphics_af653ac5e04559d540521f297c1b45109}{}\label{class_ensum_1_1_graphics_1_1_graphics_af653ac5e04559d540521f297c1b45109}
+
+\begin{DoxyCompactList}\small\item\em Creates the thread and executes it. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_a42ab0b6aa0d00eb926de5afef3ce1f9c}{Stop\+Thread} ()\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a42ab0b6aa0d00eb926de5afef3ce1f9c}{}\label{class_ensum_1_1_graphics_1_1_graphics_a42ab0b6aa0d00eb926de5afef3ce1f9c}
+
+\begin{DoxyCompactList}\small\item\em Stops the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_a752ebdfc026c69ecc90f565e196ce726}{Create\+Instance} (\hyperlink{class_ensum_1_1_graphics_1_1_graphics}{Graphics} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Takes the pointer and initializes the graphics. \end{DoxyCompactList}\item 
+static const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_a266c9b4cab940ccc392889be05d17d17}{Delete\+Instance} ()\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a266c9b4cab940ccc392889be05d17d17}{}\label{class_ensum_1_1_graphics_1_1_graphics_a266c9b4cab940ccc392889be05d17d17}
+
+\begin{DoxyCompactList}\small\item\em Deletes the graphics instance. \end{DoxyCompactList}\item 
+static \hyperlink{struct_ensum_1_1_file_handler_1_1_mesh_data}{File\+Handler\+::\+Mesh\+Data} \hyperlink{class_ensum_1_1_graphics_1_1_graphics_acea2ccecffb6f21bd9d5ddb250879e07}{Create\+Mesh\+Data} (\hyperlink{class_ensum_1_1_file_handler_1_1_mesh}{File\+Handler\+::\+Mesh} \&mesh)\hypertarget{class_ensum_1_1_graphics_1_1_graphics_acea2ccecffb6f21bd9d5ddb250879e07}{}\label{class_ensum_1_1_graphics_1_1_graphics_acea2ccecffb6f21bd9d5ddb250879e07}
+
+\begin{DoxyCompactList}\small\item\em Interleaves the meshdata and orders the creation of buffers for the mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Graphics} (const \hyperlink{class_ensum_1_1string}{string} \&type)\hypertarget{class_ensum_1_1_graphics_1_1_graphics_ad8b5c80d5999b74320aa9bf13dead117}{}\label{class_ensum_1_1_graphics_1_1_graphics_ad8b5c80d5999b74320aa9bf13dead117}
+
+\item 
+virtual const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_a530a469dbfc96e4224c916f2253b8764}{\+\_\+\+On\+Options\+Change} ()=0
+\begin{DoxyCompactList}\small\item\em Loads a mesh and creates a vertex and indexbuffer ID of mesh is returned. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_a79847436ca7588f8e3af99342461206c}{\+\_\+\+Begin\+Frame} (void)=0\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a79847436ca7588f8e3af99342461206c}{}\label{class_ensum_1_1_graphics_1_1_graphics_a79847436ca7588f8e3af99342461206c}
+
+\begin{DoxyCompactList}\small\item\em Begin the rendering frame. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_a0bdc9c86d0b314d6243e25c22eaecff9}{\+\_\+\+End\+Frame} (void)=0\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a0bdc9c86d0b314d6243e25c22eaecff9}{}\label{class_ensum_1_1_graphics_1_1_graphics_a0bdc9c86d0b314d6243e25c22eaecff9}
+
+\begin{DoxyCompactList}\small\item\em End the rendering frame. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_graphics_1_1_graphics_a0bf982fe118c7cbb23ad900509222e35}{\+\_\+\+Frame} ()=0\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a0bf982fe118c7cbb23ad900509222e35}{}\label{class_ensum_1_1_graphics_1_1_graphics_a0bf982fe118c7cbb23ad900509222e35}
+
+\begin{DoxyCompactList}\small\item\em What happens between Begin\+Frame and End\+Frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+H\+A\+N\+D\+LE {\bfseries \+\_\+options\+Change\+Mutex}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a486430a6a88ac0c0d6b96cefcab105c3}{}\label{class_ensum_1_1_graphics_1_1_graphics_a486430a6a88ac0c0d6b96cefcab105c3}
+
+\item 
+H\+A\+N\+D\+LE {\bfseries \+\_\+thread\+Handle}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_aa876c80ddab2979f0f981579fcad4a5e}{}\label{class_ensum_1_1_graphics_1_1_graphics_aa876c80ddab2979f0f981579fcad4a5e}
+
+\item 
+D\+W\+O\+RD {\bfseries \+\_\+thread\+Address}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a35a7545f0e91b48c4fc356d47cb902e4}{}\label{class_ensum_1_1_graphics_1_1_graphics_a35a7545f0e91b48c4fc356d47cb902e4}
+
+\item 
+bool {\bfseries \+\_\+shutdown}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_aeb14afd8bd18405619070141bee75db6}{}\label{class_ensum_1_1_graphics_1_1_graphics_aeb14afd8bd18405619070141bee75db6}
+
+\item 
+bool {\bfseries \+\_\+fullscreen}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_af9417ebb67c1d375ca922bb4dcb0d761}{}\label{class_ensum_1_1_graphics_1_1_graphics_af9417ebb67c1d375ca922bb4dcb0d761}
+
+\item 
+unsigned {\bfseries \+\_\+width}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_aca92665104053a5d47daa843e89cace6}{}\label{class_ensum_1_1_graphics_1_1_graphics_aca92665104053a5d47daa843e89cace6}
+
+\item 
+unsigned {\bfseries \+\_\+height}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a062bb53f418490d51cddb757421dccf1}{}\label{class_ensum_1_1_graphics_1_1_graphics_a062bb53f418490d51cddb757421dccf1}
+
+\item 
+bool {\bfseries \+\_\+vsync}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_ab72c0acc92e99f35b05f3f18be3a4ca8}{}\label{class_ensum_1_1_graphics_1_1_graphics_ab72c0acc92e99f35b05f3f18be3a4ca8}
+
+\item 
+\hyperlink{class_ensum_1_1string}{string} {\bfseries \+\_\+type}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a1712f52c5d4a3d9af81f9a0b53806d84}{}\label{class_ensum_1_1_graphics_1_1_graphics_a1712f52c5d4a3d9af81f9a0b53806d84}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_ensum_1_1_graphics_1_1_graphics}{Graphics} $\ast$ {\bfseries \+\_\+instance}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a42490e399a8dbe1b5516033938522b84}{}\label{class_ensum_1_1_graphics_1_1_graphics_a42490e399a8dbe1b5516033938522b84}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The graphics interface. 
+
+When an instance of the graphics is created it will connect with a sceneprovider which in turn provides the graphics with render jobs. The graphics is runs on its own thread and will only interact with the rest when gathering jobs. 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Graphics\+::\+Graphics@{Ensum\+::\+Graphics\+::\+Graphics}!\+\_\+\+On\+Options\+Change@{\+\_\+\+On\+Options\+Change}}
+\index{\+\_\+\+On\+Options\+Change@{\+\_\+\+On\+Options\+Change}!Ensum\+::\+Graphics\+::\+Graphics@{Ensum\+::\+Graphics\+::\+Graphics}}
+\subsubsection[{\texorpdfstring{\+\_\+\+On\+Options\+Change()=0}{_OnOptionsChange()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const void Ensum\+::\+Graphics\+::\+Graphics\+::\+\_\+\+On\+Options\+Change (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a530a469dbfc96e4224c916f2253b8764}{}\label{class_ensum_1_1_graphics_1_1_graphics_a530a469dbfc96e4224c916f2253b8764}
+
+
+Loads a mesh and creates a vertex and indexbuffer ID of mesh is returned. 
+
+Use flag to indicate loading and unloading for mesh.\+Called when the options have changed. 
+
+Implemented in \hyperlink{class_ensum_1_1_graphics_1_1_d3_d12_ad276cdc2f03df54cbbb7d05ac8785df4}{Ensum\+::\+Graphics\+::\+D3\+D12}, and \hyperlink{class_ensum_1_1_graphics_1_1_d3_d11_aaa1f9118226ed14729d1d1ad450ec10d}{Ensum\+::\+Graphics\+::\+D3\+D11}.
+
+\index{Ensum\+::\+Graphics\+::\+Graphics@{Ensum\+::\+Graphics\+::\+Graphics}!Create\+Instance@{Create\+Instance}}
+\index{Create\+Instance@{Create\+Instance}!Ensum\+::\+Graphics\+::\+Graphics@{Ensum\+::\+Graphics\+::\+Graphics}}
+\subsubsection[{\texorpdfstring{Create\+Instance(\+Graphics $\ast$g)}{CreateInstance(Graphics *g)}}]{\setlength{\rightskip}{0pt plus 5cm}static const void Ensum\+::\+Graphics\+::\+Graphics\+::\+Create\+Instance (
+\begin{DoxyParamCaption}
+\item[{{\bf Graphics} $\ast$}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a752ebdfc026c69ecc90f565e196ce726}{}\label{class_ensum_1_1_graphics_1_1_graphics_a752ebdfc026c69ecc90f565e196ce726}
+
+
+Takes the pointer and initializes the graphics. 
+
+This function calls the On\+Create\+Device then the Start\+Thread function. \index{Ensum\+::\+Graphics\+::\+Graphics@{Ensum\+::\+Graphics\+::\+Graphics}!Start@{Start}}
+\index{Start@{Start}!Ensum\+::\+Graphics\+::\+Graphics@{Ensum\+::\+Graphics\+::\+Graphics}}
+\subsubsection[{\texorpdfstring{Start()}{Start()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const void Ensum\+::\+Graphics\+::\+Graphics\+::\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_graphics_1_1_graphics_a79cd1971eb83f2b53707a1f71c764c9b}{}\label{class_ensum_1_1_graphics_1_1_graphics_a79cd1971eb83f2b53707a1f71c764c9b}
+
+
+Enters the render loop. 
+
+This should only be called inside the thread. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+graphics/Graphics.\+h\end{DoxyCompactItemize}

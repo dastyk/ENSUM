@@ -15,6 +15,9 @@ Manages all entities in all scenes.
 \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \hyperlink{class_ensum_1_1_components_1_1_entity_manager_a15c2795c73d625bcc2399bf59cea64b5}{Create} ()\hypertarget{class_ensum_1_1_components_1_1_entity_manager_a15c2795c73d625bcc2399bf59cea64b5}{}\label{class_ensum_1_1_components_1_1_entity_manager_a15c2795c73d625bcc2399bf59cea64b5}
 
 \begin{DoxyCompactList}\small\item\em Creates an entity, and returns it. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_entity_manager_a87651038fca34e5dac4641c3d257c486}{Add\+Delete\+Callback} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, \hyperlink{class_ensum_1_1_delegate}{Delegate}$<$ const void(const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)$>$ \&callback)\hypertarget{class_ensum_1_1_components_1_1_entity_manager_a87651038fca34e5dac4641c3d257c486}{}\label{class_ensum_1_1_components_1_1_entity_manager_a87651038fca34e5dac4641c3d257c486}
+
+\begin{DoxyCompactList}\small\item\em Add the callback for the entity. \end{DoxyCompactList}\item 
 const bool \hyperlink{class_ensum_1_1_components_1_1_entity_manager_aa30d3768a9f92b138a52b7ac7c6045cc}{Alive} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity) const \hypertarget{class_ensum_1_1_components_1_1_entity_manager_aa30d3768a9f92b138a52b7ac7c6045cc}{}\label{class_ensum_1_1_components_1_1_entity_manager_aa30d3768a9f92b138a52b7ac7c6045cc}
 
 \begin{DoxyCompactList}\small\item\em Determines whether or not the entity is alive. \end{DoxyCompactList}\item 
@@ -28,6 +31,9 @@ std\+::vector$<$ uint8\+\_\+t $>$ $\ast$ {\bfseries \+\_\+generation}\hypertarge
 
 \item 
 std\+::deque$<$ uint32\+\_\+t $>$ $\ast$ {\bfseries \+\_\+free\+Indices}\hypertarget{class_ensum_1_1_components_1_1_entity_manager_aa90213c24c2e4f8f8c09f9cf1c21a613}{}\label{class_ensum_1_1_components_1_1_entity_manager_aa90213c24c2e4f8f8c09f9cf1c21a613}
+
+\item 
+std\+::vector$<$ \hyperlink{class_ensum_1_1_event}{Event}$<$ const void(const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)$>$ $>$ $\ast$ {\bfseries \+\_\+destroy\+Callback}\hypertarget{class_ensum_1_1_components_1_1_entity_manager_a1f9c14dc1c320228130200a49fa08b9b}{}\label{class_ensum_1_1_components_1_1_entity_manager_a1f9c14dc1c320228130200a49fa08b9b}
 
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
@@ -43,4 +49,4 @@ Manages all entities in all scenes.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Includes/\+Ensum\+\_\+components/Entity\+Manager.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+components/Entity\+Manager.\+h\end{DoxyCompactItemize}

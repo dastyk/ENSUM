@@ -1,0 +1,136 @@
+\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11}{}\section{Ensum\+:\+:Graphics\+:\+:Direct3\+D11 Class Reference}
+\label{class_ensum_1_1_graphics_1_1_direct3_d11}\index{Ensum\+::\+Graphics\+::\+Direct3\+D11@{Ensum\+::\+Graphics\+::\+Direct3\+D11}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void {\bfseries Start} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a12b3a76ee7552796aef3385222a79c7b}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a12b3a76ee7552796aef3385222a79c7b}
+
+\item 
+const void {\bfseries Shutdown} (void)\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_ab8fab874dc6263d67ec4e9bfa0e2991e}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_ab8fab874dc6263d67ec4e9bfa0e2991e}
+
+\item 
+const void {\bfseries Resize} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_ac1d1ae70143ca8c795526dad0bf03fe6}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_ac1d1ae70143ca8c795526dad0bf03fe6}
+
+\item 
+I\+D3\+D11\+Device $\ast$ {\bfseries Get\+Device} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a4ba00335d046107496f7bf9decc7f729}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a4ba00335d046107496f7bf9decc7f729}
+
+\item 
+I\+D3\+D11\+Device\+Context $\ast$ {\bfseries Get\+Device\+Context} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a5be4ad19e4d80399289e89eba6bdeb99}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a5be4ad19e4d80399289e89eba6bdeb99}
+
+\item 
+I\+D\+X\+G\+I\+Swap\+Chain $\ast$ {\bfseries Get\+Swap\+Chain} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_ac022c45da3e0456366b2c99e533fb964}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_ac022c45da3e0456366b2c99e533fb964}
+
+\item 
+I\+D3\+D11\+Render\+Target\+View $\ast$ {\bfseries Get\+Back\+Buffer\+R\+TV} ()\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a03b866538c72558c4e43a7b76a2b1c2e}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a03b866538c72558c4e43a7b76a2b1c2e}
+
+\item 
+\hyperlink{struct_ensum_1_1_graphics_1_1_render_target}{Render\+Target} {\bfseries Create\+Render\+Target} (D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT format, unsigned width, unsigned height, unsigned depth, unsigned flags=0, unsigned array\+Size=1, unsigned mip\+Levels=1, unsigned sample\+Count=1) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a1f485443b98ca65ad7cf3a4e7fe8ab01}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a1f485443b98ca65ad7cf3a4e7fe8ab01}
+
+\item 
+const void {\bfseries Delete\+Render\+Target} (\hyperlink{struct_ensum_1_1_graphics_1_1_render_target}{Render\+Target} \&rt) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_ae92708638a582ef8f9c1b3365cb13c15}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_ae92708638a582ef8f9c1b3365cb13c15}
+
+\item 
+\hyperlink{struct_ensum_1_1_graphics_1_1_depth_buffer}{Depth\+Buffer} {\bfseries Create\+Depth\+Buffer} (D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT format, unsigned width, unsigned height, bool sample\+In\+Shader=false, unsigned flags=0, unsigned array\+Size=1, unsigned mip\+Levels=1, unsigned sample\+Count=1) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a92b2f778d29d893b02d2340b5f5fd601}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a92b2f778d29d893b02d2340b5f5fd601}
+
+\item 
+const void {\bfseries Delete\+Depth\+Buffer} (\hyperlink{struct_ensum_1_1_graphics_1_1_depth_buffer}{Depth\+Buffer} \&db) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a59404f3cb164d6f4090fb08ed807a8ba}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a59404f3cb164d6f4090fb08ed807a8ba}
+
+\item 
+\hyperlink{struct_ensum_1_1_graphics_1_1_structured_buffer}{Structured\+Buffer} {\bfseries Create\+Structured\+Buffer} (unsigned stride, unsigned element\+Count, bool C\+P\+U\+Write=true, bool G\+P\+U\+Write=false, const void $\ast$initial\+Data=nullptr, bool add\+Structure\+Counter=false) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a817c74a8413dc1786d08c1d9ed8a214d}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a817c74a8413dc1786d08c1d9ed8a214d}
+
+\item 
+\hyperlink{struct_ensum_1_1_graphics_1_1_structured_buffer}{Structured\+Buffer} {\bfseries Create\+Append\+Consume\+Buffer} (unsigned stride, unsigned element\+Count, const void $\ast$initial\+Data=nullptr) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a56d338dff88648277a5f49882b6af286}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a56d338dff88648277a5f49882b6af286}
+
+\item 
+const void {\bfseries Delete\+Structured\+Buffer} (\hyperlink{struct_ensum_1_1_graphics_1_1_structured_buffer}{Structured\+Buffer} \&sb) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a7a6698ae37a063a0ca9bbe6d649fe90f}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a7a6698ae37a063a0ca9bbe6d649fe90f}
+
+\item 
+\hyperlink{struct_ensum_1_1_graphics_1_1_indirect_args_buffer}{Indirect\+Args\+Buffer} {\bfseries Create\+Indirect\+Args\+Buffer} (unsigned size, void $\ast$initial\+Data=nullptr) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_aff12bd4ad62cfed85481cabd1f1424e4}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_aff12bd4ad62cfed85481cabd1f1424e4}
+
+\item 
+const void {\bfseries Delete\+Indirect\+Args\+Buffer} (\hyperlink{struct_ensum_1_1_graphics_1_1_indirect_args_buffer}{Indirect\+Args\+Buffer} \&iab) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a4daa1cbb069d7380a31080b7fce25d7e}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a4daa1cbb069d7380a31080b7fce25d7e}
+
+\item 
+\hyperlink{struct_ensum_1_1_graphics_1_1_depth_stencil_state}{Depth\+Stencil\+State} {\bfseries Create\+Depth\+Stencil\+State} (bool depth\+Enable=true, D3\+D11\+\_\+\+D\+E\+P\+T\+H\+\_\+\+W\+R\+I\+T\+E\+\_\+\+M\+A\+SK depth\+Write\+Mask=D3\+D11\+\_\+\+D\+E\+P\+T\+H\+\_\+\+W\+R\+I\+T\+E\+\_\+\+M\+A\+S\+K\+\_\+\+A\+LL, D3\+D11\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+N\+\_\+\+F\+U\+NC depth\+Comparison=D3\+D11\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+N\+\_\+\+L\+E\+SS, bool stencil\+Enable=false, U\+I\+N\+T8 stencil\+Read\+Mask=0x\+F\+F, U\+I\+N\+T8 stencil\+Write\+Mask=0x\+F\+F) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a3202ea5e7bd4ca7b77fc0918e90bc373}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a3202ea5e7bd4ca7b77fc0918e90bc373}
+
+\item 
+const void {\bfseries Delete\+Depth\+Stencil\+State} (\hyperlink{struct_ensum_1_1_graphics_1_1_depth_stencil_state}{Depth\+Stencil\+State} \&dss) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_ab90c58cbc32683636eb2657c8787ca57}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_ab90c58cbc32683636eb2657c8787ca57}
+
+\item 
+\hyperlink{struct_ensum_1_1_graphics_1_1_rasterizer_state}{Rasterizer\+State} {\bfseries Create\+Rasterizer\+State} (D3\+D11\+\_\+\+F\+I\+L\+L\+\_\+\+M\+O\+DE fill\+Mode=D3\+D11\+\_\+\+F\+I\+L\+L\+\_\+\+S\+O\+L\+ID, D3\+D11\+\_\+\+C\+U\+L\+L\+\_\+\+M\+O\+DE cull\+Mode=D3\+D11\+\_\+\+C\+U\+L\+L\+\_\+\+B\+A\+CK, bool front\+Counter\+Clockwise=true, bool depth\+Bias=false, float depth\+Bias\+Clamp=0.\+0f, float slope\+Scaled\+Depth\+Bias=0.\+0f, bool depth\+Clip\+Enable=true, bool scissor\+Enable=false, bool multi\+Sample\+Enable=false, bool antialiased\+Line\+Enable=false) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a06450d57a4aaf75d607573e202db8558}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a06450d57a4aaf75d607573e202db8558}
+
+\item 
+const void {\bfseries Delete\+Rasterizer\+State} (\hyperlink{struct_ensum_1_1_graphics_1_1_rasterizer_state}{Rasterizer\+State} \&rs) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a51740626ccbd753381c2a2d0120a9b72}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a51740626ccbd753381c2a2d0120a9b72}
+
+\item 
+\hyperlink{struct_ensum_1_1_graphics_1_1_blend_state}{Blend\+State} {\bfseries Create\+Blend\+State} (bool blend\+Enabled=false, U\+I\+N\+T8 render\+Target\+Write\+Mask=D3\+D11\+\_\+\+C\+O\+L\+O\+R\+\_\+\+W\+R\+I\+T\+E\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+LL) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_ad84a4a23abd2e3c05cdd87955fdbba3d}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_ad84a4a23abd2e3c05cdd87955fdbba3d}
+
+\item 
+\hyperlink{struct_ensum_1_1_graphics_1_1_blend_state}{Blend\+State} {\bfseries Create\+Blend\+State} (D3\+D11\+\_\+\+B\+L\+E\+N\+D\+\_\+\+D\+E\+SC $\ast$blend\+Desc) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a60305dc183f6c5994e6d14db88999f94}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a60305dc183f6c5994e6d14db88999f94}
+
+\item 
+const void {\bfseries Delete\+Blend\+State} (\hyperlink{struct_ensum_1_1_graphics_1_1_blend_state}{Blend\+State} \&bs) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a0274aa6937f2da786cdac2f039771f15}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a0274aa6937f2da786cdac2f039771f15}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Direct3\+D11} (const \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d11}{Direct3\+D11} \&other)\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a7d568c79f32741212046af961492aa68}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a7d568c79f32741212046af961492aa68}
+
+\item 
+\hyperlink{class_ensum_1_1_graphics_1_1_direct3_d11}{Direct3\+D11} \& {\bfseries operator=} (const \hyperlink{class_ensum_1_1_graphics_1_1_direct3_d11}{Direct3\+D11} \&rhs)\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a557bc6af306005cf46de9d5d0174aec6}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a557bc6af306005cf46de9d5d0174aec6}
+
+\item 
+I\+D3\+D11\+Render\+Target\+View $\ast$ {\bfseries \+\_\+\+Create\+R\+TV} (I\+D3\+D11\+Resource $\ast$resource, D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT format=D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+K\+N\+O\+WN, int first\+Slice=-\/1, unsigned num\+Slices=1) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a360fa1814a2e6087c2ba3d0a6018fbcd}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a360fa1814a2e6087c2ba3d0a6018fbcd}
+
+\item 
+I\+D3\+D11\+Shader\+Resource\+View $\ast$ {\bfseries \+\_\+\+Create\+S\+RV} (I\+D3\+D11\+Resource $\ast$resource, D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT format=D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+K\+N\+O\+WN, int first\+Slice=-\/1, unsigned num\+Slices=1) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a3b64ff06a76530eaac835d91ca78ceca}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a3b64ff06a76530eaac835d91ca78ceca}
+
+\item 
+I\+D3\+D11\+Unordered\+Access\+View $\ast$ {\bfseries \+\_\+\+Create\+U\+AV} (I\+D3\+D11\+Resource $\ast$resource, D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT format=D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+K\+N\+O\+WN, int first\+Slice=-\/1, unsigned num\+Slices=1) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a52387272106b9ef4e7b9be0d0b4fcbc3}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a52387272106b9ef4e7b9be0d0b4fcbc3}
+
+\item 
+I\+D3\+D11\+Depth\+Stencil\+View $\ast$ {\bfseries \+\_\+\+Create\+D\+SV} (I\+D3\+D11\+Resource $\ast$resource, D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT format=D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+K\+N\+O\+WN, bool read\+Only=false, int first\+Slice=-\/1, unsigned num\+Slices=1) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a2309142b6f9de0233a05156e0f282eaa}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a2309142b6f9de0233a05156e0f282eaa}
+
+\item 
+I\+D3\+D11\+Depth\+Stencil\+State $\ast$ {\bfseries \+\_\+\+Create\+D\+SS} (bool depth\+Enable=true, D3\+D11\+\_\+\+D\+E\+P\+T\+H\+\_\+\+W\+R\+I\+T\+E\+\_\+\+M\+A\+SK depth\+Write\+Mask=D3\+D11\+\_\+\+D\+E\+P\+T\+H\+\_\+\+W\+R\+I\+T\+E\+\_\+\+M\+A\+S\+K\+\_\+\+A\+LL, D3\+D11\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+N\+\_\+\+F\+U\+NC depth\+Comparison=D3\+D11\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+N\+\_\+\+L\+E\+SS, bool stencil\+Enable=false, U\+I\+N\+T8 stencil\+Read\+Mask=0x\+F\+F, U\+I\+N\+T8 stencil\+Write\+Mask=0x\+F\+F) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_aa6c5d4175898eb21915b1402719d44ee}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_aa6c5d4175898eb21915b1402719d44ee}
+
+\item 
+I\+D3\+D11\+Rasterizer\+State $\ast$ {\bfseries \+\_\+\+Create\+RS} (D3\+D11\+\_\+\+F\+I\+L\+L\+\_\+\+M\+O\+DE fill\+Mode=D3\+D11\+\_\+\+F\+I\+L\+L\+\_\+\+S\+O\+L\+ID, D3\+D11\+\_\+\+C\+U\+L\+L\+\_\+\+M\+O\+DE cull\+Mode=D3\+D11\+\_\+\+C\+U\+L\+L\+\_\+\+B\+A\+CK, bool front\+Counter\+Clockwise=true, bool depth\+Bias=false, float depth\+Bias\+Clamp=0.\+0f, float slope\+Scaled\+Depth\+Bias=0.\+0f, bool depth\+Clip\+Enable=true, bool scissor\+Enable=false, bool multi\+Sample\+Enable=false, bool antialiased\+Line\+Enable=false) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a1e93657992eb91b0aa9eaa8d9f96a03e}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a1e93657992eb91b0aa9eaa8d9f96a03e}
+
+\item 
+I\+D3\+D11\+Blend\+State $\ast$ {\bfseries \+\_\+\+Create\+BS} (bool blend\+Enabled=false, U\+I\+N\+T8 render\+Target\+Write\+Mask=D3\+D11\+\_\+\+C\+O\+L\+O\+R\+\_\+\+W\+R\+I\+T\+E\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+A\+LL) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a88e514dd663ddcc229a6b61fe6adf19e}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a88e514dd663ddcc229a6b61fe6adf19e}
+
+\item 
+I\+D3\+D11\+Blend\+State $\ast$ {\bfseries \+\_\+\+Create\+BS} (D3\+D11\+\_\+\+B\+L\+E\+N\+D\+\_\+\+D\+E\+SC $\ast$blend\+Desc) const \hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a54184d338e4dd0753ee177eadb726da8}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a54184d338e4dd0753ee177eadb726da8}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+H\+W\+ND {\bfseries \+\_\+h\+Wnd}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_ad3fb134a667bf1b31aa6335311c6c874}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_ad3fb134a667bf1b31aa6335311c6c874}
+
+\item 
+I\+D3\+D11\+Device $\ast$ {\bfseries \+\_\+d3d\+Device} = nullptr\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_aa6a1333e30d315bd6b2136dd6e23018c}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_aa6a1333e30d315bd6b2136dd6e23018c}
+
+\item 
+I\+D3\+D11\+Device\+Context $\ast$ {\bfseries \+\_\+d3d\+Device\+Context} = nullptr\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_ade2ce6e90bff8d33867c4af788702741}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_ade2ce6e90bff8d33867c4af788702741}
+
+\item 
+D3\+D\+\_\+\+F\+E\+A\+T\+U\+R\+E\+\_\+\+L\+E\+V\+EL {\bfseries \+\_\+\+Feature\+Level}\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a82861081b0fedc420c16f0f6c10a201d}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a82861081b0fedc420c16f0f6c10a201d}
+
+\item 
+I\+D\+X\+G\+I\+Swap\+Chain $\ast$ {\bfseries \+\_\+\+Swap\+Chain} = nullptr\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_a0253d19ec8e600ce61c09be8507b40be}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_a0253d19ec8e600ce61c09be8507b40be}
+
+\item 
+I\+D\+X\+G\+I\+Output $\ast$ {\bfseries \+\_\+\+D\+X\+G\+I\+Output} = nullptr\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_afd6c2e521b0144834f1ebf76029125eb}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_afd6c2e521b0144834f1ebf76029125eb}
+
+\item 
+I\+D3\+D11\+Render\+Target\+View $\ast$ {\bfseries \+\_\+\+Back\+Buffer\+R\+TV} = nullptr\hypertarget{class_ensum_1_1_graphics_1_1_direct3_d11_ad9086848e620026c6861dc245db02edc}{}\label{class_ensum_1_1_graphics_1_1_direct3_d11_ad9086848e620026c6861dc245db02edc}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+graphics/Direct3\+D11.\+h\end{DoxyCompactItemize}

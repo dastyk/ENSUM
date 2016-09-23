@@ -130,6 +130,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (const
 <tr class="memitem:a17b8e30ebf66d670d9afc31568b64c01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17b8e30ebf66d670d9afc31568b64c01"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator-=</b> (const <a class="el" href="class_ensum_1_1_delegate.html">Delegate</a>&lt; ReturnType(Arguments...)&gt; &amp;func)</td></tr>
 <tr class="separator:a17b8e30ebf66d670d9afc31568b64c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2079482906c55a1d66ec3c19502804d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2079482906c55a1d66ec3c19502804d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Clear</b> ()</td></tr>
+<tr class="separator:ac2079482906c55a1d66ec3c19502804d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -154,7 +157,7 @@ class Ensum::Event&lt; ReturnType(Arguments...)&gt;</h3>
 <p>See more at <a href="http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates">http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates</a> There doesn't seem to exist a much simpler way. std::function was considered, but due to lack of an equality operator they cannot be compared, ergo they also cannot be unsubscribed. Game Coding Complete says that C#-style events would be nice, but C++ doesn't support them out of the box. They do note however that it can be done using alot of template magic, with emphasis on alot. This solution works, but the syntax is horrible.</p>
 <p>The event itself is just a collection of delegates that should be called when the event occurs. Triggering the event is done by the one owning the event. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>Includes/<a class="el" href="_event_8h_source.html">Event.h</a></li>
+<li>C:/Users/peter/Source/Repos/ENSUM/Ensum/Includes/<a class="el" href="_event_8h_source.html">Event.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

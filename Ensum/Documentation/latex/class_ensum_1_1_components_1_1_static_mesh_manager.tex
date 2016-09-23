@@ -1,0 +1,96 @@
+\hypertarget{class_ensum_1_1_components_1_1_static_mesh_manager}{}\section{Ensum\+:\+:Components\+:\+:Static\+Mesh\+Manager Class Reference}
+\label{class_ensum_1_1_components_1_1_static_mesh_manager}\index{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager@{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager}}
+
+
+Handles meshes for entities.  
+
+
+
+
+{\ttfamily \#include $<$Static\+Mesh\+Manager.\+h$>$}
+
+Inheritance diagram for Ensum\+:\+:Components\+:\+:Static\+Mesh\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ensum_1_1_components_1_1_static_mesh_manager}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_static_mesh_manager_1_1_mesh_component}{Mesh\+Component}
+\begin{DoxyCompactList}\small\item\em The managers data struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Static\+Mesh\+Manager} (\hyperlink{class_ensum_1_1_components_1_1_entity_manager}{Entity\+Manager} \&ent\+Manager)\hypertarget{class_ensum_1_1_components_1_1_static_mesh_manager_a36c1b89e93c9ca37855b709b9e5c8268}{}\label{class_ensum_1_1_components_1_1_static_mesh_manager_a36c1b89e93c9ca37855b709b9e5c8268}
+
+\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_static_mesh_manager_a693d1787a0e9e52118e26b66d6d4d01e}{Create\+Static\+Mesh} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity, const char $\ast$path)\hypertarget{class_ensum_1_1_components_1_1_static_mesh_manager_a693d1787a0e9e52118e26b66d6d4d01e}{}\label{class_ensum_1_1_components_1_1_static_mesh_manager_a693d1787a0e9e52118e26b66d6d4d01e}
+
+\begin{DoxyCompactList}\small\item\em Create a static mesh for the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_static_mesh_manager_a470c7fb98f91c55b803ef8d2dd7a4803}{\+\_\+\+Allocate} (uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Allocate more memory. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_static_mesh_manager_a3d7684a00092ff8d467425a9f1ba7e5c}{\+\_\+\+Destroy} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Delete an entry in the memory block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ uint32\+\_\+t, \hyperlink{struct_ensum_1_1_file_handler_1_1_mesh_data}{File\+Handler\+::\+Mesh\+Data} $>$ $\ast$ {\bfseries \+\_\+loaded\+Meshes}\hypertarget{class_ensum_1_1_components_1_1_static_mesh_manager_a79e92dda1ad0d4aa9fd87ea808258add}{}\label{class_ensum_1_1_components_1_1_static_mesh_manager_a79e92dda1ad0d4aa9fd87ea808258add}
+
+\item 
+\hyperlink{struct_ensum_1_1_components_1_1_static_mesh_manager_1_1_mesh_component}{Mesh\+Component} $\ast$ \hyperlink{class_ensum_1_1_components_1_1_static_mesh_manager_af47fea699c4d1241d82ca9374a7a48ad}{\+\_\+datap}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Handles meshes for entities. 
+
+Static/\+Non-\/\+Animated 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager@{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager}!\+\_\+\+Allocate@{\+\_\+\+Allocate}}
+\index{\+\_\+\+Allocate@{\+\_\+\+Allocate}!Ensum\+::\+Components\+::\+Static\+Mesh\+Manager@{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Allocate(uint32\+\_\+t size)}{_Allocate(uint32_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Static\+Mesh\+Manager\+::\+\_\+\+Allocate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_components_1_1_static_mesh_manager_a470c7fb98f91c55b803ef8d2dd7a4803}{}\label{class_ensum_1_1_components_1_1_static_mesh_manager_a470c7fb98f91c55b803ef8d2dd7a4803}
+
+
+Allocate more memory. 
+
+
+
+Implements \hyperlink{class_ensum_1_1_components_1_1_manager_a1b593059210d09632c910a6abaae49c0}{Ensum\+::\+Components\+::\+Manager}.
+
+\index{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager@{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager}!\+\_\+\+Destroy@{\+\_\+\+Destroy}}
+\index{\+\_\+\+Destroy@{\+\_\+\+Destroy}!Ensum\+::\+Components\+::\+Static\+Mesh\+Manager@{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Destroy(uint32\+\_\+t index)}{_Destroy(uint32_t index)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Static\+Mesh\+Manager\+::\+\_\+\+Destroy (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_components_1_1_static_mesh_manager_a3d7684a00092ff8d467425a9f1ba7e5c}{}\label{class_ensum_1_1_components_1_1_static_mesh_manager_a3d7684a00092ff8d467425a9f1ba7e5c}
+
+
+Delete an entry in the memory block. 
+
+The deleted entry is replaced by the last in the block. 
+
+Implements \hyperlink{class_ensum_1_1_components_1_1_manager_a5ba85395802e942ed8904ca18951e6b0}{Ensum\+::\+Components\+::\+Manager}.
+
+
+
+\subsection{Member Data Documentation}
+\index{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager@{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager}!\+\_\+datap@{\+\_\+datap}}
+\index{\+\_\+datap@{\+\_\+datap}!Ensum\+::\+Components\+::\+Static\+Mesh\+Manager@{Ensum\+::\+Components\+::\+Static\+Mesh\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+datap}{_datap}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh\+Component}$\ast$ Ensum\+::\+Components\+::\+Static\+Mesh\+Manager\+::\+\_\+datap\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_static_mesh_manager_af47fea699c4d1241d82ca9374a7a48ad}{}\label{class_ensum_1_1_components_1_1_static_mesh_manager_af47fea699c4d1241d82ca9374a7a48ad}
+A reference pointer to avoid having to cast the basic datapointer all the time. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+components/Static\+Mesh\+Manager.\+h\end{DoxyCompactItemize}

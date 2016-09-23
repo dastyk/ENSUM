@@ -43,6 +43,9 @@ namespace Ensum
 		public:
 			StaticMeshManager(EntityManager& entManager);
 			virtual ~StaticMeshManager();
+			/** Create a static mesh for the entity.
+			* 
+			*/
 			const void CreateStaticMesh(const Entity& entity, const char* path);
 		private:
 			/** Allocate more memory

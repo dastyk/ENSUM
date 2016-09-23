@@ -40,10 +40,18 @@ virtual const void \hyperlink{class_ensum_1_1_components_1_1_scene_a4f12d73cbbd3
 \hyperlink{class_ensum_1_1_input_1_1_input}{Input\+::\+Input} $\ast$ {\bfseries \+\_\+input}\hypertarget{class_ensum_1_1_components_1_1_scene_ab7ee39773379321c85d73984b03c5568}{}\label{class_ensum_1_1_components_1_1_scene_ab7ee39773379321c85d73984b03c5568}
 
 \item 
-\hyperlink{class_ensum_1_1_components_1_1_data_manager}{Data\+Manager} {\bfseries \+\_\+data\+Manager}\hypertarget{class_ensum_1_1_components_1_1_scene_a51e11d82064b37aaf9295d71593792a1}{}\label{class_ensum_1_1_components_1_1_scene_a51e11d82064b37aaf9295d71593792a1}
+std\+::vector$<$ \hyperlink{class_ensum_1_1_components_1_1_manager}{Manager} $\ast$ $>$ $\ast$ \hyperlink{class_ensum_1_1_components_1_1_scene_a9f7c53f74805c8bf7461f9ff2c818be7}{\+\_\+managers}
+\begin{DoxyCompactList}\small\item\em Create new instance of all other managers here. \end{DoxyCompactList}\item 
+\hyperlink{class_ensum_1_1_components_1_1_data_manager}{Data\+Manager} {\bfseries \+\_\+data}\hypertarget{class_ensum_1_1_components_1_1_scene_ae6357dc18aece3e778ce642f59f8195b}{}\label{class_ensum_1_1_components_1_1_scene_ae6357dc18aece3e778ce642f59f8195b}
 
 \item 
-std\+::vector$<$ \hyperlink{class_ensum_1_1_components_1_1_manager}{Manager} $\ast$ $>$ $\ast$ {\bfseries \+\_\+managers}\hypertarget{class_ensum_1_1_components_1_1_scene_a9f7c53f74805c8bf7461f9ff2c818be7}{}\label{class_ensum_1_1_components_1_1_scene_a9f7c53f74805c8bf7461f9ff2c818be7}
+\hyperlink{class_ensum_1_1_components_1_1_transform_manager}{Transform\+Manager} {\bfseries \+\_\+transform}\hypertarget{class_ensum_1_1_components_1_1_scene_a9f8a3149409a891d77b5554c154deb65}{}\label{class_ensum_1_1_components_1_1_scene_a9f8a3149409a891d77b5554c154deb65}
+
+\item 
+\hyperlink{class_ensum_1_1_components_1_1_camera_manager}{Camera\+Manager} {\bfseries \+\_\+camera}\hypertarget{class_ensum_1_1_components_1_1_scene_a9d4a91f7879f6392a6d95dfeea6608a2}{}\label{class_ensum_1_1_components_1_1_scene_a9d4a91f7879f6392a6d95dfeea6608a2}
+
+\item 
+\hyperlink{class_ensum_1_1_components_1_1_static_mesh_manager}{Static\+Mesh\+Manager} {\bfseries \+\_\+static\+Meshes}\hypertarget{class_ensum_1_1_components_1_1_scene_a790b65abe3f86eae4e082a4557fc07d8}{}\label{class_ensum_1_1_components_1_1_scene_a790b65abe3f86eae4e082a4557fc07d8}
 
 \end{DoxyCompactItemize}
 
@@ -60,8 +68,15 @@ A scene could be considered it\textquotesingle{}s own world or a state in a stat
 The scenes own entity \index{Ensum\+::\+Components\+::\+Scene@{Ensum\+::\+Components\+::\+Scene}!\+\_\+entity\+Manager@{\+\_\+entity\+Manager}}
 \index{\+\_\+entity\+Manager@{\+\_\+entity\+Manager}!Ensum\+::\+Components\+::\+Scene@{Ensum\+::\+Components\+::\+Scene}}
 \subsubsection[{\texorpdfstring{\+\_\+entity\+Manager}{_entityManager}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity\+Manager}\& Ensum\+::\+Components\+::\+Scene\+::\+\_\+entity\+Manager\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_ensum_1_1_components_1_1_scene_af7eb8e3279c5b6768f442ae05b44e75f}{}\label{class_ensum_1_1_components_1_1_scene_af7eb8e3279c5b6768f442ae05b44e75f}
-A reference to the entitymanager created in scenemanager 
+A reference to the entitymanager created in scenemanager \index{Ensum\+::\+Components\+::\+Scene@{Ensum\+::\+Components\+::\+Scene}!\+\_\+managers@{\+\_\+managers}}
+\index{\+\_\+managers@{\+\_\+managers}!Ensum\+::\+Components\+::\+Scene@{Ensum\+::\+Components\+::\+Scene}}
+\subsubsection[{\texorpdfstring{\+\_\+managers}{_managers}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Manager}$\ast$$>$$\ast$ Ensum\+::\+Components\+::\+Scene\+::\+\_\+managers\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_ensum_1_1_components_1_1_scene_a9f7c53f74805c8bf7461f9ff2c818be7}{}\label{class_ensum_1_1_components_1_1_scene_a9f7c53f74805c8bf7461f9ff2c818be7}
+
+
+Create new instance of all other managers here. 
+
+Every new manager needs to be initiated in the constructor and added to the managers vector. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Includes/\+Ensum\+\_\+components/Scene.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+components/Scene.\+h\end{DoxyCompactItemize}

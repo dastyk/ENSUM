@@ -1,4 +1,25 @@
 var searchData=
 [
-  ['unsubscribe',['UnSubscribe',['../class_ensum_1_1_utils_1_1_options.html#ac8945e45a27cd51401779bd92ae44fb2',1,'Ensum::Utils::Options']]]
+  ['set',['Set',['../class_ensum_1_1_file_handler_1_1ini.html#a7981581cf337fa3829dc95bc3def5a72',1,'Ensum::FileHandler::ini']]],
+  ['setbackbufferasrendertarget',['SetBackBufferAsRenderTarget',['../class_ensum_1_1_graphics_1_1_direct3_d12.html#ab7487166c3eda609467275b33a32e4b0',1,'Ensum::Graphics::Direct3D12']]],
+  ['setboolean',['SetBoolean',['../class_ensum_1_1_file_handler_1_1ini.html#ac31a3463aeec3b6c378e2b5a8f73de8f',1,'Ensum::FileHandler::ini']]],
+  ['setbooleanoption',['SetBooleanOption',['../class_ensum_1_1_utils_1_1_options.html#a68837babb89a589bc49180fd849b2c28',1,'Ensum::Utils::Options']]],
+  ['setboolvalue',['SetBoolValue',['../class_ensum_1_1_components_1_1_data_manager.html#a2ef6ead291f631e756b19971e1391acf',1,'Ensum::Components::DataManager']]],
+  ['setfloatvalue',['SetFloatValue',['../class_ensum_1_1_components_1_1_data_manager.html#aecdd69439279eb2f1fb68250085ffc3a',1,'Ensum::Components::DataManager']]],
+  ['setinteger',['SetInteger',['../class_ensum_1_1_file_handler_1_1ini.html#a1ed4f9fa3abb4a1ce94fafd64d348af6',1,'Ensum::FileHandler::ini']]],
+  ['setintegeroption',['SetIntegerOption',['../class_ensum_1_1_utils_1_1_options.html#a1d69b78fe5f4072908f5b615cd1ee9b4',1,'Ensum::Utils::Options']]],
+  ['setreal',['SetReal',['../class_ensum_1_1_file_handler_1_1ini.html#ae628d6053f8e94a6acc8499961741317',1,'Ensum::FileHandler::ini']]],
+  ['setrealoption',['SetRealOption',['../class_ensum_1_1_utils_1_1_options.html#ad8ebf2ce046cc95530f787bf372e7fd2',1,'Ensum::Utils::Options']]],
+  ['setstringoption',['SetStringOption',['../class_ensum_1_1_utils_1_1_options.html#a67df741524fdcd73f377d3b65f9699c9',1,'Ensum::Utils::Options']]],
+  ['setstringvalue',['SetStringValue',['../class_ensum_1_1_components_1_1_data_manager.html#a97f2560a6bfd6da8c7708737680f8607',1,'Ensum::Components::DataManager']]],
+  ['setupdate',['SetUpdate',['../class_ensum_1_1_components_1_1_scene_manager.html#aea9f13488931b4448778e5563685428e',1,'Ensum::Components::SceneManager']]],
+  ['setviewport',['SetViewPort',['../class_ensum_1_1_graphics_1_1_direct3_d12.html#a6d3a67e0619d6ac1938aa228783772cd',1,'Ensum::Graphics::Direct3D12']]],
+  ['shutdown',['Shutdown',['../class_ensum_1_1_graphics_1_1_direct3_d12.html#a08122d8124d9abfe0394f11811889698',1,'Ensum::Graphics::Direct3D12']]],
+  ['size',['size',['../class_ensum_1_1string.html#ac3c5ca17258824b74dc8da3d5b7602cd',1,'Ensum::string']]],
+  ['start',['Start',['../class_ensum_1_1_core_1_1_timer.html#a3f8cd57aade8eb858d68ba376053df25',1,'Ensum::Core::Timer::Start()'],['../class_ensum_1_1_core_1_1_window.html#a2be80d0faaa9082f32df2416c8a0f42b',1,'Ensum::Core::Window::Start()'],['../class_ensum_1_1_graphics_1_1_direct3_d12.html#ab7149b342ff2557e9e4662856b773156',1,'Ensum::Graphics::Direct3D12::Start()'],['../class_ensum_1_1_graphics_1_1_graphics.html#a79cd1971eb83f2b53707a1f71c764c9b',1,'Ensum::Graphics::Graphics::Start()']]],
+  ['startthread',['StartThread',['../class_ensum_1_1_graphics_1_1_graphics.html#af653ac5e04559d540521f297c1b45109',1,'Ensum::Graphics::Graphics']]],
+  ['stop',['Stop',['../class_ensum_1_1_core_1_1_timer.html#a0b65dc7246e0ac5498ac3f2ede1f2c29',1,'Ensum::Core::Timer']]],
+  ['stopthread',['StopThread',['../class_ensum_1_1_graphics_1_1_graphics.html#a42ab0b6aa0d00eb926de5afef3ce1f9c',1,'Ensum::Graphics::Graphics']]],
+  ['subscribe',['Subscribe',['../class_ensum_1_1_utils_1_1_options.html#a0e7f1fc995faacdd3df031f1703eb163',1,'Ensum::Utils::Options']]],
+  ['swapbackbuffer',['SwapBackBuffer',['../class_ensum_1_1_graphics_1_1_direct3_d12.html#a860474f86765106018b843df44ee2705',1,'Ensum::Graphics::Direct3D12']]]
 ];

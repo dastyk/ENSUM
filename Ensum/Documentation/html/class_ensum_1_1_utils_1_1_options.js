@@ -11,5 +11,5 @@ var class_ensum_1_1_utils_1_1_options =
     [ "_SetRealOption", "class_ensum_1_1_utils_1_1_options.html#a1e6721c6556806ea91df7739c63e9ba2", null ],
     [ "_SetStringOption", "class_ensum_1_1_utils_1_1_options.html#a7ba0b31a187c20ffec4725b5f1fd9003", null ],
     [ "_file", "class_ensum_1_1_utils_1_1_options.html#ae10dba8ac3cb72c83e206ba2b74fa9c3", null ],
-    [ "_OptionChange", "class_ensum_1_1_utils_1_1_options.html#a8387d551a3972a8c09097fdc7b35c057", null ]
+    [ "_OptionChange", "class_ensum_1_1_utils_1_1_options.html#a01cff1997c3b03c78af3dcc611f8acd1", null ]
 ];

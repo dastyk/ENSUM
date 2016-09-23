@@ -12,7 +12,7 @@ Debug console.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_abc61d8b873933eca1dce471498807839}{Add\+To\+Que} (const std\+::string \&data)\hypertarget{class_ensum_1_1_utils_1_1_console_log_abc61d8b873933eca1dce471498807839}{}\label{class_ensum_1_1_utils_1_1_console_log_abc61d8b873933eca1dce471498807839}
+const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_af018fe2d5f702995ce18d4e2f2dde55c}{Add\+To\+Que} (const \hyperlink{class_ensum_1_1string}{string} \&data)\hypertarget{class_ensum_1_1_utils_1_1_console_log_af018fe2d5f702995ce18d4e2f2dde55c}{}\label{class_ensum_1_1_utils_1_1_console_log_af018fe2d5f702995ce18d4e2f2dde55c}
 
 \begin{DoxyCompactList}\small\item\em Adds the string data to the que. \end{DoxyCompactList}\item 
 const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_a6d0cb31da153393c122cd5f9514eb6c9}{Write} ()
@@ -27,11 +27,13 @@ static const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_a5510d37e7c70
 
 \begin{DoxyCompactList}\small\item\em Deletes the console. \end{DoxyCompactList}\item 
 static const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_a3cb3fc27bd5a6a1a04831e6eb8d79b42}{Dump\+To\+Console} (const char $\ast$message,...)
+\begin{DoxyCompactList}\small\item\em Adds the message and optional args to the que. \end{DoxyCompactList}\item 
+static const void \hyperlink{class_ensum_1_1_utils_1_1_console_log_ae4cb4119e99b9cdfd71878b5c666523f}{Dump\+To\+Console} (const W\+C\+H\+AR $\ast$message,...)
 \begin{DoxyCompactList}\small\item\em Adds the message and optional args to the que. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::deque$<$ std\+::string $>$ $\ast$ {\bfseries \+\_\+to\+Print}\hypertarget{class_ensum_1_1_utils_1_1_console_log_a14ea8d692b09b00c972baca65563be78}{}\label{class_ensum_1_1_utils_1_1_console_log_a14ea8d692b09b00c972baca65563be78}
+std\+::deque$<$ \hyperlink{class_ensum_1_1string}{string} $>$ $\ast$ {\bfseries \+\_\+to\+Print}\hypertarget{class_ensum_1_1_utils_1_1_console_log_a8be721f764eb1f8330d4a2646a840a5d}{}\label{class_ensum_1_1_utils_1_1_console_log_a8be721f764eb1f8330d4a2646a840a5d}
 
 \item 
 H\+A\+N\+D\+LE {\bfseries \+\_\+thread\+Handle}\hypertarget{class_ensum_1_1_utils_1_1_console_log_aa93afd55081441f111fc804da614913e}{}\label{class_ensum_1_1_utils_1_1_console_log_aa93afd55081441f111fc804da614913e}
@@ -70,6 +72,18 @@ Debug console.
 
 Adds the message and optional args to the que. 
 
+Use this static function when writing to the console. This is a formated string. (See documentation for printf). \index{Ensum\+::\+Utils\+::\+Console\+Log@{Ensum\+::\+Utils\+::\+Console\+Log}!Dump\+To\+Console@{Dump\+To\+Console}}
+\index{Dump\+To\+Console@{Dump\+To\+Console}!Ensum\+::\+Utils\+::\+Console\+Log@{Ensum\+::\+Utils\+::\+Console\+Log}}
+\subsubsection[{\texorpdfstring{Dump\+To\+Console(const W\+C\+H\+A\+R $\ast$message,...)}{DumpToConsole(const WCHAR *message,...)}}]{\setlength{\rightskip}{0pt plus 5cm}static const void Ensum\+::\+Utils\+::\+Console\+Log\+::\+Dump\+To\+Console (
+\begin{DoxyParamCaption}
+\item[{const W\+C\+H\+AR $\ast$}]{message, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_ensum_1_1_utils_1_1_console_log_ae4cb4119e99b9cdfd71878b5c666523f}{}\label{class_ensum_1_1_utils_1_1_console_log_ae4cb4119e99b9cdfd71878b5c666523f}
+
+
+Adds the message and optional args to the que. 
+
 Use this static function when writing to the console. This is a formated string. (See documentation for printf). \index{Ensum\+::\+Utils\+::\+Console\+Log@{Ensum\+::\+Utils\+::\+Console\+Log}!Write@{Write}}
 \index{Write@{Write}!Ensum\+::\+Utils\+::\+Console\+Log@{Ensum\+::\+Utils\+::\+Console\+Log}}
 \subsubsection[{\texorpdfstring{Write()}{Write()}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Utils\+::\+Console\+Log\+::\+Write (
@@ -85,4 +99,4 @@ This is used in the thread.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Includes/\+Ensum\+\_\+utils/Console\+Log.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+utils/Console\+Log.\+h\end{DoxyCompactItemize}

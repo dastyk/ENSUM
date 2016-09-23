@@ -18,20 +18,32 @@ Inheritance diagram for Ensum\+:\+:Core\+:\+:Win\+Window\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Win\+Window} (\hyperlink{class_ensum_1_1_components_1_1_scene_manager}{Components\+::\+Scene\+Manager} \&scene\+Manager)\hypertarget{class_ensum_1_1_core_1_1_win_window_ab3a79f80f08b914e3bb5510633423028}{}\label{class_ensum_1_1_core_1_1_win_window_ab3a79f80f08b914e3bb5510633423028}
+{\bfseries Win\+Window} (\hyperlink{class_ensum_1_1_delegate}{Delegate}$<$ const void()$>$ \&scene\+Manager\+Frame)\hypertarget{class_ensum_1_1_core_1_1_win_window_a486f2e174483bce9d547b34f29867034}{}\label{class_ensum_1_1_core_1_1_win_window_a486f2e174483bce9d547b34f29867034}
 
 \item 
 virtual const void \hyperlink{class_ensum_1_1_core_1_1_win_window_afb59ce364f98918b2b17653cbfc39ead}{Init} ()\hypertarget{class_ensum_1_1_core_1_1_win_window_afb59ce364f98918b2b17653cbfc39ead}{}\label{class_ensum_1_1_core_1_1_win_window_afb59ce364f98918b2b17653cbfc39ead}
 
 \begin{DoxyCompactList}\small\item\em Initialization for the window. \end{DoxyCompactList}\item 
-virtual const void \hyperlink{class_ensum_1_1_core_1_1_win_window_a1c316902d186c3d685210237e3438745}{Start} ()\hypertarget{class_ensum_1_1_core_1_1_win_window_a1c316902d186c3d685210237e3438745}{}\label{class_ensum_1_1_core_1_1_win_window_a1c316902d186c3d685210237e3438745}
+const H\+W\+ND \hyperlink{class_ensum_1_1_core_1_1_win_window_a478777bf6b64a67076b58bcdfccb7791}{Get\+Hwnd} () const \hypertarget{class_ensum_1_1_core_1_1_win_window_a478777bf6b64a67076b58bcdfccb7791}{}\label{class_ensum_1_1_core_1_1_win_window_a478777bf6b64a67076b58bcdfccb7791}
 
-\begin{DoxyCompactList}\small\item\em Start the message loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the H\+W\+ND instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const H\+W\+ND \hyperlink{class_ensum_1_1_core_1_1_win_window_a76fd8155e64f79c4a04f8dbe675f6da4}{Get\+Window} ()\hypertarget{class_ensum_1_1_core_1_1_win_window_a76fd8155e64f79c4a04f8dbe675f6da4}{}\label{class_ensum_1_1_core_1_1_win_window_a76fd8155e64f79c4a04f8dbe675f6da4}
+
+\begin{DoxyCompactList}\small\item\em Static func, for getting the hwnd. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual const void \hyperlink{class_ensum_1_1_core_1_1_win_window_a3e828ccbc90f0d6ed81c2320277561e6}{Frame} ()
-\begin{DoxyCompactList}\small\item\em The frame function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual const void \hyperlink{class_ensum_1_1_core_1_1_win_window_a309cbdef995b8ca8638fe297987ce852}{\+\_\+\+Frame} ()
+\begin{DoxyCompactList}\small\item\em The frame function. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_core_1_1_win_window_a72c5ab4c337ca995b2d7c9a73864de70}{\+\_\+\+Message\+Handling} ()\hypertarget{class_ensum_1_1_core_1_1_win_window_a72c5ab4c337ca995b2d7c9a73864de70}{}\label{class_ensum_1_1_core_1_1_win_window_a72c5ab4c337ca995b2d7c9a73864de70}
+
+\begin{DoxyCompactList}\small\item\em Handle messages. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_core_1_1_win_window_a6bda38d807b2afe273284c7c6836503f}{\+\_\+\+Resize} ()\hypertarget{class_ensum_1_1_core_1_1_win_window_a6bda38d807b2afe273284c7c6836503f}{}\label{class_ensum_1_1_core_1_1_win_window_a6bda38d807b2afe273284c7c6836503f}
+
+\begin{DoxyCompactList}\small\item\em Called when options have changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,23 +63,23 @@ D\+W\+O\+RD {\bfseries \+\_\+style}\hypertarget{class_ensum_1_1_core_1_1_win_win
 Windows specific window. 
 
 \subsection{Member Function Documentation}
-\index{Ensum\+::\+Core\+::\+Win\+Window@{Ensum\+::\+Core\+::\+Win\+Window}!Frame@{Frame}}
-\index{Frame@{Frame}!Ensum\+::\+Core\+::\+Win\+Window@{Ensum\+::\+Core\+::\+Win\+Window}}
-\subsubsection[{\texorpdfstring{Frame()}{Frame()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const void Ensum\+::\+Core\+::\+Win\+Window\+::\+Frame (
+\index{Ensum\+::\+Core\+::\+Win\+Window@{Ensum\+::\+Core\+::\+Win\+Window}!\+\_\+\+Frame@{\+\_\+\+Frame}}
+\index{\+\_\+\+Frame@{\+\_\+\+Frame}!Ensum\+::\+Core\+::\+Win\+Window@{Ensum\+::\+Core\+::\+Win\+Window}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Frame()}{_Frame()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const void Ensum\+::\+Core\+::\+Win\+Window\+::\+\_\+\+Frame (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_core_1_1_win_window_a3e828ccbc90f0d6ed81c2320277561e6}{}\label{class_ensum_1_1_core_1_1_win_window_a3e828ccbc90f0d6ed81c2320277561e6}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_core_1_1_win_window_a309cbdef995b8ca8638fe297987ce852}{}\label{class_ensum_1_1_core_1_1_win_window_a309cbdef995b8ca8638fe297987ce852}
 
 
 The frame function. 
 
 Put the gamelogic here. 
 
-Implements \hyperlink{class_ensum_1_1_core_1_1_window_a58af9c1b06e0fe12820f584f4638ae15}{Ensum\+::\+Core\+::\+Window}.
+Implements \hyperlink{class_ensum_1_1_core_1_1_window_ae3c16f115d465bf013410573d1b935f5}{Ensum\+::\+Core\+::\+Window}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Includes/\+Ensum\+\_\+core/Windows\+Window.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+core/Windows\+Window.\+h\end{DoxyCompactItemize}

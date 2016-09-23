@@ -1,0 +1,128 @@
+\hypertarget{class_ensum_1_1_components_1_1_camera_manager}{}\section{Ensum\+:\+:Components\+:\+:Camera\+Manager Class Reference}
+\label{class_ensum_1_1_components_1_1_camera_manager}\index{Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}}
+
+
+Camera component, holds the view, projection, etc.  
+
+
+
+
+{\ttfamily \#include $<$Camera\+Manager.\+h$>$}
+
+Inheritance diagram for Ensum\+:\+:Components\+:\+:Camera\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ensum_1_1_components_1_1_camera_manager}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_ensum_1_1_components_1_1_camera_manager_1_1_camera_data}{Camera\+Data}
+\begin{DoxyCompactList}\small\item\em The managers data struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Camera\+Manager} (\hyperlink{class_ensum_1_1_components_1_1_entity_manager}{Entity\+Manager} \&ent\+Manager, \hyperlink{class_ensum_1_1_components_1_1_transform_manager}{Transform\+Manager} \&transform\+Manager, \hyperlink{class_ensum_1_1_input_1_1_input}{Input\+::\+Input} \&input)\hypertarget{class_ensum_1_1_components_1_1_camera_manager_ac7b03cc416c4cd3eb033356c2c49d4c1}{}\label{class_ensum_1_1_components_1_1_camera_manager_ac7b03cc416c4cd3eb033356c2c49d4c1}
+
+\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_camera_manager_a47e425d0c9ec790f6e54f813c601d28b}{Create\+Controllable\+Camera} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)
+\begin{DoxyCompactList}\small\item\em Create a camera which accepts player input. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_camera_manager_a7e18a054f3dff83b2766df1d79093026}{Create\+Un\+Controllable\+Camera} (const \hyperlink{struct_ensum_1_1_components_1_1_entity}{Entity} \&entity)
+\begin{DoxyCompactList}\small\item\em Create a camera that only get its orientation from the translation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_camera_manager_a1ccb090150e77084806fa903bc5006e5}{\+\_\+\+Allocate} (uint32\+\_\+t size)\hypertarget{class_ensum_1_1_components_1_1_camera_manager_a1ccb090150e77084806fa903bc5006e5}{}\label{class_ensum_1_1_components_1_1_camera_manager_a1ccb090150e77084806fa903bc5006e5}
+
+\begin{DoxyCompactList}\small\item\em Allocate more memory. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_camera_manager_a7a4aff38cf9e0fa2d504e0836d06efe7}{\+\_\+\+Destroy} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Delete an entry in the memory block. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_camera_manager_af3d4e192ed57eccef18ae37bbb6377e2}{Frame} ()
+\begin{DoxyCompactList}\small\item\em Takes input for player controlled camera. \end{DoxyCompactList}\item 
+const void \hyperlink{class_ensum_1_1_components_1_1_camera_manager_a59015c858649a55264cb89f0338d5b96}{\+\_\+\+On\+Options\+Change} ()\hypertarget{class_ensum_1_1_components_1_1_camera_manager_a59015c858649a55264cb89f0338d5b96}{}\label{class_ensum_1_1_components_1_1_camera_manager_a59015c858649a55264cb89f0338d5b96}
+
+\begin{DoxyCompactList}\small\item\em Called when options have changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_ensum_1_1_components_1_1_camera_manager_1_1_camera_data}{Camera\+Data} $\ast$ \hyperlink{class_ensum_1_1_components_1_1_camera_manager_a370c6e1c497262287af591821ac42d09}{\+\_\+datap}
+\item 
+\hyperlink{class_ensum_1_1_components_1_1_transform_manager}{Transform\+Manager} \& {\bfseries \+\_\+transform\+Manager}\hypertarget{class_ensum_1_1_components_1_1_camera_manager_a2664fa2e0c57e893408fd1d98b594055}{}\label{class_ensum_1_1_components_1_1_camera_manager_a2664fa2e0c57e893408fd1d98b594055}
+
+\item 
+\hyperlink{class_ensum_1_1_input_1_1_input}{Input\+::\+Input} \& {\bfseries \+\_\+input}\hypertarget{class_ensum_1_1_components_1_1_camera_manager_a43ae22b81db7c864e876b1f108f7d5bf}{}\label{class_ensum_1_1_components_1_1_camera_manager_a43ae22b81db7c864e876b1f108f7d5bf}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Camera component, holds the view, projection, etc. 
+
+For rendering. 
+
+\subsection{Member Function Documentation}
+\index{Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}!\+\_\+\+Destroy@{\+\_\+\+Destroy}}
+\index{\+\_\+\+Destroy@{\+\_\+\+Destroy}!Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Destroy(uint32\+\_\+t index)}{_Destroy(uint32_t index)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Camera\+Manager\+::\+\_\+\+Destroy (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_components_1_1_camera_manager_a7a4aff38cf9e0fa2d504e0836d06efe7}{}\label{class_ensum_1_1_components_1_1_camera_manager_a7a4aff38cf9e0fa2d504e0836d06efe7}
+
+
+Delete an entry in the memory block. 
+
+The deleted entry is replaced by the last in the block. 
+
+Implements \hyperlink{class_ensum_1_1_components_1_1_manager_a5ba85395802e942ed8904ca18951e6b0}{Ensum\+::\+Components\+::\+Manager}.
+
+\index{Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}!Create\+Controllable\+Camera@{Create\+Controllable\+Camera}}
+\index{Create\+Controllable\+Camera@{Create\+Controllable\+Camera}!Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}}
+\subsubsection[{\texorpdfstring{Create\+Controllable\+Camera(const Entity \&entity)}{CreateControllableCamera(const Entity &entity)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Camera\+Manager\+::\+Create\+Controllable\+Camera (
+\begin{DoxyParamCaption}
+\item[{const {\bf Entity} \&}]{entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_components_1_1_camera_manager_a47e425d0c9ec790f6e54f813c601d28b}{}\label{class_ensum_1_1_components_1_1_camera_manager_a47e425d0c9ec790f6e54f813c601d28b}
+
+
+Create a camera which accepts player input. 
+
+(Player camera,etc.) \index{Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}!Create\+Un\+Controllable\+Camera@{Create\+Un\+Controllable\+Camera}}
+\index{Create\+Un\+Controllable\+Camera@{Create\+Un\+Controllable\+Camera}!Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}}
+\subsubsection[{\texorpdfstring{Create\+Un\+Controllable\+Camera(const Entity \&entity)}{CreateUnControllableCamera(const Entity &entity)}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Camera\+Manager\+::\+Create\+Un\+Controllable\+Camera (
+\begin{DoxyParamCaption}
+\item[{const {\bf Entity} \&}]{entity}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ensum_1_1_components_1_1_camera_manager_a7e18a054f3dff83b2766df1d79093026}{}\label{class_ensum_1_1_components_1_1_camera_manager_a7e18a054f3dff83b2766df1d79093026}
+
+
+Create a camera that only get its orientation from the translation. 
+
+(Security camera,etc.) \index{Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}!Frame@{Frame}}
+\index{Frame@{Frame}!Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}}
+\subsubsection[{\texorpdfstring{Frame()}{Frame()}}]{\setlength{\rightskip}{0pt plus 5cm}const void Ensum\+::\+Components\+::\+Camera\+Manager\+::\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_ensum_1_1_components_1_1_camera_manager_af3d4e192ed57eccef18ae37bbb6377e2}{}\label{class_ensum_1_1_components_1_1_camera_manager_af3d4e192ed57eccef18ae37bbb6377e2}
+
+
+Takes input for player controlled camera. 
+
+Also calls the garbadge collection func. 
+
+Reimplemented from \hyperlink{class_ensum_1_1_components_1_1_manager_a7327f9a28abf0011498ced0c86692a73}{Ensum\+::\+Components\+::\+Manager}.
+
+
+
+\subsection{Member Data Documentation}
+\index{Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}!\+\_\+datap@{\+\_\+datap}}
+\index{\+\_\+datap@{\+\_\+datap}!Ensum\+::\+Components\+::\+Camera\+Manager@{Ensum\+::\+Components\+::\+Camera\+Manager}}
+\subsubsection[{\texorpdfstring{\+\_\+datap}{_datap}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera\+Data}$\ast$ Ensum\+::\+Components\+::\+Camera\+Manager\+::\+\_\+datap\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ensum_1_1_components_1_1_camera_manager_a370c6e1c497262287af591821ac42d09}{}\label{class_ensum_1_1_components_1_1_camera_manager_a370c6e1c497262287af591821ac42d09}
+A reference pointer to avoid having to cast the basic datapointer all the time. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+components/Camera\+Manager.\+h\end{DoxyCompactItemize}

@@ -121,14 +121,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1dcb14cba81346865107759292b46d2c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dcb14cba81346865107759292b46d2c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>DataBuffer</b> (const <a class="el" href="struct_ensum_1_1_components_1_1_entity.html">Entity</a> &amp;ent)</td></tr>
 <tr class="separator:a1dcb14cba81346865107759292b46d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbdb72eacb423808f312810d5ce4556f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abbdb72eacb423808f312810d5ce4556f"></a>
-const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer.html#abbdb72eacb423808f312810d5ce4556f">Allocate</a> (uint32_t size)</td></tr>
-<tr class="memdesc:abbdb72eacb423808f312810d5ce4556f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow the entry buffer. <br /></td></tr>
-<tr class="separator:abbdb72eacb423808f312810d5ce4556f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a35fa29a95fa628d4323d130c636da8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a35fa29a95fa628d4323d130c636da8"></a>
-const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer.html#a0a35fa29a95fa628d4323d130c636da8">AllocateAndResizeHeader</a> (uint32_t size)</td></tr>
-<tr class="memdesc:a0a35fa29a95fa628d4323d130c636da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow the entry buffer and copy the header immediately. <br /></td></tr>
-<tr class="separator:a0a35fa29a95fa628d4323d130c636da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70b839f07c569748fd321a40a7369575"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70b839f07c569748fd321a40a7369575"></a>
+const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer.html#a70b839f07c569748fd321a40a7369575">Allocate</a> (size_t size)</td></tr>
+<tr class="memdesc:a70b839f07c569748fd321a40a7369575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow the entry buffer. <br /></td></tr>
+<tr class="separator:a70b839f07c569748fd321a40a7369575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b80765b7c5384c639237addd6c30be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58b80765b7c5384c639237addd6c30be"></a>
+const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer.html#a58b80765b7c5384c639237addd6c30be">AllocateAndResizeHeader</a> (size_t size)</td></tr>
+<tr class="memdesc:a58b80765b7c5384c639237addd6c30be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow the entry buffer and copy the header immediately. <br /></td></tr>
+<tr class="separator:a58b80765b7c5384c639237addd6c30be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ec69ae3f18745283e3190ea663a17a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ec69ae3f18745283e3190ea663a17a2"></a>
 const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ensum_1_1_components_1_1_data_manager_1_1_data_buffer.html#a1ec69ae3f18745283e3190ea663a17a2">HeaderResize</a> ()</td></tr>
 <tr class="memdesc:a1ec69ae3f18745283e3190ea663a17a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow the header. <br /></td></tr>
@@ -139,9 +139,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a9297555e082ec773d4e49060df1c6a91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9297555e082ec773d4e49060df1c6a91"></a>
 void *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
 <tr class="separator:a9297555e082ec773d4e49060df1c6a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11b7c9123c55ad06806011412b6617f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11b7c9123c55ad06806011412b6617f4"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>capacity</b></td></tr>
-<tr class="separator:a11b7c9123c55ad06806011412b6617f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a386af07a3b4373ec96e67f58a5a33f78"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a386af07a3b4373ec96e67f58a5a33f78"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>capacity</b></td></tr>
+<tr class="separator:a386af07a3b4373ec96e67f58a5a33f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49547b879ac0083ade12a7488c1b74d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49547b879ac0083ade12a7488c1b74d9"></a>
 <a class="el" href="struct_ensum_1_1_components_1_1_data_manager_1_1_entry_header.html">EntryHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><b>header</b></td></tr>
 <tr class="separator:a49547b879ac0083ade12a7488c1b74d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,7 +153,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>capacity</b></td>
 <div class="textblock"><p>Struct for keeping track of the data entries a entity has been given. </p>
 <p>The databuffer stores the header on the left side and the value_buffer on the right side. When the buffers meet the size is increased. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Includes/Ensum_components/<a class="el" href="_data_manager_8h_source.html">DataManager.h</a></li>
+<li>C:/Users/peter/Source/Repos/ENSUM/Ensum/Includes/Ensum_components/<a class="el" href="_data_manager_8h_source.html">DataManager.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

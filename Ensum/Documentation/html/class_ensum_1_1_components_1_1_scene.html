@@ -154,12 +154,21 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ab7ee39773379321c85d73984b03c5568"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7ee39773379321c85d73984b03c5568"></a>
 <a class="el" href="class_ensum_1_1_input_1_1_input.html">Input::Input</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_input</b></td></tr>
 <tr class="separator:ab7ee39773379321c85d73984b03c5568"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51e11d82064b37aaf9295d71593792a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51e11d82064b37aaf9295d71593792a1"></a>
-<a class="el" href="class_ensum_1_1_components_1_1_data_manager.html">DataManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_dataManager</b></td></tr>
-<tr class="separator:a51e11d82064b37aaf9295d71593792a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f7c53f74805c8bf7461f9ff2c818be7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f7c53f74805c8bf7461f9ff2c818be7"></a>
-std::vector&lt; <a class="el" href="class_ensum_1_1_components_1_1_manager.html">Manager</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_managers</b></td></tr>
+<tr class="memitem:a9f7c53f74805c8bf7461f9ff2c818be7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_ensum_1_1_components_1_1_manager.html">Manager</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensum_1_1_components_1_1_scene.html#a9f7c53f74805c8bf7461f9ff2c818be7">_managers</a></td></tr>
+<tr class="memdesc:a9f7c53f74805c8bf7461f9ff2c818be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new instance of all other managers here.  <a href="#a9f7c53f74805c8bf7461f9ff2c818be7">More...</a><br /></td></tr>
 <tr class="separator:a9f7c53f74805c8bf7461f9ff2c818be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6357dc18aece3e778ce642f59f8195b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6357dc18aece3e778ce642f59f8195b"></a>
+<a class="el" href="class_ensum_1_1_components_1_1_data_manager.html">DataManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_data</b></td></tr>
+<tr class="separator:ae6357dc18aece3e778ce642f59f8195b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8a3149409a891d77b5554c154deb65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f8a3149409a891d77b5554c154deb65"></a>
+<a class="el" href="class_ensum_1_1_components_1_1_transform_manager.html">TransformManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_transform</b></td></tr>
+<tr class="separator:a9f8a3149409a891d77b5554c154deb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4a91f7879f6392a6d95dfeea6608a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d4a91f7879f6392a6d95dfeea6608a2"></a>
+<a class="el" href="class_ensum_1_1_components_1_1_camera_manager.html">CameraManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_camera</b></td></tr>
+<tr class="separator:a9d4a91f7879f6392a6d95dfeea6608a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a790b65abe3f86eae4e082a4557fc07d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a790b65abe3f86eae4e082a4557fc07d8"></a>
+<a class="el" href="class_ensum_1_1_components_1_1_static_mesh_manager.html">StaticMeshManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_staticMeshes</b></td></tr>
+<tr class="separator:a790b65abe3f86eae4e082a4557fc07d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The abstract scene class. </p>
@@ -207,8 +216,31 @@ std::vector&lt; <a class="el" href="class_ensum_1_1_components_1_1_manager.html"
 
 </div>
 </div>
+<a class="anchor" id="a9f7c53f74805c8bf7461f9ff2c818be7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_ensum_1_1_components_1_1_manager.html">Manager</a>*&gt;* Ensum::Components::Scene::_managers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create new instance of all other managers here. </p>
+<p>Every new manager needs to be initiated in the constructor and added to the managers vector. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Includes/Ensum_components/<a class="el" href="_scene_8h_source.html">Scene.h</a></li>
+<li>C:/Users/peter/Source/Repos/ENSUM/Ensum/Includes/Ensum_components/<a class="el" href="_scene_8h_source.html">Scene.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

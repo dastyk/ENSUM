@@ -21,9 +21,12 @@ Inheritance diagram for Ensum\+:\+:Core\+:\+:Window\+:\begin{figure}[H]
 virtual const void \hyperlink{class_ensum_1_1_core_1_1_window_a43f467e7e5ea83f3a9b990b6edc2ec46}{Init} ()=0\hypertarget{class_ensum_1_1_core_1_1_window_a43f467e7e5ea83f3a9b990b6edc2ec46}{}\label{class_ensum_1_1_core_1_1_window_a43f467e7e5ea83f3a9b990b6edc2ec46}
 
 \begin{DoxyCompactList}\small\item\em Initialization for the window. \end{DoxyCompactList}\item 
-virtual const void \hyperlink{class_ensum_1_1_core_1_1_window_aeafece8bb46d29de1de3ddf092662195}{Start} ()=0\hypertarget{class_ensum_1_1_core_1_1_window_aeafece8bb46d29de1de3ddf092662195}{}\label{class_ensum_1_1_core_1_1_window_aeafece8bb46d29de1de3ddf092662195}
+virtual const void \hyperlink{class_ensum_1_1_core_1_1_window_a2be80d0faaa9082f32df2416c8a0f42b}{Start} ()\hypertarget{class_ensum_1_1_core_1_1_window_a2be80d0faaa9082f32df2416c8a0f42b}{}\label{class_ensum_1_1_core_1_1_window_a2be80d0faaa9082f32df2416c8a0f42b}
 
-\begin{DoxyCompactList}\small\item\em Start the message loop. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Start the Game loop. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_core_1_1_window_a2b417072a3e324cf5101f1b90a82f317}{Pause} (bool paused)\hypertarget{class_ensum_1_1_core_1_1_window_a2b417072a3e324cf5101f1b90a82f317}{}\label{class_ensum_1_1_core_1_1_window_a2b417072a3e324cf5101f1b90a82f317}
+
+\begin{DoxyCompactList}\small\item\em Function for pausing and unpausing app. \end{DoxyCompactList}\item 
 \hyperlink{class_ensum_1_1_input_1_1_input}{Input\+::\+Input} $\ast$ \hyperlink{class_ensum_1_1_core_1_1_window_af746ffdd0281b2722d162fbf96c3542b}{Get\+Input} ()\hypertarget{class_ensum_1_1_core_1_1_window_af746ffdd0281b2722d162fbf96c3542b}{}\label{class_ensum_1_1_core_1_1_window_af746ffdd0281b2722d162fbf96c3542b}
 
 \begin{DoxyCompactList}\small\item\em Returns a pointer to the input. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -47,15 +50,24 @@ static void \hyperlink{class_ensum_1_1_core_1_1_window_ac6e8b05158fca2587cdfe23d
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Window} (\hyperlink{class_ensum_1_1_components_1_1_scene_manager}{Components\+::\+Scene\+Manager} \&scene\+Manager)\hypertarget{class_ensum_1_1_core_1_1_window_a64e2b8f8d5728eb941f54cc1577fcb0a}{}\label{class_ensum_1_1_core_1_1_window_a64e2b8f8d5728eb941f54cc1577fcb0a}
+{\bfseries Window} (\hyperlink{class_ensum_1_1_delegate}{Delegate}$<$ const void()$>$ \&scene\+Manager\+Frame)\hypertarget{class_ensum_1_1_core_1_1_window_ac7a0135f3a3488acdc78a37ce6413b3b}{}\label{class_ensum_1_1_core_1_1_window_ac7a0135f3a3488acdc78a37ce6413b3b}
 
 \item 
-virtual const void \hyperlink{class_ensum_1_1_core_1_1_window_a58af9c1b06e0fe12820f584f4638ae15}{Frame} ()=0
-\begin{DoxyCompactList}\small\item\em The frame function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual const void \hyperlink{class_ensum_1_1_core_1_1_window_ae3c16f115d465bf013410573d1b935f5}{\+\_\+\+Frame} ()=0
+\begin{DoxyCompactList}\small\item\em The frame function. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_core_1_1_window_a045101d73101ee67672ff02472277487}{\+\_\+\+Message\+Handling} ()=0\hypertarget{class_ensum_1_1_core_1_1_window_a045101d73101ee67672ff02472277487}{}\label{class_ensum_1_1_core_1_1_window_a045101d73101ee67672ff02472277487}
+
+\begin{DoxyCompactList}\small\item\em Handle messages. \end{DoxyCompactList}\item 
+virtual const void \hyperlink{class_ensum_1_1_core_1_1_window_a8f14f3c446fb696f33217327b0b2da5a}{\+\_\+\+Resize} ()=0\hypertarget{class_ensum_1_1_core_1_1_window_a8f14f3c446fb696f33217327b0b2da5a}{}\label{class_ensum_1_1_core_1_1_window_a8f14f3c446fb696f33217327b0b2da5a}
+
+\begin{DoxyCompactList}\small\item\em Called when options have changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 bool {\bfseries \+\_\+running}\hypertarget{class_ensum_1_1_core_1_1_window_a6424445161cec33a48906e90270ba20b}{}\label{class_ensum_1_1_core_1_1_window_a6424445161cec33a48906e90270ba20b}
+
+\item 
+bool {\bfseries \+\_\+paused}\hypertarget{class_ensum_1_1_core_1_1_window_a49015186ceadd7d1e12c4b4d2f506242}{}\label{class_ensum_1_1_core_1_1_window_a49015186ceadd7d1e12c4b4d2f506242}
 
 \item 
 L\+P\+W\+S\+TR {\bfseries \+\_\+wnd\+Caption}\hypertarget{class_ensum_1_1_core_1_1_window_a42e780f298c4b0ea9f7f68f855f43e98}{}\label{class_ensum_1_1_core_1_1_window_a42e780f298c4b0ea9f7f68f855f43e98}
@@ -67,7 +79,7 @@ L\+P\+W\+S\+TR {\bfseries \+\_\+wnd\+Caption}\hypertarget{class_ensum_1_1_core_1
 \hyperlink{class_ensum_1_1_input_1_1_input}{Input\+::\+Input} $\ast$ {\bfseries \+\_\+input}\hypertarget{class_ensum_1_1_core_1_1_window_a6b2925a490f7a5a2417059660713bc19}{}\label{class_ensum_1_1_core_1_1_window_a6b2925a490f7a5a2417059660713bc19}
 
 \item 
-\hyperlink{class_ensum_1_1_components_1_1_scene_manager}{Components\+::\+Scene\+Manager} \& {\bfseries \+\_\+scene\+Manager}\hypertarget{class_ensum_1_1_core_1_1_window_a19281ff51aee4c5bd8a71f7a00786930}{}\label{class_ensum_1_1_core_1_1_window_a19281ff51aee4c5bd8a71f7a00786930}
+\hyperlink{class_ensum_1_1_event}{Event}$<$ const void()$>$ {\bfseries \+\_\+scene\+Manager\+Frame}\hypertarget{class_ensum_1_1_core_1_1_window_a3590c66ab2e35d39305d587db08aeae5}{}\label{class_ensum_1_1_core_1_1_window_a3590c66ab2e35d39305d587db08aeae5}
 
 \end{DoxyCompactItemize}
 \subsection*{Static Protected Attributes}
@@ -82,6 +94,21 @@ static \hyperlink{class_ensum_1_1_core_1_1_window}{Window} $\ast$ {\bfseries \+\
 Fully abstract class for interfacting with the actual window. 
 
 \subsection{Member Function Documentation}
+\index{Ensum\+::\+Core\+::\+Window@{Ensum\+::\+Core\+::\+Window}!\+\_\+\+Frame@{\+\_\+\+Frame}}
+\index{\+\_\+\+Frame@{\+\_\+\+Frame}!Ensum\+::\+Core\+::\+Window@{Ensum\+::\+Core\+::\+Window}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Frame()=0}{_Frame()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const void Ensum\+::\+Core\+::\+Window\+::\+\_\+\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_ensum_1_1_core_1_1_window_ae3c16f115d465bf013410573d1b935f5}{}\label{class_ensum_1_1_core_1_1_window_ae3c16f115d465bf013410573d1b935f5}
+
+
+The frame function. 
+
+Put the gamelogic here. 
+
+Implemented in \hyperlink{class_ensum_1_1_core_1_1_win_window_a309cbdef995b8ca8638fe297987ce852}{Ensum\+::\+Core\+::\+Win\+Window}.
+
 \index{Ensum\+::\+Core\+::\+Window@{Ensum\+::\+Core\+::\+Window}!Delete\+Instance@{Delete\+Instance}}
 \index{Delete\+Instance@{Delete\+Instance}!Ensum\+::\+Core\+::\+Window@{Ensum\+::\+Core\+::\+Window}}
 \subsubsection[{\texorpdfstring{Delete\+Instance()}{DeleteInstance()}}]{\setlength{\rightskip}{0pt plus 5cm}static void Ensum\+::\+Core\+::\+Window\+::\+Delete\+Instance (
@@ -93,23 +120,8 @@ Fully abstract class for interfacting with the actual window.
 
 Deletes the window. 
 
-This also deletes all members \index{Ensum\+::\+Core\+::\+Window@{Ensum\+::\+Core\+::\+Window}!Frame@{Frame}}
-\index{Frame@{Frame}!Ensum\+::\+Core\+::\+Window@{Ensum\+::\+Core\+::\+Window}}
-\subsubsection[{\texorpdfstring{Frame()=0}{Frame()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const void Ensum\+::\+Core\+::\+Window\+::\+Frame (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_ensum_1_1_core_1_1_window_a58af9c1b06e0fe12820f584f4638ae15}{}\label{class_ensum_1_1_core_1_1_window_a58af9c1b06e0fe12820f584f4638ae15}
-
-
-The frame function. 
-
-Put the gamelogic here. 
-
-Implemented in \hyperlink{class_ensum_1_1_core_1_1_win_window_a3e828ccbc90f0d6ed81c2320277561e6}{Ensum\+::\+Core\+::\+Win\+Window}.
-
-
+This also deletes all members 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Includes/\+Ensum\+\_\+core/Window.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/peter/\+Source/\+Repos/\+E\+N\+S\+U\+M/\+Ensum/\+Includes/\+Ensum\+\_\+core/Window.\+h\end{DoxyCompactItemize}
